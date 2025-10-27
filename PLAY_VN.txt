@@ -1,0 +1,105 @@
+================================================================================
+🎮 HOW TO PLAY YOUR VISUAL NOVEL 🎮
+================================================================================
+
+QUICK START - Play Old Bugs Demo
+---------------------------------
+
+Option 1 - Command Line (RECOMMENDED):
+  cd renpy_sdk
+  ./renpy.sh ../vn_projects/old_bugs_demo
+
+Option 2 - Launcher Script:
+  ./vn_projects/old_bugs_demo/launch_vn.sh
+
+Option 3 - Ren'Py Launcher GUI:
+  cd renpy_sdk
+  ./renpy.sh
+  (Then select "old_bugs_demo" from the project list)
+
+
+CREATE NEW VISUAL NOVELS
+-------------------------
+
+Convert any analyzed book to a VN:
+
+  python create_visual_novel.py output/BookName [optional_project_name]
+
+Example:
+  python create_visual_novel.py output/The_Complete_Works_of_H.P._Lovecraft lovecraft_vn
+
+
+WHAT YOU GET
+------------
+
+✅ 279 dialogue blocks
+✅ 3,013 words of H.P. Lovecraft prose
+✅ 7 characters with sprites
+✅ 15 expressions for Old Bugs
+✅ Gothic atmosphere & styling
+✅ Automatic dialogue/narration flow
+✅ Professional Ren'Py project
+
+CONTROLS IN-GAME
+----------------
+
+Left Click / Space / Enter - Advance text
+Right Click / Esc - Open menu
+Ctrl - Skip text
+Tab - Toggle skipping
+H - Hide text window
+S - Take screenshot
+F - Toggle fullscreen
+Q - Quick save
+L - Quick load
+
+TECHNICAL STATUS
+----------------
+
+✅ Ren'Py SDK 8.3.2 installed
+✅ Fonts fixed (DejaVuSans.ttf)
+✅ Lint check passed - no errors
+✅ 23 images loaded
+✅ Gothic style applied
+✅ All character sprites working
+✅ Ready to play!
+
+PROJECT LOCATION
+----------------
+
+Demo Project: vn_projects/old_bugs_demo/
+Ren'Py SDK: renpy_sdk/
+Conversion System: vn/
+Convenience Script: create_visual_novel.py
+
+CUSTOMIZATION
+-------------
+
+After playing, you can customize:
+
+1. Edit scripts: vn_projects/old_bugs_demo/game/*.rpy
+2. Change colors: vn_projects/old_bugs_demo/game/style.rpy
+3. Adjust pacing: Change config.default_text_cps in style.rpy
+4. Add music: Place .mp3 files in game/audio/
+5. Add backgrounds: Place images in game/images/backgrounds/
+
+CONVERT MORE BOOKS
+------------------
+
+To convert another book:
+
+1. Analyze book: python analyze_chapters.py books/book.txt
+2. Generate images: python generate_character_images.py output/BookName
+3. Create VN: python create_visual_novel.py output/BookName
+
+The system automatically:
+- Detects mood (Gothic, Noir, Horror, Romance, Adventure)
+- Applies appropriate colors and styling
+- Organizes all character sprites
+- Parses dialogue from narration
+- Creates a playable Ren'Py project
+
+ENJOY YOUR VISUAL NOVEL! 🎉📚🎮
+
+================================================================================
+

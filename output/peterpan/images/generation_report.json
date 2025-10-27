@@ -1,0 +1,64 @@
+{
+  "total_characters": 7,
+  "successful": 7,
+  "failed": 0,
+  "total_time_seconds": 68.53049850463867,
+  "results": [
+    {
+      "character_name": "Mrs. Darling",
+      "output_path": "output/peterpan/images/Mrs_Darling.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 10.06,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Nana",
+      "output_path": "output/peterpan/images/Nana.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 9.53,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "The Boy (Peter)",
+      "output_path": "output/peterpan/images/The_Boy_Peter.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 8.7,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Mr. Darling (George Darling)",
+      "output_path": "output/peterpan/images/Mr_Darling_George_Darling.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 8.59,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Wendy",
+      "output_path": "output/peterpan/images/Wendy.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 10.28,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Michael",
+      "output_path": "output/peterpan/images/Michael.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 11.62,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "John",
+      "output_path": "output/peterpan/images/John.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 9.75,
+      "success": true,
+      "error_message": ""
+    }
+  ]
+}

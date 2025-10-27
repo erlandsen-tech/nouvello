@@ -1,0 +1,123 @@
+[
+  {
+    "scene_number": 1,
+    "title": "The Boy at the Window",
+    "content": "The chapter primarily takes place in the nursery of the Darling home, a Victorian-era children's room with a window that becomes a crucial point of action. The setting shifts between the immediate dramatic moment when the mysterious boy escapes through the window into the black night, and later domestic scenes in the nursery where the family prepares for an evening dinner party.",
+    "characters_present": [
+      "The Boy",
+      "Wendy Darling",
+      "John Darling",
+      "Michael Darling"
+    ],
+    "setting": "The nursery of the Darling home, a Victorian-era children's room with a large window overlooking the night sky.",
+    "mood": "Mysterious, suspenseful, with a sense of the supernatural.",
+    "image_prompt": "A dimly lit Victorian nursery with three children in nightclothes gathered at a large window. A mysterious boy is halfway through the open window, about to disappear into the night sky filled with stars. The nursery is cluttered with toys and children's furnishings.",
+    "image_type": "scene",
+    "image_file": "scene_01_the_boy_at_the_window.png"
+  },
+  {
+    "scene_number": 2,
+    "title": "Domestic Disarray",
+    "content": "The atmosphere transitions from nighttime mystery and alarm to the warmth of evening preparations with soft lamplight, then forward in time to sorrowful retrospective scenes where the family sits in what has become an 'empty nursery.'",
+    "characters_present": [
+      "Mr. Darling",
+      "Mrs. Darling",
+      "Wendy Darling",
+      "John Darling",
+      "Michael Darling",
+      "Liza (the maid)"
+    ],
+    "setting": "The same nursery, now brightly lit and in disarray as the family prepares for a dinner party.",
+    "mood": "Chaotic, comedic, with an underlying sense of warmth and domestic bliss.",
+    "image_prompt": "A well-appointed Victorian nursery in a state of chaos, with toys and clothes strewn about. Mr. Darling is flustered, trying to tie his bowtie, while Mrs. Darling and the maid Liza attend to the three children who are running amok. There is a warm glow from lamps, and a general air of happy domestic commotion.",
+    "image_type": "scene",
+    "image_file": "scene_02_domestic_disarray.png"
+  },
+  {
+    "scene_number": 3,
+    "title": "The Empty Nursery",
+    "content": "The chapter spans from one evening through to 'that never-to-be-forgotten Friday' a week later, with the family seated night after night in grief-stricken reminiscence.",
+    "characters_present": [
+      "Mr. Darling",
+      "Mrs. Darling"
+    ],
+    "setting": "The same nursery, now empty and neglected, with traces of the children's belongings.",
+    "mood": "Melancholic, somber, filled with a sense of loss and regret.",
+    "image_prompt": "A once-vibrant Victorian nursery now neglected and empty, with children's toys and furniture covered in dust. A rocking horse sits motionless, and the window is open to the night sky. Mr. and Mrs. Darling sit in chairs, heads bowed in grief, surrounded by the echoes of their children's absence.",
+    "image_type": "scene",
+    "image_file": "scene_03_the_empty_nursery.png"
+  },
+  {
+    "scene_number": 4,
+    "title": "The Shadow's Capture",
+    "content": "The chapter oscillates between multiple emotional registers: initial alarm and supernatural mystery when the boy escapes and his shadow is caught;",
+    "characters_present": [
+      "The Boy",
+      "Wendy Darling",
+      "John Darling",
+      "Michael Darling"
+    ],
+    "setting": "The nursery, with the window open to the night sky.",
+    "mood": "Tense, filled with a sense of the supernatural and the unknown.",
+    "image_prompt": "The three Darling children stand in their nightclothes, surrounding a mysterious shadow on the nursery floor. The shadow appears to be struggling to escape, its form detached from the silhouette of the boy who clings to the open window frame, bathed in moonlight. The children's expressions are a mix of fear and wonder.",
+    "image_type": "scene",
+    "image_file": "scene_04_the_shadows_capture.png"
+  },
+  {
+    "scene_number": 5,
+    "title": "Mr. Darling's Tie Crisis",
+    "content": "domestic comedy during Mr. Darling's tie crisis;",
+    "characters_present": [
+      "Mr. Darling",
+      "Liza (the maid)"
+    ],
+    "setting": "The nursery, brightly lit and in disarray as the family prepares for a dinner party.",
+    "mood": "Comedic, farcical, with a sense of domestic chaos.",
+    "image_prompt": "In the cluttered Victorian nursery, Mr. Darling stands before a mirror, his face contorted in frustration as he struggles to tie his bowtie. The maid, Liza, hovers nearby, trying to assist him while navigating the toys and clothes strewn about the room. The scene is chaotic but filled with a sense of humor and warmth.",
+    "image_type": "scene",
+    "image_file": "scene_05_mr_darlings_tie_crisis.png"
+  },
+  {
+    "scene_number": 6,
+    "title": "Children's Play",
+    "content": "tender family warmth during the children's play-acting and romping;",
+    "characters_present": [
+      "Wendy Darling",
+      "John Darling",
+      "Michael Darling"
+    ],
+    "setting": "The nursery, filled with toys and children's furnishings.",
+    "mood": "Playful, joyful, with a sense of childhood innocence and familial love.",
+    "image_prompt": "The three Darling children, in their nightclothes, are engaged in a lively game of make-believe in the nursery. Wendy, the eldest, sits regally in a chair, while John and Michael act out fantastical roles, surrounded by toys and stuffed animals. The scene is filled with warmth, laughter, and the magic of childhood imagination.",
+    "image_type": "scene",
+    "image_file": "scene_06_childrens_play.png"
+  },
+  {
+    "scene_number": 7,
+    "title": "Lost in Grief",
+    "content": "and ultimately deep melancholy and regret as the narrative reveals these are memories of events leading to the children's disappearance.",
+    "characters_present": [
+      "Mr. Darling",
+      "Mrs. Darling"
+    ],
+    "setting": "The empty nursery, now neglected and dust-covered.",
+    "mood": "Somber, melancholic, filled with a profound sense of loss and regret.",
+    "image_prompt": "Mr. and Mrs. Darling sit in the once-vibrant nursery, now neglected and covered in a layer of dust. Toys and children's belongings lie scattered, untouched. The parents are slumped in chairs, their faces etched with grief and regret, as if reliving memories of happier times before their children's disappearance. The scene is heartbreaking, filled with a sense of mourning and the weight of lost innocence.",
+    "image_type": "scene",
+    "image_file": "scene_07_lost_in_grief.png"
+  },
+  {
+    "scene_number": 8,
+    "title": "Haunting Memories",
+    "content": "The tone is nostalgic and tragic, with an undercurrent of foreboding. The pacing moves from quick, dramatic action to slower, detail-rich recollection. There's a pervasive sense of loss, guilt, and the painful meditation on seemingly trivial moments that preceded catastrophe.",
+    "characters_present": [
+      "Mr. Darling",
+      "Mrs. Darling"
+    ],
+    "setting": "The empty nursery, with the window open to the night sky.",
+    "mood": "Haunting, melancholic, filled with a sense of regret and foreboding.",
+    "image_prompt": "In the dimly lit nursery, Mr. and Mrs. Darling sit in silence, their faces illuminated by the soft moonlight streaming through the open window. The room is empty, save for a few forgotten toys and a rocking horse that casts eerie shadows on the walls. The parents' expressions are etched with haunting grief and regret, as if they are reliving the seemingly trivial moments that preceded the loss of their children. The scene is heavy with a sense of tragedy and the weight of what can never be undone.",
+    "image_type": "scene",
+    "image_file": "scene_08_haunting_memories.png"
+  }
+]

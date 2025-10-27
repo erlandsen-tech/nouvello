@@ -1,0 +1,87 @@
+.text-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.95);
+  margin: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.text-content {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.scene-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  padding: 0.5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.scene-mood {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: 0.3rem;
+  background: rgba(52, 152, 219, 0.1);
+  border-radius: 4px;
+}
+
+.speaker-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #3498db;
+}
+
+.text-block {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #2c3e50;
+  text-align: justify;
+}
+
+.text-block.narration {
+  font-style: italic;
+  color: #34495e;
+}
+
+.text-block.dialogue {
+  font-weight: 500;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .text-panel {
+    margin: 0.5rem;
+    border-radius: 8px;
+  }
+  
+  .text-content {
+    padding: 1.5rem;
+  }
+  
+  .text-block {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .speaker-name {
+    font-size: 1rem;
+  }
+}

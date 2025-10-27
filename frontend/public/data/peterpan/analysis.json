@@ -1,0 +1,66 @@
+[
+  {
+    "chapter_title": "Chapter II. THE SHADOW",
+    "chapter_number": 5,
+    "scene_description": "The chapter primarily takes place in the nursery of the Darling home, a Victorian-era children's room with a window that becomes a crucial point of action. The setting shifts between the immediate dramatic moment when the mysterious boy escapes through the window into the black night, and later domestic scenes in the nursery where the family prepares for an evening dinner party. The atmosphere transitions from nighttime mystery and alarm to the warmth of evening preparations with soft lamplight, then forward in time to sorrowful retrospective scenes where the family sits in what has become an 'empty nursery.' The chapter spans from one evening through to 'that never-to-be-forgotten Friday' a week later, with the family seated night after night in grief-stricken reminiscence.",
+    "mood_description": "The chapter oscillates between multiple emotional registers: initial alarm and supernatural mystery when the boy escapes and his shadow is caught; domestic comedy during Mr. Darling's tie crisis; tender family warmth during the children's play-acting and romping; and ultimately deep melancholy and regret as the narrative reveals these are memories of events leading to the children's disappearance. The tone is nostalgic and tragic, with an undercurrent of foreboding. The pacing moves from quick, dramatic action to slower, detail-rich recollection. There's a pervasive sense of loss, guilt, and the painful meditation on seemingly trivial moments that preceded catastrophe.",
+    "characters": [
+      {
+        "name": "Mrs. Darling",
+        "description": "The mother of the family, portrayed as gentle, placid, and maternal. She wears a white evening gown and a necklace from her husband, along with Wendy's bracelet. She is protective and concerned, screaming both in alarm at the intruder and in distress for the boy's safety. She is practical yet sentimental, deciding to store the shadow in a drawer. She defends Nana and refuses to speak ill of Peter (the boy). In retrospective scenes, she is shown holding Nana's paw, consumed with regret over accepting a dinner invitation. She has 'something in the right-hand corner of her mouth' that prevents her from calling Peter names, suggesting a knowing sympathy."
+      },
+      {
+        "name": "Nana",
+        "description": "The family dog who serves as nurse to the children. She is protective and responsible, growling and springing at the intruder, managing to catch his shadow when she slams the window. She demonstrates practical thinking by wanting to hang the shadow outside for the boy to retrieve. She performs nursery duties like preparing Michael's bath and carrying him on her back. In later scenes, she is portrayed with 'wet eyes' full of guilt, believing the family's misfortune stems from having 'a dog for a nurse.' She is treated as a full member of the family, capable of complex emotions and participating in their collective mourning."
+      },
+      {
+        "name": "The Boy (Peter)",
+        "description": "A mysterious figure who leaps lightly through the nursery window to escape. He is agile enough to jump from what must be a considerable height into the black night. Mrs. Darling initially fears he's been killed but sees what appears to be a shooting star. His shadow is described as 'quite the ordinary kind,' though Mr. Darling later calls him 'a scoundrel' and 'that fiend' based on examining the shadow. He is never directly named Peter in this excerpt but is referred to as 'the boy' throughout. He becomes the source of the family's greatest tragedy."
+      },
+      {
+        "name": "Mr. Darling (George Darling)",
+        "description": "The father, a man concerned with practical matters like 'stocks and shares' and 'winter great-coats.' He is portrayed with both dignity and comic weakness—unable to master his own tie, prone to dramatic overreaction (arriving 'like a tornado,' threatening that the family will 'starve' if his tie isn't fixed), yet also capable of tenderness and self-reproach. He has 'had a classical education' (saying 'Mea culpa'). He dances with Michael on his back during romping, but also complains about dog hair on his new braided trousers. In retrospective scenes, he assumes full responsibility for the tragedy, is gentle with Nana (putting handkerchief to her eyes), and obsessively recalls every detail of 'that fatal Friday.'"
+      },
+      {
+        "name": "Wendy",
+        "description": "The eldest child (or at least eldest daughter), who loves to see her mother in evening dress and willingly lends her bracelet to Mrs. Darling. She participates in imaginative play, acting out being her mother at the occasion of her own birth, dancing with joy in the role-play. She is portrayed as sweet and generous. Though present in the memories, she is notably absent in the later retrospective scenes, part of the tragedy that has befallen the family."
+      },
+      {
+        "name": "Michael",
+        "description": "The youngest child, portrayed as sensitive and in need of reassurance. He protests being bathed, declaring he won't go to bed and threatening not to love Nana anymore. He seeks inclusion, nearly crying when John says they don't want any more children in their play, saying 'Nobody wants me.' He asks to be 'born also' in the children's game and leaps into his mother's arms when she affirms she wants him. He rides on his father's back during romping and asks his mother 'How did you get to know me, mother?' He is notably absent in the later scenes of parental mourning."
+      },
+      {
+        "name": "John",
+        "description": "The middle child and eldest son, who plays at being his father in the children's imaginative game, announcing Wendy's 'birth' in a tone imitating Mr. Darling. He treats his own play-birth 'with the extra pomp that he conceived due to the birth of a male' and 'brutally' tells Michael 'they did not want any more' children. He is mentioned in Mr. Darling's calculations about winter great-coats. Like his siblings, he is present in memories but absent in the later mourning scenes."
+      }
+    ],
+    "significant_objects": [
+      {
+        "name": "The Shadow",
+        "description": "The boy's shadow, severed when Nana slams the window shut as he escapes. It is described as 'quite the ordinary kind' upon Mrs. Darling's examination, yet it is tangible enough to be caught, held, examined, and stored. Mr. Darling examines it carefully and declares its owner looks like 'a scoundrel.' Nana initially wants to hang it outside the window for easy retrieval, but Mrs. Darling objects that 'it looked so like the washing and lowered the whole tone of the house,' so she rolls it up and stores it in a drawer. The shadow represents the first concrete evidence of the supernatural intruder and foreshadows his return. It symbolizes both Peter's otherworldly nature and the connection that will draw him back to the nursery."
+      },
+      {
+        "name": "The Window",
+        "description": "The nursery window serves as the threshold between the ordinary domestic world and the magical realm beyond. It is the escape route for the mysterious boy and the mechanism that captures his shadow when Nana slams it shut. Mrs. Darling looks through it into 'the black night' where she can see nothing but what might be a shooting star. The window represents the boundary between safety and danger, the known and unknown, the mundane and the magical."
+      },
+      {
+        "name": "The Tie",
+        "description": "Mr. Darling's necktie becomes a symbol of his pride, insecurity, and the trivial concerns that preceded tragedy. He calls it 'the crumpled little brute of a tie' and dramatically declares it 'will not tie' around his neck, though it ties easily around the bedpost. His inability to master it, despite knowing 'about stocks and shares,' reveals his domestic vulnerability. Mrs. Darling ties it easily with her 'nice cool hands.' The tie incident becomes one of the painful details the family obsessively recalls, representing how small moments of vanity and frustration preceded catastrophe."
+      },
+      {
+        "name": "White Evening-Gown",
+        "description": "Mrs. Darling's white evening dress, worn for the dinner party at '27.' Wendy especially loves to see her mother in this gown. It represents the elegance and social obligations of adult life, and becomes part of the tender domestic scene before the tragedy. The dress is mentioned in the family's painful recollections, symbolizing the normal social life that pulled the parents away at the crucial moment."
+      },
+      {
+        "name": "Wendy's Bracelet",
+        "description": "A piece of jewelry that Wendy lends to her mother, worn by Mrs. Darling on her arm along with the necklace from George. The exchange of the bracelet demonstrates the loving relationship between mother and daughter, with Wendy taking pleasure in lending it. It represents the tender bonds of the family and becomes another poignant detail in their retrospective mourning."
+      },
+      {
+        "name": "Nana's Bowl",
+        "description": "The dog's bowl into which Mr. Darling pours his medicine, one of the specific actions he obsessively regrets in the aftermath of the tragedy. This act becomes one of the pivotal 'if only' moments the family recounts night after night, suggesting it played some role in the events that led to the children's disappearance. It represents the chain of small decisions that led to catastrophe."
+      }
+    ],
+    "summary": "A mysterious boy escapes through the nursery window but leaves his shadow behind when Nana the dog-nurse slams the window on it; Mrs. Darling stores the shadow in a drawer. The narrative then shifts to recount 'that never-to-be-forgotten Friday' one week later when the parents went out to dinner, leaving the children in the nursery—a decision that led to an unnamed tragedy, with the family now sitting in the empty nursery consumed by guilt and obsessively recalling every detail of that fatal evening.",
+    "raw_content_preview": "Chapter II.\nTHE SHADOW\nMrs. Darling screamed, and, as if in answer to a bell, the door opened, and\nNana entered, returned from her evening out. She growled and sprang at the boy,\nwho leapt lightly thr"
+  }
+]

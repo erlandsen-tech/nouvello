@@ -1,0 +1,20 @@
+[
+  {
+    "id": "alice",
+    "title": "Alice In Wonderland",
+    "description": "Visual novel adaptation of Alice's Adventures in Wonderland",
+    "data_dir": "alice",
+    "created_at": "2024-01-01",
+    "scenes_count": 12,
+    "characters_count": 4
+  },
+  {
+    "id": "peterpan",
+    "title": "Peterpan",
+    "description": "Visual novel adaptation of Peterpan",
+    "data_dir": "peterpan",
+    "created_at": "/home/john/Projects/book-generation",
+    "scenes_count": 8,
+    "characters_count": 7
+  }
+]

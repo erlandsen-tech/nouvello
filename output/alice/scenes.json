@@ -1,0 +1,162 @@
+[
+  {
+    "scene_number": 1,
+    "title": "Bored by the Bank",
+    "content": "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, 'and what is the use of a book,' thought Alice 'without pictures or conversations?'",
+    "characters_present": [
+      "Alice",
+      "Alice's Sister"
+    ],
+    "setting": "Riverbank on a hot summer day",
+    "mood": "Drowsy, bored, restless",
+    "image_prompt": "A peaceful riverbank scene on a hot summer day, young Alice in a blue dress sitting beside her older sister who is reading a thick book, daisies scattered in the grass, warm golden afternoon light, Alice looking bored and sleepy",
+    "image_type": "environment",
+    "image_file": "output/alice/scenes/scene_01_bored_by_the_bank.png"
+  },
+  {
+    "scene_number": 2,
+    "title": "The White Rabbit Appears",
+    "content": "So she was considering in her own mind (as well as she could, for the hot day made her feel very sleepy and stupid), whether the pleasure of making a daisy-chain would be worth the trouble of getting up and picking the daisies, when suddenly a White Rabbit with pink eyes ran close by her.",
+    "characters_present": [
+      "Alice",
+      "White Rabbit"
+    ],
+    "setting": "Grassy bank near the riverbank",
+    "mood": "Sudden surprise, curiosity awakening",
+    "image_prompt": "A white rabbit with pink eyes wearing a waistcoat running past, Alice sitting up startled in the grass with daisies around her, the rabbit appears hurried and anxious, bright daylight, Victorian era illustration style",
+    "image_type": "character",
+    "image_file": "output/alice/scenes/scene_02_the_white_rabbit_appears.png"
+  },
+  {
+    "scene_number": 3,
+    "title": "A Talking Rabbit!",
+    "content": "There was nothing so very remarkable in that; nor did Alice think it so very much out of the way to hear the Rabbit say to itself, 'Oh dear! Oh dear! I shall be late!' (when she thought it over afterwards, it occurred to her that she ought to have wondered at this, but at the time it all seemed quite natural)",
+    "characters_present": [
+      "Alice",
+      "White Rabbit"
+    ],
+    "setting": "Grassy field near the bank",
+    "mood": "Dreamy acceptance, mild curiosity",
+    "image_prompt": "The White Rabbit in a waistcoat speaking to himself with a worried expression saying 'Oh dear! I shall be late!', Alice in the background watching with mild interest, anthropomorphic rabbit, whimsical Victorian style",
+    "image_type": "action",
+    "image_file": "output/alice/scenes/scene_03_a_talking_rabbit.png"
+  },
+  {
+    "scene_number": 4,
+    "title": "The Pocket Watch",
+    "content": "but when the Rabbit actually took a watch out of its waistcoat-pocket, and looked at it, and then hurried on, Alice started to her feet, for it flashed across her mind that she had never before seen a rabbit with either a waistcoat-pocket, or a watch to take out of it, and burning with curiosity, she ran across the field after it",
+    "characters_present": [
+      "Alice",
+      "White Rabbit"
+    ],
+    "setting": "Open field with hedges in distance",
+    "mood": "Excitement, burning curiosity, sudden action",
+    "image_prompt": "The White Rabbit pulling out a large pocket watch from his waistcoat pocket and looking at it anxiously, Alice jumping to her feet in the background with an expression of amazement and curiosity, dynamic action pose, the rabbit hurrying away",
+    "image_type": "action",
+    "image_file": "output/alice/scenes/scene_04_the_pocket_watch.png"
+  },
+  {
+    "scene_number": 5,
+    "title": "Down the Rabbit-Hole",
+    "content": "and fortunately was just in time to see it pop down a large rabbit-hole under the hedge. In another moment down went Alice after it, never once considering how in the world she was to get out again.",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "A large rabbit-hole entrance under a hedge",
+    "mood": "Impulsive, adventurous, reckless abandon",
+    "image_prompt": "Alice diving headfirst into a large dark rabbit-hole under a hedge, her blue dress and blonde hair flowing, White Rabbit's feet disappearing into the darkness ahead, dramatic moment of commitment, hedge leaves framing the entrance",
+    "image_type": "action",
+    "image_file": ""
+  },
+  {
+    "scene_number": 6,
+    "title": "The Tunnel Falls",
+    "content": "The rabbit-hole went straight on like a tunnel for some way, and then dipped suddenly down, so suddenly that Alice had not a moment to think about stopping herself before she found herself falling down a very deep well.",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "Inside the rabbit-hole tunnel transitioning to a deep well",
+    "mood": "Sudden shock, disorientation, falling",
+    "image_prompt": "Alice falling suddenly down a deep well shaft, her arms outstretched, dress billowing upward, expression of surprise on her face, the tunnel walls rushing past her, darkness below, sense of rapid descent",
+    "image_type": "action",
+    "image_file": "output/alice/scenes/scene_06_the_tunnel_falls.png"
+  },
+  {
+    "scene_number": 7,
+    "title": "The Slow Fall",
+    "content": "Either the well was very deep, or she fell very slowly, for she had plenty of time as she went down to look about her and to wonder what was going to happen next. First, she tried to look down and make out what she was coming to, but it was too dark to see anything",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "Inside the deep well shaft, darkness below",
+    "mood": "Dreamlike, curious, suspended in time",
+    "image_prompt": "Alice floating slowly downward through a deep well shaft, looking down into darkness below, her hair and dress floating gently as if in slow motion, mysterious and dreamlike atmosphere, vertical perspective showing the depth",
+    "image_type": "environment",
+    "image_file": "output/alice/scenes/scene_07_the_slow_fall.png"
+  },
+  {
+    "scene_number": 8,
+    "title": "The Cupboards and Maps",
+    "content": "then she looked at the sides of the well, and noticed that they were filled with cupboards and book-shelves; here and there she saw maps and pictures hung upon pegs.",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "The well shaft lined with cupboards and shelves",
+    "mood": "Wonder, curious exploration, surreal",
+    "image_prompt": "The interior walls of the well shaft lined with cupboards, bookshelves, maps and pictures hanging on pegs, Alice falling past them with an expression of wonder and curiosity, warm candlelight glow from the shelves, impossible and whimsical architecture",
+    "image_type": "environment",
+    "image_file": "output/alice/scenes/scene_08_the_cupboards_and_maps.png"
+  },
+  {
+    "scene_number": 9,
+    "title": "The Marmalade Jar",
+    "content": "She took down a jar from one of the shelves as she passed; it was labelled 'ORANGE MARMALADE', but to her great disappointment it was empty: she did not like to drop the jar for fear of killing somebody underneath, so managed to put it into one of the cupboards as she fell past it.",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "Inside the well shaft with cupboards",
+    "mood": "Polite concern, mild disappointment, careful",
+    "image_prompt": "Alice holding an empty jar labeled 'ORANGE MARMALADE' while falling, carefully placing it back into a cupboard on the wall as she descends, her expression showing disappointment but thoughtfulness, Victorian-style jar and cupboards",
+    "image_type": "action",
+    "image_file": "output/alice/scenes/scene_09_the_marmalade_jar.png"
+  },
+  {
+    "scene_number": 10,
+    "title": "Thoughts of Dinah",
+    "content": "Alice began talking again. 'Dinah'll miss me very much to-night, I should think!' (Dinah was the cat.) 'I hope they'll remember her saucer of milk at tea-time. Dinah my dear! I wish you were down here with me! There are no mice in the air, I'm afraid, but you might catch a bat, and that's very like a mouse, you know.'",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "Continuing to fall through the well shaft",
+    "mood": "Homesick, affectionate, drowsy rambling",
+    "image_prompt": "Alice falling gently through the dark well shaft, speaking to herself with a wistful expression, thinking of her cat Dinah, soft dreamy quality, her hands gesturing as she talks, growing more drowsy",
+    "image_type": "character",
+    "image_file": "output/alice/scenes/scene_10_thoughts_of_dinah.png"
+  },
+  {
+    "scene_number": 11,
+    "title": "Growing Very Sleepy",
+    "content": "But do cats eat bats, I wonder?' And here Alice began to get rather sleepy, and went on saying to herself, in a dreamy sort of way, 'Do cats eat bats? Do cats eat bats?' and sometimes, 'Do bats eat cats?' for, you see, as she couldn't answer either question, it didn't much matter which way she put it.",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "Deep in the well shaft, darkness all around",
+    "mood": "Drowsy, confused, dreamlike stupor",
+    "image_prompt": "Alice falling very slowly now, eyes half-closed and drowsy, murmuring to herself with a dreamy confused expression, hair floating around her face, growing darker and more dream-like, sense of time stretching",
+    "image_type": "character",
+    "image_file": "output/alice/scenes/scene_11_growing_very_sleepy.png"
+  },
+  {
+    "scene_number": 12,
+    "title": "The Sudden Landing",
+    "content": "She felt that she was dozing off, and had just begun to dream that she was walking hand in hand with Dinah, and saying to her very earnestly, 'Now, Dinah, tell me the truth: did you ever eat a bat?' when suddenly, thump! thump! down she came upon a heap of sticks and dry leaves, and the fall was over.",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "Bottom of the well shaft, heap of sticks and dry leaves",
+    "mood": "Sudden awakening, startled, abrupt transition",
+    "image_prompt": "Alice landing suddenly on a heap of dry sticks and leaves at the bottom of the well, her dress spread around her, expression of surprise and confusion, dust and leaves scattered around, dim light, the long fall finally ended",
+    "image_type": "action",
+    "image_file": "output/alice/scenes/scene_12_the_sudden_landing.png"
+  }
+]

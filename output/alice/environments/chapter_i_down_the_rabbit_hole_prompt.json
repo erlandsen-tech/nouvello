@@ -1,0 +1,22 @@
+{
+  "scene_name": "chapter_i_down_the_rabbit_hole",
+  "image_prompt": "A long, low Victorian hall stretching into darkness, illuminated by a row of ornate brass oil lamps hanging from an arched ceiling, casting warm pools of golden light that create alternating patches of light and shadow. The walls are lined with locked wooden doors of various sizes and designs, their brass doorknobs gleaming in the lamplight. In the center of the polished marble floor stands a delicate three-legged glass table, its crystalline surface catching and refracting the lamp light. A tiny golden key glints atop the transparent table, drawing attention to its solitary presence. Near the floor, partially hidden behind a rich velvet curtain, a small ornate door no larger than a book reveals a tantalizing glimpse of a sun-drenched garden beyond, with vibrant flowers and a distant fountain visible through its keyhole. The hall's perspective draws the eye down its length, while shadowy corners and high ceiling create a sense of mystery and scale. The marble floor reflects the warm lamplight, creating subtle mirror-like reflections that add depth and atmosphere to the scene.",
+  "style_tags": [
+    "cinematic",
+    "atmospheric",
+    "victorian",
+    "surreal",
+    "mysterious",
+    "architectural"
+  ],
+  "key_visual_elements": [
+    "glass table",
+    "golden key",
+    "hanging lamps",
+    "tiny door",
+    "velvet curtain",
+    "locked doors",
+    "glimpse of garden"
+  ],
+  "mood": "whimsical"
+}
