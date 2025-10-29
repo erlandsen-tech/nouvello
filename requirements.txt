@@ -1,0 +1,10 @@
+flask
+flask-cors
+python-dotenv
+boto3
+ebooklib
+beautifulsoup4
+lxml
+Pillow
+google-genai
+

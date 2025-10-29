@@ -1,132 +1,405 @@
 [
   {
-    "character_name": "Mrs. Darling",
-    "image_prompt": "A gentle, maternal woman in her early thirties stands in a softly lit Victorian nursery, bathed in the warm glow of gaslight and lamplight. She wears an elegant white evening gown with period-appropriate Edwardian styling, the fabric flowing gracefully with delicate lace details at the collar and sleeves. Around her neck rests a simple but meaningful necklace, and on her wrist she wears a small bracelet. Her expression conveys both tenderness and underlying worry, with a subtle, knowing quality in the right corner of her mouth that suggests deep sympathy and understanding. Her posture is protective yet graceful, one hand gently touching her chest in a gesture of maternal concern. The background shows a dimly lit nursery with Victorian furnishings, including a wooden drawer visible nearby, mysterious shadows cast by the gaslight creating an atmosphere of domestic Gothic mystery. The lighting is theatrical and atmospheric, with soft amber tones contrasting against deep shadows, creating a melancholic and nostalgic mood. Her face shows traces of recent alarm but also profound gentleness, her eyes reflecting both the practical sensibility of a mother and the sentimental nature of someone who understands childhood wonder. The overall composition evokes turn-of-the-century London domesticity mixed with supernatural undertones, rendered in a style reminiscent of nostalgic storybook illustrations with rich period detail and bittersweet emotional depth.",
+    "character_name": "Wendy Darling",
+    "image_prompt": "A delicate young girl of approximately two years old, portrayed with the refined sensibility of Victorian illustration. She has soft, luminous skin with rosy cheeks and a gently rounded child's face conveying both innocence and precocious awareness. Her hair is long and pale golden, falling in gentle waves past her shoulders with wispy tendrils catching ethereal light. Her eyes are large, thoughtful, and deeply expressive—communicating an almost sorrowful wisdom beyond her years. She wears an elaborate Edwardian-era dress in ivory or pale cream, featuring delicate lace trim, ribbon accents, and softly puffed sleeves. The fabric has an almost gossamer quality, rendered with romantic softness. A subtle expression plays across her features—neither fully joyful nor melancholic, but caught in the bittersweet moment between childhood wonder and emerging awareness. Her posture is graceful and dignified despite her youth. The entire figure is suffused with warm, golden lamplight that creates gentle shadows and highlights, giving her an almost ethereal, dreamlike quality. Her appearance embodies the magical realism of the narrative—an ordinary child rendered extraordinary through tender artistic treatment and nostalgic beauty.",
     "style_tags": [
-      "Edwardian period illustration",
-      "Victorian domestic Gothic",
-      "soft gaslight atmosphere",
-      "nostalgic storybook realism",
-      "theatrical chiaroscuro lighting",
-      "melancholic fairy tale aesthetic",
-      "turn-of-the-century portraiture",
-      "supernatural domestic scene"
+      "Victorian illustration",
+      "soft romantic realism",
+      "gentle whimsy",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "Edwardian aesthetics",
+      "dreamlike atmospheric lighting",
+      "fairy-tale enchantment",
+      "bittersweet nostalgia",
+      "magical realism",
+      "poignant beauty",
+      "tender character portrayal"
     ],
-    "book_context": "Peter Pan",
+    "book_context": "Peter and Wendy",
     "chapter_references": [
+      "Chapter I. PETER BREAKS THROUGH"
+    ]
+  },
+  {
+    "character_name": "Mrs. Darling",
+    "image_prompt": "Mrs. Darling, a graceful and ethereal woman in her early thirties, rendered in soft romantic realism with Victorian illustration sensibility. She possesses delicate, refined features with a sweetly knowing expression and faintly mocking mouth that suggests both tenderness and gentle irony. Her dark hair is elegantly arranged in Edwardian-style waves, softly framing her composed face. She wears an exquisite white evening gown of flowing silk with subtle ethereal luminescence, adorned with an ornate borrowed bracelet catching warm lamplight. Her posture is naturally graceful, almost as though mid-pirouette, conveying both maternal devotion and romantic whimsy. Her eyes hold an enigmatic, mysterious quality—like nested Russian boxes—suggesting hidden depths and layers of complexity. Her expression carries subtle traces of tender melancholy and gentle doubt, with a placid beauty that speaks to both nurturing strength and bittersweet poignancy. The soft, dreamy atmospheric lighting casts a warm glow across her features, creating gentle shadows that enhance her ethereal, almost magical presence. Every detail reflects upper-class Edwardian grace intertwined with fairy-tale enchantment.",
+    "style_tags": [
+      "Victorian illustration",
+      "soft romantic realism",
+      "gentle whimsy",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "Edwardian aesthetics",
+      "fairy-tale enchantment",
+      "bittersweet nostalgia",
+      "magical realism",
+      "poignant beauty",
+      "dreamlike atmospheric lighting",
+      "tender character moments"
+    ],
+    "book_context": "Peter and Wendy",
+    "chapter_references": [
+      "Chapter I. PETER BREAKS THROUGH",
       "Chapter II. THE SHADOW"
+    ]
+  },
+  {
+    "character_name": "Mr. Darling",
+    "image_prompt": "Mr. Darling is a distinguished middle-aged gentleman with a dignified bearing befitting upper-class Edwardian society. He has a lean, methodical build suggesting careful restraint and practical sensibility. His face is angular and contemplative, with sharp, intelligent eyes that betray both pride and quiet worry. He possesses a neat, well-trimmed beard tinged with grey, and his hair is slicked back with Victorian precision. His expression carries an underlying tension between social propriety and suppressed emotion—the faint creases around his eyes suggest a man perpetually calculating expenses and neighbors' opinions. He wears impeccably tailored evening dress: a formal black coat with pristine white shirt and silk cravat, polished waistcoat suggesting financial conscientiousness. His posture is erect yet slightly strained, as though bearing invisible burdens of responsibility and social standing. Every detail speaks of a man devoted to honor and propriety, yet touched by an ineffable melancholy—a tender vulnerability beneath his pedantic exterior. His hands are refined, capable, suggesting both gentleness and the grip of someone who has worked to secure his family's position. There is gentle irony in his formal perfection, a hint of wistfulness in his gaze.",
+    "style_tags": [
+      "Victorian illustration",
+      "soft romantic realism",
+      "gentle whimsy",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "Edwardian aesthetics",
+      "dreamlike atmospheric lighting",
+      "bittersweet nostalgia",
+      "poignant beauty",
+      "tender character portraiture",
+      "magical realism"
+    ],
+    "book_context": "Peter and Wendy",
+    "chapter_references": [
+      "Chapter I. PETER BREAKS THROUGH"
+    ]
+  },
+  {
+    "character_name": "John Darling",
+    "image_prompt": "John Darling, a young boy of kindergarten age, approximately five or six years old, with a delicate, fair-complexioned face and soft, tousled brown hair swept gently across his forehead in the manner of an Edwardian child. His features are tender and innocent, with wide, curious eyes holding a hint of wistful contemplation. He wears a pristine cream-colored sailor suit with navy blue collar trim and brass buttons, meticulously maintained as befits upper-class children of the period. A carefully folded sweater, lovingly prepared by his nanny Nana, drapes over his small shoulders—soft wool in muted tones suggesting maternal care. His posture is naturally boyish yet composed, with an understated elegance reflecting his refined upbringing. A subtle, bittersweet expression crosses his youthful face, capturing both innocent wonder and a fleeting melancholy. Fine details include neatly combed hair with gentle waves, rosy cheeks, and small, graceful hands. The overall impression is of a cherished child suspended between ordinary childhood and something more magical, rendered with soft romantic realism and ethereal luminescence that bathes him in warm, gentle light reminiscent of Victorian illustration.",
+    "style_tags": [
+      "Victorian illustration",
+      "soft romantic realism",
+      "gentle whimsy",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "upper-class Edwardian aesthetics",
+      "dreamlike atmospheric lighting",
+      "bittersweet nostalgia",
+      "fairy-tale enchantment",
+      "tender character portrayal",
+      "poignant beauty",
+      "magical realism"
+    ],
+    "book_context": "Peter and Wendy",
+    "chapter_references": [
+      "Chapter I. PETER BREAKS THROUGH"
+    ]
+  },
+  {
+    "character_name": "Michael Darling",
+    "image_prompt": "Michael Darling, the youngest child, rendered as a delicate boy of approximately five to seven years old with an ethereal, tender presence. He has soft, fine blonde hair that catches warm lamplight, falling gently across his pale forehead in wispy curls. His face is characterized by wide, innocent blue-grey eyes holding a poignant mixture of wonder and subtle melancholy—the expression of a child caught between whimsy and an early understanding of fragility. His features are fine and refined, with delicate cheekbones and a small, soft mouth often held in quiet contemplation. He wears a pristine white cotton pinafore with delicate embroidered details at the collar and hem, the fabric rendered with soft romantic realism showing gentle folds and the luminous quality of fine linen. Beneath the pinafore, a pale cream linen shirt is visible at his wrists. His small frame is slender and somewhat slight, suggesting the mentioned precariousness of his place in the family. His complexion is porcelain-pale with a faint rosy flush, and his overall demeanor emanates quiet fragility and innocent beauty, embodying both the ordinary domestic child and something touched by fairy-tale enchantment. His appearance conveys both material reality and dreamlike poignancy.",
+    "style_tags": [
+      "Victorian illustration",
+      "soft romantic realism",
+      "gentle whimsy",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "upper-class Edwardian aesthetics",
+      "dreamlike atmospheric lighting",
+      "bittersweet nostalgia",
+      "tender character moment",
+      "poignant beauty",
+      "magical realism",
+      "domestic intimacy"
+    ],
+    "book_context": "Peter and Wendy",
+    "chapter_references": [
+      "Chapter I. PETER BREAKS THROUGH"
     ]
   },
   {
     "character_name": "Nana",
-    "image_prompt": "A dignified Newfoundland dog with thick, dark fur sits protectively in a gas-lit Victorian nursery, her expression simultaneously gentle and watchful. She wears a white nurse's apron tied around her broad chest, the fabric slightly rumpled from her devoted service. Her large, soulful eyes glisten with moisture, reflecting both lamplight and an unmistakable weight of responsibility and guilt. The dog's posture is upright and maternal, one large paw positioned forward as if ready to spring into protective action. Around her, the Edwardian nursery glows with warm amber light from a gas lamp, casting long dramatic shadows across floral wallpaper and a braided rug. A window in the background shows darkness beyond the panes, with gossamer curtains stirring slightly. Victorian children's toys are scattered nearby—a wooden rocking horse, building blocks, a small brass bath tub. The dog's fur catches the lamplight in places, creating a halo effect around her ears and muzzle. Her expression conveys complex emotion: devotion, worry, and profound sadness, as if bearing an invisible burden. The overall atmosphere blends domestic warmth with Gothic melancholy, the lighting theatrical and painterly, reminiscent of turn-of-the-century storybook illustrations. The composition emphasizes the dog's nobility and humanlike emotional depth, positioning her as both servant and full family member in this bittersweet domestic tableau.",
+    "image_prompt": "Nana, a large Newfoundland dog with a dignified, matronly presence. Her coat is dense and luxuriously dark, rendered in deep chocolate and black tones with soft, feathered edges that catch warm lamplight. She possesses an intelligent, expressive face with kind but serious eyes that convey maternal wisdom and subtle concern. Her features are noble and refined, befitting her role as family nurse. She wears a pristine white apron tied neatly around her substantial frame, embellished with delicate lace trim at the edges, speaking to her commitment to propriety and care. A small nurse's cap or ribbon adorns her head with Victorian propriety. Her posture is upright and composed, shoulders squared with quiet authority and capable strength. Her expression blends gentle affection with quiet resolve—eyes slightly glistening with tender emotion, mouth set in a determined but caring line. Every detail conveys loyal devotion, impeccable standards, and maternal instinct. Rendered with soft romantic realism, her form glows warmly against ethereal shadows, capturing both her practical competence and her deeply felt emotional connection to those she protects.",
     "style_tags": [
-      "Edwardian period illustration",
-      "Victorian nursery interior",
-      "soft gaslight illumination",
-      "domestic Gothic atmosphere",
-      "nostalgic storybook painting",
-      "theatrical chiaroscuro lighting",
-      "turn-of-the-century realism",
-      "melancholic fairy tale aesthetic",
-      "Pre-Raphaelite attention to detail",
-      "anthropomorphic character art"
+      "Victorian illustration",
+      "soft romantic realism",
+      "gentle whimsy",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "domestic intimacy",
+      "fairy-tale enchantment",
+      "bittersweet nostalgia",
+      "magical realism",
+      "poignant beauty",
+      "Edwardian aesthetics",
+      "dreamlike atmospheric lighting",
+      "tender character moments"
     ],
-    "book_context": "Peter Pan",
+    "book_context": "Peter and Wendy",
     "chapter_references": [
+      "Chapter I. PETER BREAKS THROUGH",
       "Chapter II. THE SHADOW"
     ]
   },
   {
-    "character_name": "The Boy (Peter)",
-    "image_prompt": "A mysterious young boy caught mid-leap through an open Victorian nursery window, silhouetted against the black night sky beyond, his lithe figure suspended in graceful motion as he escapes into darkness. His agile form is backlit by the warm golden glow of gaslight from within the Edwardian nursery, creating dramatic contrasts between light and shadow. The boy's ordinary shadow is visible on the wooden window frame, detached and significant. His clothing suggests turn-of-the-century period dress with simple tunic-like garments that allow freedom of movement. The scene captures him in profile or three-quarter view, emphasizing his supernatural agility and ethereal quality. Behind him, the cozy Victorian nursery interior glows with soft lamplight, showing glimpses of children's furniture, floral wallpaper, and domestic warmth he's leaving behind. The composition should evoke both whimsy and melancholy, with theatrical lighting that creates deep shadows and warm highlights. The boy's expression, if visible, should carry hints of mischief and wildness mixed with something tragic and otherworldly. The overall atmosphere should feel like a nostalgic storybook illustration with Gothic undertones, capturing the moment between domestic safety and supernatural adventure, between childhood innocence and darker fate. The color palette should emphasize warm amber lamplight contrasting with cool blue-black night, creating a bittersweet fairy tale aesthetic with Edwardian period authenticity.",
+    "character_name": "Liza",
+    "image_prompt": "Liza, a diminutive maidservant with the delicate, timeless features of someone caught between youth and age. She possesses a petite, elfin frame suggesting her 'midget' stature, with an impossibly slender build enhanced by her modest posture. Her face holds an enigmatic quality—youthful in its softness yet marked by knowing, gentle eyes that betray her claim of never seeing ten again, suggesting quiet wisdom beneath her diminutive appearance. She wears a pristine Victorian maid's uniform consisting of a long, flowing dark skirt that reaches her ankles, cinched at the waist, paired with a crisp white apron adorned with delicate lace trim. A white lace maid's cap sits perched upon her head, framing soft, dark hair arranged in neat period curls. Her hands are small and graceful, perpetually poised as if ready to serve. Her expression carries bittersweet warmth—a tender melancholy suggesting both servitude and quiet joy in family moments. There is an ethereal quality to her presence, as though she belongs both wholly to the domestic sphere yet somehow between worlds, rendered with soft romantic realism and dreamlike luminescence.",
     "style_tags": [
-      "Edwardian period illustration",
-      "Victorian Gothic atmosphere",
-      "nostalgic storybook realism",
-      "theatrical gaslight chiaroscuro",
-      "domestic supernatural fantasy",
-      "turn-of-the-century London",
-      "melancholic fairy tale aesthetic",
-      "soft lamplight and deep shadows"
+      "Victorian illustration",
+      "soft romantic realism",
+      "gentle whimsy",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "domestic intimacy",
+      "fairy-tale enchantment",
+      "bittersweet nostalgia",
+      "magical realism",
+      "Edwardian servant aesthetic",
+      "dreamlike atmospheric lighting",
+      "poignant beauty",
+      "tender character rendering",
+      "contrast between ordinary and fantastical"
     ],
-    "book_context": "Peter Pan",
+    "book_context": "Peter and Wendy",
     "chapter_references": [
-      "Chapter II. THE SHADOW"
+      "Chapter I. PETER BREAKS THROUGH"
+    ]
+  },
+  {
+    "character_name": "Peter Pan",
+    "image_prompt": "Peter Pan, a delicate boy appearing approximately twelve years old with an ethereal, androgynous beauty that defies ordinary childhood. His frame is slender and graceful, with an otherworldly poise suggesting exposure to fairy ceremonies. He possesses fine, sharp features with large, luminous eyes that shift between mischievous delight and mercurial melancholy. His hair is tousled and dark, with an almost supernatural gleam. He wears a simple tunic in soft sage or moss green with leaf-like embroidery, accented with delicate golden threads that catch lamplight. His clothing has an antiquated, almost timeless quality—part Edwardian child's wear, part fairy enchantment. One arm reaches toward his shadow, which appears as a separate, slightly corporeal form beside him, rendered in deeper tones. His expression conveys simultaneous vanity and vulnerability, with an irresistible charm in his features. His skin has a faint luminescence as though touched by moonlight and magic. Every detail suggests both youthful innocence and ageless otherworldliness—a boy caught between worlds, neither wholly mortal nor entirely fey.",
+    "style_tags": [
+      "Victorian illustration",
+      "soft romantic realism",
+      "gentle whimsy",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "fairy-tale enchantment",
+      "bittersweet nostalgia",
+      "magical realism",
+      "poignant beauty",
+      "Edwardian aesthetics",
+      "dreamlike atmospheric lighting",
+      "tender character study",
+      "contrast between ordinary and fantastical"
+    ],
+    "book_context": "Peter and Wendy",
+    "chapter_references": [
+      "Chapter I. PETER BREAKS THROUGH",
+      "Chapter III. COME AWAY, COME AWAY!"
+    ]
+  },
+  {
+    "character_name": "Miss Fulsom",
+    "image_prompt": "Miss Fulsom, a stern yet dignified middle-aged woman of refined Edwardian bearing, portrayed in soft romantic realism with ethereal Victorian illustration qualities. She possesses a slender, upright posture befitting her institutional authority, with sharp, intelligent features softened by warm lamplight that casts gentle shadows across her face. Her hair is pulled back severely in a high Edwardian style, graying at the temples with wisps catching golden luminescence. She wears a crisp, high-collared blouse in ivory or pale grey, buttoned to the throat with delicate mother-of-pearl fastenings, beneath a tailored dark jacket that speaks to her professional propriety. Her eyes are keen and observant, holding both pragmatic discipline and an underlying hint of melancholy—as if she understands the bittersweet passage of childhood. Fine lines around her mouth suggest both stern correction and suppressed tenderness. Her hands are shown with long, elegant fingers—a schoolmistress's hands—rendered with poignant sensitivity. The overall impression is of dignified institutional authority touched with magical realism, embodying the contrast between her ordinary institutional role and the whimsical, enchanted world the Darling children inhabit.",
+    "style_tags": [
+      "Victorian illustration",
+      "soft romantic realism",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "Edwardian aesthetics",
+      "dreamlike atmospheric lighting",
+      "bittersweet nostalgia",
+      "poignant beauty",
+      "gentle whimsy",
+      "magical realism",
+      "tender character rendering",
+      "contrast between ordinary and fantastical"
+    ],
+    "book_context": "Peter and Wendy",
+    "chapter_references": [
+      "Chapter I. PETER BREAKS THROUGH"
     ]
   },
   {
     "character_name": "Mr. Darling (George Darling)",
-    "image_prompt": "A distinguished Edwardian gentleman in his mid-thirties standing in a softly gaslit Victorian nursery, captured in a moment of theatrical exasperation. He wears formal evening attire with a white dress shirt, black waistcoat, and new braided trousers, struggling comically with an uncooperative bow tie that hangs askew around his collar. His posture combines dignity with comic frustration—one hand raised dramatically as if making a grand pronouncement, the other tugging at the stubborn tie. His face shows both pompous severity and underlying tenderness, clean-shaven with expressive features that suggest a man of classical education prone to overreaction. The warm lamplight casts theatrical shadows across the nursery walls, illuminating details of the domestic Victorian interior: a large window showing darkness beyond, children's toys scattered nearby, soft fabric textures. The atmosphere blends domestic comedy with melancholic undertones, as if this moment of everyday chaos masks deeper anxieties. His expression wavers between paternal warmth and nervous agitation, embodying a man concerned with stocks and shares yet capable of romping with children on his back. The color palette features warm amber lamplight against cool evening shadows, rich burgundies and deep browns of Victorian furnishings, creating a bittersweet nostalgic mood that balances whimsy with Gothic melancholy. The overall composition suggests both the ordinariness of Edwardian domestic life and the supernatural mysteries lurking just beyond the window glass.",
+    "image_prompt": "A distinguished middle-aged gentleman with a round, expressive face marked by refined Edwardian features. He has neatly parted dark hair touched with silver at the temples, conveying both respectability and the weight of worry. His eyes are large and soulful, capable of both theatrical drama and profound tenderness, currently reflecting deep paternal concern. He possesses a well-fed, comfortable build befitting a prosperous businessman, dressed impeccably in a formal dark suit jacket with a waistcoat. Most notably, his tie is askew and struggling against his collar—a small practical rebellion that hints at his struggle with mundane matters. His expression conveys emotional volatility: furrowed brow, slightly pursed lips suggesting he's either about to launch into hyperbolic proclamation or succumb to guilt-stricken remorse. His hands are genteel but expressive, with manicured fingers that gesture dramatically. The overall impression is of a man of fine character caught between civilized composure and raw paternal anguish, rendered with soft romantic realism and gentle melancholy befitting a Victorian illustration.",
     "style_tags": [
-      "Edwardian period illustration",
-      "Victorian domestic Gothic",
-      "gaslit theatrical lighting",
-      "nostalgic storybook realism",
-      "turn-of-the-century portraiture",
-      "melancholic fairy tale aesthetic",
-      "soft lamplight and shadows",
-      "bittersweet vintage atmosphere"
+      "Victorian illustration",
+      "soft romantic realism",
+      "Edwardian gentleman",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "bittersweet nostalgia",
+      "poignant beauty",
+      "dreamlike atmospheric lighting",
+      "upper-class aesthetics",
+      "tender emotional expression",
+      "fairy-tale melancholy"
     ],
-    "book_context": "Peter Pan",
+    "book_context": "Peter and Wendy",
+    "chapter_references": [
+      "Chapter II. THE SHADOW"
+    ]
+  },
+  {
+    "character_name": "Peter (the boy)",
+    "image_prompt": "Peter, an ethereal young boy appearing no more than twelve years old, with an androgynous delicate beauty. He has pale, luminous skin with an otherworldly quality, as if touched by moonlight. His hair is tousled and fine, appearing dark blonde or light brown with an almost silvery sheen, falling softly around his face in romantic waves. His features are sharp yet innocent—high cheekbones, a pointed chin, and large, luminous eyes that gleam with mischievous intelligence and timeless melancholy. His gaze holds an ancient, knowing quality despite his youthful appearance. He wears a simple but elegant costume of soft green and brown tones, reminiscent of fairy-tale illustrations, with subtle iridescent qualities suggesting otherworldly magic. His slender, graceful frame conveys supernatural lightness and preternatural agility. Around him hovers an ethereal luminescence, as if he exists partially between worlds. His expression balances boyish wonder with something darker and more complex—a blend of innocence and mischief tinged with bittersweet knowing. He appears poised mid-movement, capturing an essence of perpetual youth frozen in time.",
+    "style_tags": [
+      "Victorian illustration",
+      "soft romantic realism",
+      "gentle whimsy",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "fairy-tale enchantment",
+      "bittersweet nostalgia",
+      "magical realism",
+      "poignant beauty",
+      "Edwardian aesthetics",
+      "dreamlike atmospheric lighting",
+      "contrast between ordinary and fantastical"
+    ],
+    "book_context": "Peter and Wendy",
     "chapter_references": [
       "Chapter II. THE SHADOW"
     ]
   },
   {
     "character_name": "Wendy",
-    "image_prompt": "A young girl of approximately twelve years old stands in an Edwardian-era nursery bathed in warm lamplight and deep shadows. She has a sweet, maternal expression with gentle eyes that reflect both joy and tender responsibility beyond her years. Her dark hair is styled in the fashion of the early 1900s, possibly with a ribbon or simple bow. She wears a modest Victorian nightgown or a simple high-necked dress appropriate for a middle-class Edwardian child, with delicate details like lace trim at the collar and cuffs. The girl holds herself with a posture that suggests both childlike playfulness and an attempt at grown-up dignity, perhaps with one hand extended gracefully as if dancing or play-acting. The background features a cozy but slightly Gothic nursery with gaslit ambiance, showing details like a large window with dark night visible beyond, floral wallpaper, wooden furniture, and soft textile elements. The lighting creates a theatrical atmosphere with warm golden tones from oil lamps contrasting against cool blue shadows, evoking both domestic comfort and an underlying sense of melancholy. The overall composition should feel like a nostalgic storybook illustration with painterly qualities, capturing the bittersweet innocence of childhood on the cusp of something magical and tragic. The mood balances Victorian domestic warmth with supernatural mystery, rendered in a style reminiscent of classic fairy tale illustrations with soft focus and dreamlike quality.",
+    "image_prompt": "Wendy Darling as a young girl, approximately ten years old, rendered in Victorian illustration style with soft romantic realism. She has a delicate, refined face with gentle features, pale complexion, and thoughtful, intelligent eyes reflecting both childhood wonder and early wisdom. Her dark hair is arranged in long, flowing waves or ringlets typical of Edwardian children, framing her face softly. She wears an elegant white or cream-colored nightgown or day dress with fine lace details, characteristic of upper-class early 1900s children's fashion. A delicate bracelet adorns her wrist—precious and meaningful. Her posture is graceful yet natural, conveying both maturity beyond her years and tender innocence. Her expression shows a gentle, affectionate nature with a hint of bittersweet contemplation. The character should be illuminated with warm, dreamlike lamplight creating soft shadows across her features, with an ethereal luminescence surrounding her. Render with tender, poignant beauty that captures the contrast between her ordinary youth and an inner magical quality, embodying whimsical nostalgia and gentle melancholy.",
     "style_tags": [
-      "Edwardian period illustration",
-      "Victorian storybook art",
-      "domestic Gothic atmosphere",
-      "nostalgic lamplight painting",
-      "theatrical chiaroscuro",
-      "turn-of-the-century realism",
-      "melancholic fairy tale aesthetic",
-      "soft painterly style",
-      "gaslit interior scene"
+      "Victorian illustration",
+      "soft romantic realism",
+      "gentle whimsy",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "Edwardian aesthetics",
+      "dreamlike atmospheric lighting",
+      "tender character moments",
+      "bittersweet nostalgia",
+      "poignant beauty",
+      "magical realism",
+      "domestic intimacy"
     ],
-    "book_context": "Peter Pan",
-    "chapter_references": [
-      "Chapter II. THE SHADOW"
-    ]
-  },
-  {
-    "character_name": "Michael",
-    "image_prompt": "A sensitive young Victorian boy, approximately 4-5 years old, with soft cherubic features and an expression of vulnerable earnestness. He has tousled hair in the Edwardian style, dressed in a white cotton nightshirt with delicate embroidered details at the collar. His eyes are wide and expressive, conveying a mixture of hope and uncertainty, with a slight downturn at the corners that suggests his need for reassurance and inclusion. The child stands in a gaslit Victorian nursery bathed in warm amber lamplight that casts gentle shadows across floral wallpaper and wooden furniture. The atmosphere is rich with domestic Gothic ambiance—soft glowing oil lamps create pools of golden light while mysterious shadows dance in the corners. Behind him, a large window reveals the dark night beyond, with moonlight casting an ethereal silver glow that contrasts with the warm interior lighting. The room contains period-appropriate details: a brass bedstead, toy blocks scattered on a Persian rug, and delicate lace curtains. The overall composition should evoke nostalgic melancholy and supernatural whimsy, rendered in the style of classic turn-of-the-century storybook illustrations with theatrical lighting that emphasizes both the coziness of childhood and an underlying sense of bittersweet impermanence. The color palette features warm ambers, soft creams, deep mahogany browns, and touches of midnight blue from the window, creating an atmosphere of Edwardian domestic comfort tinged with fantastical mystery.",
-    "style_tags": [
-      "Edwardian period illustration",
-      "Victorian nursery interior",
-      "gaslit atmospheric lighting",
-      "nostalgic storybook art",
-      "domestic Gothic aesthetic",
-      "theatrical chiaroscuro",
-      "turn-of-the-century realism",
-      "melancholic fairy tale",
-      "soft romantic realism"
-    ],
-    "book_context": "Peter Pan",
+    "book_context": "Peter and Wendy",
     "chapter_references": [
       "Chapter II. THE SHADOW"
     ]
   },
   {
     "character_name": "John",
-    "image_prompt": "A young Edwardian boy of approximately nine or ten years old standing in a Victorian nursery illuminated by soft gaslight, embodying the demeanor of a middle child with the self-importance of an eldest son. He has neatly parted dark hair in the style of early 1900s London children, wearing a proper nightshirt or vintage striped pajamas typical of well-to-do Edwardian families. His posture is slightly pompous and theatrical, with chin lifted and chest puffed out, mimicking adult male authority in a childish way. His expression carries both boyish mischief and affected seriousness, caught mid-gesture as if making an important announcement during imaginative play. The background features a warmly-lit Victorian nursery with floral wallpaper, wooden furniture casting long shadows, and window curtains suggesting nighttime mystery beyond. Soft lamplight creates pools of amber warmth contrasted with deep shadows in corners, establishing a nostalgic yet slightly Gothic atmosphere. The boy's features should be gentle but proud, with rosy cheeks and an earnest quality that suggests both innocence and the capacity for childish cruelty. The overall composition should balance domestic coziness with an undercurrent of melancholy, rendered in the style of classic storybook illustrations with rich period detail, theatrical chiaroscuro lighting, and a bittersweet fairy tale quality that evokes both comfort and loss.",
+    "image_prompt": "John Darling, a young boy of approximately eight to ten years old, with a fair complexion and delicate, refined features characteristic of upper-class Edwardian youth. His hair is light brown or sandy blonde, neatly parted and slightly tousled, falling softly across his forehead with an air of gentle dishevelment. His eyes are bright and intelligent, holding a hint of pompous self-importance mixed with imaginative wonder. He possesses a slender, graceful build befitting a privileged child of the era. He wears formal Victorian nightclothes—a pristine white cotton nightshirt with delicate lace trim at the collar and cuffs, exuding both innocence and dignified formality. His expression conveys theatrical gravitas, as if mid-announcement or engaged in an elaborate game of pretense. There is something simultaneously earnest and wistful about his demeanor, capturing the bittersweet nature of childhood make-believe. The soft, warm lamplight of his bedroom catches the delicate contours of his face, creating gentle shadows that emphasize his youthful vulnerability beneath his performative pride. Every detail suggests a child caught between imagination and reality, between playfulness and solemn ceremony.",
     "style_tags": [
-      "Edwardian period illustration",
-      "Victorian nursery scene",
-      "gaslit chiaroscuro",
-      "nostalgic storybook realism",
-      "domestic Gothic atmosphere",
-      "turn-of-the-century London",
-      "theatrical lighting",
-      "melancholic fairy tale aesthetic"
+      "Victorian illustration",
+      "soft romantic realism",
+      "gentle whimsy",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "Edwardian aesthetics",
+      "fairy-tale enchantment",
+      "bittersweet nostalgia",
+      "magical realism",
+      "poignant beauty",
+      "dreamlike atmospheric lighting",
+      "tender character portrayal",
+      "upper-class elegance"
     ],
-    "book_context": "Peter Pan",
+    "book_context": "Peter and Wendy",
     "chapter_references": [
       "Chapter II. THE SHADOW"
+    ]
+  },
+  {
+    "character_name": "Michael",
+    "image_prompt": "Michael Darling, a delicate young boy of approximately five or six years old, rendered in soft romantic realism with Victorian illustration sensibilities. He has a pale, cherubic face with large, luminous eyes reflecting both wonder and vulnerability—the eyes of a sensitive child seeking reassurance. His hair is soft and slightly tousled, falling gently around his face in warm honey or light brown tones. He wears an Edwardian-era nightshirt or pajamas of fine white linen, rendered with ethereal luminescence suggesting candlelight catching the fabric. His small, slender build conveys youthful fragility and a certain neediness in his posture. His expression captures bittersweet poignancy—a mixture of childish wonder and subtle melancholy, as if caught between magical enchantment and the ache of not quite belonging. Delicate, fine-boned features suggest innocence and sensitivity. Soft warm light bathes his figure, creating gentle shadows that enhance the dreamlike, magical quality while maintaining intimate domestic realism. His overall appearance evokes both the ordinary vulnerability of childhood and an ethereal, almost fairy-tale quality.",
+    "style_tags": [
+      "Victorian illustration",
+      "soft romantic realism",
+      "gentle whimsy",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "fairy-tale enchantment",
+      "bittersweet nostalgia",
+      "magical realism",
+      "Edwardian aesthetics",
+      "dreamlike atmospheric lighting",
+      "tender character portrayal",
+      "poignant beauty"
+    ],
+    "book_context": "Peter and Wendy",
+    "chapter_references": [
+      "Chapter II. THE SHADOW"
+    ]
+  },
+  {
+    "character_name": "Wendy Moira Angela Darling",
+    "image_prompt": "A young girl of delicate, petite frame, approximately twelve years old, with an ethereal quality enhanced by soft, dreamlike lighting. She has long, flowing dark hair cascading past her shoulders in the style of Edwardian fashion, with a gentle wave and luminous quality. Her face is refined and intelligent, with thoughtful, expressive eyes conveying both curiosity and wisdom beyond her years. Her complexion is pale and porcelain-like, with a slight rosy flush to her cheeks suggesting both innocence and quiet confidence. She wears an elegant nightgown of soft cream or pale lavender fabric with delicate lace trimming at the neckline and cuffs, befitting upper-class Victorian domestic dress. The fabric catches warm lamplight with an ethereal glow. Her posture is graceful and composed, reflecting her natural poise and propriety. Soft shadows and warm golden light caress her features, creating an intimate, vulnerable quality that emphasizes both her childhood and her precocious maturity. The overall impression conveys gentle romanticism, refined elegance, and a bittersweet vulnerability—a girl caught between the ordinary world of propriety and something magical and transformative.",
+    "style_tags": [
+      "Victorian illustration",
+      "soft romantic realism",
+      "gentle whimsy",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "Edwardian aesthetics",
+      "dreamlike atmospheric lighting",
+      "poignant beauty",
+      "magical realism",
+      "domestic intimacy",
+      "bittersweet nostalgia"
+    ],
+    "book_context": "Peter and Wendy",
+    "chapter_references": [
+      "Chapter III. COME AWAY, COME AWAY!"
+    ]
+  },
+  {
+    "character_name": "Tinker Bell",
+    "image_prompt": "Tinker Bell, a delicate fairy no taller than a human hand, rendered in soft romantic realism with ethereal luminescence. She possesses a youthful, cherubic face with gentle features and a slightly plump, rounded figure suggesting graceful femininity. Her skin glows with a warm, luminous quality as if lit from within by soft lamplight. She wears an exquisitely tailored dress fashioned from a skeleton leaf, cut low and square across the bodice in upper-class Edwardian fashion, with delicate leaf-like veining visible in the fabric. Her silhouette is full and softly rounded, reflecting her slightly inclined embonpoint with tender, poignant beauty. Gossamer wings shimmer behind her, catching prismatic light in iridescent hues of amber and pearl. Golden light radiates from her form in gentle, flashing waves—like the loveliest tinkle of golden bells made visible. Her hair frames her face in soft curls with an aura of warm luminescence. The entire figure should convey magical enchantment, whimsical wonder, and bittersweet charm, with dreamlike atmospheric quality suggesting both delicate fragility and timeless fairy-tale magic.",
+    "style_tags": [
+      "Victorian illustration",
+      "soft romantic realism",
+      "gentle whimsy",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "fairy-tale enchantment",
+      "bittersweet nostalgia",
+      "magical realism",
+      "poignant beauty",
+      "Edwardian aesthetics",
+      "dreamlike atmospheric lighting",
+      "contrast between ordinary and fantastical"
+    ],
+    "book_context": "Peter and Wendy",
+    "chapter_references": [
+      "Chapter III. COME AWAY, COME AWAY!"
+    ]
+  },
+  {
+    "character_name": "Mr. and Mrs. Darling",
+    "image_prompt": "Mr. and Mrs. Darling depicted as an elegant Edwardian couple, rendered in soft romantic realism with Victorian illustration sensibilities. Mr. Darling is a distinguished gentleman of middle years with a composed, dignified bearing—he wears a formal dark evening suit with a crisp white shirt and silk waistcoat, his face marked by genteel features softened by warm lamplight. His hair is neatly combed, his expression reflecting quiet authority tempered with absent-minded warmth. Mrs. Darling is graceful and refined, dressed in an exquisite gown of pale silk or taffeta with delicate lace details, her hair arranged in the fashionable Gibson Girl style of the period. Her face possesses tender beauty—kind eyes and gentle features touched by ethereal luminescence. Both figures radiate upper-class Edwardian sophistication and domestic respectability, their forms bathed in warm, dreamlike light that creates soft shadows and an almost melancholic nostalgia. Their appearance conveys both the ordinary solidity of parental authority and a subtle, poignant vulnerability—suggesting the bittersweet tension between their conventional world and the magical forces their absence allows to enter.",
+    "style_tags": [
+      "Victorian illustration",
+      "soft romantic realism",
+      "gentle whimsy",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "Edwardian aesthetics",
+      "dreamlike atmospheric lighting",
+      "poignant beauty",
+      "bittersweet nostalgia",
+      "upper-class domestic intimacy",
+      "magical realism",
+      "tender character rendering"
+    ],
+    "book_context": "Peter and Wendy",
+    "chapter_references": [
+      "Chapter III. COME AWAY, COME AWAY!"
+    ]
+  },
+  {
+    "character_name": "The three Darling children",
+    "image_prompt": "Three children in Edwardian nightclothes, rendered in soft romantic realism with Victorian illustration sensibilities. Wendy, the eldest girl, approximately ten years old, with long flowing dark hair cascading down her back, delicate pale complexion, and large expressive eyes reflecting wonder and gentle melancholy. She wears an ornate white cotton nightgown with lace trim and ribbon details. Her two younger brothers flank her—one with tousled light brown hair, cherubic features, and the other with darker curls, both dressed in simple white or cream-colored nightshirts. All three children have the soft, peaceful expressions of drowsy innocence, their features touched by ethereal luminescence as if caught between wakefulness and dreams. Their skin glows warmly in lamplight, with delicate shadows defining their youthful faces and creating dreamlike atmospheric depth. Fine details include embroidered nightwear, bare feet or soft slippers, and an overall aesthetic of upper-class Edwardian comfort. Their postures suggest tender vulnerability and bittersweet beauty, with a haunting quality that captures both childhood innocence and the poignant knowledge of impending change. Rendered with magical realism, emphasizing the contrast between their ordinary domestic appearance and the extraordinary moment about to unfold.",
+    "style_tags": [
+      "Victorian illustration",
+      "soft romantic realism",
+      "gentle whimsy",
+      "warm lamplight and shadows",
+      "ethereal luminescence",
+      "domestic intimacy",
+      "fairy-tale enchantment",
+      "bittersweet nostalgia",
+      "magical realism",
+      "poignant beauty",
+      "upper-class Edwardian aesthetics",
+      "dreamlike atmospheric lighting",
+      "tender character moments",
+      "contrast between ordinary and fantastical"
+    ],
+    "book_context": "Peter and Wendy",
+    "chapter_references": [
+      "Chapter III. COME AWAY, COME AWAY!"
     ]
   }
 ]

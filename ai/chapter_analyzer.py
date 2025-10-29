@@ -4,10 +4,13 @@ Uses AWS Bedrock to analyze book chapters and extract descriptive elements
 """
 
 import json
+import os
 from typing import List, Dict, Optional
 from dataclasses import dataclass, asdict
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from epub_parser import EPUBChapter, EPUBParser
 from llm_providers import MultiProviderLLM, LLMResponse
+from dotenv import load_dotenv
 
 
 @dataclass
@@ -21,6 +24,7 @@ class ChapterAnalysis:
     significant_objects: List[Dict[str, str]]  # [{"name": "...", "description": "..."}]
     summary: str
     raw_content_preview: str  # First 200 chars for reference
+    raw_content: str  # Full original chapter content for segmentation
     
     def to_dict(self) -> dict:
         """Convert to dictionary"""
@@ -32,21 +36,21 @@ class ChapterAnalysis:
 
 
 class ChapterAnalyzer:
-    """Analyze chapters using LLM to extract descriptive elements"""
+    """Analyze chapters using AWS Bedrock to extract descriptive elements"""
     
-    def __init__(self, provider: str = "bedrock", region: str = "us-east-1", 
-                 model: str = None, profile: Optional[str] = None):
+    def __init__(self, region: str = "eu-central-1", model: str = None, profile: Optional[str] = None):
         """
         Initialize the analyzer
         
         Args:
-            provider: LLM provider (bedrock, openai)
             region: AWS region for Bedrock
             model: Specific model to use (optional, uses default if not specified)
             profile: AWS profile name (optional)
         """
-        self.llm = MultiProviderLLM(provider=provider, region=region, profile=profile)
-        self.model = model
+        load_dotenv()
+        self.llm = MultiProviderLLM(provider="bedrock", region=region, profile=profile)
+        # Default to faster model unless overridden
+        self.model = model or os.getenv("BEDROCK_MODEL", "anthropic.claude-3-haiku-20240307-v1:0")
         
     def analyze_chapter(self, chapter: EPUBChapter) -> ChapterAnalysis:
         """
@@ -72,7 +76,8 @@ class ChapterAnalyzer:
                 characters=analysis_data.get("characters", []),
                 significant_objects=analysis_data.get("objects", []),
                 summary=analysis_data.get("summary", ""),
-                raw_content_preview=chapter.content[:200]
+                raw_content_preview=chapter.content[:200],
+                raw_content=chapter.content
             )
             
         except Exception as e:
@@ -86,7 +91,8 @@ class ChapterAnalyzer:
                 characters=[],
                 significant_objects=[],
                 summary="Error during analysis",
-                raw_content_preview=chapter.content[:200]
+                raw_content_preview=chapter.content[:200],
+                raw_content=chapter.content
             )
     
     def analyze_chapters(self, chapters: List[EPUBChapter], 
@@ -107,15 +113,65 @@ class ChapterAnalyzer:
         else:
             chapters_to_analyze = [chapters[i] for i in selected_indices if 0 <= i < len(chapters)]
         
-        analyses = []
-        total = len(chapters_to_analyze)
+        # Filter out non-story chapters (contents, acknowledgements, etc.)
+        chapters_to_analyze = [ch for ch in chapters_to_analyze if not _should_skip_chapter(ch.title, ch.content)]
         
-        for idx, chapter in enumerate(chapters_to_analyze, 1):
-            print(f"📖 Analyzing chapter {idx}/{total}: {chapter.title}")
-            analysis = self.analyze_chapter(chapter)
-            analyses.append(analysis)
-            print(f"   ✅ Complete")
+        if not chapters_to_analyze:
+            print("⚠️  All selected chapters were skipped (non-story content)")
+            return []
         
+        # Get number of workers from env (default to 4)
+        num_workers = int(os.getenv("ANALYSIS_WORKERS", "4"))
+        
+        # Use parallel processing if multiple chapters
+        if len(chapters_to_analyze) > 1 and num_workers > 1:
+            # Don't create more workers than chapters
+            actual_workers = min(num_workers, len(chapters_to_analyze))
+            print(f"🚀 Running parallel analysis with {actual_workers} workers")
+            return self._analyze_chapters_parallel(chapters_to_analyze, actual_workers)
+        else:
+            # Sequential for single chapter or single worker
+            analyses = []
+            total = len(chapters_to_analyze)
+            
+            for idx, chapter in enumerate(chapters_to_analyze, 1):
+                print(f"📖 Analyzing chapter {idx}/{total}: {chapter.title}")
+                analysis = self.analyze_chapter(chapter)
+                analyses.append(analysis)
+                print(f"   ✅ Complete")
+            
+            return analyses
+    
+    def _analyze_chapters_parallel(self, chapters: List[EPUBChapter], num_workers: int) -> List[ChapterAnalysis]:
+        """Analyze multiple chapters in parallel using processes (signal-safe)."""
+        analyses: List[ChapterAnalysis] = []
+
+        # Convert EPUBChapter objects to dicts for pickling
+        chapter_dicts = [{'title': ch.title, 'content': ch.content, 'order': ch.order} for ch in chapters]
+        
+        with ProcessPoolExecutor(max_workers=num_workers) as executor:
+            future_to_chapter = {executor.submit(_analyze_chapter_worker, ch_data): ch_data for ch_data in chapter_dicts}
+            
+            for future in as_completed(future_to_chapter):
+                ch_data = future_to_chapter[future]
+                try:
+                    analysis = future.result()
+                    analyses.append(analysis)
+                except Exception as e:
+                    print(f"   ❌ Error analyzing {ch_data['title']}: {e}")
+                    analyses.append(ChapterAnalysis(
+                        chapter_title=ch_data['title'],
+                        chapter_number=ch_data['order'] + 1,
+                        scene_description="Error during analysis",
+                        mood_description="Error during analysis",
+                        characters=[],
+                        significant_objects=[],
+                        summary="Error during analysis",
+                        raw_content_preview=ch_data['content'][:200] if ch_data.get('content') else "",
+                        raw_content=ch_data.get('content', '')
+                    ))
+
+        analyses.sort(key=lambda a: a.chapter_number)
         return analyses
     
     def _build_analysis_prompt(self, title: str, content: str) -> str:
@@ -363,7 +419,7 @@ def main():
     
     # Initialize analyzer
     print("🚀 Initializing Chapter Analyzer with AWS Bedrock")
-    analyzer = ChapterAnalyzer(provider="bedrock", region="us-east-1")
+    analyzer = ChapterAnalyzer(region="eu-central-1")
     
     # Analyze chapters
     analyses = analyzer.analyze_epub(epub_path, selected_chapters)
@@ -393,6 +449,53 @@ def main():
         print(f"Scene: {first.scene_description[:150]}...")
         print(f"Characters: {len(first.characters)} found")
         print(f"Objects: {len(first.significant_objects)} found")
+
+
+def _analyze_chapter_worker(chapter_data: dict) -> ChapterAnalysis:
+    """Worker function for parallel analysis (must be at module level for pickling)"""
+    # Re-create analyzer in the subprocess
+    local_analyzer = ChapterAnalyzer(region=os.getenv("AWS_REGION", "eu-central-1"),
+                                     model=os.getenv("BEDROCK_MODEL"))
+    
+    # Create temporary EPUBChapter object
+    class TempChapter:
+        def __init__(self, data):
+            self.title = data['title']
+            self.content = data['content']
+            self.order = data['order']
+    
+    temp_chapter = TempChapter(chapter_data)
+    return local_analyzer.analyze_chapter(temp_chapter)
+
+
+def _should_skip_chapter(chapter_title: str, chapter_content: str) -> bool:
+    """Check if a chapter should be skipped (non-story content)"""
+    title_lower = chapter_title.lower()
+    content_lower = chapter_content.lower()[:500]  # Check first 500 chars
+    
+    skip_keywords = [
+        'contents', 'table of contents', 'toc',
+        'acknowledgements', 'acknowledgments',
+        'preface', 'foreword', 'introduction',
+        'copyright', 'license', 'project gutenberg',
+        'the millennium fulcrum edition',
+        'credits', 'about', 'colophon'
+    ]
+    
+    # Check title
+    for keyword in skip_keywords:
+        if keyword in title_lower:
+            return True
+    
+    # Check if content is too short or looks like metadata
+    if len(chapter_content.strip()) < 100:
+        return True
+    
+    # Check if it's mostly metadata/tags
+    if '<html' in content_lower or '<?xml' in content_lower:
+        return True
+    
+    return False
 
 
 if __name__ == "__main__":

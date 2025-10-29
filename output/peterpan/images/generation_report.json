@@ -1,14 +1,46 @@
 {
-  "total_characters": 7,
-  "successful": 7,
-  "failed": 0,
-  "total_time_seconds": 68.53049850463867,
+  "total_characters": 18,
+  "successful": 17,
+  "failed": 1,
+  "total_time_seconds": 183.3610017299652,
   "results": [
+    {
+      "character_name": "Wendy Darling",
+      "output_path": "output/peterpan/images/Wendy_Darling.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 9.52,
+      "success": true,
+      "error_message": ""
+    },
     {
       "character_name": "Mrs. Darling",
       "output_path": "output/peterpan/images/Mrs_Darling.png",
       "aspect_ratio": "1:1",
-      "generation_time": 10.06,
+      "generation_time": 11.47,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Mr. Darling",
+      "output_path": "output/peterpan/images/Mr_Darling.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 6.8,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "John Darling",
+      "output_path": "output/peterpan/images/John_Darling.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 7.22,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Michael Darling",
+      "output_path": "output/peterpan/images/Michael_Darling.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 11.91,
       "success": true,
       "error_message": ""
     },
@@ -16,15 +48,31 @@
       "character_name": "Nana",
       "output_path": "output/peterpan/images/Nana.png",
       "aspect_ratio": "1:1",
-      "generation_time": 9.53,
+      "generation_time": 7.6,
       "success": true,
       "error_message": ""
     },
     {
-      "character_name": "The Boy (Peter)",
-      "output_path": "output/peterpan/images/The_Boy_Peter.png",
+      "character_name": "Liza",
+      "output_path": "",
       "aspect_ratio": "1:1",
-      "generation_time": 8.7,
+      "generation_time": 12.12,
+      "success": false,
+      "error_message": "'NoneType' object has no attribute 'parts'"
+    },
+    {
+      "character_name": "Peter Pan",
+      "output_path": "output/peterpan/images/Peter_Pan.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 13.09,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Miss Fulsom",
+      "output_path": "output/peterpan/images/Miss_Fulsom.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 9.56,
       "success": true,
       "error_message": ""
     },
@@ -32,7 +80,15 @@
       "character_name": "Mr. Darling (George Darling)",
       "output_path": "output/peterpan/images/Mr_Darling_George_Darling.png",
       "aspect_ratio": "1:1",
-      "generation_time": 8.59,
+      "generation_time": 6.61,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Peter (the boy)",
+      "output_path": "output/peterpan/images/Peter_the_boy.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 7.9,
       "success": true,
       "error_message": ""
     },
@@ -40,15 +96,7 @@
       "character_name": "Wendy",
       "output_path": "output/peterpan/images/Wendy.png",
       "aspect_ratio": "1:1",
-      "generation_time": 10.28,
-      "success": true,
-      "error_message": ""
-    },
-    {
-      "character_name": "Michael",
-      "output_path": "output/peterpan/images/Michael.png",
-      "aspect_ratio": "1:1",
-      "generation_time": 11.62,
+      "generation_time": 11.55,
       "success": true,
       "error_message": ""
     },
@@ -56,7 +104,47 @@
       "character_name": "John",
       "output_path": "output/peterpan/images/John.png",
       "aspect_ratio": "1:1",
-      "generation_time": 9.75,
+      "generation_time": 13.08,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Michael",
+      "output_path": "output/peterpan/images/Michael.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 7.5,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Wendy Moira Angela Darling",
+      "output_path": "output/peterpan/images/Wendy_Moira_Angela_Darling.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 14.79,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Tinker Bell",
+      "output_path": "output/peterpan/images/Tinker_Bell.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 10.4,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Mr. and Mrs. Darling",
+      "output_path": "output/peterpan/images/Mr_and_Mrs_Darling.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 10.95,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "The three Darling children",
+      "output_path": "output/peterpan/images/The_three_Darling_children.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 11.28,
       "success": true,
       "error_message": ""
     }

@@ -1,37 +1,29 @@
-import { BookData, Chapter, SceneSegment } from '../types';
+import { BookData, SceneSegment } from '../types';
 
+// Get API URL from environment variable, fallback to default
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
+
+// Standardized loader: fetches scenes from backend API which reads from output/ folder
 export const loadBookData = async (bookId: string): Promise<BookData> => {
   try {
-    // Load analysis data
-    const analysisResponse = await fetch(`/data/${bookId}/analysis.json`);
-    const analysisData: Chapter[] = await analysisResponse.json();
-
-    // Load character prompts for image mapping
-    const characterPromptsResponse = await fetch(`/data/${bookId}/character_prompts.json`);
-    const characterPrompts = await characterPromptsResponse.json();
-
-    // Load scene segments
-    const scenesResponse = await fetch(`/data/${bookId}/scenes.json`);
-    const sceneSegments: SceneSegment[] = await scenesResponse.json();
-
-    // Create character image mapping
-    const characterImages: { [key: string]: string } = {};
-    if (characterPrompts.characters) {
-      characterPrompts.characters.forEach((char: any) => {
-        const imageName = char.name.replace(/'/g, '').replace(/\s+/g, '_');
-        characterImages[imageName] = `/images/characters/${imageName}.png`;
-      });
+    const scenesResponse = await fetch(`${API_BASE_URL}/books/${bookId}/scenes`);
+    if (!scenesResponse.ok) {
+      throw new Error(`Failed to load scenes for ${bookId}`);
     }
+    const rawScenes: SceneSegment[] = await scenesResponse.json();
 
-    // Create environment image mapping
-    const environmentImages: { [key: string]: string } = {
-      'chapter_i_down_the_rabbit_hole': '/images/environments/chapter_i_down_the_rabbit_hole.png'
-    };
+    // Normalize image_file to backend API URLs
+    const sceneSegments: SceneSegment[] = rawScenes.map((scene) => ({
+      ...scene,
+      image_file: scene.image_file.startsWith('http')
+        ? scene.image_file
+        : `${API_BASE_URL}/books/${bookId}/images/${scene.image_file}`
+    }));
 
     return {
-      chapters: analysisData,
-      characterImages,
-      environmentImages,
+      chapters: [],
+      characterImages: {},
+      environmentImages: {},
       sceneSegments
     };
   } catch (error) {

@@ -1,0 +1,16 @@
+{
+  "character_name": "Duck",
+  "image_prompt": "A whimsical anthropomorphic duck with exaggerated proportions. The duck has a large, round body and a disproportionately small head. Its eyes are wide and curious, with long eyelashes. The duck's bill is bright orange and slightly oversized. It wears a Victorian-era outfit consisting of a tiny top hat perched askew on its head, a high-collared shirt with a frilly cravat, and a colorful waistcoat with oversized buttons. The duck's feathers are a vibrant mix of blues and greens, with hints of purple, giving it a surreal appearance. Its wings are comically small compared to its body. The duck's feet are bright yellow and cartoonishly large. Its expression is one of perpetual bewilderment and intense curiosity.",
+  "style_tags": [
+    "surreal",
+    "anthropomorphic",
+    "Victorian-era",
+    "whimsical",
+    "exaggerated proportions",
+    "watercolor-inspired"
+  ],
+  "book_context": "Alice's Adventures in Wonderland",
+  "chapter_references": [
+    "CHAPTER III. A Caucus-Race and a Long Tale"
+  ]
+}

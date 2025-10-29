@@ -162,7 +162,7 @@ Environment Variables:
     parser.add_argument(
         '--skip-expressions',
         action='store_true',
-        help='Skip expression prompt generation'
+        help='Skip expression prompt generation (default unless GENERATE_EXPRESSIONS=true)'
     )
     
     parser.add_argument(
@@ -257,7 +257,6 @@ Environment Variables:
         print(f"\n   🚀 Initializing analyzer...")
         try:
             analyzer = ChapterAnalyzer(
-                provider="bedrock",
                 region=args.bedrock_region,
                 model=args.bedrock_model,
                 profile=args.bedrock_profile
@@ -296,27 +295,61 @@ Environment Variables:
     expressions_generated = False
     
     try:
-        prompter = CharacterImagePrompter(
-            provider="bedrock",
-            region=args.bedrock_region,
-            model=args.bedrock_model,
-            profile=args.bedrock_profile
-        )
+        # Build a set of existing character images to skip prompt generation
+        existing_images = set()
+        if os.path.isdir(images_dir):
+            for fname in os.listdir(images_dir):
+                if fname.lower().endswith('.png'):
+                    existing_images.add(os.path.splitext(fname)[0].lower())
         
-        prompts = prompter.generate_from_analysis_file(analysis_file)
+        # Check if prompts file already exists
+        if os.path.exists(prompts_file):
+            print(f"   ℹ️  Loading existing prompts from: {prompts_file}")
+            # Load existing prompts instead of regenerating
+            from ai.character_image_prompter import CharacterImagePrompt
+            with open(prompts_file, 'r', encoding='utf-8') as f:
+                prompts_data = json.load(f)
+            prompts = [CharacterImagePrompt.from_dict(p) for p in prompts_data]
+            print(f"   ✅ Loaded {len(prompts)} existing character prompts")
+        else:
+            # Generate new prompts
+            print(f"   🔄 Generating new character prompts...")
+            prompter = CharacterImagePrompter(
+                region=args.bedrock_region,
+                model=args.bedrock_model,
+                profile=args.bedrock_profile
+            )
+            prompts = prompter.generate_from_analysis_file(analysis_file)
+            
+            # Export prompts for future use
+            prompter.export_prompts(prompts, prompts_file, format="json")
+            print(f"   ✅ Generated prompts for {len(prompts)} characters")
+            print(f"   ✅ Output: {prompts_file}")
+        if existing_images:
+            filtered = []
+            for p in prompts:
+                basename = p.character_name.lower().replace(' ', '_')
+                if basename in existing_images:
+                    print(f"   ⏭️  Skipping prompt for {p.character_name} (image exists)")
+                    continue
+                filtered.append(p)
+            prompts = filtered
         
         if not prompts:
-            print("❌ No character prompts generated")
-            sys.exit(1)
+            print("✅ All character images already exist - nothing to generate")
+            print(f"   📁 Output: {images_dir}")
+            # Exit successfully - this is a valid state (already complete)
+            print("\n" + "=" * 70)
+            print("✅ WORKFLOW COMPLETE!")
+            print("=" * 70)
+            print(f"\nAll character images already exist in: {images_dir}")
+            sys.exit(0)
         
-        # Export prompts
-        prompter.export_prompts(prompts, prompts_file, format="json")
-        
-        print(f"   ✅ Generated prompts for {len(prompts)} characters")
-        print(f"   ✅ Output: {prompts_file}")
-        
-        # STEP 2.5: Generate expression prompts
-        if not args.skip_expressions:
+        # STEP 2.5: Generate expression prompts (opt-in via env or explicit flag)
+        generate_expressions_env = os.getenv('GENERATE_EXPRESSIONS', 'false').lower() == 'true'
+        want_expressions = (not args.skip_expressions) and generate_expressions_env
+
+        if want_expressions:
             print("\n🎭 STEP 2.5: Generating expression variation prompts")
             try:
                 expr_prompter = ExpressionPrompter()
@@ -330,7 +363,8 @@ Environment Variables:
             except Exception as e:
                 print(f"   ⚠️  Warning: Failed to generate expressions: {e}")
         else:
-            print("\n⏩ STEP 2.5: Skipping expression prompts (--skip-expressions)")
+            reason = "GENERATE_EXPRESSIONS!=true" if not generate_expressions_env else "--skip-expressions"
+            print(f"\n⏩ STEP 2.5: Skipping expression prompts ({reason})")
         
     except Exception as e:
         print(f"❌ Error generating prompts: {e}")

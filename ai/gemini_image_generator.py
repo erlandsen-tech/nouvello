@@ -12,6 +12,7 @@ from pathlib import Path
 from dataclasses import dataclass
 from PIL import Image
 from io import BytesIO
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -83,6 +84,18 @@ class GeminiImageGenerator:
         safe_name = safe_name.replace(' ', '_')
         output_path = os.path.join(output_dir, f"{safe_name}.png")
         
+        # Check if image already exists
+        if Path(output_path).exists():
+            print(f"  ⏭️  Skipping {character_name} - image already exists")
+            return GeneratedImage(
+                character_name=character_name,
+                prompt_used=prompt,
+                output_path=output_path,
+                aspect_ratio=aspect_ratio,
+                generation_time=0.0,
+                success=True
+            )
+        
         try:
             print(f"  🎨 Generating image for: {character_name}")
             
@@ -137,6 +150,96 @@ class GeminiImageGenerator:
                 error_message=str(e)
             )
     
+    def generate_scene_with_references(self, scene_name: str, prompt: str,
+                                      reference_images: Dict[str, Path],
+                                      output_dir: str, aspect_ratio: str = "16:9") -> GeneratedImage:
+        """
+        Generate a scene image using character reference images
+        
+        Args:
+            scene_name: Name for the scene
+            prompt: Scene description prompt
+            reference_images: Dict mapping character names to their image paths
+            output_dir: Directory to save generated image
+            aspect_ratio: Aspect ratio for the scene image
+            
+        Returns:
+            GeneratedImage object with generation results
+        """
+        start_time = time.time()
+        
+        # Sanitize filename
+        safe_name = "".join(c for c in scene_name if c.isalnum() or c in (' ', '-', '_')).strip()
+        safe_name = safe_name.replace(' ', '_')
+        output_path = os.path.join(output_dir, f"{safe_name}.png")
+        
+        try:
+            print(f"  🎬 Generating scene: {scene_name}")
+            print(f"     📸 Using {len(reference_images)} character references")
+            
+            # Build contents array with reference images
+            contents = []
+            
+            # Add reference images as PIL Image objects
+            for char_name, image_path in reference_images.items():
+                ref_image = Image.open(image_path)
+                contents.append(ref_image)
+                print(f"     📸 Loading reference: {char_name}")
+            
+            # Add the text prompt after images
+            contents.append(prompt)
+            
+            # Generate image with Gemini API
+            response = self.client.models.generate_content(
+                model=self.model,
+                contents=contents,
+                config=types.GenerateContentConfig(
+                    image_config=types.ImageConfig(
+                        aspect_ratio=aspect_ratio,
+                    )
+                )
+            )
+            
+            # Extract image from response
+            image_saved = False
+            for part in response.candidates[0].content.parts:
+                if part.text is not None:
+                    print(f"     ℹ️  Model response: {part.text[:100]}")
+                elif part.inline_data is not None:
+                    # Save the image
+                    image = Image.open(BytesIO(part.inline_data.data))
+                    image.save(output_path)
+                    image_saved = True
+                    print(f"     ✅ Scene image saved: {output_path}")
+            
+            if not image_saved:
+                raise ValueError("No image data in response")
+            
+            generation_time = time.time() - start_time
+            
+            return GeneratedImage(
+                character_name=scene_name,
+                prompt_used=prompt,
+                output_path=output_path,
+                aspect_ratio=aspect_ratio,
+                generation_time=generation_time,
+                success=True
+            )
+            
+        except Exception as e:
+            generation_time = time.time() - start_time
+            print(f"     ❌ Error: {str(e)}")
+            
+            return GeneratedImage(
+                character_name=scene_name,
+                prompt_used=prompt,
+                output_path="",
+                aspect_ratio=aspect_ratio,
+                generation_time=generation_time,
+                success=False,
+                error_message=str(e)
+            )
+    
     def generate_from_prompts_file(self, prompts_file: str, output_dir: str,
                                   aspect_ratio: str = "1:1",
                                   delay_seconds: float = 1.0) -> List[GeneratedImage]:
@@ -163,27 +266,60 @@ class GeminiImageGenerator:
         os.makedirs(output_dir, exist_ok=True)
         print(f"📁 Output directory: {output_dir}")
         
-        # Generate images
-        results = []
-        total = len(prompts_data)
+        # Get number of workers from env (default to 2 for API rate limits)
+        num_workers = int(os.getenv("CHARACTER_IMAGE_WORKERS", "2"))
         
-        for idx, prompt_data in enumerate(prompts_data, 1):
+        # Generate images in parallel if multiple characters
+        if len(prompts_data) > 1 and num_workers > 1:
+            # Don't create more workers than characters
+            actual_workers = min(num_workers, len(prompts_data))
+            print(f"🚀 Running parallel image generation with {actual_workers} workers")
+            results = self._generate_images_parallel(prompts_data, output_dir, aspect_ratio, actual_workers, delay_seconds)
+        else:
+            # Sequential for single character or single worker
+            results = []
+            total = len(prompts_data)
+            
+            for idx, prompt_data in enumerate(prompts_data, 1):
+                char_name = prompt_data.get("character_name", f"Character_{idx}")
+                image_prompt = prompt_data.get("image_prompt", "")
+                
+                print(f"\n[{idx}/{total}] {char_name}")
+                
+                result = self.generate_character_image(
+                    char_name,
+                    image_prompt,
+                    output_dir,
+                    aspect_ratio
+                )
+                results.append(result)
+                
+                # Delay between requests to avoid rate limits
+                if idx < total and delay_seconds > 0:
+                    time.sleep(delay_seconds)
+        
+        return results
+    
+    def _generate_images_parallel(self, prompts_data: List, output_dir: str, aspect_ratio: str, num_workers: int, delay_seconds: float) -> List[GeneratedImage]:
+        """Generate images in parallel using threads (API-safe)"""
+        results = []
+        
+        def generate_single(prompt_item):
+            idx, prompt_data = prompt_item
             char_name = prompt_data.get("character_name", f"Character_{idx}")
             image_prompt = prompt_data.get("image_prompt", "")
+            total = len(prompts_data)
             
             print(f"\n[{idx}/{total}] {char_name}")
+            result = self.generate_character_image(char_name, image_prompt, output_dir, aspect_ratio)
             
-            result = self.generate_character_image(
-                char_name,
-                image_prompt,
-                output_dir,
-                aspect_ratio
-            )
-            results.append(result)
-            
-            # Delay between requests to avoid rate limits
-            if idx < total and delay_seconds > 0:
-                time.sleep(delay_seconds)
+            # Delay after generation
+            time.sleep(delay_seconds)
+            return result
+        
+        with ThreadPoolExecutor(max_workers=num_workers) as executor:
+            futures = [executor.submit(generate_single, (idx+1, data)) for idx, data in enumerate(prompts_data)]
+            results = [f.result() for f in futures]
         
         return results
     

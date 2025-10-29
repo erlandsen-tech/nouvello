@@ -1,0 +1,50 @@
+[
+  {
+    "character_name": "Jervas Dudley",
+    "image_prompt": "Jervas Dudley is a young man in his mid-20s, with a tall, slender build and an unnervingly intense gaze. His features are sharp and angular, with a prominent brow, sunken cheeks, and piercing eyes that seem to peer directly into the viewer's soul. His pale, almost sallow skin is offset by a mane of wild, dark hair that falls in disheveled waves around his face. Jervas wears a high-collared, velvet-trimmed frock coat of a deep, midnight blue, giving him an air of brooding sophistication. There is an unsettling quality to his demeanor, a sense of barely contained energy and a hint of the occult that clings to him like an aura of mystery.",
+    "style_tags": [
+      "gothic",
+      "dark fantasy",
+      "surreal",
+      "eerie",
+      "occult",
+      "eldritch"
+    ],
+    "book_context": "Collected Stories of H.P. Lovecraft",
+    "chapter_references": [
+      "The Tomb"
+    ]
+  },
+  {
+    "character_name": "The Narrator",
+    "image_prompt": "A haggard, middle-aged man with sunken features and a gaunt, emaciated frame. His skin is pale and sallow, tinged with a sickly, greenish hue. Deep shadows linger beneath his hollow, haunted eyes, which dart about restlessly, as if plagued by visions only he can perceive. Stringy, unkempt hair the color of tarnished silver frames his angular, gaunt face, and his chapped, cracked lips are twisted into a weary, despairing expression. He is dressed in tattered, ill-fitting clothes - a threadbare, stained shirt, faded trousers, and worn, scuffed boots. An air of profound unease and barely-contained madness clings to him, hinting at the horrors he has endured.",
+    "style_tags": [
+      "dark fantasy",
+      "gothic",
+      "surreal",
+      "eerie",
+      "occult",
+      "eldritch"
+    ],
+    "book_context": "Collected Stories of H.P. Lovecraft",
+    "chapter_references": [
+      "Dagon"
+    ]
+  },
+  {
+    "character_name": "Joe Slater/Slaader",
+    "image_prompt": "A middle-aged man of above-average height and build, with a pale, gaunt complexion and listless, sleepy blue eyes that convey an unsettling air of 'harmless stupidity'. His face is framed by scant, neglected facial hair, and his heavy, drooping lower lip gives him a disquieting, vaguely simian appearance. The man's clothing is simple and worn, suggesting a primitive, isolated existence - a ragged, earth-toned shirt and trousers, perhaps with a tattered cloak or shawl draped over his hunched shoulders. His expression is one of distant, unfocused distress, as if his mind is lost in a dreamlike state of consciousness, consumed by visions of 'great edifices of light' and a primal, inexplicable urge to 'kill a certain thing that shines and shakes and laughs'.",
+    "style_tags": [
+      "gothic",
+      "dark fantasy",
+      "surreal",
+      "eerie",
+      "occult",
+      "eldritch"
+    ],
+    "book_context": "Collected Stories of H.P. Lovecraft",
+    "chapter_references": [
+      "Beyond the Wall of Sleep"
+    ]
+  }
+]

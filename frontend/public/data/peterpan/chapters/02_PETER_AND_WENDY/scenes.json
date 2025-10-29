@@ -1,0 +1,54 @@
+[
+  {
+    "scene_number": 1,
+    "title": "Default Scene (Part 1)",
+    "content": "The Project Gutenberg eBook of Peter Pan\nThis ebook is for the use of anyone anywhere in the United States and\nmost other parts of the world at no cost and with almost no restrictions\nwhatsoever. You may copy it, give it away or re-use it under the te",
+    "characters_present": [],
+    "setting": "Unknown setting",
+    "mood": "Neutral",
+    "image_prompt": "Default scene",
+    "image_type": "scene",
+    "image_file": "scene_01_default_scene_part_1.png",
+    "chapter_number": 2,
+    "chapter_title": "[PETER AND WENDY]"
+  },
+  {
+    "scene_number": 2,
+    "title": "Default Scene (Part 2)",
+    "content": "rms\nof the Project Gutenberg License included with this ebook or online\nat www.gutenberg.org. If you are not located in the United States,\nyou will have to check the laws of the country where you are located\nbefore using this eBook.\nTitle: Peter Pan...",
+    "characters_present": [],
+    "setting": "Unknown setting",
+    "mood": "Neutral",
+    "image_prompt": "Default scene",
+    "image_type": "scene",
+    "image_file": "scene_02_default_scene_part_2.png",
+    "chapter_number": 2,
+    "chapter_title": "[PETER AND WENDY]"
+  },
+  {
+    "scene_number": 3,
+    "title": "Default Scene (Part 2) (Continued)",
+    "content": "rms\nof the Project Gutenberg License included with this ebook or online\nat www.gutenberg.org. If you are not located in the United States,\nyou will have to check the laws of the country where you are located\nbefore using this eBook.\nTitle: Peter Pan...",
+    "characters_present": [],
+    "setting": "Unknown setting",
+    "mood": "Neutral",
+    "image_prompt": "Default scene",
+    "image_type": "scene",
+    "image_file": "scene_03_default_scene_part_2_continued.png",
+    "chapter_number": 2,
+    "chapter_title": "[PETER AND WENDY]"
+  },
+  {
+    "scene_number": 4,
+    "title": "Default Scene (Part 2) (Continued) (Continued)",
+    "content": "rms\nof the Project Gutenberg License included with this ebook or online\nat www.gutenberg.org. If you are not located in the United States,\nyou will have to check the laws of the country where you are located\nbefore using this eBook.\nTitle: Peter Pan...",
+    "characters_present": [],
+    "setting": "Unknown setting",
+    "mood": "Neutral",
+    "image_prompt": "Default scene",
+    "image_type": "scene",
+    "image_file": "scene_04_default_scene_part_2_continued_continued.png",
+    "chapter_number": 2,
+    "chapter_title": "[PETER AND WENDY]"
+  }
+]

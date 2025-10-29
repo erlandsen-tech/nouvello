@@ -1,12 +1,10 @@
-import chapterize.chapterize as ch
+from ai.epub_parser import EPUBParser
 
-book = ch.Book("books/alice.txt", nochapters=False, stats=False)
+parser = EPUBParser("books/alice.epub")
+chapters = parser.parse()
 
-# Print chapter headings
 print("Chapter Headings:")
-for i, heading_line_num in enumerate(book.headings[:-1]):  # Exclude the last one (end location)
-    heading_text = book.lines[heading_line_num]
-    print(f"Chapter {i+1}: {heading_text}")
+for i, ch in enumerate(chapters, 1):
+    print(f"Chapter {i}: {ch.title}")
 
-print(f"\nTotal chapters found: {book.numChapters}")
-print(f"Number of headings: {len(book.headings)}")
+print(f"\nTotal chapters found: {len(chapters)}")

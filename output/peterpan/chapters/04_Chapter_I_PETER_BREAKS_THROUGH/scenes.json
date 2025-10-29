@@ -1,0 +1,325 @@
+[
+  {
+    "scene_number": 1,
+    "title": "Mrs. Darling's Vigil",
+    "content": "All were looking so safe and cosy that she smiled at her fears now and sat down tranquilly by the fire to sew. It was something for Michael, who on his birthday was getting into shirts. The fire was warm, however, and the nursery dimly lit by three night-lights, and presently the sewing lay on Mrs. Darling's lap. Then her head nodded, oh, so gracefully. She was asleep. Look at the four of them, Wendy and Michael over there, John here, and Mrs. Darling by the fire. There should have been a fourth night-light.",
+    "characters_present": [
+      "Mrs. Darling",
+      "Wendy",
+      "Michael",
+      "John"
+    ],
+    "setting": "The nursery, lit by three night-lights with a warm fire",
+    "mood": "Peaceful, tranquil, safe, intimate",
+    "image_prompt": "A mother sleeping peacefully in a chair by a warm fireplace in a dimly lit nursery, sewing draped across her lap, three small night-lights casting gentle shadows on the sleeping children in their beds",
+    "image_type": "scene",
+    "image_file": "scene_01_mrs_darlings_vigil.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 2,
+    "title": "The Dream of Neverland",
+    "content": "While she slept she had a dream. She dreamt that the Neverland had come too near and that a strange boy had broken through from it. He did not alarm her, for she thought she had seen him before in the faces of many women who have no children. Perhaps he is to be found in the faces of some mothers also. But in her dream he had rent the film that obscures the Neverland, and she saw Wendy and John and Michael peeping through the gap.",
+    "characters_present": [
+      "Mrs. Darling (dreaming)",
+      "Strange boy (Peter Pan)",
+      "Wendy",
+      "John",
+      "Michael"
+    ],
+    "setting": "A dreamscape where Neverland overlaps with reality",
+    "mood": "Mystical, ethereal, wondrous, slightly unsettling",
+    "image_prompt": "A surreal dream vision showing a mysterious boy emerging from a luminous tear in reality, with three children peering through a shimmering gap into a magical land beyond",
+    "image_type": "scene",
+    "image_file": "scene_02_the_dream_of_neverland.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 3,
+    "title": "Peter Pan Arrives",
+    "content": "The dream by itself would have been a trifle, but while she was dreaming the window of the nursery blew open, and a boy did drop on the floor. He was accompanied by a strange light, no bigger than your fist, which darted about the room like a living thing and I think it must have been this light that wakened Mrs. Darling. She started up with a cry, and saw the boy, and somehow she knew at once that he was Peter Pan. If you or I or Wendy had been there we should have seen that he was very like Mrs. Darling's kiss. He was a lovely boy, clad in skeleton leaves and the juices that ooze out of trees but the most entrancing thing about him was that he had all his first teeth. When he saw she was a grown-up, he gnashed the little pearls at her.",
+    "characters_present": [
+      "Mrs. Darling",
+      "Peter Pan",
+      "Strange light (Tinker Bell implied)"
+    ],
+    "setting": "The nursery at night, window blown open",
+    "mood": "Startling, magical, tense, extraordinary",
+    "image_prompt": "A boy dressed in skeleton leaves materializes in a nursery as a window bursts open, accompanied by a small glowing light; a woman awakens in shock, seeing the ethereal, ageless boy with perfect teeth bared at her",
+    "image_type": "scene",
+    "image_file": "scene_03_peter_pan_arrives.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 4,
+    "title": "The Nightly Tidying of Children's Minds",
+    "content": "Mrs. Darling first heard of Peter when she was tidying up her children's minds. It is the nightly custom of every good mother after her children are asleep to rummage in their minds and put things straight for next morning, repacking into their proper places the many articles that have wandered during the day. If you could keep awake (but of course you can't) you would see your own mother doing this, and you would find it very interesting to watch her. It is quite like tidying up drawers. You would see her on her knees, I expect, lingering humorously over some of your contents, wondering where on earth you had picked this thing up, making discoveries sweet and not so sweet, pressing this to her cheek as if it were as nice as a kitten, and hurriedly stowing that out of sight. When you wake in the morning, the naughtiness and evil passions with which you went to bed have been folded up small and placed at the bottom of your mind and on the top, beautifully aired, are spread out your prettier thoughts, ready for you to put on.",
+    "characters_present": [
+      "Mrs. Darling"
+    ],
+    "setting": "The children's bedroom at night, after they have fallen asleep",
+    "mood": "Tender, intimate, whimsical, maternal",
+    "image_prompt": "A mother kneeling beside sleeping children's beds in soft lamplight, gently arranging intangible thoughts and memories like objects in a drawer, her expression warm and contemplative",
+    "image_type": "scene",
+    "image_file": "scene_04_the_nightly_tidying_of_childrens_minds.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 5,
+    "title": "A Map of a Child's Mind",
+    "content": "I don't know whether you have ever seen a map of a person's mind. Doctors sometimes draw maps of other parts of you, and your own map can become intensely interesting, but catch them trying to draw a map of a child's mind, which is not only confused, but keeps going round all the time. There are zigzag lines on it, just like your temperature on a card, and these are probably roads in the island, for the Neverland is always more or less an island, with astonishing splashes of colour here and there, and coral reefs and rakish-looking craft in the offing, and savages and lonely lairs, and gnomes who are mostly tailors, and caves through which a river runs, and princes with six elder brothers, and a hut fast going to decay, and one very small old lady with a hooked nose.",
+    "characters_present": [
+      "Narrator (implied)"
+    ],
+    "setting": "A child's mind visualized as a fantastical island map",
+    "mood": "Imaginative, whimsical, dreamlike, wondrous",
+    "image_prompt": "An intricately detailed fantastical map of an island with zigzag roads, coral reefs, mysterious caves, colorful splashes, savages, and strange inhabitants, rendered with whimsical detail and vibrant colors",
+    "image_type": "scene",
+    "image_file": "scene_05_a_map_of_a_childs_mind.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 6,
+    "title": "The Discovery of Peter",
+    "content": "Occasionally in her travels through her children's minds Mrs. Darling found things she could not understand, and of these quite the most perplexing was the word Peter. She knew of no Peter, and yet he was here and there in John and Michael's minds, while Wendy's began to be scrawled all over with him. The name stood out in bolder letters than any of the other words, and as Mrs. Darling gazed she felt that it had an oddly cocky appea",
+    "characters_present": [
+      "Mrs. Darling",
+      "John (referenced)",
+      "Michael (referenced)",
+      "Wendy (referenced)"
+    ],
+    "setting": "Within the children's minds during Mrs. Darling's nightly tidying",
+    "mood": "Puzzling, intriguing, curious, slightly unsettling",
+    "image_prompt": "Mrs. Darling's surprised face illuminated in soft light, reading the name 'Peter' written in bold letters across a dreamlike mindscape, the name growing larger and more prominent, with an expression of bemused confusion",
+    "image_type": "scene",
+    "image_file": "scene_06_the_discovery_of_peter.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 7,
+    "title": "Mr. Darling's Careful Accounting",
+    "content": "\"Remember mumps,\" he warned her almost threateningly, and off he went again. \"Mumps one pound, that is what I have put down, but I daresay it will be more like thirty shillings\u2014don't speak\u2014measles one five, German measles half a guinea, makes two fifteen six\u2014don't waggle your finger\u2014whooping-cough, say fifteen shillings\"\u2014and so on it went, and it added up differently each time; but at last Wendy just got through, with mumps reduced to twelve six, and the two kinds of measles treated as one. There was the same excitement over John, and Michael had even a narrower squeak; but both were kept, and soon, you might have seen the three of them going in a row to Miss Fulsom's Kindergarten school, accompanied by their nurse.",
+    "characters_present": [
+      "Mr. Darling",
+      "Wendy",
+      "John",
+      "Michael"
+    ],
+    "setting": "The Darling household",
+    "mood": "Anxious, comedic, domestic concern",
+    "image_prompt": "Mr. Darling meticulously calculating medical expenses on paper, speaking earnestly to Wendy while she listens with concern, Victorian-era furnishings visible in background",
+    "image_type": "scene",
+    "image_file": "scene_07_mr_darlings_careful_accounting.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 8,
+    "title": "Nana the Newfoundland Nurse",
+    "content": "As they were poor, owing to the amount of milk the children drank, this nurse was a prim Newfoundland dog, called Nana, who had belonged to no one in particular until the Darlings engaged her. She had always thought children important, however, and the Darlings had become acquainted with her in Kensington Gardens, where she spent most of her spare time peeping into perambulators, and was much hated by careless nursemaids, whom she followed to their homes and complained of to their mistresses. She proved to be quite a treasure of a nurse. How thorough she was at bath-time, and up at any moment of the night if one of her charges made the slightest cry. Of course her kennel was in the nursery. She had a genius for knowing when a cough is a thing to have no patience with and when it needs stocking around your throat.",
+    "characters_present": [
+      "Nana",
+      "Wendy",
+      "John",
+      "Michael",
+      "the Darlings"
+    ],
+    "setting": "Kensington Gardens, the Darling nursery",
+    "mood": "Warm, dutiful, gently humorous",
+    "image_prompt": "A dignified Newfoundland dog (Nana) attending to children in a Victorian nursery, with her kennel visible; flashback to her observing perambulators in Kensington Gardens",
+    "image_type": "scene",
+    "image_file": "scene_08_nana_the_newfoundland_nurse.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 9,
+    "title": "Family Gaiety and Mrs. Darling's Dance",
+    "content": "He had his position in the city to consider. Nana also troubled him in another way. He had sometimes a feeling that she did not admire him. \"I know she admires you tremendously, George,\" Mrs. Darling would assure him, and then she would sign to the children to be specially nice to father. Lovely dances followed, in which the only other servant, Liza, was sometimes allowed to join. Such a midget she looked in her long skirt and maid's cap, though she had sworn, when engaged, that she would never see ten again. The gaiety of those romps! And gayest of all was Mrs. Darling, who would pirouette so wildly that all you could see of her was the kiss, and then if you had dashed at her you might have got it. There never was a simpler happier family until the coming of Peter Pan.",
+    "characters_present": [
+      "Mr. Darling",
+      "Mrs. Darling",
+      "Wendy",
+      "John",
+      "Michael",
+      "Nana",
+      "Liza"
+    ],
+    "setting": "The Darling household, nursery",
+    "mood": "Joyful, playful, innocent happiness tinged with foreboding",
+    "image_prompt": "Mrs. Darling pirouetting joyfully in the center while Mr. Darling, children, Nana, and small maid Liza watch or participate in a lively dance; warm Victorian interior with movement and light",
+    "image_type": "scene",
+    "image_file": "scene_09_family_gaiety_and_mrs_darlings_dance.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 10,
+    "title": "Mrs. Darling's Nightly Custom",
+    "content": "Mrs. Darling first heard of Peter when she was tidying up her children's minds. It is the nightly custom of every good mother after her children are asleep to rummage in their minds and put things straight for next morning, repacking into their proper places the many articles that have wandered during the day. If you could keep awake (but of course you ca",
+    "characters_present": [
+      "Mrs. Darling",
+      "Wendy",
+      "John",
+      "Michael (asleep)"
+    ],
+    "setting": "The Darling nursery, nighttime",
+    "mood": "Tender, introspective, magical, mysterious",
+    "image_prompt": "Mrs. Darling beside sleeping children in candlelit nursery, her hands gently touching their heads in a gesture of tidying their minds; ethereal, intimate moment with soft shadows",
+    "image_type": "scene",
+    "image_file": "scene_10_mrs_darlings_nightly_custom.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 11,
+    "title": "The Garden Moment",
+    "content": "All children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing in a garden, and she plucked another flower and ran with it to her mother. I suppose she must have looked rather delightful, for Mrs. Darling put her hand to her heart and cried, \"Oh, why can't you remain like this for ever!\" This was all that passed between them on the subject, but henceforth Wendy knew that she must grow up. You always know after you are two. Two is the beginning of the end.",
+    "characters_present": [
+      "Wendy (age 2)",
+      "Mrs. Darling"
+    ],
+    "setting": "A garden",
+    "mood": "Bittersweet, tender, tinged with melancholy realization",
+    "image_prompt": "A young toddler girl in a sunlit garden clutching a plucked flower, running toward her mother who stands with hand to heart, expression caught between delight and wistful longing",
+    "image_type": "scene",
+    "image_file": "scene_11_the_garden_moment.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 12,
+    "title": "Mrs. Darling's Enigmatic Beauty",
+    "content": "Of course they lived at 14, and until Wendy came her mother was the chief one. She was a lovely lady, with a romantic mind and such a sweet mocking mouth. Her romantic mind was like the tiny boxes, one within the other, that come from the puzzling East, however many you discover there is always one more; and her sweet mocking mouth had one kiss on it that Wendy could never get, though there it was, perfectly conspicuous in the right-hand corner.",
+    "characters_present": [
+      "Mrs. Darling",
+      "Wendy"
+    ],
+    "setting": "14 (the Darling residence)",
+    "mood": "Mysterious, romantic, whimsical yet slightly unattainable",
+    "image_prompt": "Portrait of an elegant lady with a sweet mocking smile, her face serene yet enigmatic, hinting at hidden depths and a mysterious, unreachable kiss at the corner of her mouth",
+    "image_type": "scene",
+    "image_file": "scene_12_mrs_darlings_enigmatic_beauty.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 13,
+    "title": "How Mr. Darling Won Her",
+    "content": "The way Mr. Darling won her was this: the many gentlemen who had been boys when she was a girl discovered simultaneously that they loved her, and they all ran to her house to propose to her except Mr. Darling, who took a cab and nipped in first, and so he got her. He got all of her, except the innermost box and the kiss. He never knew about the box, and in time he gave up trying for the kiss. Wendy thought Napoleon could have got it, but I can picture him trying, and then going off in a passion, slamming the door.",
+    "characters_present": [
+      "Mr. Darling",
+      "Mrs. Darling",
+      "multiple suitors"
+    ],
+    "setting": "The Darling house and surrounding streets (implied)",
+    "mood": "Romantic and humorous, with an undertone of irony and missed depths",
+    "image_prompt": "Multiple well-dressed gentlemen rushing toward a townhouse in competition, with Mr. Darling arriving by cab ahead of them all, securing his victory with determined cleverness",
+    "image_type": "scene",
+    "image_file": "scene_13_how_mr_darling_won_her.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 14,
+    "title": "Calculating Wendy's Future",
+    "content": "For a week or two after Wendy came it was doubtful whether they would be able to keep her, as she was another mouth to feed. Mr. Darling was frightfully proud of her, but he was very honourable, and he sat on the edge of Mrs. Darling's bed, holding her hand and calculating expenses, while she looked at him imploringly. She wanted to risk it, come what might, but that was not his way; his way was with a pencil and a piece of paper, and if she confused him with suggestions he had to begin at the beginning again.\n\n\"Now don't interrupt,\" he would beg of her.\n\n\"I have one pound seventeen here, and two and six at the office; I can cut off my coffee at the office, say ten shillings, making two nine and six, with your eighteen and three makes three nine seven, with five naught naught in my cheque-book makes eight nine seven\u2014who is that moving?\u2014eight nine seven, dot and carry seven\u2014don't speak, my own\u2014and the pound you lent to that man who came to the door\u2014quiet, child\u2014dot and carry child\u2014there, you've done it!\u2014did I say nine nine seven? yes, I said nine nine seven; the question is, can we try it for a year on nine nine seven?\"\n\n\"Of course we can, George,\" she cried.",
+    "characters_present": [
+      "Mr. Darling",
+      "Mrs. Darling"
+    ],
+    "setting": "The Darling bedroom",
+    "mood": "Anxious yet devoted, humorous in its meticulous earnestness, tender despite the financial worry",
+    "image_prompt": "A Victorian gentleman hunched over a notebook filled with calculations on the edge of a bed, clutching a pencil, while his wife beside him gazes imploringly with hope in her eyes",
+    "image_type": "scene",
+    "image_file": "scene_14_calculating_wendys_future.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 15,
+    "title": "The Mysterious Name in the Children's Minds",
+    "content": "Occasionally in her travels through her children's minds Mrs. Darling found things she could not understand, and of these quite the most perplexing was the word Peter. She knew of no Peter, and yet he was here and there in John and Michael's minds, while Wendy's began to be scrawled all over with him. The name stood out in bolder letters than any of the other words, and as Mrs. Darling gazed she felt that it had an oddly cocky appearance.\n\"Yes, he is rather cocky,\" Wendy admitted with regret. Her mother had been questioning her.\n\"But who is he, my pet?\"\n\"He is Peter Pan, you know, mother.\"",
+    "characters_present": [
+      "Mrs. Darling",
+      "Wendy"
+    ],
+    "setting": "The Darling household, nursery or bedroom",
+    "mood": "Curious, perplexing, slightly concerned",
+    "image_prompt": "Mrs. Darling gazing thoughtfully at her daughter Wendy, with ethereal text and names floating in the air around them, the name 'Peter' written in bold letters",
+    "image_type": "scene",
+    "image_file": "scene_15_the_mysterious_name_in_the_childrens_minds.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 16,
+    "title": "Mrs. Darling's Recollection and Doubt",
+    "content": "At first Mrs. Darling did not know, but after thinking back into her childhood she just remembered a Peter Pan who was said to live with the fairies. There were odd stories about him, as that when children died he went part of the way with them, so that they should not be frightened. She had believed in him at the time, but now that she was married and full of sense she quite doubted whether there was any such person.\n\"Besides,\" she said to Wendy, \"he would be grown up by this time.\"\n\"Oh no, he isn't grown up,\" Wendy assured her confidently, \"and he is just my size.\" She meant that he was her size in both mind and body; she didn't know how she knew, she just knew it.",
+    "characters_present": [
+      "Mrs. Darling",
+      "Wendy"
+    ],
+    "setting": "The Darling nursery",
+    "mood": "Nostalgic yet skeptical, mysterious and dreamlike",
+    "image_prompt": "Mrs. Darling lost in thought, remembering childhood stories, with a ghostly image of Peter Pan ethereally appearing in her mind",
+    "image_type": "scene",
+    "image_file": "scene_16_mrs_darlings_recollection_and_doubt.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 17,
+    "title": "The Troublesome Discovery of Leaves",
+    "content": "Children have the strangest adventures without being troubled by them. For instance, they may remember to mention, a week after the event happened, that when they were in the wood they had met their dead father and had a game with him. It was in this casual way that Wendy one morning made a disquieting revelation. Some leaves of a tree had been found on the nursery floor, which certainly were not there when the children went to bed, and Mrs. Darling was puzzling over them when Wendy said with a tolerant smile:\n\"I do believe it is that Peter again!\"\n\"Whatever do you mean, Wendy?\"\n\"It is so naughty of him not to wipe his feet,\" Wendy said, sighing. She was a tidy child.",
+    "characters_present": [
+      "Mrs. Darling",
+      "Wendy"
+    ],
+    "setting": "The Darling nursery floor",
+    "mood": "Disquieting, mysterious, matter-of-fact wonder",
+    "image_prompt": "Strange leaves scattered on the nursery floor near a window, Mrs. Darling examining them with concern while Wendy stands nearby with an innocent smile",
+    "image_type": "scene",
+    "image_file": "scene_17_the_troublesome_discovery_of_leaves.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 18,
+    "title": "Wendy's Explanation of Peter's Visits",
+    "content": "She explained in quite a matter-of-fact way that she thought Peter sometimes came to the nursery in the night and sat on the foot of her bed and played on his pipes to her. Unfortunately she never woke, so she didn't know how she knew, she just knew.\n\"What nonsense you talk, precious. No one can get into the house without knocking.\"\n\"I think he comes in by the window,\" she said.\n\"My love, it is three floors up.\"\n\"Were not the leaves at the foot of the window, mother?\"",
+    "characters_present": [
+      "Mrs. Darling",
+      "Wendy"
+    ],
+    "setting": "The Darling nursery, near a window",
+    "mood": "Incredulous disbelief meeting innocent certainty, growing unease",
+    "image_prompt": "Wendy calmly explaining to her skeptical mother, with a dreamy expression, while the window looms in the background three stories above the pavement",
+    "image_type": "scene",
+    "image_file": "scene_18_wendys_explanation_of_peters_visits.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  },
+  {
+    "scene_number": 19,
+    "title": "Mrs. Darling's Fruitless Investigation",
+    "content": "Mrs. Darling did not know what to think, for it all seemed so natural to Wendy that you could not dismiss it by saying she had been dreaming. She crawled about the floor, peering at it with a candle for marks of a strange foot. She rattled the poker up the chimney and tapped the walls. She let down a tape from the window to the pavement, and it was a sheer drop of thirty feet, without so much as a spout to climb up by.\nCertainly Wendy had been dreaming.\nBut Wendy had not been dreaming, as the very next night showed, the night on which the extraordinary adventures of these children may be said to have begun.",
+    "characters_present": [
+      "Mrs. Darling",
+      "Wendy (implied)"
+    ],
+    "setting": "The Darling nursery at night",
+    "mood": "Growing dread, mystery deepening, supernatural tension building",
+    "image_prompt": "Mrs. Darling investigating the nursery by candlelight, examining the floor and walls, with a tape measure dangling from a high window into darkness below",
+    "image_type": "scene",
+    "image_file": "scene_19_mrs_darlings_fruitless_investigation.png",
+    "chapter_number": 4,
+    "chapter_title": "Chapter I. PETER BREAKS THROUGH"
+  }
+]

@@ -39,6 +39,7 @@ export interface TextBlock {
   mentionedCharacter?: string;
   imageType: 'character' | 'environment' | 'scene' | 'action';
   imageName: string;
+  imageUrl?: string;
   sceneTitle?: string;
   setting?: string;
   mood?: string;

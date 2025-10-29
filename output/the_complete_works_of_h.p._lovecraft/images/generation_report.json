@@ -1,0 +1,32 @@
+{
+  "total_characters": 3,
+  "successful": 3,
+  "failed": 0,
+  "total_time_seconds": 25.72412085533142,
+  "results": [
+    {
+      "character_name": "Jervas Dudley",
+      "output_path": "output/the_complete_works_of_h.p._lovecraft/images/Jervas_Dudley.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 10.06,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "The Narrator",
+      "output_path": "output/the_complete_works_of_h.p._lovecraft/images/The_Narrator.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 7.14,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Joe Slater/Slaader",
+      "output_path": "output/the_complete_works_of_h.p._lovecraft/images/Joe_SlaterSlaader.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 8.52,
+      "success": true,
+      "error_message": ""
+    }
+  ]
+}

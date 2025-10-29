@@ -1,0 +1,16 @@
+{
+  "character_name": "Alice",
+  "image_prompt": "A young girl of about 7-9 years old with a delicate, curious face. She has large, bright blue eyes filled with wonder and intelligence. Her long, golden blonde hair falls in soft waves, held back by a black ribbon headband. She wears a light blue puff-sleeved dress with a white pinafore, featuring intricate lace detailing and a bow at the back. White stockings and shiny black Mary Jane shoes complete her outfit. Her expression is a mix of surprise and determination, with slightly parted lips and raised eyebrows. Her posture suggests readiness for adventure, with one foot slightly forward and hands clasped in front of her chest. The character is rendered in a dreamy, watercolor-like style with soft edges and a subtle glow, evoking a sense of Victorian-era illustration with a fantastical twist.",
+  "style_tags": [
+    "whimsical",
+    "Victorian-inspired",
+    "storybook illustration",
+    "dreamlike",
+    "watercolor",
+    "fantastical"
+  ],
+  "book_context": "Alice's Adventures in Wonderland",
+  "chapter_references": [
+    "CHAPTER I. Down the Rabbit-Hole"
+  ]
+}

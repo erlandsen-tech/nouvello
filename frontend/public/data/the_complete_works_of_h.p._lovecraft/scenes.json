@@ -1,0 +1,663 @@
+[
+  {
+    "scene_number": 1,
+    "title": "The Mysterious Tomb",
+    "content": "Close by my home there lies a singular wooded hollow, in whose twilight deeps I spent most of my time; reading, thinking, and dreaming. Down its moss-covered slopes my first steps of infancy were taken, and around its grotesquely gnarled oak trees my first fancies of boyhood were woven. Well did I come to know the presiding dryads of those trees, and often have I watched their wild dances in the struggling beams of a waning moon\u2014but of these things I must not now speak. I will tell only of the lone tomb in the darkest of the hillside thickets; the deserted tomb of the Hydes, an old and exalted family whose last direct descendant had been laid within its black recesses many decades before my birth.\n\nThe vault to which I refer is of ancient granite, weathered and discoloured by the mists and dampness of generations. Excavated back into the hillside, the structure is visible only at the entrance. The door, a ponderous and forbidding slab of stone, hangs upon rusted iron hinges, and is fastened ajar in a queerly sinister way by means of heavy iron chains and padlocks, according to a gruesome fashion of half a century ago.",
+    "characters_present": [
+      "Jervas Dudley"
+    ],
+    "setting": "A wooded hollow near the narrator's home, with an ancient granite tomb in the darkest thicket",
+    "mood": "Mysterious, somber, and slightly ominous",
+    "image_prompt": "A young man standing before an ancient, weathered granite tomb, partially obscured by gnarled oak trees and overgrown foliage. The tomb's entrance is chained and padlocked, adding to the sense of mystery and unease.",
+    "image_type": "scene",
+    "image_file": "scene_01_the_mysterious_tomb.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 2,
+    "title": "The Tomb Exploration",
+    "content": "One morning at breakfast I came close to disaster by declaiming in palpably liquorish accents an effusion of eighteenth-century Bacchanalian mirth; a bit of Georgian playfulness never recorded in a book, which ran something like this:\n\nCome hither, my lads, with your tankards of ale,\nAnd drink to the present before it shall fail;\nPile each on your platter a mountain of beef,\nFor 'tis eating and drinking that bring us relief:\nSo fill up your glass,\nFor life will soon pass;\nWhen you're dead ye'll ne'er drink to your king or your lass!\n\nAnacreon had a red nose, so they say;\nBut what's a red nose if ye're happy and gay?\nGad split me! I'd rather be red whilst I'm here,\nThan white as a lily\u2014and dead half a year!\n\nSo Betty, my miss,\nCome give me a kiss;\nIn hell there's no innkeeper's daughter like this!",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "The narrator's home, during breakfast",
+    "mood": "Playful, carefree",
+    "image_prompt": "A man sitting at a breakfast table, reciting a rowdy, drunken poem with a mischievous grin on his face.",
+    "image_type": "scene",
+    "image_file": "scene_02_the_tomb_exploration.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 3,
+    "title": "The Vigil in the Bower",
+    "content": "the night in the bower outside the tomb; my sleep-filmed eyes fixed upon the crevice where the padlocked portal stood ajar! By what miracle had the watcher been thus deluded? I was now convinced that a supernatural agency protected me. Made bold by this heaven-sent circumstance, I began to resume perfect openness in going to the vault; confident that no one could witness my entrance.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "The bower outside the tomb, at night",
+    "mood": "Curious, hopeful, mystical",
+    "image_prompt": "The narrator, eyes fixed on the ajar padlock, surrounded by the darkness of the bower at night",
+    "image_type": "scene",
+    "image_file": "scene_03_the_vigil_in_the_bower.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 4,
+    "title": "The Phantom Mansion",
+    "content": "As I emerged from an intervening grove upon the plain before the ruin, I beheld in the misty moonlight a thing I had always vaguely expected. The mansion, gone for a century, once more reared its stately height to the raptured vision; every window ablaze with the splendour of many candles. Up the long drive rolled the coaches of the Boston gentry, whilst on foot came a numerous assemblage of powdered exquisites from the neighbouring mansions.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "The plain before the ruined mansion, illuminated by moonlight and candlelight",
+    "mood": "Mystical, dreamlike, anticipatory",
+    "image_prompt": "The narrator gazing upon the phantom mansion, with its windows ablaze and the gentry arriving by coach and on foot",
+    "image_type": "scene",
+    "image_file": "scene_04_the_phantom_mansion.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 5,
+    "title": "The Calamitous Revelry",
+    "content": "Inside the hall were music, laughter, and wine on every hand. Several faces I recognised; though I should have known them better had they been shrivelled or eaten away by death and decomposition. Amidst a wild and reckless throng I was the wildest and most abandoned. Gay blasphemy poured in torrents from my lips, and in my shocking sallies I heeded no law of God, Man, or Nature. Suddenly a peal of thunder, resonant even above the din of the swinish revelry, clave the very roof and laid a hush of fear upon the boisterous company.",
+    "characters_present": [
+      "Narrator",
+      "Revelers"
+    ],
+    "setting": "The interior of the phantom mansion, filled with music, laughter, and wine",
+    "mood": "Reckless, intoxicated, then struck with terror",
+    "image_prompt": "The narrator amid the wild and reckless revelry, as a sudden peal of thunder silences the boisterous company",
+    "image_type": "scene",
+    "image_file": "scene_05_the_calamitous_revelry.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 6,
+    "title": "Awakening to Voices",
+    "content": "The night of the first revelation was a sultry one. I must have fallen asleep from fatigue, for it was with a distinct sense of awakening that I heard the voices. Of those tones and accents I hesitate to speak; of their quality I will not speak; but I may say that they presented certain uncanny differences in vocabulary, pronunciation, and mode of utterance. Every shade of New England dialect, from the uncouth syllables of the Puritan colonists to the precise rhetoric of fifty years ago, seemed represented in that shadowy colloquy, though it was only later that I noticed the fact. At the time, indeed, my attention was distracted from this matter by another phenomenon; a phenomenon so fleeting that I could not take oath upon its reality. I barely fancied that as I awoke, a light had been hurriedly extinguished within the sunken sepulchre.",
+    "characters_present": [
+      "The Narrator"
+    ],
+    "setting": "A secluded, sylvan bower on an abandoned slope",
+    "mood": "Uncanny, unsettling",
+    "image_prompt": "A dimly lit chamber, with the narrator just waking up and catching a glimpse of a flickering light being extinguished in the distance",
+    "image_type": "scene",
+    "image_file": "scene_06_awakening_to_voices.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 7,
+    "title": "Entering the Vault",
+    "content": "It was in the soft glow of late afternoon that I first entered the vault on the abandoned slope. A spell was upon me, and my heart leaped with an exultation I can but ill describe. As I closed the door behind me and descended the dripping steps by the light of my lone candle, I seemed to know the way; and though the candle sputtered with the stifling reek of the place, I felt singularly at home in the musty, charnel-house air. Looking about me, I beheld many marble slabs bearing coffins, or the remains of coffins. Some of these were sealed and intact, but others had nearly vanished, leaving the silver handles and plates isolated amidst certain curious heaps of whitish dust. Upon one plate I read the name of Sir Geoffrey Hyde, who had come from Sussex in 1640 and died here a few years later. In a conspicuous alcove was one fairly well-preserved and untenanted casket, adorned with a single name which brought to me both a smile and a shudder. An odd impulse caused me to climb upon the broad slab, extinguish my candle, and lie down within the vacant box.",
+    "characters_present": [
+      "The Narrator"
+    ],
+    "setting": "The musty, dimly lit vault of the abandoned tomb",
+    "mood": "Compelled, unsettled",
+    "image_prompt": "The narrator, candle in hand, descending the dripping steps into the dimly lit vault, surrounded by the marble tombs and coffins",
+    "image_type": "scene",
+    "image_file": "scene_07_entering_the_vault.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 8,
+    "title": "The Forgotten Tomb",
+    "content": "years vaguely increased the always strong fascination which I felt for the forest-darkened sepulchre. One man only had perished in the fire. When the last of the Hydes was buried in this place of shade and stillness, the sad urnful of ashes had come from a distant land; to which the family had repaired when the mansion burned down. No one remains to lay flowers before the granite portal, and few care to brave the depressing shadows which seem to linger strangely about the water-worn stones.",
+    "characters_present": [
+      "The narrator"
+    ],
+    "setting": "A forgotten, forest-darkened tomb",
+    "mood": "Melancholic, contemplative",
+    "image_prompt": "A moss-covered, weathered granite tomb nestled among towering trees, its entrance partially obscured by overgrown vegetation.",
+    "image_type": "scene",
+    "image_file": "scene_08_the_forgotten_tomb.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 9,
+    "title": "Stumbling Upon the Entrance",
+    "content": "I shall never forget the afternoon when first I stumbled upon the half-hidden house of death. It was in mid-summer, when the alchemy of Nature transmutes the sylvan landscape to one vivid and almost homogeneous mass of green; when the senses are well-nigh intoxicated with the surging seas of moist verdure and the subtly indefinable odours of the soil and the vegetation. In such surroundings the mind loses its perspective; time and space become trivial and unreal, and echoes of a forgotten prehistoric past beat insistently upon the enthralled consciousness. When, upon forcing my way between two savage clumps of briers, I suddenly encountered the entrance of the vault, I had no knowledge of what I had discovered.",
+    "characters_present": [
+      "The narrator as a child"
+    ],
+    "setting": "A lush, overgrown forest in midsummer",
+    "mood": "Curious, enchanted",
+    "image_prompt": "A young boy, his clothes slightly disheveled, standing before a half-hidden, moss-covered granite doorway, his expression one of wonder and intrigue.",
+    "image_type": "scene",
+    "image_file": "scene_09_stumbling_upon_the_entrance.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 10,
+    "title": "Pondering the Tomb",
+    "content": "I felt that the great and sinister family of the burned-down mansion was in some way represented within the stone space I sought to explore. Mumbled tales of the weird rites and godless revels of bygone years in the ancient hall gave to me a new and potent interest in the tomb, before whose door I would sit for hours at a time each day. Once I thrust a candle within the nearly closed entrance, but could see nothing save a flight of damp stone steps leading downward. The odour of the place repelled yet bewitched me. I felt I had known it before, in a past remote beyond all recollection; beyond even my tenancy of the body I now possess.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "An ancient hillside tomb, shrouded in mystery and legend",
+    "mood": "Curious, yet unsettled and intrigued by the sinister aura of the tomb",
+    "image_prompt": "The narrator sitting before the tomb's entrance, gazing down the dark, damp stone steps, a single candle flickering in the shadows",
+    "image_type": "scene",
+    "image_file": "scene_10_pondering_the_tomb.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 11,
+    "title": "Theseus and the Tomb",
+    "content": "The year after I first beheld the tomb, I stumbled upon a worm-eaten translation of Plutarch's Lives in the book-filled attic of my home. Reading the life of Theseus, I was much impressed by that passage telling of the great stone beneath which the boyish hero was to find his tokens of destiny whenever he should become old enough to lift its enormous weight. This legend had the effect of dispelling my keenest impatience to enter the vault, for it made me feel that the time was not yet ripe. Later, I told myself, I should grow to a strength and ingenuity which might enable me to unfasten the heavily chained door with ease; but until then I would do better by conforming to what seemed the will of Fate.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "The narrator's home, surrounded by books in the attic",
+    "mood": "Reflective and patient, as the narrator contemplates the legend of Theseus and the great stone, and the need to wait for the right time to enter the tomb",
+    "image_prompt": "The narrator, seated in the attic surrounded by books, reading the passage about Theseus and the great stone",
+    "image_type": "scene",
+    "image_file": "scene_11_theseus_and_the_tomb.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 12,
+    "title": "Midnight Vigils",
+    "content": "I now formed the habit of listening very intently at the slightly open portal, choosing my favourite hours of midnight stillness for the odd vigil. By the time I came of age, I had made a small clearing in the thicket before the mould-stained facade of the hillside, allowing the surrounding vegetation to encircle and overhang the space like the walls and roof of a sylvan bower. This bower was my temple, the fastened door my shrine, and here I would lie outstretched on the mossy ground, thinking strange thoughts and dreaming strange dreams.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "The narrator's clearing, a secluded sylvan bower before the tomb's entrance, at the dead of night",
+    "mood": "Reverent, almost ritualistic, as the narrator embraces the tomb as a sacred space, meditating and dreaming in the stillness of the night",
+    "image_prompt": "The narrator, lying on the mossy ground in the clearing, gazing up at the tomb's facade through the overhanging vegetation, a look of intense focus and anticipation on their face",
+    "image_type": "scene",
+    "image_file": "scene_12_midnight_vigils.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 13,
+    "title": "Unearthing the Treasure-Trove",
+    "content": "Ceasing my futile and now objectless writhing, I watched the spectators as they viewed the treasure-trove, and was permitted to share in their discoveries. The box, whose fastenings were broken by the stroke which had unearthed it, contained many papers and objects of value; but I had eyes for one thing alone. It was the porcelain miniature of a young man in a smartly curled bag-wig, and bore the initials \"J. H.\" The face was such that as I gazed, I might well have been studying my mirror.",
+    "characters_present": [
+      "Narrator",
+      "Spectators"
+    ],
+    "setting": "The site of the unearthed treasure-trove",
+    "mood": "Curious, introspective",
+    "image_prompt": "A group of spectators examining the contents of an unearthed box, with the narrator captivated by a porcelain miniature portrait",
+    "image_type": "scene",
+    "image_file": "scene_13_unearthing_the_treasure_trove.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 14,
+    "title": "Confined in the Barred Room",
+    "content": "On the following day I was brought to this room with the barred windows, but I have been kept informed of certain things through an aged and simple-minded servitor, for whom I bore a fondness in infancy, and who like me loves the churchyard. What I have dared relate of my experiences within the vault has brought me only pitying smiles. My father, who visits me frequently, declares that at no time did I pass the chained portal, and swears that the rusted padlock had not been touched for fifty years when he examined it.",
+    "characters_present": [
+      "Narrator",
+      "Aged Servant",
+      "Father"
+    ],
+    "setting": "A barred room",
+    "mood": "Frustrated, perplexed",
+    "image_prompt": "The narrator sitting in a barred room, with an aged servant and the narrator's father visiting and dismissing his claims about the vault",
+    "image_type": "scene",
+    "image_file": "scene_14_confined_in_the_barred_room.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 1,
+    "title": "Examining the Monolith",
+    "content": "Dazed and frightened, yet not without a certain thrill of the scientist's or archaeologist's delight, I examined my surroundings more closely. The moon, now near the zenith, shone weirdly and vividly above the towering steeps that hemmed in the chasm, and revealed the fact that a far-flung body of water flowed at the bottom, winding out of sight in both directions, and almost lapping my feet as I stood on the slope. Across the chasm, the wavelets washed the base of the Cyclopean monolith; on whose surface I could now trace both inscriptions and crude sculptures. The writing was in a system of hieroglyphics unknown to me, and unlike anything I had ever seen in books; consisting for the most part of conventionalised aquatic symbols such as fishes, eels, octopi, crustaceans, molluscs, whales, and the like. Several characters obviously represented marine things which are unknown to the modern world, but whose decomposing forms I had observed on the ocean-risen plain.",
+    "characters_present": [
+      "The narrator"
+    ],
+    "setting": "At the bottom of a chasm, with a large monolith and a body of water",
+    "mood": "Dazed, frightened, yet intrigued and scientific",
+    "image_prompt": "The narrator standing before the massive Cyclopean monolith, examining its strange hieroglyphic inscriptions and carvings in the eerie moonlight",
+    "image_type": "scene",
+    "image_file": "scene_01_examining_the_monolith.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 2,
+    "title": "The Monstrous Arrival",
+    "content": "Then suddenly I saw it. With only a slight churning to mark its rise to the surface, the thing slid into view above the dark waters. Vast, Polyphemus-like, and loathsome, it darted like a stupendous monster of nightmares to the monolith, about which it flung its gigantic scaly arms, the while it bowed its hideous head and gave vent to certain measured sounds. I think I went mad then.",
+    "characters_present": [
+      "The narrator",
+      "The monstrous creature"
+    ],
+    "setting": "The chasm with the monolith, as the monstrous creature emerges from the dark waters",
+    "mood": "Horrified, terrified, and on the verge of madness",
+    "image_prompt": "The massive, Polyphemus-like creature emerging from the waters and wrapping its gigantic scaly arms around the ancient monolith, as the narrator looks on in horror",
+    "image_type": "scene",
+    "image_file": "scene_02_the_monstrous_arrival.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 3,
+    "title": "Solitary Suffering",
+    "content": "I am writing this under an appreciable mental strain, since by tonight I shall be no more. Penniless, and at the end of my supply of the drug which alone makes life endurable, I can bear the torture no longer; and shall cast myself from this garret window into the squalid street below. Do not think from my slavery to morphine that I am a weakling or a degenerate. When you have read these hastily scrawled pages you may guess, though never fully realise, why it is that I must have forgetfulness or death.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "A squalid garret room",
+    "mood": "Desperate, tortured",
+    "image_prompt": "A haggard man sitting at a desk, clutching a sheet of paper, with a window overlooking a grim city street in the background.",
+    "image_type": "scene",
+    "image_file": "scene_03_solitary_suffering.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 4,
+    "title": "The Unnatural Expanse",
+    "content": "The change happened whilst I slept. Its details I shall never know; for my slumber, though troubled and dream-infested, was continuous. When at last I awaked, it was to discover myself half sucked into a slimy expanse of hellish black mire which extended about me in monotonous undulations as far as I could see, and in which my boat lay grounded some distance away. Though one might well imagine that my first sensation would be of wonder at so prodigious and unexpected a transformation of scenery, I was in reality more horrified than astonished; for there was in the air and in the rotting soil a sinister quality which chilled me to the very core. The region was putrid with the carcasses of decaying fish, and of other less describable things which I saw protruding from the nasty mud of the unending plain.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "A vast, desolate expanse of black, slimy mire",
+    "mood": "Horrified, oppressed",
+    "image_prompt": "A lone figure in a small boat, surrounded by a vast, desolate landscape of black, slimy mud and the decaying remains of strange creatures.",
+    "image_type": "scene",
+    "image_file": "scene_04_the_unnatural_expanse.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 5,
+    "title": "Haunting Visions",
+    "content": "It is at night, especially when the moon is gibbous and waning, that I see the thing. I tried morphine; but the drug has given only transient surcease, and has drawn me into its clutches as a hopeless slave. So now I am to end it all, having written a full account for the information or the contemptuous amusement of my fellow-men. Often I ask myself if it could not all have been a pure phantasm\u2014a mere freak of fever as I lay sun-stricken and raving in the open boat after my escape from the German man-of-war. This I ask myself, but ever does there come before me a hideously vivid vision in reply. I cannot think of the deep sea without shuddering at the nameless things that may at this very moment be crawling and floundering on its slimy bed, worshipping their ancient stone idols and carving their own detestable likenesses on submarine obelisks of water-soaked granite.",
+    "characters_present": "The narrator",
+    "setting": "A dimly lit room at night, with the moon casting an eerie glow",
+    "mood": "Unsettling, haunting, and desperate",
+    "image_prompt": "The narrator sitting in a dimly lit room, a haunted expression on their face as they stare out a window at the waning gibbous moon",
+    "image_type": "scene",
+    "image_file": "scene_05_haunting_visions.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 6,
+    "title": "The Looming Threat",
+    "content": "I dream of a day when they may rise above the billows to drag down in their reeking talons the remnants of puny, war-exhausted mankind\u2014of a day when the land shall sink, and the dark ocean floor shall ascend amidst universal pandemonium.",
+    "characters_present": "The narrator",
+    "setting": "A dark, ominous seascape with the ocean floor rising ominously",
+    "mood": "Foreboding, apocalyptic, and horrific",
+    "image_prompt": "A nightmarish vision of the ocean floor rising, with monstrous, tentacled creatures emerging from the depths to engulf humanity",
+    "image_type": "scene",
+    "image_file": "scene_06_the_looming_threat.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 7,
+    "title": "The Final Escape",
+    "content": "The end is near. I hear a noise at the door, as of some immense slippery body lumbering against it. It shall not find me. God, that hand! The window! The window!",
+    "characters_present": "The narrator",
+    "setting": "A confined, claustrophobic room with the narrator desperately trying to escape",
+    "mood": "Intense, terrified, and claustrophobic",
+    "image_prompt": "The narrator crouched in a room, eyes wide with fear, as a massive, otherworldly limb intrudes through the doorway",
+    "image_type": "scene",
+    "image_file": "scene_07_the_final_escape.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 8,
+    "title": "Adrift in the Boat",
+    "content": "Nor were there any sea-fowl to prey upon the dead things.\nFor several hours I sat thinking or brooding in the boat, which lay upon its side and afforded a slight shade as the sun moved across the heavens. As the day progressed, the ground lost some of its stickiness, and seemed likely to dry sufficiently for travelling purposes in a short time. That night I slept but little, and the next day I made for myself a pack containing food and water, preparatory to an overland journey in search of the vanished sea and possible rescue.",
+    "characters_present": "The narrator",
+    "setting": "A boat adrift on a desolate, sticky plain",
+    "mood": "Brooding, contemplative, determined",
+    "image_prompt": "The narrator sitting in a boat on a barren, dried-up landscape, with the sun moving overhead",
+    "image_type": "scene",
+    "image_file": "scene_08_adrift_in_the_boat.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 9,
+    "title": "The Mysterious Mound",
+    "content": "On the third morning I found the soil dry enough to walk upon with ease. The odour of the fish was maddening; but I was too much concerned with graver things to mind so slight an evil, and set out boldly for an unknown goal. All day I forged steadily westward, guided by a far-away hummock which rose higher than any other elevation on the rolling desert. That night I encamped, and on the following day still travelled toward the hummock, though that object seemed scarcely nearer than when I had first espied it. By the fourth evening I attained the base of the mound, which turned out to be much higher than it had appeared from a distance; an intervening valley setting it out in sharper relief from the general surface. Too weary to ascend, I slept in the shadow of the hill.",
+    "characters_present": "The narrator",
+    "setting": "A vast, rolling desert with a mysterious mound in the distance",
+    "mood": "Determined, weary, curious",
+    "image_prompt": "The narrator approaching the towering mound in the distance, the surrounding landscape stretching out before them",
+    "image_type": "scene",
+    "image_file": "scene_09_the_mysterious_mound.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 10,
+    "title": "The Chasm's Edge",
+    "content": "I know not why my dreams were so wild that night; but ere the waning and fantastically gibbous moon had risen far above the eastern plain, I was awake in a cold perspiration, determined to sleep no more. Such visions as I had experienced were too much for me to endure again. And in the glow of the moon I saw how unwise I had been to travel by day. Without the glare of the parching sun, my journey would have cost me less energy; indeed, I now felt quite able to perform the ascent which had deterred me at sunset. Picking up my pack, I started for the crest of the eminence.\nI have said that the unbroken monotony of the rolling plain was a source of vague horror to me; but I think my horror was greater when I gained the summit of the mound and looked down the other side into an immeasurable pit or canyon, whose black recesses the moon had not yet soared high enough to illumine. I felt myself on the edge of the world; peering over the rim into a fathomless chaos of eternal night.",
+    "characters_present": "The narrator",
+    "setting": "The top of the mysterious mound, overlooking a vast, dark chasm",
+    "mood": "Horrified, awed, unsettled",
+    "image_prompt": "The narrator standing at the edge of the mound, gazing down into the deep, shadowy chasm below, the moonlight casting an eerie glow over the scene",
+    "image_type": "scene",
+    "image_file": "scene_10_the_chasms_edge.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 11,
+    "title": "The Mysterious Monolith",
+    "content": "As the moon climbed higher in the sky, I began to see that the slopes of the valley were not quite so perpendicular as I had imagined. Ledges and outcroppings of rock afforded fairly easy foot-holds for a descent, whilst after a drop of a few hundred feet, the declivity became very gradual. Urged on by an impulse which I cannot definitely analyse, I scrambled with difficulty down the rocks and stood on the gentler slope beneath, gazing into the Stygian deeps where no light had yet penetrated.\nAll at once my attention was captured by a vast and singular object on the opposite slope, which rose steeply about an hundred yards ahead of me; an object that gleamed whitely in the newly bestowed rays of the ascending moon. That it was merely a gigantic piece of stone, I soon assured myself; but I was conscious of a distinct impression that its contour and position were not altogether the work of Nature.",
+    "characters_present": "The narrator",
+    "setting": "The interior of the dark chasm, with a mysterious monolith visible in the distance",
+    "mood": "Curious, unsettled, intrigued",
+    "image_prompt": "The narrator descending into the chasm, their gaze fixed on the massive, gleaming monolith in the distance",
+    "image_type": "scene",
+    "image_file": "scene_11_the_mysterious_monolith.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 1,
+    "title": "The Watchtower Vigil",
+    "content": "Alone I mounted the tower, for every man of stout body was needed in the passes below. My brain was sore dazed with excitement and fatigue, for I had not slept in many days; yet was my purpose firm, for I loved my native land of Lomar, and the marble city of Olatho\u00eb that lies betwixt the peaks of Noton and Kadiphonek.\n\nBut as I stood in the tower's topmost chamber, I beheld the horned waning moon, red and sinister, quivering through the vapours that hovered over the distant valley of Banof. And through an opening in the roof glittered the pale Pole Star, fluttering as if alive, and leering like a fiend and tempter. Methought its spirit whispered evil counsel, soothing me to traitorous somnolence with a damnable rhythmical promise which it repeated over and over.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "The watchtower of Thapnen, overlooking the peaks of Noton and Kadiphonek",
+    "mood": "Tense, weary, unsettled",
+    "image_prompt": "A lone figure stands vigilant in the dimly lit watchtower, gazing out at the haunting red moon and flickering Pole Star above.",
+    "image_type": "scene",
+    "image_file": "scene_01_the_watchtower_vigil.png",
+    "chapter_number": 4,
+    "chapter_title": "Polaris"
+  },
+  {
+    "scene_number": 2,
+    "title": "Nightmarish Visions",
+    "content": "I sometimes scream frantically, begging the dream-creatures around me to waken me ere the Inutos steal up the pass behind the peak Noton and take the citadel by surprise; but these creatures are daemons, for they laugh at me and tell me I am not dreaming. They mock me whilst I sleep, and whilst the squat yellow foe may be creeping silently upon us. I have failed in my duty and betrayed the marble city of Olatho\u00eb; I have proven false to Alos, my friend and commander. But still these shadows of my dream deride me.",
+    "characters_present": [
+      "The narrator",
+      "Dream-creatures"
+    ],
+    "setting": "Inside a dream or nightmare",
+    "mood": "Panicked, guilty, hopeless",
+    "image_prompt": "The narrator desperately trying to wake from a nightmare as shadowy dream-creatures mock and deride them",
+    "image_type": "scene",
+    "image_file": "scene_02_nightmarish_visions.png",
+    "chapter_number": 4,
+    "chapter_title": "Polaris"
+  },
+  {
+    "scene_number": 3,
+    "title": "Unsettling Visions of the Pole Star",
+    "content": "They say there is no land of Lomar, save in my nocturnal imaginings; that in those realms where the Pole Star shines high and red Aldebaran crawls low around the horizon, there has been naught save ice and snow for thousands of years, and never a man save squat yellow creatures, blighted by the cold, whom they call \"Esquimaux\". And as I writhe in my guilty agony, frantic to save the city whose peril every moment grows, and vainly striving to shake off this unnatural dream of a house of stone and brick south of a sinister swamp and a cemetery on a low hillock; the Pole Star, evil and monstrous, leers down from the black vault, winking hideously like an insane watching eye which strives to convey some strange message, yet recalls nothing save that it once had a message to convey.",
+    "characters_present": [
+      "The narrator"
+    ],
+    "setting": "The night sky, with the Pole Star prominent",
+    "mood": "Unsettling, ominous, foreboding",
+    "image_prompt": "The Pole Star shining ominously down from the night sky, as the narrator struggles with their disturbing visions",
+    "image_type": "scene",
+    "image_file": "scene_03_unsettling_visions_of_the_pole_star.png",
+    "chapter_number": 4,
+    "chapter_title": "Polaris"
+  },
+  {
+    "scene_number": 4,
+    "title": "The Watchful Pole Star",
+    "content": "Into the north window of my chamber glows the Pole Star with uncanny light. All through the long hellish hours of blackness it shines there. And in the autumn of the year, when the winds from the north curse and whine, and the red-leaved trees of the swamp mutter things to one another in the small hours of the morning under the horned waning moon, I sit by the casement and watch that star. Down from the heights reels the glittering Cassiopeia as the hours wear on, while Charles' Wain lumbers up from behind the vapour-soaked swamp trees that sway in the night-wind. Just before dawn Arcturus winks ruddily from above the cemetery on the low hillock, and Coma Berenices shimmers weirdly afar off in the mysterious east; but still the Pole Star leers down from the same place in the black vault, winking hideously like an insane watching eye which strives to convey some strange message, yet recalls nothing save that it once had a message to convey.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "The narrator's chamber, with a view of the night sky and the Pole Star.",
+    "mood": "Ominous, unsettling, and contemplative.",
+    "image_prompt": "The Pole Star shining through a window on a cold, autumn night, with the swamps and forests in the background.",
+    "image_type": "scene",
+    "image_file": "scene_04_the_watchful_pole_star.png",
+    "chapter_number": 4,
+    "chapter_title": "Polaris"
+  },
+  {
+    "scene_number": 5,
+    "title": "The Mysterious City",
+    "content": "And it was under a horned waning moon that I saw the city for the first time. Still and somnolent did it lie, on a strange plateau in a hollow betwixt strange peaks. Of ghastly marble were its walls and its towers, its columns, domes, and pavements. In the marble streets were marble pillars, the upper parts of which were carven into the images of grave bearded men. The air was warm and stirred not. And overhead, scarce ten degrees from the zenith, glowed that watching Pole Star. Long did I gaze on the city, but the day came not. When the red Aldebaran, which blinked low in the sky but never set, had crawled a quarter of the way around the horizon, I saw light and motion in the houses and the streets. Forms strangely robed, but at once noble and familiar, walked abroad, and under the horned waning moon men talked wisdom in a tongue which I understood, though it was unlike any language I had ever known.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "A mysterious, ancient city on a plateau between strange peaks, bathed in the light of the Pole Star and a waning moon.",
+    "mood": "Eerie, otherworldly, and captivating.",
+    "image_prompt": "The ancient, marble city on the plateau, with the Pole Star and a waning moon in the sky above.",
+    "image_type": "scene",
+    "image_file": "scene_05_the_mysterious_city.png",
+    "chapter_number": 4,
+    "chapter_title": "Polaris"
+  },
+  {
+    "scene_number": 1,
+    "title": "The Curious Case of Joe Slater",
+    "content": "I have frequently wondered if the majority of mankind ever pause to reflect upon the occasionally titanic significance of dreams, and of the obscure world to which they belong. Whilst the greater number of our nocturnal visions are perhaps no more than faint and fantastic reflections of our waking experiences\u2014Freud to the contrary with his puerile symbolism\u2014there are still a certain remainder whose immundane and ethereal character permits of no ordinary interpretation, and whose vaguely exciting and disquieting effect suggests possible minute glimpses into a sphere of mental existence no less important than physical life, yet separated from that life by an all but impassable barrier. From my experience I cannot doubt but that man, when lost to terrestrial consciousness, is indeed sojourning in another and uncorporeal life of far different nature from the life we know; and of which only the slightest and most indistinct memories linger after waking. From those blurred and fragmentary memories we may infer much, yet prove little. We may guess that in dreams life, matter, and vitality, as the earth knows such things, are not necessarily constant; and that time and space do not exist as our waking selves comprehend them. Sometimes I believe that this less material life is our truer life, and that our vain presence on the terraqueous globe is itself the secondary or merely virtual phenomenon.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "A study or library, late at night",
+    "mood": "Introspective, speculative, contemplative",
+    "image_prompt": "A man sitting in a dimly lit room, gazing out a window at the night sky, lost in thought about the nature of dreams and consciousness.",
+    "image_type": "scene",
+    "image_file": "scene_01_the_curious_case_of_joe_slater.png",
+    "chapter_number": 5,
+    "chapter_title": "Beyond the Wall of Sleep"
+  },
+  {
+    "scene_number": 2,
+    "title": "Slater's Mental Attack",
+    "content": "On the third morning occurred the first of the man's mental attacks. After some show of uneasiness in sleep, he burst forth into a frenzy so powerful that the combined efforts of four men were needed to bind him in a strait-jacket. The alienists listened with keen attention to his words, since their curiosity had been aroused to a high pitch by the suggestive yet mostly conflicting and incoherent stories of his family and neighbours. Slater raved for upward of fifteen minutes, babbling in his backwoods dialect of great edifices of light, oceans of space, strange music, and shadowy mountains and valleys. But most of all did he dwell upon some mysterious blazing entity that shook and laughed and mocked at him. This vast, vague personality seemed to have done him a terrible wrong, and to kill it in triumphant revenge was his paramount desire. In order to reach it, he said, he would soar through abysses of emptiness, burning every obstacle that stood in his way. Thus ran his discourse, until with the greatest suddenness he ceased. The fire of madness died from his eyes, and in dull wonder he looked at his questioners and asked why he was bound.",
+    "characters_present": [
+      "Slater",
+      "Alienists"
+    ],
+    "setting": "Asylum",
+    "mood": "Tense, chaotic",
+    "image_prompt": "Slater raving in a frenzy, strapped to a bed, while alienists watch with keen interest",
+    "image_type": "scene",
+    "image_file": "scene_02_slaters_mental_attack.png",
+    "chapter_number": 5,
+    "chapter_title": "Beyond the Wall of Sleep"
+  },
+  {
+    "scene_number": 3,
+    "title": "Slater's Quiet Hours",
+    "content": "He seemed to sense a certain friendliness in me; born no doubt of the interest I could not conceal, and the gentle manner in which I questioned him. Not that he ever recognised me during his attacks, when I hung breathlessly upon his chaotic but cosmic word-pictures; but he knew me in his quiet hours, when he would sit by his barred window weaving baskets of straw and willow, and perhaps pining for the mountain freedom he could never enjoy again.",
+    "characters_present": [
+      "Slater",
+      "Narrator"
+    ],
+    "setting": "Asylum, Slater's room",
+    "mood": "Pensive, melancholic",
+    "image_prompt": "Slater sitting by a barred window, weaving a basket, with a melancholic expression on his face",
+    "image_type": "scene",
+    "image_file": "scene_03_slaters_quiet_hours.png",
+    "chapter_number": 5,
+    "chapter_title": "Beyond the Wall of Sleep"
+  },
+  {
+    "scene_number": 4,
+    "title": "Slater's Bizarre Outbursts",
+    "content": "beyond the ordinary time, and upon waking would often talk of unknown things in a manner so bizarre as to inspire fear even in the hearts of an unimaginative populace. Not that his form of language was at all unusual, for he never spoke save in the debased patois of his environment; but the tone and tenor of his utterances were of such mysterious wildness, that none might listen without apprehension. He himself was generally as terrified and baffled as his auditors, and within an hour after awakening would forget all that he had said, or at least all that had caused him to say what he did; relapsing into a bovine, half-amiable normality like that of the other hill-dwellers.",
+    "characters_present": [
+      "Slater"
+    ],
+    "setting": "Slater's cabin in the hills",
+    "mood": "Unsettling, mysterious",
+    "image_prompt": "Slater sitting up abruptly in bed, eyes wild as he shouts strange, incomprehensible words to a group of frightened onlookers",
+    "image_type": "scene",
+    "image_file": "scene_04_slaters_bizarre_outbursts.png",
+    "chapter_number": 5,
+    "chapter_title": "Beyond the Wall of Sleep"
+  },
+  {
+    "scene_number": 5,
+    "title": "Slater's Violent Outburst",
+    "content": "One day near noon, after a profound sleep begun in a whiskey debauch at about five of the previous afternoon, the man had roused himself most suddenly; with ululations so horrible and unearthly that they brought several neighbours to his cabin\u2014a filthy sty where he dwelt with a family as indescribable as himself. Rushing out into the snow, he had flung his arms aloft and commenced a series of leaps directly upward in the air; the while shouting his determination to reach some 'big, big cabin with brightness in the roof and walls and floor, and the loud queer music far away'. As two men of moderate size sought to restrain him, he had struggled with maniacal force and fury, screaming of his desire and need to find and kill a certain 'thing that shines and shakes and laughs'. At length, after temporarily felling one of his detainers with a sudden blow, he had flung himself upon the other in a daemoniac ecstasy of bloodthirstiness, shrieking fiendishly that he would 'jump high in the air and burn his way through anything that stopped him'.",
+    "characters_present": [
+      "Slater",
+      "Neighbors"
+    ],
+    "setting": "Outside Slater's cabin in the snow",
+    "mood": "Chaotic, violent, supernatural",
+    "image_prompt": "Slater in a frenzy, leaping and flailing his arms as he shouts at the sky, with a group of frightened neighbors trying to restrain him",
+    "image_type": "scene",
+    "image_file": "scene_05_slaters_violent_outburst.png",
+    "chapter_number": 5,
+    "chapter_title": "Beyond the Wall of Sleep"
+  },
+  {
+    "scene_number": 6,
+    "title": "Experimenting with the Cosmic Radio",
+    "content": "Now, in my intense desire to probe into the dream life of Joe Slater, I sought these instruments again; and spent several days in repairing them for action. When they were complete once more I missed no opportunity for their trial. At each outburst of Slater's violence, I would fit the transmitter to his forehead and the receiver to my own; constantly making delicate adjustments for various hypothetical wave-lengths of intellectual energy. I had but little notion of how the thought-impressions would, if successfully conveyed, arouse an intelligent response in my brain; but I felt certain that I could detect and interpret them. Accordingly I continued my experiments, though informing no one of their nature.",
+    "characters_present": [
+      "Narrator",
+      "Joe Slater"
+    ],
+    "setting": "A laboratory or medical facility, with the narrator preparing and using the 'cosmic radio' apparatus on Joe Slater.",
+    "mood": "Intense scientific curiosity and anticipation, with an underlying sense of mystery and uncertainty.",
+    "image_prompt": "The narrator carefully fitting the 'cosmic radio' transmitter to Joe Slater's forehead, while the receiver is connected to the narrator's own head. The two men are surrounded by various scientific instruments and equipment.",
+    "image_type": "scene",
+    "image_file": "scene_06_experimenting_with_the_cosmic_radio.png",
+    "chapter_number": 5,
+    "chapter_title": "Beyond the Wall of Sleep"
+  },
+  {
+    "scene_number": 7,
+    "title": "Entering the Dream-World",
+    "content": "The sound of weird lyric melody was what aroused me. Chords, vibrations, and harmonic ecstasies echoed passionately on every hand; while on my ravished sight burst the stupendous spectacle of ultimate beauty. Walls, columns, and architraves of living fire blazed effulgently around the spot where I seemed to float in air; extending upward to an infinitely high vaulted dome of indescribable splendour. Blending with this display of palatial magnificence, or rather, supplanting it at times in kaleidoscopic rotation, were glimpses of wide plains and graceful valleys, high mountains and inviting grottoes; covered with every lovely attribute of scenery which my delighted eye could conceive of, yet formed wholly of some glowing, ethereal, plastic entity, which in consistency partook as much of spirit as of matter.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "A surreal, dreamlike realm of unearthly beauty and wonder, filled with shifting, ethereal landscapes and architectural wonders of light and energy.",
+    "mood": "Awe-struck, enchanted, and transported to a realm beyond normal experience.",
+    "image_prompt": "The narrator floating in mid-air, surrounded by a vast, luminous chamber of living fire and shifting ethereal landscapes. The scene should convey a sense of boundless, transcendent beauty.",
+    "image_type": "scene",
+    "image_file": "scene_07_entering_the_dream_world.png",
+    "chapter_number": 5,
+    "chapter_title": "Beyond the Wall of Sleep"
+  },
+  {
+    "scene_number": 8,
+    "title": "The Madman's Dreams",
+    "content": "By degrees I commenced to feel an overwhelming wonder at the mad and fantastic conceptions of Joe Slater. The man himself was pitiably inferior in mentality and language alike; but his glowing, titanic visions, though described in a barbarous and disjointed jargon, were assuredly things which only a superior or even exceptional brain could conceive. How, I often asked myself, could the stolid imagination of a Catskill degenerate conjure up sights whose very possession argued a lurking spark of genius? How could any backwoods dullard have gained so much as an idea of those glittering realms of supernal radiance and space about which Slater ranted in his furious delirium?",
+    "characters_present": [
+      "the narrator",
+      "Joe Slater"
+    ],
+    "setting": "A medical institution, in the narrator's office",
+    "mood": "Contemplative, curious",
+    "image_prompt": "The narrator sitting at his desk, deep in thought, as he listens to Slater's vivid descriptions of his dreams.",
+    "image_type": "scene",
+    "image_file": "scene_08_the_madmans_dreams.png",
+    "chapter_number": 5,
+    "chapter_title": "Beyond the Wall of Sleep"
+  },
+  {
+    "scene_number": 9,
+    "title": "Slater's Dream Realm",
+    "content": "And yet I could extract nothing definite from the man. The sum of all my investigation was, that in a kind of semi-uncorporeal dream life Slater wandered or floated through resplendent and prodigious valleys, meadows, gardens, cities, and palaces of light; in a region unbounded and unknown to man. That there he was no peasant or degenerate, but a creature of importance and vivid life; moving proudly and dominantly, and checked only by a certain deadly enemy, who seemed to be a being of visible yet ethereal structure, and who did not appear to be of human shape, since Slater never referred to it as a man, or as aught save a thing.",
+    "characters_present": [
+      "the narrator",
+      "Joe Slater"
+    ],
+    "setting": "The narrator's office, as Slater describes his dreams",
+    "mood": "Intrigued, imaginative",
+    "image_prompt": "A fantastical landscape of glittering, otherworldly realms, with Slater floating through the scene in a state of dreamlike wonder.",
+    "image_type": "scene",
+    "image_file": "scene_09_slaters_dream_realm.png",
+    "chapter_number": 5,
+    "chapter_title": "Beyond the Wall of Sleep"
+  },
+  {
+    "scene_number": 10,
+    "title": "The Narrator's Theories",
+    "content": "This impression was sustained by his frequent references to flying through space and burning all that impeded his progress. Yet these conceptions were formulated in rustic words wholly inadequate to convey them, a circumstance which drove me to the conclusion that if a true dream-world indeed existed, oral language was not its medium for the transmission of thought. Could it be that the dream-soul inhabiting this inferior body was desperately struggling to speak things which the simple and halting tongue of dulness could not utter? Could it be that I was face to face with intellectual emanations which would explain the mystery if I could but learn to discover and read them?",
+    "characters_present": [
+      "the narrator"
+    ],
+    "setting": "The narrator's office, as he ponders Slater's descriptions",
+    "mood": "Speculative, intrigued",
+    "image_prompt": "The narrator sitting at his desk, surrounded by scientific equipment, lost in thought as he tries to make sense of Slater's dream experiences.",
+    "image_type": "scene",
+    "image_file": "scene_10_the_narrators_theories.png",
+    "chapter_number": 5,
+    "chapter_title": "Beyond the Wall of Sleep"
+  },
+  {
+    "scene_number": 11,
+    "title": "Realm of Familiar Sights and Sounds",
+    "content": "an realm I dwelt not as a stranger, for each sight and sound was familiar to me; just as it had been for uncounted aeons of eternity before, and would be for like eternities to come.\nThen the resplendent aura of my brother of light drew near and held colloquy with me, soul to soul, with silent and perfect interchange of thought. The hour was one of approaching triumph, for was not my fellow-being escaping at last from a degrading periodic bondage; escaping forever, and preparing to follow the accursed oppressor even unto the uttermost fields of ether, that upon it might be wrought a flaming cosmic vengeance which would shake the spheres?",
+    "characters_present": [
+      "the narrator",
+      "the 'brother of light'"
+    ],
+    "setting": "a dreamlike, ethereal realm",
+    "mood": "anticipatory, triumphant",
+    "image_prompt": "Two ethereal, luminous beings conversing in a vast, otherworldly landscape of glowing lights and nebulae",
+    "image_type": "scene",
+    "image_file": "scene_11_realm_of_familiar_sights_and_sounds.png",
+    "chapter_number": 5,
+    "chapter_title": "Beyond the Wall of Sleep"
+  },
+  {
+    "scene_number": 12,
+    "title": "Slater's Transformation",
+    "content": "A well-defined shock separates my final impression of the fading scene of light from my sudden and somewhat shamefaced awakening and straightening up in my chair as I saw the dying figure on the couch move hesitantly. Joe Slater was indeed awaking, though probably for the last time. As I looked more closely, I saw that in the sallow cheeks shone spots of colour which had never before been present. The lips, too, seemed unusual; being tightly compressed, as if by the force of a stronger character than had been Slater's. The whole face finally began to grow tense, and the head turned restlessly with closed eyes. I did not arouse the sleeping nurse, but readjusted the slightly disarranged head-bands of my telepathic 'radio', intent to catch any parting message the dreamer might have to deliver. All at once the head turned sharply in my direction and the eyes fell open, causing me to stare in blank amazement at what I beheld. The man who had been Joe Slater, the Catskill decadent, was now gazing at me with a pair of luminous, expanded eyes whose blue seemed subtly to have deepened. Neither mania nor degeneracy was visible in that gaze, and I felt beyond a doubt that I was viewing a face behind which lay an active mind of high order.",
+    "characters_present": [
+      "the narrator",
+      "Joe Slater"
+    ],
+    "setting": "a room with a couch where Slater is resting",
+    "mood": "startled, curious, amazed",
+    "image_prompt": "Joe Slater's face transforming from a sallow, weary expression to one of intense intelligence and luminosity, with his eyes wide open and fixed on the narrator",
+    "image_type": "scene",
+    "image_file": "scene_12_slaters_transformation.png",
+    "chapter_number": 5,
+    "chapter_title": "Beyond the Wall of Sleep"
+  },
+  {
+    "scene_number": 13,
+    "title": "Discovery of the Nova Persei",
+    "content": "On February 22, 1901, a marvellous new star was discovered by Dr. Anderson, of Edinburgh, not very far from Algol. No star had been visible at that point before. Within twenty-four hours the stranger had become so bright that it outshone Capella. In a week or two it had visibly faded, and in the course of a few months it was hardly discernible with the naked eye.",
+    "characters_present": [
+      "Dr. Anderson"
+    ],
+    "setting": "Edinburgh observatory, night sky",
+    "mood": "Awe, wonder, discovery",
+    "image_prompt": "A starry night sky, with a bright new star suddenly appearing and outshining the surrounding constellations. Dr. Anderson, an astronomer, gazes up in amazement at the unexpected celestial phenomenon.",
+    "image_type": "scene",
+    "image_file": "scene_13_discovery_of_the_nova_persei.png",
+    "chapter_number": 5,
+    "chapter_title": "Beyond the Wall of Sleep"
+  },
+  {
+    "scene_number": 14,
+    "title": "The Cosmic Traveler's Farewell",
+    "content": "He was too much of an animal, too little a man; yet it is through his deficiency that you have come to discover me, for the cosmic and planet souls rightly should never meet. He has been my torment and diurnal prison for forty-two of your terrestrial years. I am an entity like that which you yourself become in the freedom of dreamless sleep. I am your brother of light, and have floated with you in the effulgent valleys. It is not permitted me to tell your waking earth-self of your real self, but we are all roamers of vast spaces and travellers in many ages. Next year I may be dwelling in the dark Egypt which you call ancient, or in the cruel empire of Tsan-Chan which is to come three thousand years hence. You and I have drifted to the worlds that reel about the red Arcturus, and dwelt in the bodies of the insect-philosophers that crawl proudly over the fourth moon of Jupiter. How little does the earth-self know of life and its extent! How little, indeed, ought it to know for its own tranquillity! Of the oppressor I cannot speak. You on earth have unwittingly felt its distant presence\u2014you who without knowing idly gave to its blinking beacon the name of Algol, the Daemon-Star. It is to meet and conquer the oppressor that I have vainly striven for aeons, held back by bodily encumbrances. Tonight I go as a Nemesis bearing just and blazingly cataclysmic vengeance. Watch me in the sky close by the Daemon-Star.",
+    "characters_present": [
+      "the cosmic entity",
+      "the narrator"
+    ],
+    "setting": "a hospital room, with the dying Joe Slater on the couch",
+    "mood": "somber, philosophical, and ethereal",
+    "image_prompt": "A glowing, ethereal figure emerging from the body of the dying Joe Slater, gazing out the window towards the night sky and the 'Daemon-Star'.",
+    "image_type": "scene",
+    "image_file": "scene_14_the_cosmic_travelers_farewell.png",
+    "chapter_number": 5,
+    "chapter_title": "Beyond the Wall of Sleep"
+  }
+]

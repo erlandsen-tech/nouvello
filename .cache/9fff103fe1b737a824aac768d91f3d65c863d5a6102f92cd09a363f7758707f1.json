@@ -1,0 +1,16 @@
+{
+  "character_name": "Alice",
+  "image_prompt": "A young girl with a petite, slender frame and rosy cheeks. Alice's shoulder-length blonde hair cascades in delicate waves, framing her round, inquisitive face. Her large, hazel eyes hold an expression of bewilderment, as if she is constantly trying to make sense of the strange world around her. She wears a simple, blue dress with a white pinafore, the fabric flowing gracefully as she moves. Alice's features are rendered in a whimsical, fanciful style, with a slight distortion that lends an air of surreal enchantment to her appearance. Her face is equal parts childlike innocence and growing frustration, reflecting the tension of her fantastical journey in Wonderland.",
+  "style_tags": [
+    "surreal",
+    "fairytale",
+    "absurdist",
+    "fanciful",
+    "colorful"
+  ],
+  "book_context": "Alice in Wonderland",
+  "chapter_references": [
+    "CHAPTER II. The Pool of Tears",
+    "CHAPTER IV. The Rabbit Sends in a Little Bill"
+  ]
+}

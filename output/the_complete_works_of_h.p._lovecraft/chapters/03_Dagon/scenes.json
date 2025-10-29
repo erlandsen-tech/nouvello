@@ -1,0 +1,154 @@
+[
+  {
+    "scene_number": 1,
+    "title": "Examining the Monolith",
+    "content": "Dazed and frightened, yet not without a certain thrill of the scientist's or archaeologist's delight, I examined my surroundings more closely. The moon, now near the zenith, shone weirdly and vividly above the towering steeps that hemmed in the chasm, and revealed the fact that a far-flung body of water flowed at the bottom, winding out of sight in both directions, and almost lapping my feet as I stood on the slope. Across the chasm, the wavelets washed the base of the Cyclopean monolith; on whose surface I could now trace both inscriptions and crude sculptures. The writing was in a system of hieroglyphics unknown to me, and unlike anything I had ever seen in books; consisting for the most part of conventionalised aquatic symbols such as fishes, eels, octopi, crustaceans, molluscs, whales, and the like. Several characters obviously represented marine things which are unknown to the modern world, but whose decomposing forms I had observed on the ocean-risen plain.",
+    "characters_present": [
+      "The narrator"
+    ],
+    "setting": "At the bottom of a chasm, with a large monolith and a body of water",
+    "mood": "Dazed, frightened, yet intrigued and scientific",
+    "image_prompt": "The narrator standing before the massive Cyclopean monolith, examining its strange hieroglyphic inscriptions and carvings in the eerie moonlight",
+    "image_type": "scene",
+    "image_file": "scene_01_examining_the_monolith.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 2,
+    "title": "The Monstrous Arrival",
+    "content": "Then suddenly I saw it. With only a slight churning to mark its rise to the surface, the thing slid into view above the dark waters. Vast, Polyphemus-like, and loathsome, it darted like a stupendous monster of nightmares to the monolith, about which it flung its gigantic scaly arms, the while it bowed its hideous head and gave vent to certain measured sounds. I think I went mad then.",
+    "characters_present": [
+      "The narrator",
+      "The monstrous creature"
+    ],
+    "setting": "The chasm with the monolith, as the monstrous creature emerges from the dark waters",
+    "mood": "Horrified, terrified, and on the verge of madness",
+    "image_prompt": "The massive, Polyphemus-like creature emerging from the waters and wrapping its gigantic scaly arms around the ancient monolith, as the narrator looks on in horror",
+    "image_type": "scene",
+    "image_file": "scene_02_the_monstrous_arrival.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 3,
+    "title": "Solitary Suffering",
+    "content": "I am writing this under an appreciable mental strain, since by tonight I shall be no more. Penniless, and at the end of my supply of the drug which alone makes life endurable, I can bear the torture no longer; and shall cast myself from this garret window into the squalid street below. Do not think from my slavery to morphine that I am a weakling or a degenerate. When you have read these hastily scrawled pages you may guess, though never fully realise, why it is that I must have forgetfulness or death.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "A squalid garret room",
+    "mood": "Desperate, tortured",
+    "image_prompt": "A haggard man sitting at a desk, clutching a sheet of paper, with a window overlooking a grim city street in the background.",
+    "image_type": "scene",
+    "image_file": "scene_03_solitary_suffering.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 4,
+    "title": "The Unnatural Expanse",
+    "content": "The change happened whilst I slept. Its details I shall never know; for my slumber, though troubled and dream-infested, was continuous. When at last I awaked, it was to discover myself half sucked into a slimy expanse of hellish black mire which extended about me in monotonous undulations as far as I could see, and in which my boat lay grounded some distance away. Though one might well imagine that my first sensation would be of wonder at so prodigious and unexpected a transformation of scenery, I was in reality more horrified than astonished; for there was in the air and in the rotting soil a sinister quality which chilled me to the very core. The region was putrid with the carcasses of decaying fish, and of other less describable things which I saw protruding from the nasty mud of the unending plain.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "A vast, desolate expanse of black, slimy mire",
+    "mood": "Horrified, oppressed",
+    "image_prompt": "A lone figure in a small boat, surrounded by a vast, desolate landscape of black, slimy mud and the decaying remains of strange creatures.",
+    "image_type": "scene",
+    "image_file": "scene_04_the_unnatural_expanse.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 5,
+    "title": "Haunting Visions",
+    "content": "It is at night, especially when the moon is gibbous and waning, that I see the thing. I tried morphine; but the drug has given only transient surcease, and has drawn me into its clutches as a hopeless slave. So now I am to end it all, having written a full account for the information or the contemptuous amusement of my fellow-men. Often I ask myself if it could not all have been a pure phantasm\u2014a mere freak of fever as I lay sun-stricken and raving in the open boat after my escape from the German man-of-war. This I ask myself, but ever does there come before me a hideously vivid vision in reply. I cannot think of the deep sea without shuddering at the nameless things that may at this very moment be crawling and floundering on its slimy bed, worshipping their ancient stone idols and carving their own detestable likenesses on submarine obelisks of water-soaked granite.",
+    "characters_present": "The narrator",
+    "setting": "A dimly lit room at night, with the moon casting an eerie glow",
+    "mood": "Unsettling, haunting, and desperate",
+    "image_prompt": "The narrator sitting in a dimly lit room, a haunted expression on their face as they stare out a window at the waning gibbous moon",
+    "image_type": "scene",
+    "image_file": "scene_05_haunting_visions.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 6,
+    "title": "The Looming Threat",
+    "content": "I dream of a day when they may rise above the billows to drag down in their reeking talons the remnants of puny, war-exhausted mankind\u2014of a day when the land shall sink, and the dark ocean floor shall ascend amidst universal pandemonium.",
+    "characters_present": "The narrator",
+    "setting": "A dark, ominous seascape with the ocean floor rising ominously",
+    "mood": "Foreboding, apocalyptic, and horrific",
+    "image_prompt": "A nightmarish vision of the ocean floor rising, with monstrous, tentacled creatures emerging from the depths to engulf humanity",
+    "image_type": "scene",
+    "image_file": "scene_06_the_looming_threat.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 7,
+    "title": "The Final Escape",
+    "content": "The end is near. I hear a noise at the door, as of some immense slippery body lumbering against it. It shall not find me. God, that hand! The window! The window!",
+    "characters_present": "The narrator",
+    "setting": "A confined, claustrophobic room with the narrator desperately trying to escape",
+    "mood": "Intense, terrified, and claustrophobic",
+    "image_prompt": "The narrator crouched in a room, eyes wide with fear, as a massive, otherworldly limb intrudes through the doorway",
+    "image_type": "scene",
+    "image_file": "scene_07_the_final_escape.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 8,
+    "title": "Adrift in the Boat",
+    "content": "Nor were there any sea-fowl to prey upon the dead things.\nFor several hours I sat thinking or brooding in the boat, which lay upon its side and afforded a slight shade as the sun moved across the heavens. As the day progressed, the ground lost some of its stickiness, and seemed likely to dry sufficiently for travelling purposes in a short time. That night I slept but little, and the next day I made for myself a pack containing food and water, preparatory to an overland journey in search of the vanished sea and possible rescue.",
+    "characters_present": "The narrator",
+    "setting": "A boat adrift on a desolate, sticky plain",
+    "mood": "Brooding, contemplative, determined",
+    "image_prompt": "The narrator sitting in a boat on a barren, dried-up landscape, with the sun moving overhead",
+    "image_type": "scene",
+    "image_file": "scene_08_adrift_in_the_boat.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 9,
+    "title": "The Mysterious Mound",
+    "content": "On the third morning I found the soil dry enough to walk upon with ease. The odour of the fish was maddening; but I was too much concerned with graver things to mind so slight an evil, and set out boldly for an unknown goal. All day I forged steadily westward, guided by a far-away hummock which rose higher than any other elevation on the rolling desert. That night I encamped, and on the following day still travelled toward the hummock, though that object seemed scarcely nearer than when I had first espied it. By the fourth evening I attained the base of the mound, which turned out to be much higher than it had appeared from a distance; an intervening valley setting it out in sharper relief from the general surface. Too weary to ascend, I slept in the shadow of the hill.",
+    "characters_present": "The narrator",
+    "setting": "A vast, rolling desert with a mysterious mound in the distance",
+    "mood": "Determined, weary, curious",
+    "image_prompt": "The narrator approaching the towering mound in the distance, the surrounding landscape stretching out before them",
+    "image_type": "scene",
+    "image_file": "scene_09_the_mysterious_mound.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 10,
+    "title": "The Chasm's Edge",
+    "content": "I know not why my dreams were so wild that night; but ere the waning and fantastically gibbous moon had risen far above the eastern plain, I was awake in a cold perspiration, determined to sleep no more. Such visions as I had experienced were too much for me to endure again. And in the glow of the moon I saw how unwise I had been to travel by day. Without the glare of the parching sun, my journey would have cost me less energy; indeed, I now felt quite able to perform the ascent which had deterred me at sunset. Picking up my pack, I started for the crest of the eminence.\nI have said that the unbroken monotony of the rolling plain was a source of vague horror to me; but I think my horror was greater when I gained the summit of the mound and looked down the other side into an immeasurable pit or canyon, whose black recesses the moon had not yet soared high enough to illumine. I felt myself on the edge of the world; peering over the rim into a fathomless chaos of eternal night.",
+    "characters_present": "The narrator",
+    "setting": "The top of the mysterious mound, overlooking a vast, dark chasm",
+    "mood": "Horrified, awed, unsettled",
+    "image_prompt": "The narrator standing at the edge of the mound, gazing down into the deep, shadowy chasm below, the moonlight casting an eerie glow over the scene",
+    "image_type": "scene",
+    "image_file": "scene_10_the_chasms_edge.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  },
+  {
+    "scene_number": 11,
+    "title": "The Mysterious Monolith",
+    "content": "As the moon climbed higher in the sky, I began to see that the slopes of the valley were not quite so perpendicular as I had imagined. Ledges and outcroppings of rock afforded fairly easy foot-holds for a descent, whilst after a drop of a few hundred feet, the declivity became very gradual. Urged on by an impulse which I cannot definitely analyse, I scrambled with difficulty down the rocks and stood on the gentler slope beneath, gazing into the Stygian deeps where no light had yet penetrated.\nAll at once my attention was captured by a vast and singular object on the opposite slope, which rose steeply about an hundred yards ahead of me; an object that gleamed whitely in the newly bestowed rays of the ascending moon. That it was merely a gigantic piece of stone, I soon assured myself; but I was conscious of a distinct impression that its contour and position were not altogether the work of Nature.",
+    "characters_present": "The narrator",
+    "setting": "The interior of the dark chasm, with a mysterious monolith visible in the distance",
+    "mood": "Curious, unsettled, intrigued",
+    "image_prompt": "The narrator descending into the chasm, their gaze fixed on the massive, gleaming monolith in the distance",
+    "image_type": "scene",
+    "image_file": "scene_11_the_mysterious_monolith.png",
+    "chapter_number": 3,
+    "chapter_title": "Dagon"
+  }
+]

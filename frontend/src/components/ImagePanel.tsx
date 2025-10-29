@@ -5,26 +5,13 @@ import './ImagePanel.css';
 interface ImagePanelProps {
   imageType: 'character' | 'environment' | 'scene' | 'action';
   imageName: string;
+  imageUrl?: string;
   bookData: BookData;
 }
 
-const ImagePanel: React.FC<ImagePanelProps> = ({ imageType, imageName, bookData }) => {
-  const getImagePath = () => {
-    switch (imageType) {
-      case 'character':
-        return `/images/characters/${imageName}.png`;
-      case 'environment':
-        return `/images/environments/${imageName}.png`;
-      case 'scene':
-      case 'action':
-        // Use the imageName directly since it's now formatted as "01_bored_by_the_bank"
-        return `/images/scenes/scene_${imageName}.png`;
-      default:
-        return `/images/environments/chapter_i_down_the_rabbit_hole.png`;
-    }
-  };
-
-  const imagePath = getImagePath();
+const ImagePanel: React.FC<ImagePanelProps> = ({ imageType, imageName, imageUrl, bookData }) => {
+  // All images should come from the backend API via imageUrl
+  const imagePath = imageUrl || '';
 
   return (
     <div className="image-panel">
@@ -34,12 +21,16 @@ const ImagePanel: React.FC<ImagePanelProps> = ({ imageType, imageName, bookData 
           alt={imageName}
           className="book-image"
           onError={(e) => {
-            // Fallback to environment image if scene/action image not found
-            if (imageType === 'scene' || imageType === 'action') {
-              (e.target as HTMLImageElement).src = '/images/environments/chapter_i_down_the_rabbit_hole.png';
-            } else if (imageType === 'character') {
-              (e.target as HTMLImageElement).src = '/images/environments/chapter_i_down_the_rabbit_hole.png';
+            const imgEl = e.target as HTMLImageElement;
+            // Try to use first scene image from the current book as fallback
+            const firstSceneUrl = bookData.sceneSegments && bookData.sceneSegments.length > 0
+              ? bookData.sceneSegments[0].image_file
+              : undefined;
+            if (firstSceneUrl) {
+              imgEl.src = firstSceneUrl;
             }
+            // If still no image, just hide the broken image
+            // (Could also set to a placeholder image here)
           }}
         />
       </div>

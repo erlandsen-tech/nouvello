@@ -1,38 +1,46 @@
 {
-  "total_characters": 4,
-  "successful": 4,
+  "total_characters": 5,
+  "successful": 5,
   "failed": 0,
-  "total_time_seconds": 34.20598006248474,
+  "total_time_seconds": 123.38138484954834,
   "results": [
     {
       "character_name": "Alice",
-      "output_path": "output/alice/alice/images/Alice.png",
+      "output_path": "output/alice/images/Alice.png",
       "aspect_ratio": "1:1",
-      "generation_time": 10.67,
+      "generation_time": 0.0,
       "success": true,
       "error_message": ""
     },
     {
-      "character_name": "Alice's Sister",
-      "output_path": "output/alice/alice/images/Alices_Sister.png",
+      "character_name": "The White Rabbit",
+      "output_path": "output/alice/images/The_White_Rabbit.png",
       "aspect_ratio": "1:1",
-      "generation_time": 6.14,
+      "generation_time": 114.52,
       "success": true,
       "error_message": ""
     },
     {
-      "character_name": "White Rabbit",
-      "output_path": "output/alice/alice/images/White_Rabbit.png",
+      "character_name": "Mary Ann",
+      "output_path": "output/alice/images/Mary_Ann.png",
       "aspect_ratio": "1:1",
-      "generation_time": 9.91,
+      "generation_time": 8.86,
       "success": true,
       "error_message": ""
     },
     {
-      "character_name": "Dinah",
-      "output_path": "output/alice/alice/images/Dinah.png",
+      "character_name": "Pat",
+      "output_path": "output/alice/images/Pat.png",
       "aspect_ratio": "1:1",
-      "generation_time": 7.48,
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Bill",
+      "output_path": "output/alice/images/Bill.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
       "success": true,
       "error_message": ""
     }
