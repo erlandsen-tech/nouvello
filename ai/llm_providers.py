@@ -1,6 +1,6 @@
 """
-AWS Bedrock Integration for AI Chapter Detection
-Supports multiple LLM providers including Bedrock, OpenAI, and local models
+AWS Bedrock Integration for LLM responses
+Bedrock-only client with a backward-compatible interface
 """
 
 import json
@@ -8,6 +8,10 @@ import os
 from typing import List, Dict, Any, Optional, Union
 from dataclasses import dataclass
 import time
+from dotenv import load_dotenv
+
+# Load environment variables from .env if present
+load_dotenv()
 
 # Optional imports for different providers
 try:
@@ -16,10 +20,7 @@ try:
 except ImportError:
     boto3 = None
 
-try:
-    import openai
-except ImportError:
-    openai = None
+# Note: OpenAI support removed per project requirements
 
 @dataclass
 class LLMResponse:
@@ -31,21 +32,24 @@ class LLMResponse:
     cost: Optional[float] = None
 
 class LLMProvider:
-    """Base class for LLM providers"""
+    """Base class for LLM providers (kept for compatibility)"""
     
     def __init__(self, api_key: Optional[str] = None, region: Optional[str] = None):
         self.api_key = api_key
         self.region = region
     
     def generate_response(self, prompt: str, model: str = None) -> LLMResponse:
-        """Generate response from LLM"""
         raise NotImplementedError
 
 class BedrockProvider(LLMProvider):
     """AWS Bedrock provider"""
     
-    def __init__(self, region: str = "us-east-1", profile: Optional[str] = None):
-        super().__init__(region=region)
+    def __init__(self, region: str = "eu-central-1", profile: Optional[str] = None):
+        # Allow region/profile to be provided via .env when not passed explicitly
+        env_region = os.getenv("AWS_REGION")
+        env_profile = os.getenv("AWS_PROFILE")
+        effective_region = region or env_region or "eu-central-1"
+        super().__init__(region=effective_region)
         self.profile = profile
         self.client = None
         self._initialize_client()
@@ -56,10 +60,27 @@ class BedrockProvider(LLMProvider):
             raise ImportError("boto3 is required for Bedrock. Install with: pip install boto3")
         
         try:
-            if self.profile:
-                session = boto3.Session(profile_name=self.profile)
-                self.client = session.client('bedrock-runtime', region_name=self.region)
+            # Prefer explicit AWS creds from environment if present (.env supported)
+            access_key = os.getenv("AWS_ACCESS_KEY_ID")
+            secret_key = os.getenv("AWS_SECRET_ACCESS_KEY")
+            session_token = os.getenv("AWS_SESSION_TOKEN")
+
+            # If a profile was not explicitly passed, fall back to env profile
+            effective_profile = self.profile or os.getenv("AWS_PROFILE")
+
+            if access_key and secret_key:
+                session = boto3.Session(
+                    aws_access_key_id=access_key,
+                    aws_secret_access_key=secret_key,
+                    aws_session_token=session_token,
+                    region_name=self.region
+                )
+                self.client = session.client('bedrock-runtime')
+            elif effective_profile:
+                session = boto3.Session(profile_name=effective_profile, region_name=self.region)
+                self.client = session.client('bedrock-runtime')
             else:
+                # Fall back to default credential chain (env, shared config, IAM role, etc.)
                 self.client = boto3.client('bedrock-runtime', region_name=self.region)
         except Exception as e:
             raise Exception(f"Failed to initialize Bedrock client: {e}")
@@ -99,19 +120,24 @@ class BedrockProvider(LLMProvider):
             # Add timeout and retry logic
             import time
             import signal
+            import threading
             
             max_retries = 1  # Single retry to keep it fast
             retry_delay = 1
             timeout_seconds = 15  # 15 second timeout per request
+            
+            # Check if we're in the main thread (signal only works there)
+            is_main_thread = threading.current_thread() is threading.main_thread()
             
             def timeout_handler(signum, frame):
                 raise TimeoutError("Bedrock API request timed out")
             
             for attempt in range(max_retries):
                 try:
-                    # Set timeout
-                    signal.signal(signal.SIGALRM, timeout_handler)
-                    signal.alarm(timeout_seconds)
+                    # Set timeout only if in main thread (signal doesn't work in worker threads)
+                    if is_main_thread:
+                        signal.signal(signal.SIGALRM, timeout_handler)
+                        signal.alarm(timeout_seconds)
                     
                     response = self.client.invoke_model(
                         modelId=model,
@@ -120,11 +146,13 @@ class BedrockProvider(LLMProvider):
                     )
                     
                     # Cancel timeout
-                    signal.alarm(0)
+                    if is_main_thread:
+                        signal.alarm(0)
                     break  # Success, exit retry loop
                     
                 except TimeoutError:
-                    signal.alarm(0)  # Cancel timeout
+                    if is_main_thread:
+                        signal.alarm(0)  # Cancel timeout
                     if attempt < max_retries - 1:
                         print(f"Bedrock API request timed out (attempt {attempt + 1}). Retrying...")
                         time.sleep(retry_delay)
@@ -132,7 +160,8 @@ class BedrockProvider(LLMProvider):
                     else:
                         raise Exception("Bedrock API request timed out after all retries")
                 except Exception as e:
-                    signal.alarm(0)  # Cancel timeout
+                    if is_main_thread:
+                        signal.alarm(0)  # Cancel timeout
                     if attempt < max_retries - 1:
                         print(f"Bedrock API attempt {attempt + 1} failed: {e}. Retrying in {retry_delay}s...")
                         time.sleep(retry_delay)
@@ -171,80 +200,21 @@ class BedrockProvider(LLMProvider):
         except Exception as e:
             raise Exception(f"Unexpected error with Bedrock: {e}")
 
-class OpenAIProvider(LLMProvider):
-    """OpenAI provider"""
-    
-    def __init__(self, api_key: str):
-        super().__init__(api_key=api_key)
-        if not openai:
-            raise ImportError("openai is required. Install with: pip install openai")
-        openai.api_key = api_key
-    
-    def generate_response(self, prompt: str, model: str = "gpt-3.5-turbo") -> LLMResponse:
-        """Generate response using OpenAI"""
-        try:
-            response = openai.ChatCompletion.create(
-                model=model,
-                messages=[{"role": "user", "content": prompt}],
-                temperature=0.1,
-                max_tokens=4000
-            )
-            
-            return LLMResponse(
-                content=response.choices[0].message.content,
-                provider="openai",
-                model=model,
-                tokens_used=response.usage.total_tokens,
-                cost=self._calculate_cost(response.usage.total_tokens, model)
-            )
-            
-        except Exception as e:
-            raise Exception(f"OpenAI API error: {e}")
-    
-    def _calculate_cost(self, tokens: int, model: str) -> float:
-        """Calculate approximate cost based on token usage"""
-        pricing = {
-            "gpt-3.5-turbo": 0.002 / 1000,  # $0.002 per 1K tokens
-            "gpt-4": 0.03 / 1000,           # $0.03 per 1K tokens
-        }
-        return tokens * pricing.get(model, 0.002 / 1000)
+## OpenAI provider removed
 
-class LocalProvider(LLMProvider):
-    """Local model provider (for future implementation)"""
-    
-    def generate_response(self, prompt: str, model: str = "local") -> LLMResponse:
-        """Generate response using local model"""
-        # Placeholder for local model integration
-        return LLMResponse(
-            content="Local model not implemented yet",
-            provider="local",
-            model=model
-        )
+## Local provider removed for a lighter codebase
 
 class MultiProviderLLM:
-    """Multi-provider LLM client that can switch between providers"""
+    """Bedrock-only LLM client (keeps the old interface for callers)"""
     
     def __init__(self, 
                  provider: str = "bedrock",
                  api_key: Optional[str] = None,
                  region: Optional[str] = None,
                  profile: Optional[str] = None):
-        self.provider_name = provider
-        self.provider = self._initialize_provider(provider, api_key, region, profile)
-    
-    def _initialize_provider(self, provider: str, api_key: Optional[str], 
-                          region: Optional[str], profile: Optional[str]) -> LLMProvider:
-        """Initialize the specified provider"""
-        if provider.lower() == "bedrock":
-            return BedrockProvider(region=region or "us-east-1", profile=profile)
-        elif provider.lower() == "openai":
-            if not api_key:
-                raise ValueError("OpenAI API key is required")
-            return OpenAIProvider(api_key)
-        elif provider.lower() == "local":
-            return LocalProvider()
-        else:
-            raise ValueError(f"Unsupported provider: {provider}")
+        # provider/api_key kept for signature compatibility; Bedrock is always used
+        self.provider_name = "bedrock"
+        self.provider = BedrockProvider(region=region or "eu-central-1", profile=profile)
     
     def generate_response(self, prompt: str, model: str = None) -> LLMResponse:
         """Generate response using the configured provider"""
@@ -254,33 +224,19 @@ class MultiProviderLLM:
         return self.provider.generate_response(prompt, model)
     
     def _get_default_model(self) -> str:
-        """Get default model for the current provider"""
-        defaults = {
-            "bedrock": "eu.anthropic.claude-sonnet-4-5-20250929-v1:0",  # Use Claude Sonnet 4.5 inference profile
-            "openai": "gpt-4",
-            "local": "local"
-        }
-        return defaults.get(self.provider_name, "eu.anthropic.claude-sonnet-4-5-20250929-v1:0")
+        """Get default model (Bedrock)"""
+        return "eu.anthropic.claude-sonnet-4-5-20250929-v1:0"  # Inference profile
     
     def get_available_models(self) -> List[str]:
-        """Get list of available models for the current provider"""
-        if self.provider_name == "bedrock":
-            return [
-                "anthropic.claude-3-sonnet-20240229-v1:0",
-                "anthropic.claude-3-haiku-20240307-v1:0",
-                "meta.llama2-13b-chat-v1",
-                "meta.llama2-70b-chat-v1",
-                "amazon.titan-text-express-v1",
-                "amazon.titan-text-lite-v1"
-            ]
-        elif self.provider_name == "openai":
-            return [
-                "gpt-3.5-turbo",
-                "gpt-4",
-                "gpt-4-turbo"
-            ]
-        else:
-            return ["local"]
+        """Get list of available Bedrock models"""
+        return [
+            "anthropic.claude-3-sonnet-20240229-v1:0",
+            "anthropic.claude-3-haiku-20240307-v1:0",
+            "meta.llama2-13b-chat-v1",
+            "meta.llama2-70b-chat-v1",
+            "amazon.titan-text-express-v1",
+            "amazon.titan-text-lite-v1"
+        ]
 
 def test_bedrock_integration():
     """Test Bedrock integration"""
@@ -289,7 +245,7 @@ def test_bedrock_integration():
     
     try:
         # Test Bedrock
-        llm = MultiProviderLLM(provider="bedrock", region="us-east-1")
+        llm = MultiProviderLLM(provider="bedrock", region="eu-central-1")
         
         prompt = """
         Analyze this text and identify potential chapter boundaries.
@@ -325,7 +281,6 @@ def main():
     # Test different providers
     providers_to_test = [
         ("bedrock", "AWS Bedrock"),
-        ("openai", "OpenAI"),
     ]
     
     for provider, name in providers_to_test:
@@ -333,12 +288,7 @@ def main():
         try:
             if provider == "bedrock":
                 llm = MultiProviderLLM(provider="bedrock")
-            elif provider == "openai":
-                api_key = os.getenv('OPENAI_API_KEY')
-                if not api_key:
-                    print(f"⚠️  Skipping {name} - no API key")
-                    continue
-                llm = MultiProviderLLM(provider="openai", api_key=api_key)
+            # OpenAI support removed
             
             models = llm.get_available_models()
             print(f"📋 Available models: {models[:3]}...")

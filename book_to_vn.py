@@ -22,11 +22,12 @@ from ai.epub_parser import EPUBParser
 class BookToVNConverter:
     """Complete pipeline from EPUB to React visual novel"""
     
-    def __init__(self, epub_path: str, output_base: str = "output"):
+    def __init__(self, epub_path: str, output_base: str = "output", art_style: Optional[str] = None):
         self.epub_path = Path(epub_path)
         self.output_base = Path(output_base)
         self.book_name = self.epub_path.stem.lower().replace(' ', '_')
         self.book_dir = self.output_base / self.book_name
+        self.art_style = art_style  # Optional style override for the entire book
         
         if not self.epub_path.exists():
             raise FileNotFoundError(f"EPUB file not found: {epub_path}")
@@ -48,6 +49,7 @@ class BookToVNConverter:
             'analyze': ('Analyze selected chapters', self._analyze_chapters),
             'characters': ('Generate character images', self._generate_characters),
             'scenes': ('Generate scene segmentation', self._generate_scenes),
+            'structure': ('Create chapter structure', self._create_chapter_structure),
             'consistent': ('Generate consistent scene images', self._generate_consistent_scenes),
             'copy': ('Copy to React app', self._copy_to_react_app),
             'update': ('Update React app book list', self._update_react_book_list)
@@ -196,8 +198,19 @@ class BookToVNConverter:
         print(f"\n🔍 STEP 2: Analyzing {len(selected_chapters)} selected chapters")
         print("-" * 50)
         
+        # Check if analysis already exists
+        analysis_dest = self.book_dir / "analysis.json"
+        if analysis_dest.exists():
+            print(f"✅ Chapter analysis already exists: {analysis_dest}")
+            print(f"   ⏭️  Skipping chapter analysis (file already exists)")
+            print(f"\n💡 To re-analyze chapters, delete {analysis_dest} and run again")
+            return
+        
         # Create chapter list string for the analyzer
         chapter_list = ','.join(map(str, selected_chapters))
+        
+        # Get model from env (or use default)
+        analysis_model = os.getenv("ANALYSIS_MODEL", os.getenv("BEDROCK_MODEL"))
         
         cmd = [
             "python", "analyze_chapters.py",
@@ -205,6 +218,14 @@ class BookToVNConverter:
             "-c", chapter_list,
             "-o", str(self.output_base)
         ]
+        
+        # Add model flag if specified
+        if analysis_model:
+            cmd.extend(["--bedrock-model", analysis_model])
+        
+        # Add style override if specified
+        if self.art_style:
+            cmd.extend(["--style", self.art_style])
         
         try:
             subprocess.run(cmd, check=True)
@@ -240,11 +261,18 @@ class BookToVNConverter:
             shutil.copy2(analysis_source, analysis_temp)
             print(f"✅ Copied analysis to: {analysis_temp}")
         
+        # Get model from env (or use default)
+        character_model = os.getenv("CHARACTER_MODEL", os.getenv("BEDROCK_MODEL"))
+        
         cmd = [
             "python", "generate_character_images.py",
             "--analysis", str(analysis_temp),
             "-o", str(self.output_base)
         ]
+        
+        # Add model flag if specified
+        if character_model:
+            cmd.extend(["--bedrock-model", character_model])
         
         try:
             subprocess.run(cmd, check=True)
@@ -258,11 +286,23 @@ class BookToVNConverter:
         print(f"\n🎬 STEP 4: Generating scene segmentation")
         print("-" * 50)
         
+        # Get model from env (or use default)
+        scene_model = os.getenv("SCENE_MODEL", os.getenv("BEDROCK_MODEL"))
+        
+        # Get parallelization settings
+        chapter_workers = os.getenv("CHAPTER_SEG_WORKERS", "3")  # Default to 3 for better throughput
+        
         cmd = [
             "python", "ai/scene_segmentation.py",
             str(self.book_dir),
-            str(self.book_dir)
+            str(self.book_dir),
+            "--windowed",  # Enable parallel windowed segmentation
+            "--chapter-workers", chapter_workers  # Enable parallel chapter processing
         ]
+        
+        # Add model flag if specified
+        if scene_model:
+            cmd.extend(["--model", scene_model])
         
         try:
             subprocess.run(cmd, check=True)
@@ -270,6 +310,76 @@ class BookToVNConverter:
         except subprocess.CalledProcessError as e:
             print(f"❌ Error generating scenes: {e}")
             raise
+    
+    def _create_chapter_structure(self):
+        """Create per-chapter directory structure from scenes.json"""
+        print(f"\n📂 STEP 4.5: Creating chapter directory structure")
+        print("-" * 50)
+        
+        scenes_file = self.book_dir / "scenes.json"
+        analysis_file = self.book_dir / "analysis.json"
+        chapters_dir = self.book_dir / "chapters"
+        
+        if not scenes_file.exists():
+            print(f"⚠️  No scenes.json found, skipping chapter structure creation")
+            return
+        
+        if not analysis_file.exists():
+            print(f"⚠️  No analysis.json found, skipping chapter structure creation")
+            return
+        
+        # Load scenes and analysis
+        with open(scenes_file, 'r') as f:
+            all_scenes = json.load(f)
+        
+        with open(analysis_file, 'r') as f:
+            analysis_data = json.load(f)
+        
+        # Handle both old format (array) and new format (object with book_title)
+        if isinstance(analysis_data, dict) and 'chapters' in analysis_data:
+            chapters_list = analysis_data['chapters']
+        else:
+            chapters_list = analysis_data
+        
+        # Group scenes by chapter
+        scenes_by_chapter = {}
+        for scene in all_scenes:
+            chapter_num = scene.get('chapter_number', 0)
+            if chapter_num not in scenes_by_chapter:
+                scenes_by_chapter[chapter_num] = []
+            scenes_by_chapter[chapter_num].append(scene)
+        
+        # Create chapter directories
+        chapters_dir.mkdir(exist_ok=True)
+        
+        for chapter in chapters_list:
+            chapter_num = chapter.get('chapter_number', 0)
+            chapter_title = chapter.get('chapter_title', f'Chapter {chapter_num}')
+            
+            # Create sanitized directory name
+            safe_title = chapter_title.replace(' ', '_').replace('/', '_').replace('\\', '_')
+            safe_title = ''.join(c for c in safe_title if c.isalnum() or c in ('_', '-'))
+            chapter_dirname = f"{chapter_num:02d}_{safe_title}"
+            
+            chapter_path = chapters_dir / chapter_dirname
+            chapter_path.mkdir(exist_ok=True)
+            
+            # Copy chapter analysis
+            chapter_analysis_file = chapter_path / "analysis.json"
+            with open(chapter_analysis_file, 'w') as f:
+                json.dump(chapter, f, indent=2)
+            
+            # Save chapter scenes
+            chapter_scenes = scenes_by_chapter.get(chapter_num, [])
+            if chapter_scenes:
+                chapter_scenes_file = chapter_path / "scenes.json"
+                with open(chapter_scenes_file, 'w') as f:
+                    json.dump(chapter_scenes, f, indent=2)
+                print(f"  ✅ Created: {chapter_dirname}/ ({len(chapter_scenes)} scenes)")
+            else:
+                print(f"  ⚠️  No scenes found for: {chapter_dirname}/")
+        
+        print(f"✅ Chapter structure created in: {chapters_dir}")
     
     def _generate_consistent_scenes(self):
         """Generate consistent scene images"""
@@ -335,6 +445,18 @@ class BookToVNConverter:
                 shutil.copy2(src_path, dst_path)
                 print(f"  📄 Copied: {src_file}")
         
+        # Copy chapter structure if it exists
+        chapters_src = self.book_dir / "chapters"
+        if chapters_src.exists() and chapters_src.is_dir():
+            chapters_dst = book_data_dir / "chapters"
+            if chapters_dst.exists():
+                shutil.rmtree(chapters_dst)
+            shutil.copytree(chapters_src, chapters_dst)
+            
+            # Count chapters copied
+            chapter_count = len([d for d in chapters_dst.iterdir() if d.is_dir()])
+            print(f"  📚 Copied {chapter_count} chapter directories")
+        
         # Copy images
         if (self.book_dir / "images").exists():
             for img_file in (self.book_dir / "images").glob("*.png"):
@@ -370,11 +492,30 @@ class BookToVNConverter:
         else:
             books = []
         
+        # Get book title from analysis if available
+        book_title = self.book_name.replace('_', ' ').title()
+        book_author = None
+        analysis_file = self.book_dir / "analysis.json"
+        
+        if analysis_file.exists():
+            with open(analysis_file) as f:
+                analysis_data = json.load(f)
+            # New format has book_title at top level
+            if isinstance(analysis_data, dict):
+                book_title = analysis_data.get('book_title', book_title)
+                book_author = analysis_data.get('book_author')
+        
+        # Create description
+        if book_author:
+            description = f"Visual novel adaptation of {book_title} by {book_author}"
+        else:
+            description = f"Visual novel adaptation of {book_title}"
+        
         # Add or update this book
         book_info = {
             "id": self.book_name,
-            "title": self.book_name.replace('_', ' ').title(),
-            "description": f"Visual novel adaptation of {self.book_name.replace('_', ' ').title()}",
+            "title": book_title,
+            "description": description,
             "data_dir": self.book_name,
             "created_at": str(Path().cwd()),
             "scenes_count": self._count_scenes(),
@@ -397,7 +538,14 @@ class BookToVNConverter:
         if analysis_file.exists():
             with open(analysis_file) as f:
                 analysis_data = json.load(f)
-            return [ch.get("chapter_number", i+1) for i, ch in enumerate(analysis_data)]
+            
+            # Handle both old format (array) and new format (object with book_title)
+            if isinstance(analysis_data, dict) and 'chapters' in analysis_data:
+                chapters_list = analysis_data['chapters']
+            else:
+                chapters_list = analysis_data
+            
+            return [ch.get("chapter_number", i+1) for i, ch in enumerate(chapters_list)]
         return [1]  # fallback
     
     def _count_scenes(self) -> int:
@@ -415,8 +563,20 @@ class BookToVNConverter:
         if analysis_file.exists():
             with open(analysis_file) as f:
                 analysis_data = json.load(f)
-            if analysis_data and len(analysis_data) > 0:
-                return len(analysis_data[0].get("characters", []))
+            
+            # Handle both old format (array) and new format (object with book_title)
+            if isinstance(analysis_data, dict) and 'chapters' in analysis_data:
+                chapters_list = analysis_data['chapters']
+            else:
+                chapters_list = analysis_data
+            
+            # Count unique characters across all chapters
+            if chapters_list and len(chapters_list) > 0:
+                all_characters = set()
+                for chapter in chapters_list:
+                    for char in chapter.get("characters", []):
+                        all_characters.add(char.get("name", ""))
+                return len(all_characters)
         return 0
 
 
@@ -432,11 +592,22 @@ Examples:
   # Select specific chapters
   %(prog)s books/alice.epub --chapters 1,3,5
 
-  # Select first chapter only
-  %(prog)s books/alice.epub --chapters 1
-
   # Custom output directory
   %(prog)s books/alice.epub -o my_books
+
+  # Style is auto-detected by default
+  %(prog)s books/alice.epub --chapters 1,2,3
+  # → Detects "whimsical fantasy Victorian" style automatically
+  
+  %(prog)s books/lovecraft.epub --chapters 1,2
+  # → Detects "dark gothic horror cosmic dread" style automatically
+
+  # Style Override Examples (for creative variations):
+  %(prog)s books/alice.epub --style "horror"          # Horror version of Alice
+  %(prog)s books/alice.epub --style "cute kawaii"     # Cute version
+  %(prog)s books/lovecraft.epub --style "cyberpunk"   # Cyberpunk Lovecraft
+  %(prog)s books/lovecraft.epub --style "watercolor"  # Soft watercolor style
+  %(prog)s books/alice.epub --style "teletubbies"     # Happy Teletubbies version!
         """
     )
     
@@ -457,8 +628,13 @@ Examples:
     )
     
     parser.add_argument(
+        '--style',
+        help='Override art style for the entire book. If not specified, style is auto-detected from book content. Examples: "horror", "cute kawaii", "cyberpunk neon", "watercolor pastel"'
+    )
+    
+    parser.add_argument(
         '--resume-from',
-        choices=['parse', 'analyze', 'characters', 'scenes', 'consistent', 'copy', 'update'],
+        choices=['parse', 'analyze', 'characters', 'scenes', 'structure', 'consistent', 'copy', 'update'],
         help='Resume pipeline from a specific step'
     )
     
@@ -477,7 +653,13 @@ Examples:
                 sys.exit(1)
     
     try:
-        converter = BookToVNConverter(args.epub_file, args.output)
+        # Show style override if specified
+        if args.style:
+            print(f"🎨 Art Style Override: {args.style}")
+            print(f"   This style will be applied to all images in the book")
+            print()
+        
+        converter = BookToVNConverter(args.epub_file, args.output, art_style=args.style)
         converter.run_complete_pipeline(selected_chapters, args.resume_from)
     except Exception as e:
         print(f"❌ Error: {e}")

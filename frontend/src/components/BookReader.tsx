@@ -39,6 +39,7 @@ const BookReader: React.FC<BookReaderProps> = ({ bookData }) => {
         type: 'narration' as const,
         imageType: 'scene', // Force all scene images to use 'scene' type
         imageName,
+        imageUrl: scene.image_file, // Use the actual image_file URL from the scene
         sceneTitle: scene.title,
         setting: scene.setting,
         mood: scene.mood,
@@ -87,6 +88,7 @@ const BookReader: React.FC<BookReaderProps> = ({ bookData }) => {
         <ImagePanel 
           imageType={currentBlock.imageType}
           imageName={currentBlock.imageName}
+          imageUrl={currentBlock.imageUrl}
           bookData={bookData}
         />
       </div>

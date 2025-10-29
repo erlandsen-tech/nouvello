@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './BookChooser.css';
 
+// Get API URL from environment variable
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
+
 interface Book {
   id: string;
   title: string;
@@ -9,6 +12,7 @@ interface Book {
   created_at: string;
   scenes_count: number;
   characters_count: number;
+  cover_image?: string;
 }
 
 interface BookChooserProps {
@@ -27,12 +31,35 @@ const BookChooser: React.FC<BookChooserProps> = ({ onBookSelect }) => {
   const loadBooks = async () => {
     try {
       setLoading(true);
-      const response = await fetch('/data/books.json');
+      const response = await fetch(`${API_BASE_URL}/books`);
       if (!response.ok) {
         throw new Error('Failed to load books');
       }
-      const booksData = await response.json();
-      setBooks(booksData);
+      const booksData: Book[] = await response.json();
+      
+      // For each book, load the first scene image as cover
+      const booksWithCovers = await Promise.all(
+        booksData.map(async (book) => {
+          try {
+            const scenesResponse = await fetch(`${API_BASE_URL}/books/${book.data_dir}/scenes`);
+            if (scenesResponse.ok) {
+              const scenes = await scenesResponse.json();
+              if (scenes.length > 0 && scenes[0].image_file) {
+                // Use backend API URL for image
+                const imageFile = scenes[0].image_file.startsWith('http') 
+                  ? scenes[0].image_file 
+                  : `${API_BASE_URL}/books/${book.data_dir}/images/${scenes[0].image_file}`;
+                return { ...book, cover_image: imageFile };
+              }
+            }
+          } catch (err) {
+            console.warn(`Could not load cover for ${book.id}`);
+          }
+          return book;
+        })
+      );
+      
+      setBooks(booksWithCovers);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load books');
     } finally {
@@ -52,7 +79,7 @@ const BookChooser: React.FC<BookChooserProps> = ({ onBookSelect }) => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/books/${bookId}`, {
+      const response = await fetch(`${API_BASE_URL}/books/${bookId}`, {
         method: 'DELETE',
       });
 
@@ -124,7 +151,11 @@ const BookChooser: React.FC<BookChooserProps> = ({ onBookSelect }) => {
             onClick={() => handleBookSelect(book.id)}
           >
             <div className="book-cover">
-              <div className="book-icon">📖</div>
+              {book.cover_image ? (
+                <img src={book.cover_image} alt={`${book.title} cover`} className="book-cover-image" />
+              ) : (
+                <div className="book-icon">📖</div>
+              )}
             </div>
             <div className="book-info">
               <h3>{book.title}</h3>
@@ -153,7 +184,7 @@ const BookChooser: React.FC<BookChooserProps> = ({ onBookSelect }) => {
       </div>
       
       <div className="book-chooser-footer">
-        <p>Add more books by running: <code>python book_to_vn.py books/your_book.epub</code></p>
+        Copyright AIAKAKI 2025
       </div>
     </div>
   );

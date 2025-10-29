@@ -1,0 +1,216 @@
+[
+  {
+    "scene_number": 1,
+    "title": "The Mysterious Tomb",
+    "content": "Close by my home there lies a singular wooded hollow, in whose twilight deeps I spent most of my time; reading, thinking, and dreaming. Down its moss-covered slopes my first steps of infancy were taken, and around its grotesquely gnarled oak trees my first fancies of boyhood were woven. Well did I come to know the presiding dryads of those trees, and often have I watched their wild dances in the struggling beams of a waning moon\u2014but of these things I must not now speak. I will tell only of the lone tomb in the darkest of the hillside thickets; the deserted tomb of the Hydes, an old and exalted family whose last direct descendant had been laid within its black recesses many decades before my birth.\n\nThe vault to which I refer is of ancient granite, weathered and discoloured by the mists and dampness of generations. Excavated back into the hillside, the structure is visible only at the entrance. The door, a ponderous and forbidding slab of stone, hangs upon rusted iron hinges, and is fastened ajar in a queerly sinister way by means of heavy iron chains and padlocks, according to a gruesome fashion of half a century ago.",
+    "characters_present": [
+      "Jervas Dudley"
+    ],
+    "setting": "A wooded hollow near the narrator's home, with an ancient granite tomb in the darkest thicket",
+    "mood": "Mysterious, somber, and slightly ominous",
+    "image_prompt": "A young man standing before an ancient, weathered granite tomb, partially obscured by gnarled oak trees and overgrown foliage. The tomb's entrance is chained and padlocked, adding to the sense of mystery and unease.",
+    "image_type": "scene",
+    "image_file": "scene_01_the_mysterious_tomb.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 2,
+    "title": "The Tomb Exploration",
+    "content": "One morning at breakfast I came close to disaster by declaiming in palpably liquorish accents an effusion of eighteenth-century Bacchanalian mirth; a bit of Georgian playfulness never recorded in a book, which ran something like this:\n\nCome hither, my lads, with your tankards of ale,\nAnd drink to the present before it shall fail;\nPile each on your platter a mountain of beef,\nFor 'tis eating and drinking that bring us relief:\nSo fill up your glass,\nFor life will soon pass;\nWhen you're dead ye'll ne'er drink to your king or your lass!\n\nAnacreon had a red nose, so they say;\nBut what's a red nose if ye're happy and gay?\nGad split me! I'd rather be red whilst I'm here,\nThan white as a lily\u2014and dead half a year!\n\nSo Betty, my miss,\nCome give me a kiss;\nIn hell there's no innkeeper's daughter like this!",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "The narrator's home, during breakfast",
+    "mood": "Playful, carefree",
+    "image_prompt": "A man sitting at a breakfast table, reciting a rowdy, drunken poem with a mischievous grin on his face.",
+    "image_type": "scene",
+    "image_file": "scene_02_the_tomb_exploration.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 3,
+    "title": "The Vigil in the Bower",
+    "content": "the night in the bower outside the tomb; my sleep-filmed eyes fixed upon the crevice where the padlocked portal stood ajar! By what miracle had the watcher been thus deluded? I was now convinced that a supernatural agency protected me. Made bold by this heaven-sent circumstance, I began to resume perfect openness in going to the vault; confident that no one could witness my entrance.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "The bower outside the tomb, at night",
+    "mood": "Curious, hopeful, mystical",
+    "image_prompt": "The narrator, eyes fixed on the ajar padlock, surrounded by the darkness of the bower at night",
+    "image_type": "scene",
+    "image_file": "scene_03_the_vigil_in_the_bower.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 4,
+    "title": "The Phantom Mansion",
+    "content": "As I emerged from an intervening grove upon the plain before the ruin, I beheld in the misty moonlight a thing I had always vaguely expected. The mansion, gone for a century, once more reared its stately height to the raptured vision; every window ablaze with the splendour of many candles. Up the long drive rolled the coaches of the Boston gentry, whilst on foot came a numerous assemblage of powdered exquisites from the neighbouring mansions.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "The plain before the ruined mansion, illuminated by moonlight and candlelight",
+    "mood": "Mystical, dreamlike, anticipatory",
+    "image_prompt": "The narrator gazing upon the phantom mansion, with its windows ablaze and the gentry arriving by coach and on foot",
+    "image_type": "scene",
+    "image_file": "scene_04_the_phantom_mansion.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 5,
+    "title": "The Calamitous Revelry",
+    "content": "Inside the hall were music, laughter, and wine on every hand. Several faces I recognised; though I should have known them better had they been shrivelled or eaten away by death and decomposition. Amidst a wild and reckless throng I was the wildest and most abandoned. Gay blasphemy poured in torrents from my lips, and in my shocking sallies I heeded no law of God, Man, or Nature. Suddenly a peal of thunder, resonant even above the din of the swinish revelry, clave the very roof and laid a hush of fear upon the boisterous company.",
+    "characters_present": [
+      "Narrator",
+      "Revelers"
+    ],
+    "setting": "The interior of the phantom mansion, filled with music, laughter, and wine",
+    "mood": "Reckless, intoxicated, then struck with terror",
+    "image_prompt": "The narrator amid the wild and reckless revelry, as a sudden peal of thunder silences the boisterous company",
+    "image_type": "scene",
+    "image_file": "scene_05_the_calamitous_revelry.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 6,
+    "title": "Awakening to Voices",
+    "content": "The night of the first revelation was a sultry one. I must have fallen asleep from fatigue, for it was with a distinct sense of awakening that I heard the voices. Of those tones and accents I hesitate to speak; of their quality I will not speak; but I may say that they presented certain uncanny differences in vocabulary, pronunciation, and mode of utterance. Every shade of New England dialect, from the uncouth syllables of the Puritan colonists to the precise rhetoric of fifty years ago, seemed represented in that shadowy colloquy, though it was only later that I noticed the fact. At the time, indeed, my attention was distracted from this matter by another phenomenon; a phenomenon so fleeting that I could not take oath upon its reality. I barely fancied that as I awoke, a light had been hurriedly extinguished within the sunken sepulchre.",
+    "characters_present": [
+      "The Narrator"
+    ],
+    "setting": "A secluded, sylvan bower on an abandoned slope",
+    "mood": "Uncanny, unsettling",
+    "image_prompt": "A dimly lit chamber, with the narrator just waking up and catching a glimpse of a flickering light being extinguished in the distance",
+    "image_type": "scene",
+    "image_file": "scene_06_awakening_to_voices.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 7,
+    "title": "Entering the Vault",
+    "content": "It was in the soft glow of late afternoon that I first entered the vault on the abandoned slope. A spell was upon me, and my heart leaped with an exultation I can but ill describe. As I closed the door behind me and descended the dripping steps by the light of my lone candle, I seemed to know the way; and though the candle sputtered with the stifling reek of the place, I felt singularly at home in the musty, charnel-house air. Looking about me, I beheld many marble slabs bearing coffins, or the remains of coffins. Some of these were sealed and intact, but others had nearly vanished, leaving the silver handles and plates isolated amidst certain curious heaps of whitish dust. Upon one plate I read the name of Sir Geoffrey Hyde, who had come from Sussex in 1640 and died here a few years later. In a conspicuous alcove was one fairly well-preserved and untenanted casket, adorned with a single name which brought to me both a smile and a shudder. An odd impulse caused me to climb upon the broad slab, extinguish my candle, and lie down within the vacant box.",
+    "characters_present": [
+      "The Narrator"
+    ],
+    "setting": "The musty, dimly lit vault of the abandoned tomb",
+    "mood": "Compelled, unsettled",
+    "image_prompt": "The narrator, candle in hand, descending the dripping steps into the dimly lit vault, surrounded by the marble tombs and coffins",
+    "image_type": "scene",
+    "image_file": "scene_07_entering_the_vault.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 8,
+    "title": "The Forgotten Tomb",
+    "content": "years vaguely increased the always strong fascination which I felt for the forest-darkened sepulchre. One man only had perished in the fire. When the last of the Hydes was buried in this place of shade and stillness, the sad urnful of ashes had come from a distant land; to which the family had repaired when the mansion burned down. No one remains to lay flowers before the granite portal, and few care to brave the depressing shadows which seem to linger strangely about the water-worn stones.",
+    "characters_present": [
+      "The narrator"
+    ],
+    "setting": "A forgotten, forest-darkened tomb",
+    "mood": "Melancholic, contemplative",
+    "image_prompt": "A moss-covered, weathered granite tomb nestled among towering trees, its entrance partially obscured by overgrown vegetation.",
+    "image_type": "scene",
+    "image_file": "scene_08_the_forgotten_tomb.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 9,
+    "title": "Stumbling Upon the Entrance",
+    "content": "I shall never forget the afternoon when first I stumbled upon the half-hidden house of death. It was in mid-summer, when the alchemy of Nature transmutes the sylvan landscape to one vivid and almost homogeneous mass of green; when the senses are well-nigh intoxicated with the surging seas of moist verdure and the subtly indefinable odours of the soil and the vegetation. In such surroundings the mind loses its perspective; time and space become trivial and unreal, and echoes of a forgotten prehistoric past beat insistently upon the enthralled consciousness. When, upon forcing my way between two savage clumps of briers, I suddenly encountered the entrance of the vault, I had no knowledge of what I had discovered.",
+    "characters_present": [
+      "The narrator as a child"
+    ],
+    "setting": "A lush, overgrown forest in midsummer",
+    "mood": "Curious, enchanted",
+    "image_prompt": "A young boy, his clothes slightly disheveled, standing before a half-hidden, moss-covered granite doorway, his expression one of wonder and intrigue.",
+    "image_type": "scene",
+    "image_file": "scene_09_stumbling_upon_the_entrance.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 10,
+    "title": "Pondering the Tomb",
+    "content": "I felt that the great and sinister family of the burned-down mansion was in some way represented within the stone space I sought to explore. Mumbled tales of the weird rites and godless revels of bygone years in the ancient hall gave to me a new and potent interest in the tomb, before whose door I would sit for hours at a time each day. Once I thrust a candle within the nearly closed entrance, but could see nothing save a flight of damp stone steps leading downward. The odour of the place repelled yet bewitched me. I felt I had known it before, in a past remote beyond all recollection; beyond even my tenancy of the body I now possess.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "An ancient hillside tomb, shrouded in mystery and legend",
+    "mood": "Curious, yet unsettled and intrigued by the sinister aura of the tomb",
+    "image_prompt": "The narrator sitting before the tomb's entrance, gazing down the dark, damp stone steps, a single candle flickering in the shadows",
+    "image_type": "scene",
+    "image_file": "scene_10_pondering_the_tomb.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 11,
+    "title": "Theseus and the Tomb",
+    "content": "The year after I first beheld the tomb, I stumbled upon a worm-eaten translation of Plutarch's Lives in the book-filled attic of my home. Reading the life of Theseus, I was much impressed by that passage telling of the great stone beneath which the boyish hero was to find his tokens of destiny whenever he should become old enough to lift its enormous weight. This legend had the effect of dispelling my keenest impatience to enter the vault, for it made me feel that the time was not yet ripe. Later, I told myself, I should grow to a strength and ingenuity which might enable me to unfasten the heavily chained door with ease; but until then I would do better by conforming to what seemed the will of Fate.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "The narrator's home, surrounded by books in the attic",
+    "mood": "Reflective and patient, as the narrator contemplates the legend of Theseus and the great stone, and the need to wait for the right time to enter the tomb",
+    "image_prompt": "The narrator, seated in the attic surrounded by books, reading the passage about Theseus and the great stone",
+    "image_type": "scene",
+    "image_file": "scene_11_theseus_and_the_tomb.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 12,
+    "title": "Midnight Vigils",
+    "content": "I now formed the habit of listening very intently at the slightly open portal, choosing my favourite hours of midnight stillness for the odd vigil. By the time I came of age, I had made a small clearing in the thicket before the mould-stained facade of the hillside, allowing the surrounding vegetation to encircle and overhang the space like the walls and roof of a sylvan bower. This bower was my temple, the fastened door my shrine, and here I would lie outstretched on the mossy ground, thinking strange thoughts and dreaming strange dreams.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "The narrator's clearing, a secluded sylvan bower before the tomb's entrance, at the dead of night",
+    "mood": "Reverent, almost ritualistic, as the narrator embraces the tomb as a sacred space, meditating and dreaming in the stillness of the night",
+    "image_prompt": "The narrator, lying on the mossy ground in the clearing, gazing up at the tomb's facade through the overhanging vegetation, a look of intense focus and anticipation on their face",
+    "image_type": "scene",
+    "image_file": "scene_12_midnight_vigils.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 13,
+    "title": "Unearthing the Treasure-Trove",
+    "content": "Ceasing my futile and now objectless writhing, I watched the spectators as they viewed the treasure-trove, and was permitted to share in their discoveries. The box, whose fastenings were broken by the stroke which had unearthed it, contained many papers and objects of value; but I had eyes for one thing alone. It was the porcelain miniature of a young man in a smartly curled bag-wig, and bore the initials \"J. H.\" The face was such that as I gazed, I might well have been studying my mirror.",
+    "characters_present": [
+      "Narrator",
+      "Spectators"
+    ],
+    "setting": "The site of the unearthed treasure-trove",
+    "mood": "Curious, introspective",
+    "image_prompt": "A group of spectators examining the contents of an unearthed box, with the narrator captivated by a porcelain miniature portrait",
+    "image_type": "scene",
+    "image_file": "scene_13_unearthing_the_treasure_trove.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  },
+  {
+    "scene_number": 14,
+    "title": "Confined in the Barred Room",
+    "content": "On the following day I was brought to this room with the barred windows, but I have been kept informed of certain things through an aged and simple-minded servitor, for whom I bore a fondness in infancy, and who like me loves the churchyard. What I have dared relate of my experiences within the vault has brought me only pitying smiles. My father, who visits me frequently, declares that at no time did I pass the chained portal, and swears that the rusted padlock had not been touched for fifty years when he examined it.",
+    "characters_present": [
+      "Narrator",
+      "Aged Servant",
+      "Father"
+    ],
+    "setting": "A barred room",
+    "mood": "Frustrated, perplexed",
+    "image_prompt": "The narrator sitting in a barred room, with an aged servant and the narrator's father visiting and dismissing his claims about the vault",
+    "image_type": "scene",
+    "image_file": "scene_14_confined_in_the_barred_room.png",
+    "chapter_number": 2,
+    "chapter_title": "The Tomb"
+  }
+]

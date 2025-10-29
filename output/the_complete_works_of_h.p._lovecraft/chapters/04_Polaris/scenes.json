@@ -1,0 +1,78 @@
+[
+  {
+    "scene_number": 1,
+    "title": "The Watchtower Vigil",
+    "content": "Alone I mounted the tower, for every man of stout body was needed in the passes below. My brain was sore dazed with excitement and fatigue, for I had not slept in many days; yet was my purpose firm, for I loved my native land of Lomar, and the marble city of Olatho\u00eb that lies betwixt the peaks of Noton and Kadiphonek.\n\nBut as I stood in the tower's topmost chamber, I beheld the horned waning moon, red and sinister, quivering through the vapours that hovered over the distant valley of Banof. And through an opening in the roof glittered the pale Pole Star, fluttering as if alive, and leering like a fiend and tempter. Methought its spirit whispered evil counsel, soothing me to traitorous somnolence with a damnable rhythmical promise which it repeated over and over.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "The watchtower of Thapnen, overlooking the peaks of Noton and Kadiphonek",
+    "mood": "Tense, weary, unsettled",
+    "image_prompt": "A lone figure stands vigilant in the dimly lit watchtower, gazing out at the haunting red moon and flickering Pole Star above.",
+    "image_type": "scene",
+    "image_file": "scene_01_the_watchtower_vigil.png",
+    "chapter_number": 4,
+    "chapter_title": "Polaris"
+  },
+  {
+    "scene_number": 2,
+    "title": "Nightmarish Visions",
+    "content": "I sometimes scream frantically, begging the dream-creatures around me to waken me ere the Inutos steal up the pass behind the peak Noton and take the citadel by surprise; but these creatures are daemons, for they laugh at me and tell me I am not dreaming. They mock me whilst I sleep, and whilst the squat yellow foe may be creeping silently upon us. I have failed in my duty and betrayed the marble city of Olatho\u00eb; I have proven false to Alos, my friend and commander. But still these shadows of my dream deride me.",
+    "characters_present": [
+      "The narrator",
+      "Dream-creatures"
+    ],
+    "setting": "Inside a dream or nightmare",
+    "mood": "Panicked, guilty, hopeless",
+    "image_prompt": "The narrator desperately trying to wake from a nightmare as shadowy dream-creatures mock and deride them",
+    "image_type": "scene",
+    "image_file": "scene_02_nightmarish_visions.png",
+    "chapter_number": 4,
+    "chapter_title": "Polaris"
+  },
+  {
+    "scene_number": 3,
+    "title": "Unsettling Visions of the Pole Star",
+    "content": "They say there is no land of Lomar, save in my nocturnal imaginings; that in those realms where the Pole Star shines high and red Aldebaran crawls low around the horizon, there has been naught save ice and snow for thousands of years, and never a man save squat yellow creatures, blighted by the cold, whom they call \"Esquimaux\". And as I writhe in my guilty agony, frantic to save the city whose peril every moment grows, and vainly striving to shake off this unnatural dream of a house of stone and brick south of a sinister swamp and a cemetery on a low hillock; the Pole Star, evil and monstrous, leers down from the black vault, winking hideously like an insane watching eye which strives to convey some strange message, yet recalls nothing save that it once had a message to convey.",
+    "characters_present": [
+      "The narrator"
+    ],
+    "setting": "The night sky, with the Pole Star prominent",
+    "mood": "Unsettling, ominous, foreboding",
+    "image_prompt": "The Pole Star shining ominously down from the night sky, as the narrator struggles with their disturbing visions",
+    "image_type": "scene",
+    "image_file": "scene_03_unsettling_visions_of_the_pole_star.png",
+    "chapter_number": 4,
+    "chapter_title": "Polaris"
+  },
+  {
+    "scene_number": 4,
+    "title": "The Watchful Pole Star",
+    "content": "Into the north window of my chamber glows the Pole Star with uncanny light. All through the long hellish hours of blackness it shines there. And in the autumn of the year, when the winds from the north curse and whine, and the red-leaved trees of the swamp mutter things to one another in the small hours of the morning under the horned waning moon, I sit by the casement and watch that star. Down from the heights reels the glittering Cassiopeia as the hours wear on, while Charles' Wain lumbers up from behind the vapour-soaked swamp trees that sway in the night-wind. Just before dawn Arcturus winks ruddily from above the cemetery on the low hillock, and Coma Berenices shimmers weirdly afar off in the mysterious east; but still the Pole Star leers down from the same place in the black vault, winking hideously like an insane watching eye which strives to convey some strange message, yet recalls nothing save that it once had a message to convey.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "The narrator's chamber, with a view of the night sky and the Pole Star.",
+    "mood": "Ominous, unsettling, and contemplative.",
+    "image_prompt": "The Pole Star shining through a window on a cold, autumn night, with the swamps and forests in the background.",
+    "image_type": "scene",
+    "image_file": "scene_04_the_watchful_pole_star.png",
+    "chapter_number": 4,
+    "chapter_title": "Polaris"
+  },
+  {
+    "scene_number": 5,
+    "title": "The Mysterious City",
+    "content": "And it was under a horned waning moon that I saw the city for the first time. Still and somnolent did it lie, on a strange plateau in a hollow betwixt strange peaks. Of ghastly marble were its walls and its towers, its columns, domes, and pavements. In the marble streets were marble pillars, the upper parts of which were carven into the images of grave bearded men. The air was warm and stirred not. And overhead, scarce ten degrees from the zenith, glowed that watching Pole Star. Long did I gaze on the city, but the day came not. When the red Aldebaran, which blinked low in the sky but never set, had crawled a quarter of the way around the horizon, I saw light and motion in the houses and the streets. Forms strangely robed, but at once noble and familiar, walked abroad, and under the horned waning moon men talked wisdom in a tongue which I understood, though it was unlike any language I had ever known.",
+    "characters_present": [
+      "Narrator"
+    ],
+    "setting": "A mysterious, ancient city on a plateau between strange peaks, bathed in the light of the Pole Star and a waning moon.",
+    "mood": "Eerie, otherworldly, and captivating.",
+    "image_prompt": "The ancient, marble city on the plateau, with the Pole Star and a waning moon in the sky above.",
+    "image_type": "scene",
+    "image_file": "scene_05_the_mysterious_city.png",
+    "chapter_number": 4,
+    "chapter_title": "Polaris"
+  }
+]

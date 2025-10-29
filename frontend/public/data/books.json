@@ -1,20 +1,38 @@
 [
   {
+    "id": "cathrine_the_great",
+    "title": "Cathrine The Great",
+    "description": "Visual novel adaptation of Cathrine The Great",
+    "data_dir": "cathrine_the_great",
+    "created_at": "/Users/john/Projects/DnB/REGNSKAP/aiaiai/nouvello",
+    "scenes_count": 4,
+    "characters_count": 10
+  },
+  {
     "id": "alice",
-    "title": "Alice In Wonderland",
-    "description": "Visual novel adaptation of Alice's Adventures in Wonderland",
+    "title": "Alice",
+    "description": "Visual novel adaptation of Alice",
     "data_dir": "alice",
-    "created_at": "2024-01-01",
-    "scenes_count": 12,
-    "characters_count": 4
+    "created_at": "/Users/john/Projects/DnB/REGNSKAP/aiaiai/nouvello",
+    "scenes_count": 20,
+    "characters_count": 2
+  },
+  {
+    "id": "the_complete_works_of_h.p._lovecraft",
+    "title": "The Complete Works of H.P. Lovecraft",
+    "description": "Visual novel adaptation of The Complete Works of H.P. Lovecraft by H.P. Lovecraft",
+    "data_dir": "the_complete_works_of_h.p._lovecraft",
+    "created_at": "/Users/john/Projects/DnB/REGNSKAP/aiaiai/nouvello",
+    "scenes_count": 44,
+    "characters_count": 3
   },
   {
     "id": "peterpan",
-    "title": "Peterpan",
-    "description": "Visual novel adaptation of Peterpan",
+    "title": "Peter Pan",
+    "description": "Visual novel adaptation of Peter Pan by J. M. Barrie",
     "data_dir": "peterpan",
-    "created_at": "/home/john/Projects/book-generation",
-    "scenes_count": 8,
-    "characters_count": 7
+    "created_at": "/Users/john/Projects/DnB/REGNSKAP/aiaiai/nouvello",
+    "scenes_count": 74,
+    "characters_count": 18
   }
 ]

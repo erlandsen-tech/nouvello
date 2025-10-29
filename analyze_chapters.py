@@ -81,7 +81,7 @@ def list_chapters(epub_path):
         print(f"[{i:3d}] {chapter.title} ({content_length:,} characters)")
     
     print("\n" + "=" * 70)
-    print(f"Total: {len(chapters)} chapters")
+    print(f"Total: {len(chapters)} chapters (EPUB)")
 
 
 def main():
@@ -168,6 +168,11 @@ Examples:
         help='Preview selected chapters without analyzing'
     )
     
+    parser.add_argument(
+        '--style',
+        help='Art style override for all images (e.g., "horror", "cute", "cyberpunk", "watercolor")'
+    )
+    
     args = parser.parse_args()
     
     # Check if file exists
@@ -190,6 +195,14 @@ Examples:
         sys.exit(1)
     
     print(f"✅ Found {len(chapters)} chapters")
+    
+    # Extract book metadata
+    book_title = parser_obj.get_book_title()
+    book_author = parser_obj.get_book_author()
+    if book_title:
+        print(f"📖 Book: {book_title}")
+    if book_author:
+        print(f"✍️  Author: {book_author}")
     
     # Parse chapter selection
     selected_indices = parse_chapter_selection(args.chapters, len(chapters))
@@ -245,7 +258,6 @@ Examples:
     
     try:
         analyzer = ChapterAnalyzer(
-            provider="bedrock",
             region=args.region,
             model=args.model,
             profile=args.profile
@@ -276,6 +288,34 @@ Examples:
     
     print("\n✅ Analysis complete!")
     
+    # Infer art style from book content if no override specified
+    inferred_style = None
+    if not args.style and len(analyses) > 0:
+        print(f"\n🎨 Inferring art style from book content...")
+        try:
+            # Import here to avoid circular dependency
+            sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'ai'))
+            from character_image_prompter import CharacterImagePrompter
+            
+            temp_prompter = CharacterImagePrompter(region=args.region, model=args.model, profile=args.profile)
+            book_context = temp_prompter._extract_book_context(analyses)
+            
+            # Get the inferred style tags
+            inferred_tags = book_context.get('art_style_tags', [])
+            if inferred_tags:
+                inferred_style = ', '.join(inferred_tags)
+                print(f"   ✨ Detected style: {inferred_style}")
+            
+            # Also save other useful context
+            detected_genre = book_context.get('genre', '')
+            detected_mood = book_context.get('overall_mood', '')
+            if detected_genre:
+                print(f"   📚 Genre: {detected_genre}")
+            if detected_mood:
+                print(f"   🎭 Mood: {detected_mood}")
+        except Exception as e:
+            print(f"   ⚠️  Could not infer style: {e}")
+    
     # Create output directory
     os.makedirs(args.output_dir, exist_ok=True)
     
@@ -291,7 +331,25 @@ Examples:
     for fmt in formats_to_export:
         ext = {'json': 'json', 'markdown': 'md', 'text': 'txt'}[fmt]
         output_path = os.path.join(args.output_dir, f"{base_name}_analysis.{ext}")
-        analyzer.export_analyses(analyses, output_path, format=fmt)
+        
+        # Add book metadata to the export
+        if fmt == 'json':
+            # Use override if provided, otherwise use inferred style
+            final_style = args.style if args.style else inferred_style
+            
+            # Export with book metadata wrapper
+            data = {
+                'book_title': book_title,
+                'book_author': book_author,
+                'art_style': final_style,  # Save style (override or inferred)
+                'chapters': [a.to_dict() for a in analyses]
+            }
+            with open(output_path, 'w', encoding='utf-8') as f:
+                import json as json_lib
+                json_lib.dump(data, f, indent=2, ensure_ascii=False)
+        else:
+            analyzer.export_analyses(analyses, output_path, format=fmt)
+        
         output_files.append(output_path)
         if len(formats_to_export) > 1:
             print(f"   ✅ {fmt.capitalize()}: {output_path}")

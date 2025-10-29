@@ -31,11 +31,16 @@ class EPUBParser:
         self.epub_path = epub_path
         self.book = None
         self.chapters = []
+        self.book_title = None
+        self.book_author = None
         
     def parse(self) -> List[EPUBChapter]:
         """Parse EPUB and extract chapters"""
         try:
             self.book = epub.read_epub(self.epub_path)
+            
+            # Extract book metadata
+            self._extract_metadata()
             
             # Try to extract from TOC first (most reliable)
             chapters_from_toc = self._extract_from_toc()
@@ -212,6 +217,30 @@ class EPUBParser:
     def get_chapter_count(self) -> int:
         """Get the number of chapters"""
         return len(self.chapters)
+    
+    def _extract_metadata(self):
+        """Extract book title and author from EPUB metadata"""
+        try:
+            if self.book:
+                # Extract title
+                title_meta = self.book.get_metadata('DC', 'title')
+                if title_meta and len(title_meta) > 0:
+                    self.book_title = title_meta[0][0]
+                
+                # Extract author
+                author_meta = self.book.get_metadata('DC', 'creator')
+                if author_meta and len(author_meta) > 0:
+                    self.book_author = author_meta[0][0]
+        except Exception as e:
+            print(f"Warning: Could not extract metadata: {e}")
+    
+    def get_book_title(self) -> Optional[str]:
+        """Get the book title from EPUB metadata"""
+        return self.book_title
+    
+    def get_book_author(self) -> Optional[str]:
+        """Get the book author from EPUB metadata"""
+        return self.book_author
     
     def get_chapter_titles(self) -> List[str]:
         """Get list of chapter titles"""

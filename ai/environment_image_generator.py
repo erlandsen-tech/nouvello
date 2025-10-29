@@ -32,7 +32,7 @@ class EnvironmentImagePrompt:
 class EnvironmentImageGenerator:
     """Generate atmospheric background images for visual novel scenes"""
     
-    def __init__(self, provider: str = "bedrock", region: str = "us-east-1",
+    def __init__(self, provider: str = "bedrock", region: str = "eu-central-1",
                  model: str = "us.anthropic.claude-3-5-sonnet-20241022-v2:0", profile: Optional[str] = None):
         """
         Initialize the environment image generator
