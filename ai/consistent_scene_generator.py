@@ -43,9 +43,10 @@ class SceneSegment:
 class ConsistentSceneGenerator:
     """Generate scene images with consistent characters"""
     
-    def __init__(self, art_style: Optional[str] = None):
+    def __init__(self, art_style: Optional[str] = None, explicit_style: Optional[str] = None):
         self.image_generator = GeminiImageGenerator()
-        self.art_style = art_style  # Optional style override
+        self.art_style = art_style  # Style for prompts (can be from analysis.json)
+        self.explicit_style = explicit_style  # Explicit style for filenames (only from --style flag)
     
     def generate_consistent_scenes(
         self, 
@@ -142,6 +143,13 @@ class ConsistentSceneGenerator:
         """Find character image files for the given characters"""
         character_refs = {}
         
+        # Get style suffix ONLY if explicitly set (not from auto-detected analysis.json)
+        # Check if we have an explicit style flag set
+        style_suffix = None
+        if hasattr(self, 'explicit_style') and self.explicit_style:
+            style_suffix = "".join(c for c in self.explicit_style if c.isalnum() or c in (' ', '-', '_')).strip()
+            style_suffix = style_suffix.replace(' ', '_').lower()
+        
         for character in characters:
             # Try different naming patterns
             possible_names = [
@@ -152,11 +160,30 @@ class ConsistentSceneGenerator:
                 character.replace(' ', '')
             ]
             
-            for name in possible_names:
-                image_path = character_dir / f"{name}.png"
-                if image_path.exists():
-                    character_refs[character] = image_path
-                    break
+            found = False
+            # First try style-specific names if style is set
+            # (but we'll fall back to non-style if they don't exist)
+            if style_suffix:
+                for name in possible_names:
+                    image_path = character_dir / f"{name}_{style_suffix}.png"
+                    if image_path.exists():
+                        character_refs[character] = image_path
+                        found = True
+                        break
+            
+            # Always fall back to non-style names if style-specific not found
+            # This ensures old images work even when style is set in analysis.json
+            if not found:
+                for name in possible_names:
+                    image_path = character_dir / f"{name}.png"
+                    if image_path.exists():
+                        character_refs[character] = image_path
+                        found = True
+                        break
+            
+            # Warn if character not found at all (for debugging)
+            if not found:
+                print(f"   ⚠️  Warning: No image found for character '{character}'")
         
         return character_refs
     
@@ -292,6 +319,7 @@ def main():
     parser.add_argument("--characters", required=True, help="Path to character images directory")
     parser.add_argument("-o", "--output", required=True, help="Output directory for scene images")
     parser.add_argument("--delay", type=float, default=2.0, help="Delay between requests in seconds")
+    parser.add_argument("--explicit-style", help="Explicitly provided style (from --style flag) for filename suffixes. Auto-detected styles are not used for filenames.")
     
     args = parser.parse_args()
     
@@ -347,7 +375,8 @@ def main():
         sys.exit(0)
     
     # Generate consistent scenes
-    generator = ConsistentSceneGenerator(art_style=art_style)
+    # explicit_style is only set when --style was explicitly provided (not auto-detected)
+    generator = ConsistentSceneGenerator(art_style=art_style, explicit_style=args.explicit_style)
     generator.generate_consistent_scenes(scenes, character_dir, output_dir, args.delay)
 
 

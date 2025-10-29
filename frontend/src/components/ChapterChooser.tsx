@@ -8,6 +8,7 @@ interface Chapter {
   title: string;
   number: number | null;
   preview_image?: string | null;
+  scenes_count?: number;
 }
 
 interface ChapterChooserProps {
@@ -123,6 +124,13 @@ const ChapterChooser: React.FC<ChapterChooserProps> = ({ bookId, bookTitle, onCh
                 <div className="chapter-number">Chapter {chapter.number}</div>
               )}
               <h3 className="chapter-title">{chapter.title}</h3>
+              {chapter.scenes_count !== undefined && (
+                <div className="chapter-stats">
+                  <span className="stat">
+                    <strong>{chapter.scenes_count}</strong> {chapter.scenes_count === 1 ? 'scene' : 'scenes'}
+                  </span>
+                </div>
+              )}
             </div>
             <div className="chapter-action">
               <button className="read-button">Read</button>

@@ -1,94 +1,192 @@
 [
   {
     "scene_number": 1,
-    "title": "Alice's Self-Doubt",
-    "content": "\"How doth the little crocodile\nImprove his shining tail,\nAnd pour the waters of the Nile\nOn every golden scale!\n\n\"How cheerfully he seems to grin,\nHow neatly spread his claws,\nAnd welcome little fishes in\nWith gently smiling jaws!\"\n\n\"I'm sure those are not the right words,\" said poor Alice, and her eyes filled\nwith tears again as she went on, \"I must be Mabel after all, and I shall have\nto go and live in that poky little house, and have next to no toys to play\nwith, and oh! ever so many lessons to learn! No, I've made up my mind about it;\nif I'm Mabel, I'll stay down here! It'll be no use their putting their heads\ndown and saying 'Come up again, dear!' I shall only look up and say 'Who am I\nthen? Tell me that first, and then, if I like being that person, I'll come up:\nif not, I'll stay down here till I'm somebody else'\u2014but, oh dear!\" cried Alice,\nwith a sudden burst of tears, \"I do wish they would put their heads\ndown! I am so very tired of being all alone here!\"",
+    "title": "A Strange Recitation",
+    "content": "\"How doth the little crocodile\nImprove his shining tail,\nAnd pour the waters of the Nile\nOn every golden scale!\n\"How cheerfully he seems to grin,\nHow neatly spread his claws,\nAnd welcome little fishes in\nWith gently smiling jaws!\"\n\"I'm sure those are not the right words,\" said poor Alice, and her eyes filled with tears again as she went on, \"I must be Mabel after all, and I shall have to go and live in that poky little house, and have next to no toys to play with, and oh! ever so many lessons to learn!\"",
     "characters_present": [
       "Alice"
     ],
-    "setting": "The pool of tears",
-    "mood": "Confused and self-doubting",
-    "image_prompt": "Alice sitting by the pool of tears, looking distressed as she tries to recite a poem she's unsure about.",
+    "setting": "Interior chamber or room",
+    "mood": "Distressed, confused, melancholic",
+    "image_prompt": "Young Alice sitting with hands crossed on her lap, tears streaming down her face, reciting the crocodile poem with a hoarse and strange voice. Soft interior lighting, emotional and vulnerable expression.",
     "image_type": "scene",
-    "image_file": "scene_01_alices_self_doubt.png",
+    "image_file": "scene_01_a_strange_recitation.png",
     "chapter_number": 5,
     "chapter_title": "CHAPTER II. The Pool of Tears"
   },
   {
     "scene_number": 2,
-    "title": "Conversing with the Mouse",
-    "content": "\"Would it be of any use, now,\" thought Alice, \"to speak to this mouse? Everything is so out-of-the-way down here, that I should think very likely it can talk: at any rate, there's no harm in trying.\" So she began: \"O Mouse, do you know the way out of this pool? I am very tired of swimming about here, O Mouse!\" (Alice thought this must be the right way of speaking to a mouse: she had never done such a thing before, but she remembered having seen in her brother's Latin Grammar, \"A mouse\u2014of a mouse\u2014to a mouse\u2014a mouse\u2014O mouse!\") The Mouse looked at her rather inquisitively, and seemed to her to wink with one of its little eyes, but it said nothing.",
+    "title": "The Shrinking Discovery",
+    "content": "As she said this she looked down at her hands, and was surprised to see that she had put on one of the Rabbit's little white kid gloves while she was talking. \"How can I have done that?\" she thought. \"I must be growing small again.\" She got up and went to the table to measure herself by it, and found that, as nearly as she could guess, she was now about two feet high, and was going on shrinking rapidly: she soon found out that the cause of this was the fan she was holding, and she dropped it hastily, just in time to avoid shrinking away altogether.\n\"That was a narrow escape!\" said Alice, a good deal frightened at the sudden change, but very glad to find herself still in existence; \"and now for the garden!\" and she ran with all speed back to the little door: but, alas! the little door was shut again, and the little golden key was lying on the glass table as before, \"and things are worse than ever,\" thought the poor child, \"for I never was so small as this before, never!\"",
     "characters_present": [
-      "Alice",
-      "The Mouse"
+      "Alice"
     ],
-    "setting": "The Pool of Tears",
-    "mood": "Curious, Questioning",
-    "image_prompt": "Alice swimming in the pool, looking curiously at the mouse and attempting to converse with it.",
+    "setting": "Room with table, glass table, little door",
+    "mood": "Alarmed, desperate, frantic",
+    "image_prompt": "Alice, now only two feet high, dropping a fan in panic. She is diminutive, wearing a white kid glove, standing near a glass table with a golden key visible. Her expression shows fear and desperation as she discovers the locked door behind her.",
     "image_type": "scene",
-    "image_file": "scene_02_conversing_with_the_mouse.png",
+    "image_file": "scene_02_the_shrinking_discovery.png",
     "chapter_number": 5,
     "chapter_title": "CHAPTER II. The Pool of Tears"
   },
   {
     "scene_number": 3,
-    "title": "The Mouse's Outburst",
-    "content": "\"Not like cats!\" cried the Mouse, in a shrill, passionate voice. \"Would you like cats if you were me?\" \"Well, perhaps not,\" said Alice in a soothing tone: \"don't be angry about it. And yet I wish I could show you our cat Dinah: I think you'd take a fancy to cats if you could only see her. She is such a dear quiet thing,\" Alice went on, half to herself, as she swam lazily about in the pool, \"and she sits purring so nicely by the fire, licking her paws and washing her face\u2014and she is such a nice soft thing to nurse\u2014and she's such a capital one for catching mice\u2014oh, I beg your pardon!\" cried Alice again, for this time the Mouse was bristling all over, and she felt certain it must be really offended. \"We won't talk about her any more if you'd rather not.\"",
+    "title": "The Pool of Tears",
+    "content": "As she said these words her foot slipped, and in another moment, splash! she was up to her chin in salt water. Her first idea was that she had somehow fallen into the sea, \"and in that case I can go back by railway,\" she said to herself. However, she soon made out that she was in the pool of tears which she had wept when she was nine feet high.\n\"I wish I hadn't cried so much!\" said Alice, as she swam about, trying to find her way out. \"I shall be punished for it now, I suppose, by being drowned in my own tears! That will be a queer thing, to be sure! However, everything is queer to-day.\"",
     "characters_present": [
-      "Alice",
-      "The Mouse"
+      "Alice"
     ],
-    "setting": "The Pool of Tears",
-    "mood": "Tense, Emotional",
-    "image_prompt": "The Mouse, bristling with anger, confronting Alice as she tries to appease it by describing her cat Dinah.",
+    "setting": "Pool of salt water (Alice's own tears)",
+    "mood": "Desperate, ironic, resigned",
+    "image_prompt": "Alice swimming in a large pool of water, her tiny figure barely visible as she splashes about. The liquid surface surrounds her up to her chin. Dim aquatic lighting creates a surreal, dreamlike atmosphere. Her face shows desperation mixed with grim acceptance.",
     "image_type": "scene",
-    "image_file": "scene_03_the_mouses_outburst.png",
+    "image_file": "scene_03_the_pool_of_tears.png",
     "chapter_number": 5,
     "chapter_title": "CHAPTER II. The Pool of Tears"
   },
   {
     "scene_number": 4,
-    "title": "Alice's Transformation",
-    "content": "\"Curiouser and curiouser!\" cried Alice (she was so much surprised, that for the moment she quite forgot how to speak good English); \"now I'm opening out like the largest telescope that ever was! Good-bye, feet!\" (for when she looked down at her feet, they seemed to be almost out of sight, they were getting so far off). \"Oh, my poor little feet, I wonder who will put on your shoes and stockings for you now, dears? I'm sure I shan't be able! I shall be a great deal too far off to trouble myself about you: you must manage the best way you can;\u2014but I must be kind to them,\" thought Alice, \"or perhaps they won't walk the way I want to go! Let me see: I'll give them a new pair of boots every Christmas.\"",
+    "title": "The Mouse in the Pool",
+    "content": "she swam nearer to make out what it was: at first she thought it must be a walrus or hippopotamus, but then she remembered how small she was now, and she soon made out that it was only a mouse that had slipped in like herself. \"Would it be of any use, now,\" thought Alice, \"to speak to this mouse? Everything is so out-of-the-way down here, that I should think very likely it can talk: at any rate, there's no harm in trying.\" So she began: \"O Mouse, do you know the way out of this pool? I am very tired of swimming about here, O Mouse!\" (Alice thought this must be the right way of speaking to a mouse: she had never done such a thing before, but she remembered having seen in her brother's Latin Grammar, \"A mouse\u2014of a mouse\u2014to a mouse\u2014a mouse\u2014O mouse!\") The Mouse looked at her rather inquisitively, and seemed to her to wink with one of its little eyes, but it said nothing.",
     "characters_present": [
-      "Alice"
+      "Alice",
+      "Mouse"
     ],
-    "setting": "Inside the hall, after the key causes Alice to grow larger",
-    "mood": "Surprised, confused, contemplative",
-    "image_prompt": "Alice looking down at her rapidly growing feet, a surprised expression on her face as she ponders how to care for them",
+    "setting": "The pool of tears, underwater perspective",
+    "mood": "Curious, hopeful, slightly anxious",
+    "image_prompt": "Alice swimming underwater toward a small mouse, her dress floating around her, the mouse regarding her with one eye, bubbles rising in the blue-green water",
     "image_type": "scene",
-    "image_file": "scene_04_alices_transformation.png",
+    "image_file": "scene_04_the_mouse_in_the_pool.png",
     "chapter_number": 5,
     "chapter_title": "CHAPTER II. The Pool of Tears"
   },
   {
     "scene_number": 5,
-    "title": "Alice's Self-Reflection",
-    "content": "\"You ought to be ashamed of yourself,\" said Alice, \"a great girl like you,\" (she might well say this), \"to go on crying in this way! Stop this moment, I tell you!\" But she went on all the same, shedding gallons of tears, until there was a large pool all round her, about four inches deep and reaching half down the hall.",
+    "title": "The French Lesson and the Cat Catastrophe",
+    "content": "\"Perhaps it doesn't understand English,\" thought Alice; \"I daresay it's a French mouse, come over with William the Conqueror.\" (For, with all her knowledge of history, Alice had no very clear notion how long ago anything had happened.) So she began again: \"O\u00f9 est ma chatte?\" which was the first sentence in her French lesson-book. The Mouse gave a sudden leap out of the water, and seemed to quiver all over with fright. \"Oh, I beg your pardon!\" cried Alice hastily, afraid that she had hurt the poor animal's feelings. \"I quite forgot you didn't like cats.\" \"Not like cats!\" cried the Mouse, in a shrill, passionate voice. \"Would you like cats if you were me?\"",
     "characters_present": [
-      "Alice"
+      "Alice",
+      "Mouse"
     ],
-    "setting": "Inside the hall, surrounded by a pool of Alice's tears",
-    "mood": "Frustrated, self-critical",
-    "image_prompt": "Alice sitting in the pool of her own tears, scolding herself for her emotional outburst",
+    "setting": "The pool of tears",
+    "mood": "Surprised, distressed, suddenly tense",
+    "image_prompt": "A small mouse leaping out of water in fright, Alice's face shocked and apologetic, water splashing dramatically around them",
     "image_type": "scene",
-    "image_file": "scene_05_alices_self_reflection.png",
+    "image_file": "scene_05_the_french_lesson_and_the_cat_catastrophe.png",
     "chapter_number": 5,
     "chapter_title": "CHAPTER II. The Pool of Tears"
   },
   {
     "scene_number": 6,
-    "title": "The White Rabbit's Hurried Return",
+    "title": "Alice's Unfortunate Praise of Dinah",
+    "content": "\"Well, perhaps not,\" said Alice in a soothing tone: \"don't be angry about it. And yet I wish I could show you our cat Dinah: I think you'd take a fancy to cats if you could only see her. She is such a dear quiet thing,\" Alice went on, half to herself, as she swam lazily about in the pool, \"and she sits purring so nicely by the fire, licking her paws and washing her face\u2014and she is such a nice soft thing to nurse\u2014and she's such a capital one for catching mice\u2014oh, I beg your pardon!\" cried Alice again, for this time the Mouse was bristling all over, and she felt certain it must be really offended. \"We won't talk about her any more if you'd rather not.\"",
+    "characters_present": [
+      "Alice",
+      "Mouse"
+    ],
+    "setting": "The pool of tears",
+    "mood": "Apologetic, awkward, increasingly distressed",
+    "image_prompt": "Alice speaking dreamily while swimming, the Mouse beside her bristling with fur standing on end, expressing silent fury",
+    "image_type": "scene",
+    "image_file": "scene_06_alices_unfortunate_praise_of_dinah.png",
+    "chapter_number": 5,
+    "chapter_title": "CHAPTER II. The Pool of Tears"
+  },
+  {
+    "scene_number": 7,
+    "title": "The Dogs and the Departure",
+    "content": "\"I won't indeed!\" said Alice, in a great hurry to change the subject of conversation. \"Are you\u2014are you fond\u2014of\u2014of dogs?\" The Mouse did not answer, so Alice went on eagerly: \"There is such a nice little dog near our house I should like to show you! A little bright-eyed terrier, you know, with oh, such long curly brown hair! And it'll fetch things when you throw them, and it'll sit up and beg for its dinner, and all sorts of things\u2014I can't remember half of them\u2014and it belongs to a farmer, you know, and he says it's so useful, it's worth a hundred pounds! He says it kills all the rats and\u2014oh dear!\" cried Alice in a sorrowful tone, \"I'm afraid I've offended it again!\" For the Mouse was swimming away from her as hard as it could go, and making quite a commotion in the pool as it went.",
+    "characters_present": [
+      "Alice",
+      "Mouse"
+    ],
+    "setting": "The pool of tears",
+    "mood": "Desperate, mortified, frantically apologetic",
+    "image_prompt": "Alice calling after a Mouse swimming rapidly away, her expression one of dismay, water churning as the Mouse flees",
+    "image_type": "scene",
+    "image_file": "scene_07_the_dogs_and_the_departure.png",
+    "chapter_number": 5,
+    "chapter_title": "CHAPTER II. The Pool of Tears"
+  },
+  {
+    "scene_number": 8,
+    "title": "The Promise and the Gathering Shore",
+    "content": "So she called softly after it, \"Mouse dear! Do come back again, and we won't talk about cats or dogs either, if you don't like them!\" When the Mouse heard this, it turned round and swam slowly back to her: its face was quite pale (with passion, Alice thought), and it said in a low trembling voice, \"Let us get to the shore, and then I'll tell you my history, and you'll understand why it is I hate cats and dogs.\" It was high time to go, for the pool was getting quite crowded with the birds and animals that had fallen into it: there were a Duck and a Dodo, a Lory and an Eaglet, and several other curious creatures. Alice led the way, and the whole party swam to the shore.",
+    "characters_present": [
+      "Alice",
+      "Mouse",
+      "Duck",
+      "Dodo",
+      "Lory",
+      "Eaglet",
+      "other creatures"
+    ],
+    "setting": "The pool of tears, transitioning to the shore",
+    "mood": "Reconciliatory, mysterious, busy with activity",
+    "image_prompt": "Alice leading a procession of various wet animals swimming toward shore\u2014a mouse, duck, dodo, lory, eaglet, and other curious creatures trailing behind her",
+    "image_type": "scene",
+    "image_file": "scene_08_the_promise_and_the_gathering_shore.png",
+    "chapter_number": 5,
+    "chapter_title": "CHAPTER II. The Pool of Tears"
+  },
+  {
+    "scene_number": 9,
+    "title": "Growing Impossibly Large",
+    "content": "\"Curiouser and curiouser!\" cried Alice (she was so much surprised, that for the moment she quite forgot how to speak good English); \"now I'm opening out like the largest telescope that ever was! Good-bye, feet!\" (for when she looked down at her feet, they seemed to be almost out of sight, they were getting so far off). \"Oh, my poor little feet, I wonder who will put on your shoes and stockings for you now, dears? I'm sure I shan't be able! I shall be a great deal too far off to trouble myself about you: you must manage the best way you can;\u2014but I must be kind to them,\" thought Alice, \"or perhaps they won't walk the way I want to go! Let me see: I'll give them a new pair of boots every Christmas.\" And she went on planning to herself how she would manage it. \"They must go by the carrier,\" she thought; \"and how funny it'll seem, sending presents to one's own feet! And how odd the directions will look! Alice's Right Foot, Esq., Hearthrug, near the Fender, (with Alice's love). Oh dear, what nonsense I'm talking!\"",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "The white rabbit's hall",
+    "mood": "Surreal, anxious, delirious",
+    "image_prompt": "A young girl in a blue dress crammed into a narrow hallway, her body impossibly stretched vertically, her feet distant and tiny far below her face, her expression bewildered and distressed as she gazes down at her diminished feet",
+    "image_type": "scene",
+    "image_file": "scene_09_growing_impossibly_large.png",
+    "chapter_number": 5,
+    "chapter_title": "CHAPTER II. The Pool of Tears"
+  },
+  {
+    "scene_number": 10,
+    "title": "Trapped and Weeping",
+    "content": "Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door. Poor Alice! It was as much as she could do, lying down on one side, to look through into the garden with one eye; but to get through was more hopeless than ever: she sat down and began to cry again. \"You ought to be ashamed of yourself,\" said Alice, \"a great girl like you,\" (she might well say this), \"to go on crying in this way! Stop this moment, I tell you!\" But she went on all the same, shedding gallons of tears, until there was a large pool all round her, about four inches deep and reaching half down the hall.",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "The white rabbit's hall, near the garden door",
+    "mood": "Desperate, hopeless, melancholic",
+    "image_prompt": "Alice, towering and cramped in the hall, lying on her side with tears streaming down her face, surrounded by a pool of her own tears that covers the floor four inches deep, her reflection visible in the pool below",
+    "image_type": "scene",
+    "image_file": "scene_10_trapped_and_weeping.png",
+    "chapter_number": 5,
+    "chapter_title": "CHAPTER II. The Pool of Tears"
+  },
+  {
+    "scene_number": 11,
+    "title": "The White Rabbit's Sudden Arrival and Departure",
     "content": "After a time she heard a little pattering of feet in the distance, and she hastily dried her eyes to see what was coming. It was the White Rabbit returning, splendidly dressed, with a pair of white kid gloves in one hand and a large fan in the other: he came trotting along in a great hurry, muttering to himself as he came, \"Oh! the Duchess, the Duchess! Oh! won't she be savage if I've kept her waiting!\" Alice felt so desperate that she was ready to ask help of any one; so, when the Rabbit came near her, she began, in a low, timid voice, \"If you please, sir\u2014\" The Rabbit started violently, dropped the white kid gloves and the fan, and skurried away into the darkness as hard as he could go.",
     "characters_present": [
       "Alice",
       "White Rabbit"
     ],
-    "setting": "Inside the hall, with Alice surrounded by the pool of tears",
-    "mood": "Hurried, anxious",
-    "image_prompt": "The White Rabbit, dressed in his finery, rushing past Alice in a panic as she tries to speak to him",
+    "setting": "The white rabbit's hall",
+    "mood": "Alarmed, urgent, desperate",
+    "image_prompt": "The White Rabbit in formal dress, clutching white gloves and a fan, startled and fleeing in terror down a dark hallway as the giant Alice reaches toward him from above, her expression pleading; dropped gloves and fan visible on the floor",
     "image_type": "scene",
-    "image_file": "scene_06_the_white_rabbits_hurried_return.png",
+    "image_file": "scene_11_the_white_rabbits_sudden_arrival_and_departure.png",
+    "chapter_number": 5,
+    "chapter_title": "CHAPTER II. The Pool of Tears"
+  },
+  {
+    "scene_number": 12,
+    "title": "Identity Lost in Questions",
+    "content": "Alice took up the fan and gloves, and, as the hall was very hot, she kept fanning herself all the time she went on talking: \"Dear, dear! How queer everything is to-day! And yesterday things went on just as usual. I wonder if I've been changed in the night? Let me think: was I the same when I got up this morning? I almost think I can remember feeling a little different. But if I'm not the same, the next question is, Who in the world am I? Ah, that's the great puzzle!\" And she began thinking over all the children she knew that were of the same age as herself, to see if she could have been changed for any of them. \"I'm sure I'm not Ada,\" she said, \"for her hair goes in such long ringlets, and mine doesn't go in ringlets at all; and I'm sure I can't be Mabel, for I know all sorts of things, and she, oh! she knows such a very little! Besides, she's she, and I'm I, and\u2014oh dear, how puzzling it all is!\"",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "The white rabbit's hall",
+    "mood": "Confused, philosophical, anxious",
+    "image_prompt": "Alice sitting in the vast hall, fanning herself with the white fan, her brow furrowed in deep thought, surrounded by ripples in the pool of tears, her expression troubled as she contemplates her transformed identity",
+    "image_type": "scene",
+    "image_file": "scene_12_identity_lost_in_questions.png",
     "chapter_number": 5,
     "chapter_title": "CHAPTER II. The Pool of Tears"
   }

@@ -1,0 +1,200 @@
+{
+  "total_characters": 24,
+  "successful": 24,
+  "failed": 0,
+  "total_time_seconds": 0.0,
+  "results": [
+    {
+      "character_name": "Catherine the Great (Fike of Zerbst)",
+      "output_path": "output/cathrine_the_great/images/Catherine_the_Great_Fike_of_Zerbst_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Prince Christian August of Zerbst-Dornburg",
+      "output_path": "output/cathrine_the_great/images/Prince_Christian_August_of_Zerbst-Dornburg_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Johanna Elisabeth of Holstein-Gottorp",
+      "output_path": "output/cathrine_the_great/images/Johanna_Elisabeth_of_Holstein-Gottorp_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Frederick William (Stumpy)",
+      "output_path": "output/cathrine_the_great/images/Frederick_William_Stumpy_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Peter the Great",
+      "output_path": "output/cathrine_the_great/images/Peter_the_Great_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Johann Ludwig of the Dornburg branch",
+      "output_path": "output/cathrine_the_great/images/Johann_Ludwig_of_the_Dornburg_branch_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Sophie Christine",
+      "output_path": "output/cathrine_the_great/images/Sophie_Christine_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "The Duchess of Brunswick",
+      "output_path": "output/cathrine_the_great/images/The_Duchess_of_Brunswick_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "The Bishop of Lübeck",
+      "output_path": "output/cathrine_the_great/images/The_Bishop_of_Lübeck_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Catherine's unnamed brother",
+      "output_path": "output/cathrine_the_great/images/Catherines_unnamed_brother_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Martin Luther",
+      "output_path": "output/cathrine_the_great/images/Martin_Luther_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Fike (Princess Marianna)",
+      "output_path": "output/cathrine_the_great/images/Fike_Princess_Marianna_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "The Princess (Fike's Mother)",
+      "output_path": "output/cathrine_the_great/images/The_Princess_Fikes_Mother_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "The General/Governor (Fike's Father)",
+      "output_path": "output/cathrine_the_great/images/The_GeneralGovernor_Fikes_Father_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Elisabeth Cardel (Babet)",
+      "output_path": "output/cathrine_the_great/images/Elisabeth_Cardel_Babet_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Pastor Wagner",
+      "output_path": "output/cathrine_the_great/images/Pastor_Wagner_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Madeleine Cardel (later Madame Colhard)",
+      "output_path": "output/cathrine_the_great/images/Madeleine_Cardel_later_Madame_Colhard_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Old Bolhagen",
+      "output_path": "output/cathrine_the_great/images/Old_Bolhagen_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Count Gyllenborg",
+      "output_path": "output/cathrine_the_great/images/Count_Gyllenborg_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Catholic Monk Mengden",
+      "output_path": "output/cathrine_the_great/images/Catholic_Monk_Mengden_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Princess Marianna of Brunswick-Bevern",
+      "output_path": "output/cathrine_the_great/images/Princess_Marianna_of_Brunswick-Bevern_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Monsieur Laurent",
+      "output_path": "output/cathrine_the_great/images/Monsieur_Laurent_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "French Dancing Master",
+      "output_path": "output/cathrine_the_great/images/French_Dancing_Master_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    },
+    {
+      "character_name": "Music Master",
+      "output_path": "output/cathrine_the_great/images/Music_Master_cyberpunk_anime.png",
+      "aspect_ratio": "1:1",
+      "generation_time": 0.0,
+      "success": true,
+      "error_message": ""
+    }
+  ]
+}

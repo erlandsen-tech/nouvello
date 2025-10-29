@@ -22,12 +22,14 @@ from ai.epub_parser import EPUBParser
 class BookToVNConverter:
     """Complete pipeline from EPUB to React visual novel"""
     
-    def __init__(self, epub_path: str, output_base: str = "output", art_style: Optional[str] = None):
+    def __init__(self, epub_path: str, output_base: str = "output", art_style: Optional[str] = None, force: bool = False):
         self.epub_path = Path(epub_path)
         self.output_base = Path(output_base)
         self.book_name = self.epub_path.stem.lower().replace(' ', '_')
         self.book_dir = self.output_base / self.book_name
         self.art_style = art_style  # Optional style override for the entire book
+        self.selected_epub_chapters = None  # Store selected EPUB chapter indices (1-based)
+        self.force = force
         
         if not self.epub_path.exists():
             raise FileNotFoundError(f"EPUB file not found: {epub_path}")
@@ -66,6 +68,9 @@ class BookToVNConverter:
         
         start_index = step_names.index(start_step)
         
+        # Store selected chapters for use in later steps
+        self.selected_epub_chapters = selected_chapters
+        
         # Run pipeline steps
         chapters = None
         for i, (step_name, (step_desc, step_func)) in enumerate(steps.items()):
@@ -78,6 +83,8 @@ class BookToVNConverter:
             try:
                 if step_name == 'parse':
                     chapters = step_func(selected_chapters)
+                    # Update stored selected chapters after parsing
+                    self.selected_epub_chapters = chapters
                 elif step_name == 'analyze':
                     # For analyze step, use chapters if available, or selected_chapters if it's a list
                     if chapters:
@@ -201,13 +208,36 @@ class BookToVNConverter:
         # Check if analysis already exists
         analysis_dest = self.book_dir / "analysis.json"
         if analysis_dest.exists():
-            print(f"✅ Chapter analysis already exists: {analysis_dest}")
-            print(f"   ⏭️  Skipping chapter analysis (file already exists)")
-            print(f"\n💡 To re-analyze chapters, delete {analysis_dest} and run again")
-            return
+            # If forcing, or existing analysis doesn't contain all selected chapters, re-run
+            should_reanalyze = self.force
+            if not should_reanalyze:
+                try:
+                    with open(analysis_dest) as f:
+                        analysis_data = json.load(f)
+                    if isinstance(analysis_data, dict) and 'chapters' in analysis_data:
+                        chapters_list = analysis_data['chapters']
+                    else:
+                        chapters_list = analysis_data
+                    existing_numbers = {ch.get('chapter_number', i+1) for i, ch in enumerate(chapters_list)}
+                    missing = [c for c in selected_chapters if c not in existing_numbers]
+                    should_reanalyze = len(missing) > 0
+                except Exception:
+                    should_reanalyze = True
+            if should_reanalyze:
+                print(f"♻️  Re-analyzing chapters due to --force or missing selected chapters")
+                try:
+                    analysis_dest.unlink()
+                except Exception:
+                    pass
+            else:
+                print(f"✅ Chapter analysis already exists: {analysis_dest}")
+                print(f"   ⏭️  Skipping chapter analysis (file already exists)")
+                print(f"\n💡 To re-analyze chapters, delete {analysis_dest} and run again")
+                return
         
         # Create chapter list string for the analyzer
-        chapter_list = ','.join(map(str, selected_chapters))
+        # analyze_chapters.py uses 0-based indices, so convert from 1-based
+        chapter_list = ','.join(map(str, [c - 1 for c in selected_chapters]))
         
         # Get model from env (or use default)
         analysis_model = os.getenv("ANALYSIS_MODEL", os.getenv("BEDROCK_MODEL"))
@@ -274,6 +304,10 @@ class BookToVNConverter:
         if character_model:
             cmd.extend(["--bedrock-model", character_model])
         
+        # Add style if specified
+        if self.art_style:
+            cmd.extend(["--style", self.art_style])
+        
         try:
             subprocess.run(cmd, check=True)
             print("✅ Character images generated")
@@ -286,6 +320,15 @@ class BookToVNConverter:
         print(f"\n🎬 STEP 4: Generating scene segmentation")
         print("-" * 50)
         
+        # If scenes.json exists and --force is set, remove it so segmentation reruns
+        scenes_file = self.book_dir / "scenes.json"
+        if self.force and scenes_file.exists():
+            try:
+                scenes_file.unlink()
+                print(f"♻️  Removed existing scenes.json due to --force")
+            except Exception:
+                pass
+
         # Get model from env (or use default)
         scene_model = os.getenv("SCENE_MODEL", os.getenv("BEDROCK_MODEL"))
         
@@ -304,12 +347,50 @@ class BookToVNConverter:
         if scene_model:
             cmd.extend(["--model", scene_model])
         
+        # If we have selected chapters, pass them for incremental updates
+        if self.selected_epub_chapters and isinstance(self.selected_epub_chapters, list):
+            try:
+                chapters_arg = ",".join(str(int(c)) for c in self.selected_epub_chapters)
+                cmd.extend(["--chapters", chapters_arg])
+            except Exception:
+                pass
+        
         try:
             subprocess.run(cmd, check=True)
             print("✅ Scene segmentation complete")
         except subprocess.CalledProcessError as e:
             print(f"❌ Error generating scenes: {e}")
             raise
+    
+    def _get_selected_chapter_numbers(self) -> Optional[set]:
+        """Get set of chapter_number values from analysis.json that correspond to selected EPUB chapters"""
+        if not self.selected_epub_chapters:
+            return None
+        
+        analysis_file = self.book_dir / "analysis.json"
+        if not analysis_file.exists():
+            return None
+        
+        try:
+            with open(analysis_file, 'r') as f:
+                analysis_data = json.load(f)
+            
+            # Handle both old format (array) and new format (object with book_title)
+            if isinstance(analysis_data, dict) and 'chapters' in analysis_data:
+                chapters_list = analysis_data['chapters']
+            else:
+                chapters_list = analysis_data
+            
+            # chapter_number in analysis.json should match the EPUB chapter index (1-based)
+            selected_numbers = set(self.selected_epub_chapters)
+            chapter_numbers = {ch.get('chapter_number', 0) for ch in chapters_list}
+            
+            # Return intersection of selected chapters and chapters that exist in analysis
+            intersection = selected_numbers.intersection(chapter_numbers)
+            # Return None if intersection is empty (selected chapters not in analysis)
+            return intersection if intersection else None
+        except Exception:
+            return None
     
     def _create_chapter_structure(self):
         """Create per-chapter directory structure from scenes.json"""
@@ -341,10 +422,19 @@ class BookToVNConverter:
         else:
             chapters_list = analysis_data
         
+        # Filter chapters to only selected ones if we have selected chapters
+        selected_chapter_numbers = self._get_selected_chapter_numbers()
+        if selected_chapter_numbers:
+            chapters_list = [ch for ch in chapters_list 
+                           if ch.get('chapter_number', 0) in selected_chapter_numbers]
+        
         # Group scenes by chapter
         scenes_by_chapter = {}
         for scene in all_scenes:
             chapter_num = scene.get('chapter_number', 0)
+            # Only include scenes from selected chapters if we have selection
+            if selected_chapter_numbers and chapter_num not in selected_chapter_numbers:
+                continue
             if chapter_num not in scenes_by_chapter:
                 scenes_by_chapter[chapter_num] = []
             scenes_by_chapter[chapter_num].append(scene)
@@ -386,6 +476,59 @@ class BookToVNConverter:
         print(f"\n🎭 STEP 5: Generating consistent scene images")
         print("-" * 50)
         
+        scenes_file = self.book_dir / "scenes.json"
+        if not scenes_file.exists():
+            print(f"⚠️  No scenes.json found, skipping scene image generation")
+            return
+        
+        # Load scenes and filter to selected chapters if we have selection
+        with open(scenes_file, 'r') as f:
+            all_scenes_data = json.load(f)
+        
+        selected_chapter_numbers = self._get_selected_chapter_numbers()
+        if selected_chapter_numbers:
+            # Filter scenes to only selected chapters
+            filtered_scenes = [s for s in all_scenes_data 
+                             if s.get('chapter_number', 0) in selected_chapter_numbers]
+            
+            if not filtered_scenes:
+                print(f"⚠️  No scenes found for selected chapters, skipping scene image generation")
+                return
+            
+            # Create temporary filtered scenes file
+            temp_scenes_file = self.book_dir / "scenes_filtered.json"
+            with open(temp_scenes_file, 'w') as f:
+                json.dump(filtered_scenes, f, indent=2)
+            scenes_file_to_use = temp_scenes_file
+            print(f"📋 Filtered to {len(filtered_scenes)} scenes from selected chapters")
+        elif self.selected_epub_chapters:
+            # Selected chapters specified but not found in analysis.json
+            # Check if scenes.json has scenes for selected chapters
+            scenes_for_selected = [s for s in all_scenes_data 
+                                  if s.get('chapter_number', 0) in self.selected_epub_chapters]
+            
+            if not scenes_for_selected:
+                print(f"❌ Error: Selected chapters {self.selected_epub_chapters} are not in the existing scenes.json")
+                print(f"   The existing analysis.json and scenes.json are from a previous run with different chapters.")
+                print(f"   To generate scenes for these chapters, you must:")
+                print(f"   1. Delete {self.book_dir / 'analysis.json'}")
+                print(f"   2. Delete {self.book_dir / 'scenes.json'}")
+                print(f"   3. Run again with --chapters {','.join(map(str, self.selected_epub_chapters))}")
+                print(f"   Or use --force to automatically regenerate analysis and scenes")
+                return
+            else:
+                # Selected chapters ARE in scenes.json but NOT in analysis.json (unusual but possible)
+                print(f"⚠️  Warning: Selected chapters {self.selected_epub_chapters} not found in existing analysis.json")
+                print(f"   But found {len(scenes_for_selected)} scenes for these chapters in scenes.json")
+                print(f"   Proceeding with scene image generation...")
+                temp_scenes_file = self.book_dir / "scenes_filtered.json"
+                with open(temp_scenes_file, 'w') as f:
+                    json.dump(scenes_for_selected, f, indent=2)
+                scenes_file_to_use = temp_scenes_file
+                print(f"📋 Filtered to {len(scenes_for_selected)} scenes from selected chapters")
+        else:
+            scenes_file_to_use = scenes_file
+        
         # Find the correct character images directory
         character_dir = self.book_dir / "images"
         if not character_dir.exists():
@@ -399,18 +542,66 @@ class BookToVNConverter:
                     character_dir = dir_path
                     break
         
+        # Verify character images directory exists and has images
+        if not character_dir.exists():
+            print(f"❌ Error: Character images directory not found: {self.book_dir / 'images'}")
+            print(f"   Please run character generation step first (STEP 3)")
+            return
+        
+        # Check if there are any character images
+        character_images = list(character_dir.glob("*.png"))
+        if not character_images:
+            print(f"⚠️  Warning: No character images found in {character_dir}")
+            print(f"   Scene generation requires character images. Please run character generation first.")
+            return
+        
+        print(f"📁 Found {len(character_images)} character images in: {character_dir}")
+        
+        # Determine style-specific output directory ONLY if art_style was explicitly provided
+        # (not from auto-detection in analysis.json)
+        scenes_output_dir = self.book_dir / "consistent_scenes"
+        if self.art_style:  # Only set when --style flag was used
+            style_safe = "".join(c for c in self.art_style if c.isalnum() or c in (' ', '-', '_')).strip()
+            style_safe = style_safe.replace(' ', '_').lower()
+            scenes_output_dir = self.book_dir / f"consistent_scenes_{style_safe}"
+        
+        # If forcing, clean existing output dir(s) to avoid global skip
+        if self.force:
+            # Delete both style-specific and default directories if they exist
+            dirs_to_clean = [
+                scenes_output_dir,  # Target directory
+                self.book_dir / "consistent_scenes"  # Default directory (in case style changed)
+            ]
+            for output_dir in set(dirs_to_clean):  # Use set to avoid duplicates
+                if output_dir.exists() and output_dir.is_dir():
+                    try:
+                        shutil.rmtree(output_dir)
+                        print(f"♻️  Cleared existing scene images: {output_dir.name}/")
+                    except Exception as e:
+                        print(f"   ⚠️  Warning: Could not clear {output_dir.name}: {e}")
+        
         cmd = [
             "python", "ai/consistent_scene_generator.py",
-            "--scenes", str(self.book_dir / "scenes.json"),
+            "--scenes", str(scenes_file_to_use),
             "--characters", str(character_dir),
-            "-o", str(self.book_dir / "consistent_scenes"),
+            "-o", str(scenes_output_dir),
             "--delay", "2.0"
         ]
         
+        # Only pass explicit style if it was provided via --style flag (not auto-detected)
+        if self.art_style:
+            cmd.extend(["--explicit-style", self.art_style])
+        
         try:
             subprocess.run(cmd, check=True)
+            # Clean up temporary file if we created one
+            if selected_chapter_numbers and scenes_file_to_use.exists() and scenes_file_to_use != scenes_file:
+                scenes_file_to_use.unlink()
             print("✅ Consistent scene images generated")
         except subprocess.CalledProcessError as e:
+            # Clean up temporary file on error
+            if selected_chapter_numbers and scenes_file_to_use.exists() and scenes_file_to_use != scenes_file:
+                scenes_file_to_use.unlink()
             print(f"❌ Error generating consistent scenes: {e}")
             raise
     
@@ -464,11 +655,20 @@ class BookToVNConverter:
                 shutil.copy2(img_file, dst_path)
                 print(f"  🖼️  Copied character: {img_file.name}")
         
-        if (self.book_dir / "consistent_scenes").exists():
-            for img_file in (self.book_dir / "consistent_scenes").glob("*.png"):
-                dst_path = react_images_dir / "scenes" / img_file.name
-                shutil.copy2(img_file, dst_path)
-                print(f"  🎬 Copied scene: {img_file.name}")
+        # Prefer style-specific scenes if present (only if explicitly provided)
+        scenes_dirs = []
+        if self.art_style:  # Only check if --style was explicitly provided
+            style_safe = "".join(c for c in self.art_style if c.isalnum() or c in (' ', '-', '_')).strip()
+            style_safe = style_safe.replace(' ', '_').lower()
+            scenes_dirs.append(self.book_dir / f"consistent_scenes_{style_safe}")
+        scenes_dirs.append(self.book_dir / "consistent_scenes")
+        for scenes_dir in scenes_dirs:
+            if scenes_dir.exists():
+                for img_file in scenes_dir.glob("*.png"):
+                    dst_path = react_images_dir / "scenes" / img_file.name
+                    shutil.copy2(img_file, dst_path)
+                    print(f"  🎬 Copied scene: {img_file.name}")
+                break
         
         if (self.book_dir / "environments").exists():
             for img_file in (self.book_dir / "environments").glob("*.png"):
@@ -638,6 +838,12 @@ Examples:
         help='Resume pipeline from a specific step'
     )
     
+    parser.add_argument(
+        '--force',
+        action='store_true',
+        help='Force regeneration: re-analyze, re-segment scenes, and re-generate scene images'
+    )
+    
     args = parser.parse_args()
     
     # Parse chapter selection
@@ -659,7 +865,7 @@ Examples:
             print(f"   This style will be applied to all images in the book")
             print()
         
-        converter = BookToVNConverter(args.epub_file, args.output, art_style=args.style)
+        converter = BookToVNConverter(args.epub_file, args.output, art_style=args.style, force=args.force)
         converter.run_complete_pipeline(selected_chapters, args.resume_from)
     except Exception as e:
         print(f"❌ Error: {e}")
