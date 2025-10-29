@@ -1,0 +1,216 @@
+[
+  {
+    "scene_number": 1,
+    "title": "The Mysterious Cake",
+    "content": "She opened it, and found in it a very small cake, on which the words \"EAT ME\" were beautifully marked in currants. \"Well, I'll eat it,\" said Alice, \"and if it makes me grow larger, I can reach the key; and if it makes me grow smaller, I can creep under the door; so either way I'll get into the garden, and I don't care which happens!\"",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "A small room with a table, beneath which Alice finds the cake",
+    "mood": "Curious, determined, cautiously hopeful",
+    "image_prompt": "Alice discovers a tiny cake marked with currants spelling 'EAT ME' hidden beneath a table. She holds it delicately in her hands, examining the ornate lettering with wonder and determination. Warm candlelight illuminates her face as she considers her options.",
+    "image_type": "scene",
+    "image_file": "scene_01_the_mysterious_cake.png",
+    "chapter_number": 4,
+    "chapter_title": "CHAPTER I. Down the Rabbit-Hole"
+  },
+  {
+    "scene_number": 2,
+    "title": "An Ordinary Moment",
+    "content": "She ate a little bit, and said anxiously to herself, \"Which way? Which way?\", holding her hand on the top of her head to feel which way it was growing, and she was quite surprised to find that she remained the same size: to be sure, this generally happens when one eats cake, but Alice had got so much into the way of expecting nothing but out-of-the-way things to happen, that it seemed quite dull and stupid for life to go on in the common way.\n\nSo she set to work, and very soon finished off the cake.",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "The same small room",
+    "mood": "Anxious anticipation shifting to disappointment, then resigned determination",
+    "image_prompt": "Alice sits alone, hand pressed to the crown of her head, monitoring anxiously for changes as she eats the cake. Her expression shows confusion and mild disappointment when nothing extraordinary occurs. She finishes the last crumbs with quiet resignation.",
+    "image_type": "scene",
+    "image_file": "scene_02_an_ordinary_moment.png",
+    "chapter_number": 4,
+    "chapter_title": "CHAPTER I. Down the Rabbit-Hole"
+  },
+  {
+    "scene_number": 3,
+    "title": "The Endless Fall",
+    "content": "Down, down, down. There was nothing else to do, so Alice soon began talking again. \"Dinah'll miss me very much to-night, I should think!\" (Dinah was the cat.) \"I hope they'll remember her saucer of milk at tea-time. Dinah my dear! I wish you were down here with me! There are no mice in the air, I'm afraid, but you might catch a bat, and that's very like a mouse, you know. But do cats eat bats, I wonder?\" And here Alice began to get rather sleepy, and went on saying to herself, in a dreamy sort of way, \"Do cats eat bats? Do cats eat bats?\" and sometimes, \"Do bats eat cats?\" for, you see, as she couldn't answer either question, it didn't much matter which way she put it. She felt that she was dozing off, and had just begun to dream that she was walking hand in hand with Dinah, and saying to her very earnestly, \"Now, Dinah, tell me the truth: did you ever eat a bat?\" when suddenly, thump! thump! down she came upon a heap of sticks and dry leaves, and the fall was over.",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "Falling through a rabbit hole",
+    "mood": "Dreamy, melancholic, drowsy",
+    "image_prompt": "A young girl in a blue dress falling through darkness, surrounded by swirling leaves and sticks, her expression peaceful and drowsy as she tumbles downward",
+    "image_type": "scene",
+    "image_file": "scene_03_the_endless_fall.png",
+    "chapter_number": 4,
+    "chapter_title": "CHAPTER I. Down the Rabbit-Hole"
+  },
+  {
+    "scene_number": 4,
+    "title": "The Hall of Locked Doors",
+    "content": "Alice was not a bit hurt, and she jumped up on to her feet in a moment: she looked up, but it was all dark overhead; before her was another long passage, and the White Rabbit was still in sight, hurrying down it. There was not a moment to be lost: away went Alice like the wind, and was just in time to hear it say, as it turned a corner, \"Oh my ears and whiskers, how late it's getting!\" She was close behind it when she turned the corner, but the Rabbit was no longer to be seen: she found herself in a long, low hall, which was lit up by a row of lamps hanging from the roof.\n\nThere were doors all round the hall, but they were all locked; and when Alice had been all the way down one side and up the other, trying every door, she walked sadly down the middle, wondering how she was ever to get out again.",
+    "characters_present": [
+      "Alice",
+      "White Rabbit (brief appearance)"
+    ],
+    "setting": "A long, low hall with hanging lamps and numerous locked doors",
+    "mood": "Mysterious, slightly frustrated, curious",
+    "image_prompt": "A girl standing alone in a dimly lit hall with rows of identical doors lining both walls, warm lamplight casting long shadows, her posture showing determination mixed with confusion",
+    "image_type": "scene",
+    "image_file": "scene_04_the_hall_of_locked_doors.png",
+    "chapter_number": 4,
+    "chapter_title": "CHAPTER I. Down the Rabbit-Hole"
+  },
+  {
+    "scene_number": 5,
+    "title": "The Golden Key and the Little Door",
+    "content": "Suddenly she came upon a little three-legged table, all made of solid glass; there was nothing on it except a tiny golden key, and Alice's first thought was that it might belong to one of the doors of the hall; but, alas! either the locks were too large, or the key was too small, but at any rate it would not open any of them. However, on the second time round, she came upon a low curtain she had not noticed before, and behind it was a little door about fifteen inches high: she tried the little golden key in the lock, and to her great delight it fitted!\n\nAlice opened the door and found that it led into a small passage, not much larger than a rat-hole: she knelt down and looked along the passage into the loveliest garden you ever saw.",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "The hall with a glass table, and the small doorway leading to a garden",
+    "mood": "Hopeful, delighted, wonder-struck",
+    "image_prompt": "A girl kneeling before a tiny ornate door, peering through to a magnificent garden filled with bright flowers and fountains beyond, golden light streaming through the small doorway",
+    "image_type": "scene",
+    "image_file": "scene_05_the_golden_key_and_the_little_door.png",
+    "chapter_number": 4,
+    "chapter_title": "CHAPTER I. Down the Rabbit-Hole"
+  },
+  {
+    "scene_number": 6,
+    "title": "Too Large and Too Small",
+    "content": "How she longed to get out of that dark hall, and wander about among those beds of bright flowers and those cool fountains, but she could not even get her head through the doorway; \"and even if my head would go through,\" thought poor Alice, \"it would be of very little use without my shoulders. Oh, how I wish I could shut up like a telescope! I think I could, if I only knew how to begin.\" For, you see, so many out-of-the-way things had happened lately, that Alice had begun to think that very few things indeed were really impossible.",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "Kneeling at the small doorway, viewing the garden",
+    "mood": "Longing, frustration, wonder, resignation",
+    "image_prompt": "A girl's face pressed against a tiny doorway, her expression wistful and contemplative, her shoulders too broad to fit through, with the vibrant garden garden visible in soft focus beyond",
+    "image_type": "scene",
+    "image_file": "scene_06_too_large_and_too_small.png",
+    "chapter_number": 4,
+    "chapter_title": "CHAPTER I. Down the Rabbit-Hole"
+  },
+  {
+    "scene_number": 7,
+    "title": "The Mysterious Bottle",
+    "content": "There seemed to be no use in waiting by the little door, so she went back to the table, half hoping she might find another key on it, or at any rate a book of rules for shutting people up like telescopes: this time she found a little bottle on it, (\"which certainly was not here before,\" said Alice,) and round the neck of the bottle was a paper label, with the words \"DRINK ME,\"",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "The glass table in the hall",
+    "mood": "Intrigued, curious, slightly puzzled",
+    "image_prompt": "A young girl standing at a glass table in soft lamplight, examining a small mysterious bottle with a label reading 'DRINK ME', her expression curious and uncertain",
+    "image_type": "scene",
+    "image_file": "scene_07_the_mysterious_bottle.png",
+    "chapter_number": 4,
+    "chapter_title": "CHAPTER I. Down the Rabbit-Hole"
+  },
+  {
+    "scene_number": 8,
+    "title": "The Curious Bottle",
+    "content": "There seemed to be no use in waiting by the little door, so she went back to the table, half hoping she might find another key on it, or at any rate a book of rules for shutting people up like telescopes: this time she found a little bottle on it, (\"which certainly was not here before,\" said Alice,) and round the neck of the bottle was a paper label, with the words \"DRINK ME,\" beautifully printed on it in large letters.\n\nIt was all very well to say \"Drink me,\" but the wise little Alice was not going to do that in a hurry. \"No, I'll look first,\" she said, \"and see whether it's marked 'poison' or not\"; for she had read several nice little histories about children who had got burnt, and eaten up by wild beasts and other unpleasant things, all because they would not remember the simple rules their friends had taught them: such as, that a red-hot poker will burn you if you hold it too long; and that if you cut your finger very deeply with a knife, it usually bleeds; and she had never forgotten that, if you drink much from a bottle marked \"poison,\" it is almost certain to disagree with you, sooner or later.\n\nHowever, this bottle was not marked \"poison,\" so Alice ventured to taste it, and finding it very nice, (it had, in fact, a sort of mixed flavour of cherry-tart, custard, pine-apple, roast turkey, toffee, and hot buttered toast,) she very soon finished it off.",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "A mysterious room with a table and a little door",
+    "mood": "Curious, cautious, wonder and slight trepidation",
+    "image_prompt": "A young girl with long blonde hair examining a small ornate glass bottle on a wooden table. The bottle has a golden label reading 'DRINK ME' in elegant letters. Soft light filters through the room, illuminating the bottle and Alice's thoughtful expression as she considers whether to drink it.",
+    "image_type": "scene",
+    "image_file": "scene_08_the_curious_bottle.png",
+    "chapter_number": 4,
+    "chapter_title": "CHAPTER I. Down the Rabbit-Hole"
+  },
+  {
+    "scene_number": 9,
+    "title": "The Shrinking",
+    "content": "\"What a curious feeling!\" said Alice; \"I must be shutting up like a telescope.\"\n\nAnd so it was indeed: she was now only ten inches high, and her face brightened up at the thought that she was now the right size for going through the little door into that lovely garden. First, however, she waited for a few minutes to see if she was going to shrink any further: she felt a little nervous about this; \"for it might end, you know,\" said Alice to herself, \"in my going out altogether, like a candle. I wonder what I should be like then?\" And she tried to fancy what the flame of a candle is like after the candle is blown out, for she could not remember ever having seen such a thing.",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "A mysterious room with a table and tiny door",
+    "mood": "Wonder mixed with nervousness, delighted yet apprehensive",
+    "image_prompt": "Alice has shrunk to ten inches tall, standing in an enormous room where the table leg towers above her. Her dress is proportionally smaller. She looks down at her tiny hands with amazement and concern, while the distant golden door appears closer but still challenging. The room is rendered in perspective to emphasize her diminished size.",
+    "image_type": "scene",
+    "image_file": "scene_09_the_shrinking.png",
+    "chapter_number": 4,
+    "chapter_title": "CHAPTER I. Down the Rabbit-Hole"
+  },
+  {
+    "scene_number": 10,
+    "title": "The Lost Key and the Cake",
+    "content": "After a while, finding that nothing more happened, she decided on going into the garden at once; but, alas for poor Alice! when she got to the door, she found she had forgotten the little golden key, and when she went back to the table for it, she found she could not possibly reach it: she could see it quite plainly through the glass, and she tried her best to climb up one of the legs of the table, but it was too slippery; and when she had tired herself out with trying, the poor little thing sat down and cried.\n\nSoon her eye fell on a little glass box that was lying under the table: she opened it, and found in it a very small cake, on which the words \"EAT ME\" were beautifully marked in currants. \"Well, I'll eat it,\" said Alice, \"and if it makes me grow larger, I can reach the key; and if it makes me grow smaller, I can creep under the door; so either way I'll get into the garden, and I don't care which happens!\"",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "Beneath and around a large wooden table in the mysterious room",
+    "mood": "Frustration turning to determined resignation, problem-solving hope",
+    "image_prompt": "Tiny Alice, exhausted and tear-stained, sits dejectedly on the floor beneath a massive wooden table. Above her, the golden key glints on the distant tabletop, unreachable. Before her lies an open glass box containing a small cake with 'EAT ME' written in red currants. Her expression shifts from despair to cautious determination as she considers her options.",
+    "image_type": "scene",
+    "image_file": "scene_10_the_lost_key_and_the_cake.png",
+    "chapter_number": 4,
+    "chapter_title": "CHAPTER I. Down the Rabbit-Hole"
+  },
+  {
+    "scene_number": 11,
+    "title": "Boredom by the Bank",
+    "content": "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, \"and what is the use of a book,\" thought Alice \"without pictures or conversations?\" So she was considering in her own mind (as well as she could, for the hot day made her feel very sleepy and stupid), whether the pleasure of making a daisy-chain would be worth the trouble of getting up and picking the daisies, when suddenly a White Rabbit with pink eyes ran close by her.",
+    "characters_present": [
+      "Alice",
+      "Alice's sister",
+      "White Rabbit"
+    ],
+    "setting": "Bank of a river on a hot day",
+    "mood": "Languid, bored, curious",
+    "image_prompt": "A young girl in Victorian dress sits drowsily beside her sister on a sunny riverbank. A white rabbit with pink eyes dashes past in the background. The girl's sister reads a book nearby. Warm, hazy sunlight filters through trees.",
+    "image_type": "scene",
+    "image_file": "scene_11_boredom_by_the_bank.png",
+    "chapter_number": 4,
+    "chapter_title": "CHAPTER I. Down the Rabbit-Hole"
+  },
+  {
+    "scene_number": 12,
+    "title": "The White Rabbit's Watch",
+    "content": "There was nothing so very remarkable in that; nor did Alice think it so very much out of the way to hear the Rabbit say to itself, \"Oh dear! Oh dear! I shall be late!\" (when she thought it over afterwards, it occurred to her that she ought to have wondered at this, but at the time it all seemed quite natural); but when the Rabbit actually took a watch out of its waistcoat-pocket, and looked at it, and then hurried on, Alice started to her feet, for it flashed across her mind that she had never before seen a rabbit with either a waistcoat-pocket, or a watch to take out of it, and burning with curiosity, she ran across the field after it, and fortunately was just in time to see it pop down a large rabbit-hole under the hedge.",
+    "characters_present": [
+      "Alice",
+      "White Rabbit"
+    ],
+    "setting": "Field near the riverbank, by a hedge",
+    "mood": "Astonishment, burning curiosity, urgency",
+    "image_prompt": "A white rabbit in a waistcoat pulls a pocket watch from its vest and hurries away. Alice, startled, leaps to her feet and chases after it across a sunny field. The rabbit disappears into a large hole beneath a hedge.",
+    "image_type": "scene",
+    "image_file": "scene_12_the_white_rabbits_watch.png",
+    "chapter_number": 4,
+    "chapter_title": "CHAPTER I. Down the Rabbit-Hole"
+  },
+  {
+    "scene_number": 13,
+    "title": "The Fall Down the Well",
+    "content": "In another moment down went Alice after it, never once considering how in the world she was to get out again. The rabbit-hole went straight on like a tunnel for some way, and then dipped suddenly down, so suddenly that Alice had not a moment to think about stopping herself before she found herself falling down a very deep well. Either the well was very deep, or she fell very slowly, for she had plenty of time as she went down to look about her and to wonder what was going to happen next. First, she tried to look down and make out what she was coming to, but it was too dark to see anything; then she looked at the sides of the well, and noticed that they were filled with cupboards and book-shelves; here and there she saw maps and pictures hung upon pegs. She took down a jar from one of the shelves as she passed; it was labelled \"ORANGE MARMALADE\", but to her great disappointment it was empty: she did not like to drop the jar for fear of killing somebody underneath, so managed to put it into one of the cupboards as she fell past it.",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "Inside a deep well; a tunnel with cupboards, bookshelves, maps, and pictures on the walls",
+    "mood": "Wonder, dreamlike, surreal, mild concern",
+    "image_prompt": "A girl falls slowly through an impossibly deep well lined with floating cupboards, bookshelves, and maps. Soft light illuminates the strange interior. She holds an empty jar labeled 'ORANGE MARMALADE' as she descends past household furnishings suspended on the walls.",
+    "image_type": "scene",
+    "image_file": "scene_13_the_fall_down_the_well.png",
+    "chapter_number": 4,
+    "chapter_title": "CHAPTER I. Down the Rabbit-Hole"
+  },
+  {
+    "scene_number": 14,
+    "title": "The Endless Descent",
+    "content": "\"Well!\" thought Alice to herself, \"after such a fall as this, I shall think nothing of tumbling down stairs! How brave they'll all think me at home! Why, I wouldn't say anything about it, even if I fell off the top of the house!\" (Which was very likely true.) Down, down, down. Would the fall never come to an end? \"I wonder how many miles I've fallen by this time?\" she said aloud. \"I must be getting somewhere near the centre of the earth. Let me see: that would be four thousand miles down, I think\u2014\" (for, you see, Alice had learnt several things of this sort in her lessons in the schoolroom, and though this was not a very good opportunity for showing off her knowledge, as there was no one to listen to her, still it was good practice to say it over) \"\u2014yes, that's about the right distance\u2014but then I wonder what Latitude or Longitude I've got to?\" (Alice had no idea what Latitude was, or Longitude either, but thought they were nice grand words to say.)",
+    "characters_present": [
+      "Alice"
+    ],
+    "setting": "Falling through an endless well",
+    "mood": "Philosophical, introspective, whimsical, composed despite extraordinary circumstances",
+    "image_prompt": "A girl suspended in the void of a vast well speaks to herself as she contemplates her fall. Around her swirls abstract space suggesting immense depth. Her expression shows calm wonderment as she talks aloud, reciting schoolroom lessons to an invisible audience.",
+    "image_type": "scene",
+    "image_file": "scene_14_the_endless_descent.png",
+    "chapter_number": 4,
+    "chapter_title": "CHAPTER I. Down the Rabbit-Hole"
+  }
+]

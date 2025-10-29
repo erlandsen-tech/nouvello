@@ -1,0 +1,459 @@
+[
+  {
+    "scene_number": 1,
+    "title": "Stettin: A Grim Frontier Post",
+    "content": "Early in the eighteenth century, the north German town of Stettin had all the grim and rigid characteristics of a frontier post. It was a border town and had long been a center of warfare. The broad rich lands of Pomerania, bursting with fertility, had been repeatedly devastated by the march and countermarch of Russian and Prussian soldiers. High on a strip of barren coast, the gray stone walls of Stettin overlooked a bleak northern sea over which the boats of the great Russian Peter had come sailing to batter and destroy the town. But if Stettin had trembled before Peter, who was six and a half feet tall, it had trembled even more before Frederick William who was so short that his children called him Stumpy behind his back. Ceded finally to Stumpy by treaty in 1720, Stettin settled down to the dull routine of garrison life.",
+    "characters_present": "None (establishing shot)",
+    "setting": "Stettin, north German frontier town; barren coast overlooking bleak northern sea; gray stone walls",
+    "mood": "Grim, desolate, battle-worn, rigid military atmosphere",
+    "image_prompt": "A fortified gray stone town on a barren northern coastline, overlooking a bleak sea. Military garrison flags fly from weathered walls. The landscape shows signs of repeated warfare and devastation.",
+    "image_type": "scene",
+    "image_file": "scene_01_stettin_a_grim_frontier_post.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 2,
+    "title": "The Arrival at Grosse Domstrasse",
+    "content": "Such was Stettin in 1727, after seven years of regimentation by the Prussian king. In that year there stood at Number One in the Grosse Domstrasse a substantial gray stone house owned by the president of the Handelskammer. A newly married pair took up their residence there in early winter. They were rather ill-matched as to age, the husband being thirty-seven and the wife fifteen. They were poor but pretentious, the kind of gilded paupers that heralded the decline of feudalism. Prince Christian August of Zerbst-Dornburg was the commander of a regiment of infantry quartered in Stettin. He was one of Frederick William's generals, who had reached this degree of promotion after many years of campaigning in the Prussian service. The business of soldiering had given him little taste or opportunity for home and the family which he was to found in Stettin was not to see a great deal of him. His wife seemed to manage just as well without him.",
+    "characters_present": "Prince Christian August of Zerbst-Dornburg (37), his new wife (15)",
+    "setting": "Number One Grosse Domstrasse, Stettin; a substantial gray stone house; early winter",
+    "mood": "Melancholic, formal, somewhat strained and isolated",
+    "image_prompt": "A substantial gray stone house on a snow-dusted street in winter Stettin. A middle-aged military officer and a very young girl stand in or near the doorway, their postures suggesting emotional distance. Military rigidity and domestic coldness permeate the scene.",
+    "image_type": "scene",
+    "image_file": "scene_02_the_arrival_at_grosse_domstrasse.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 3,
+    "title": "The Old Soldier's Prophecy",
+    "content": "One afternoon when Fike was seven, the old man brought with him a newspaper from which he read the report of the marriage of the Princess Augusta of Saxe-Gotha with the Prince of Wales. \"Do you know,\" said the old soldier to the governess, \"this Princess is not really so well educated as ours, and nevertheless, she is now destined to become Queen of England. Who knows what ours may yet become?\" \"He then began,\" says Fike, \"to preach to me wisdom and Christian virtues, and stern morality, to the end that I might be worthy to wear a crown, should one ever be allotted to me. This crown never again went out of my head and has since given me much to do.\"",
+    "characters_present": [
+      "Fike (age seven)",
+      "The old soldier",
+      "The governess"
+    ],
+    "setting": "A room where the old soldier visits; afternoon light",
+    "mood": "Inspirational, fateful, formative",
+    "image_prompt": "An elderly soldier in military dress holds a newspaper, speaking to a young blonde girl and a governess in an 18th-century interior. The girl gazes upward in wonder as the old man gestures dramatically. Sunlight streams through a window, illuminating their faces.",
+    "image_type": "scene",
+    "image_file": "scene_03_the_old_soldiers_prophecy.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 4,
+    "title": "The Abbess's Chamber",
+    "content": "The Princess-Provost Hedwig Sophie Augusta was a great friend of dogs and especially loved the so-called pugs. As a child, I have been amazed to see at one time in her chamber, which measured in size at most four cords of wood, as many as sixteen pugs. Many of the curs had young which also lived in the same room with my aunt. They slept and ate there and attended to their necessities. A maid was employed to keep them clean and this took her the whole day. A large number of parrots besides lived in the same room; one can imagine the fragrance which reigned there! When the Princess drove out, she had always in her carriage at least one parrot and a half a dozen dogs; the latter even accompanied her to church.",
+    "characters_present": [
+      "Fike (as a child)",
+      "Aunt Hedwig Sophie Augusta (Princess-Provost)",
+      "A maid"
+    ],
+    "setting": "A small abbey chamber at Quedlinburg; interior space measuring four cords of wood",
+    "mood": "Whimsical, cluttered, eccentric, memorable",
+    "image_prompt": "A cramped abbey chamber overflowing with sixteen pugs of various ages, their puppies scattered about the floor, alongside numerous colorful parrots perched on furniture and shelves. A young Fike observes in amazement while a maid busily tends to the animals. An elderly woman in noble dress sits among the chaos, stroking a pug. The air seems thick with the presence of so many creatures.",
+    "image_type": "scene",
+    "image_file": "scene_04_the_abbesss_chamber.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 5,
+    "title": "The Duty of Succession",
+    "content": "The brothers were both pious and unmarried and were on excellent terms with each other. It was clearly the duty of one of them to perpetuate the family. But Johann Ludwig, the elder and the logical successor, lived in Jever with a spinster sister and did not wish to change his state. It therefore fell to Christian August to go forth and seek a wife. The history of his wooing is unfortunately not known to us. Whether he saw it as a duty or an opportunity we cannot say. At any rate, he was successful.",
+    "characters_present": [
+      "Johann Ludwig",
+      "Christian August",
+      "spinster sister"
+    ],
+    "setting": "Jever and the principality of Zerbst",
+    "mood": "Dutiful resignation, familial obligation",
+    "image_prompt": "Two brothers in 18th century German attire, one reluctant in a domestic setting with a sister present, the other resolute. Period clothing, austere interior reflecting piety and duty.",
+    "image_type": "scene",
+    "image_file": "scene_05_the_duty_of_succession.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 6,
+    "title": "Co-Regents of Zerbst",
+    "content": "Promoted to the status of a married man and the father of a family, he was regarded by the elder but childless brother Ludwig as co-heir. When the reigning duke finally died the two brothers inherited Zerbst together and ruled the principality as co-regents. They were peace-loving men who lived in harmony with each other, except for occasional strife, stimulated, it is said, by sister Sophie Christine. At any rate the loyal pair did not live long to rule in Zerbst. After three years Johann Ludwig died and five months later Christian August followed him. Two months afterward Sophie Christine was buried beside her brothers.",
+    "characters_present": [
+      "Christian August",
+      "Johann Ludwig",
+      "Sophie Christine"
+    ],
+    "setting": "Zerbst principality",
+    "mood": "Bittersweet harmony, fading legacy, melancholy mortality",
+    "image_prompt": "Two brothers in formal 18th century dress ruling together in a principality, with a sister figure present. Somber tones reflecting their brief reign and swift succession of deaths. Period regalia and heraldic symbols of Anhalt-Zerbst.",
+    "image_type": "scene",
+    "image_file": "scene_06_co_regents_of_zerbst.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 7,
+    "title": "A Woman of Action",
+    "content": "Johanna Elisabeth of Holstein-Gottorp was not yet sixteen when she married her Prussian general, yet she ruled the family from the first. The portraits of this lady and her spouse which hang in the Potsdam palace reveal, even through the conventional art of Pesne, marked differences of temperament. The general has the dreamy eye that betrays the extreme idealist, while his wife looks out with the peculiar verve and readiness of a real woman of action.",
+    "characters_present": [
+      "Johanna Elisabeth of Holstein-Gottorp",
+      "Prussian General (Christian August)"
+    ],
+    "setting": "Potsdam palace, viewing portraits",
+    "mood": "Contrasting personalities, dynamic tension, shrewd observation",
+    "image_prompt": "Portrait gallery scene: two 18th century portraits side by side - a dreamy-eyed Prussian general and his young wife with sharp, energetic gaze. Rococo palace setting with formal portraiture in the style of Pesne.",
+    "image_type": "scene",
+    "image_file": "scene_07_a_woman_of_action.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 8,
+    "title": "The Princess's Disappointment",
+    "content": "The ambitious Lady of Zerbst had encountered several discouragements in the process of producing an heir. Her first child, born May 2, 1729, in the Domstrasse house, was a girl. \"It has been told me,\" wrote this girl, looking backward after forty years, \"that I was not so very joyfully welcomed when I first appeared because a son was expected. My father, however, showed more satisfaction than his environment.\" Perhaps his natural reserve and a certain philosophy which he undoubtedly possessed helped him to conceal his disappointment. The Princess's chagrin can easily be imagined.",
+    "characters_present": [
+      "Princess Johanna Elisabeth (Lady of Zerbst)",
+      "General Christian August",
+      "Newborn daughter (Sophie Auguste Friedrike/Fike)",
+      "Household members"
+    ],
+    "setting": "Domstrasse house, Stettin; small bedroom, one flight above the noisy street",
+    "mood": "Disappointment, tension, resignation; the father's concealed disapproval contrasted with the mother's visible chagrin",
+    "image_prompt": "A 18th-century bedroom scene showing a disappointed noblewoman in a confinement bed, with attendants around her and a cradle nearby, the father standing somewhat apart with a restrained expression, period furnishings and a window overlooking a German street below",
+    "image_type": "scene",
+    "image_file": "scene_08_the_princesss_disappointment.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 9,
+    "title": "The Dangerous Charcoal Pan",
+    "content": "The child had nearly cost the sixteen-year-old mother her life. We can picture the ordeal of her confinement in the small bedroom one flight above the noisy Domstrasse: the long Lutheran Sunday which happened also to be May-day; the morning and evening chiming of the church bells; the religious atmosphere of a prayerfully expectant household; the crude methods of the midwife; the waiting cradle and the charcoal pan beside which the first-born son was presently to be swaddled. Finally in the gray dawn of Monday morning, at the chill hour of half-past two, a daughter was born instead of the expected son. As the new-born infant lay in her cradle, the charcoal pan set fire to the floor. The board was almost burned through before anyone noticed it, so preoccupied was everybody with the condition of the mother.",
+    "characters_present": [
+      "Princess Johanna Elisabeth",
+      "Midwife",
+      "Household attendants",
+      "Newborn infant (Fike)"
+    ],
+    "setting": "Small bedroom, Domstrasse house, Stettin; early morning Monday, May 2, 1729",
+    "mood": "Perilous, chaotic, tense; the panic of childbirth mixed with sudden danger and neglect",
+    "image_prompt": "A 18th-century confinement chamber in gray dawn light, showing a mother in bed with attendants around her, a charcoal pan with flames spreading across floorboards near a wooden cradle, midwife and servants in period dress, church bells visible through the window, dramatic chiaroscuro lighting emphasizing the fire and crisis",
+    "image_type": "scene",
+    "image_file": "scene_09_the_dangerous_charcoal_pan.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 10,
+    "title": "A Father's Love for His Daughter",
+    "content": "Of Fike's relation to her parents, she says, \"My father, whom I saw less frequently, regarded me as an angel; my mother did not trouble much about me. A year and a half later she bore a son whom she loved idolatrously. I was merely endured and was often harshly and vehemently scolded, and not always with justice. I felt this without being, however, quite clear in my knowledge.\"",
+    "characters_present": [
+      "Sophie Auguste Friedrike (Fike)",
+      "General Christian August (her father)",
+      "Princess Johanna Elisabeth (her mother)",
+      "Brother Wilhelm Christian"
+    ],
+    "setting": "Zerbst household; various domestic scenes over the years following Fike's birth",
+    "mood": "Bittersweet, melancholic; a child's dawning awareness of parental favoritism and emotional neglect",
+    "image_prompt": "A split or layered composition showing a young girl observing her father's gentle regard from a distance versus her mother's cold indifference, with a favored younger brother between them, suggesting emotional hierarchy within a German noble household",
+    "image_type": "scene",
+    "image_file": "scene_10_a_fathers_love_for_his_daughter.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 11,
+    "title": "A Marriage of Ambition",
+    "content": "Christian August had married his wife at the court of the Duchess of Brunswick, her godmother, who had brought her up as if she were her own child. Johanna Elisabeth was the daughter of the Bishop of L\u00fcbeck who had twelve children. Having lost Schleswig to the Danes and finding himself therefore in reduced circumstances, he willingly gave away one of his children to the kind godmother who offered to bring her up. The court of Brunswick, which thus became the home of the keen little Princess of Holstein-Gottorp, was one of the most showy in Germany. It was far more elegant than the court of the parsimonious King of Prussia. Here Johanna Elisabeth seems to have grown up partly as a much-spoiled favorite and partly as a poor relation. She brought nothing to her marriage but the bridal chest given her by her godmother. The newly married pair started housekeeping in the Domstrasse house under the most frugal circumstances. Garrison life must have seemed sordid to her after the refinements of Brunswick. One hope at least she had. If she produced an heir she might one day become the reigning Princess of Anhalt-Zerbst instead of being merely the wife of a Prussian general in a garrison town.",
+    "characters_present": [
+      "Christian August",
+      "Johanna Elisabeth",
+      "Duchess of Brunswick (mentioned)"
+    ],
+    "setting": "Domstrasse house, garrison town; contrasted with the court of Brunswick",
+    "mood": "Melancholic resignation tinged with royal aspiration; the tension between refined past and frugal present",
+    "image_prompt": "A young noblewoman in 18th-century dress stands in a modest, sparsely furnished room, gazing out a window toward an imagined grand palace. Her expression shows longing and determination. A bridal chest sits nearby.",
+    "image_type": "scene",
+    "image_file": "scene_11_a_marriage_of_ambition.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 12,
+    "title": "The Russian Connection",
+    "content": "In the meantime she made the most of being a Holstein-Gottorp, a clan whose members had married royalty and were related to thrones. Johanna Elisabeth's brother had been affianced to the youngest daughter of Peter the Great and, but for his death by the smallpox, would have become the great Czar's son-in-law. Johanna Elisabeth's first cousin, who was a nephew of Charles XII of Sweden, had married another daughter of Peter the Great and had left a son who had claims upon the thrones of both Sweden and Russia. These alliances with Holstein-Gottorps were supposed to bring to Russia a strip of sea-coast, and sea-coast was Peter's passion. No doubt he regretted that he had only two daughters to sell for a bit of strand. But he never realized on these schemes and the young ladies themselves fared badly. Elisabeth, who lost her bridegroom through smallpox, remained unmarried all her life, while Anne, who went to live in Kiel, was scandalously neglected by her husband.",
+    "characters_present": [
+      "Johanna Elisabeth",
+      "Peter the Great (mentioned)",
+      "her brother (deceased)",
+      "her cousin",
+      "Elisabeth (Peter's daughter)",
+      "Anne (Peter's daughter)"
+    ],
+    "setting": "Historical recounting; spanning courts of Russia, Sweden, and Holstein-Gottorp",
+    "mood": "Romantic ambition shadowed by tragedy; a mixture of hope and bitter irony",
+    "image_prompt": "A genealogical tapestry or family tree rendered as a visual composition, with Johanna Elisabeth's figure prominent, connected by golden threads to the great powers of Russia and Sweden. Shadows and darker threads suggest the fates of those who came before.",
+    "image_type": "scene",
+    "image_file": "scene_12_the_russian_connection.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 13,
+    "title": "The Formal Announcement",
+    "content": "But no tragedy could dim the luster of the Russian connection in the eyes of the romantic Johanna Elisabeth of Holstein-Gottorp. She felt that her husband should announce their marriage to the Russian court. The Prince of Zerbst therefore wrote: \"Imperial Highness: May you, in your world renowned magnanimity, not take it ill that I venture to inform you with the most humble respect that on the eighth of November, after previous betrothal, I married the youngest sister of the Bishop of L\u00fcbeck recently deceased in Petersburg, the Princess Johanna Elisabeth of Holstein-Gottorp, in the country seat of Weheln in Brunswick-Wolfenb\u00fcttel.\" This humble composition bears all the marks of being the Prince's own.",
+    "characters_present": [
+      "Johanna Elisabeth",
+      "Prince of Zerbst",
+      "Peter the Great (recipient, mentioned)"
+    ],
+    "setting": "A study or writing room; the letter addressed to the Russian Imperial court",
+    "mood": "Formal, hopeful, tinged with humble anxiety; the careful tone of one reaching toward greatness",
+    "image_prompt": "A quill pen poised over parchment, with formal 18th-century script visible. The Prince sits at a desk, while Johanna Elisabeth stands nearby with an expression of expectant determination. Sealing wax and imperial insignia suggest the gravity of the correspondence.",
+    "image_type": "scene",
+    "image_file": "scene_13_the_formal_announcement.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 14,
+    "title": "The Inconsolable Mother",
+    "content": "Johanna Elisabeth's talent for the enhancement of life's experiences is shown again in her exaggerated grief at her son's death. \"My mother was inconsolable,\" writes Fike, \"and the presence of the entire family was necessary to help her bear her grief.\" Even Fike's old grandmother journeyed all the way down from Hamburg to Dornburg to comfort the bereaved Princess. But a second son, Friedrich August, born in 1734, came to take his brother's place and eventually to become the last Prince of Anhalt-Zerbst.",
+    "characters_present": [
+      "Johanna Elisabeth (mother)",
+      "Fike",
+      "Friedrich August (newborn)",
+      "Grandmother",
+      "Family members"
+    ],
+    "setting": "Dornburg Palace, rooms of the bereaved Princess",
+    "mood": "Sorrowful, heavy with grief, yet with underlying hope of new life",
+    "image_prompt": "A noble woman in 18th-century dress seated in an ornate room, surrounded by family members offering comfort. Soft light filters through tall windows. In the background, a cradle suggests new life amid mourning.",
+    "image_type": "scene",
+    "image_file": "scene_14_the_inconsolable_mother.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 15,
+    "title": "The Young Tutor",
+    "content": "Fike was oldest sister. She played teacher to her brothers, training them in the art of penmanship as she had learned it from Monsieur Laurent and Pastor Wagner. This doubtless meant a saving for the general's pocket-book, which was always too slender for the requirements of Fike's mother.",
+    "characters_present": [
+      "Fike",
+      "Her brothers",
+      "Fritz"
+    ],
+    "setting": "A study or schoolroom in the household",
+    "mood": "Industrious, instructive, touched with quiet family duty",
+    "image_prompt": "A young girl in 18th-century dress seated at a writing desk, guiding her younger brother's hand as he practices penmanship. Writing implements and papers are scattered across the table. Afternoon light streams through a window.",
+    "image_type": "scene",
+    "image_file": "scene_15_the_young_tutor.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 16,
+    "title": "A Daughter's Sacrifice",
+    "content": "When, at the age of fifteen, she held in her hands the first money which she had ever owned and which had been given her by the Russian Empress for card-playing, she wrote to her father at once, \"I have heard that your Highness has sent my brother to Homburg; I know that this occasions a rather heavy expense. I beg your Highness to allow my brother to remain there as long as necessary for his recovery, requesting for myself the privilege of paying all his expenses; and beg your Highness to mention a banker to whom I may send whatever is necessary.\"",
+    "characters_present": [
+      "Fike (fifteen years old)",
+      "Her father (General)",
+      "Fritz (brother)"
+    ],
+    "setting": "Fike's chamber or writing desk",
+    "mood": "Tender devotion, selfless maturity, quiet determination",
+    "image_prompt": "A fifteen-year-old girl in elegant dress seated at a writing desk, quill in hand, composing a letter by candlelight. Coins or a purse rest on the desk beside her. Her expression shows resolute compassion.",
+    "image_type": "scene",
+    "image_file": "scene_16_a_daughters_sacrifice.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 17,
+    "title": "The Child's Conviction",
+    "content": "\"I do not know for sure,\" she says in her memoirs, \"whether as a child I was really ugly, but I remember well this was often said of me, and that I must therefore strive to show inward excellence and intelligence. Up to the age of fourteen or fifteen years, I was firmly convinced of my ugliness and was therefore more concerned with acquiring inward accomplishments and was less mindful of my looks. I have seen a portrait of myself painted when I was ten years old and that is certainly very ugly. If it really resembled me, they told me nothing false.\"",
+    "characters_present": [
+      "Fike (young girl, age 10-15)",
+      "Family members (implied)"
+    ],
+    "setting": "Fike's childhood home; a moment of introspection before a portrait",
+    "mood": "Introspective, melancholic yet resolute, tinged with wry acceptance",
+    "image_prompt": "A young girl gazing at a large mirror or portrait of herself, her expression thoughtful and serious. Her surroundings are aristocratic but modest. Shadows and soft light create an atmosphere of quiet self-examination.",
+    "image_type": "scene",
+    "image_file": "scene_17_the_childs_conviction.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 18,
+    "title": "Old Bolhagen's Prophecy",
+    "content": "More hopeful was old Bolhagen, a faithful henchman of Fike's father, who visited the nursery every afternoon and there spun yarns about his travels. One afternoon when Fike was seven, the old man brought with him a newspaper from which he read the report of the marriage of the Princess Augusta of Saxe-Gotha with the Prince of Wales. \"Do you know,\" said the old soldier to the governess, \"this Princess is not really so well educated as ours, and nevertheless, she is now destined to become Queen of England. Who knows what ours may yet become?\"",
+    "characters_present": [
+      "Old Bolhagen",
+      "Fike (age seven)",
+      "The governess",
+      "Princess Augusta (mentioned)"
+    ],
+    "setting": "The nursery",
+    "mood": "Wistful, hopeful, dreamlike with possibility",
+    "image_prompt": "An elderly soldier with weathered features sits in a nursery, holding a newspaper, speaking to a young girl and a governess. His expression is warm and knowing. The room is filled with soft afternoon light and suggests nobility and expectation.",
+    "image_type": "scene",
+    "image_file": "scene_18_old_bolhagens_prophecy.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 19,
+    "title": "The Princess's Court Pretensions",
+    "content": "Princess Johanna Elisabeth was a clever woman but also a bit of a fool; that is to say, she was romantic and proud. As the wife of the Governor of Stettin, she tried to introduce in her dull town some semblance of court etiquette. For instance, she required Fike to kiss the hem of the garments of distinguished ladies who visited the house. When the old King of Prussia died, she strove to induce the ladies of Stettin to wear mourning as the court at Berlin was doing. But so cordially was the old King hated that not a lady would wear black for him. The Princess and her daughter and the faithful Khayn went bravely forth for a couple of Sundays in solemn weeds, but all the other Stettin dames united against them and the Princess was at last obliged to give up the fight.",
+    "characters_present": [
+      "Princess Johanna Elisabeth",
+      "Fike",
+      "Khayn",
+      "ladies of Stettin"
+    ],
+    "setting": "Stettin, Governor's house and town streets; also referencing the court at Berlin",
+    "mood": "Tense and ironic; the Princess's pretensions clash with provincial resistance",
+    "image_prompt": "A young girl (Fike) kissing the hem of a distinguished lady's gown in an ornate parlor, while the Princess Johanna Elisabeth watches approvingly in the background",
+    "image_type": "scene",
+    "image_file": "scene_19_the_princesss_court_pretensions.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 20,
+    "title": "A Daughter's First Disillusionment",
+    "content": "While little Fike lived in a chronic state of filial bedazzlement, she had occasional glimpses of fact that left their mark. When her mother visited the court at Berlin, she was questioned there about the mourning episode at Stettin. \"She denied the fact,\" says Fike. \"I was present and wondered greatly at this. It was the first time I had ever heard anyone deny a fact. I thought to myself, is it possible that my mother has forgotten something which happened so recently? I was near to reminding her; but I restrained myself, and that was surely my good fortune.\"",
+    "characters_present": [
+      "Fike",
+      "Princess Johanna Elisabeth",
+      "courtiers at Berlin"
+    ],
+    "setting": "The court at Berlin",
+    "mood": "Confusion and dawning awareness; a child's first encounter with deliberate falsehood",
+    "image_prompt": "Young Fike's face in profile, eyes widening with shock and confusion as she watches her mother at court deny a recent event, courtiers visible in soft focus behind them",
+    "image_type": "scene",
+    "image_file": "scene_20_a_daughters_first_disillusionment.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 21,
+    "title": "A Father's Modest Philosophy",
+    "content": "Perhaps she had from her father, the Prince of Anhalt, a saving sense of moderation. He occupies so little space in his daughter's memoirs that no clear picture of his character is possible. But certain traits come through in his correspondence. In spite of his stiff pedantic style he reports the facts more reliably than does his wife in her more eloquent epistles. His ambition was tempered with philosophy. At one time in his life, after his daughter had gone to Russia, he tried unsuccessfully to become the Duke of Courland. \"I am, thank God,\" he wrote, \"well satisfied with what I possess, yet I should like to hear no reproaches later that we had slept away our luck at such a favorable moment.\" This is the only time in his history that he shows himself in a covetous light. Perhaps his motive in grasping at Courland was to be nearer to his daughter in Russia.",
+    "characters_present": [
+      "Prince of Anhalt",
+      "Fike (referenced)",
+      "implied correspondence reader"
+    ],
+    "setting": "The Prince's study or writing desk; reflective and intimate",
+    "mood": "Philosophical and restrained; a glimpse of quiet paternal concern beneath measured ambition",
+    "image_prompt": "An older gentleman in 18th-century dress seated at a writing desk, quill in hand, gazing contemplatively with letters and correspondence around him, a distant portrait of his daughter visible on the wall",
+    "image_type": "scene",
+    "image_file": "scene_21_a_fathers_modest_philosophy.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 22,
+    "title": "The Princess's Menagerie",
+    "content": "and I remember how once I offended this Princess by doing something for which she never forgave me. I was left alone in her room for a few moments and the idea of opening the window occurred to me. Naturally half of the menagerie flew out! I shut the window and ran away. When my aunt returned she found only her little cripples left. She could guess how this had happened and her room was in the future closed to me.",
+    "characters_present": [
+      "Fike (narrator)",
+      "Princess (aunt)"
+    ],
+    "setting": "Princess's private room with a menagerie of birds",
+    "mood": "mischievous, regretful, tense aftermath",
+    "image_prompt": "A young girl closing a window in panic as colorful birds fly out into the sky, feathered creatures scattered through the air, while on the windowsill and perches remain only caged or crippled birds, the ornate room decorated in 18th-century style",
+    "image_type": "scene",
+    "image_file": "scene_22_the_princesss_menagerie.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 23,
+    "title": "The Haunted Night",
+    "content": "I slept in the same room with Fr\u00e4ulein Khayn, a companion of my mother's,\" says Fike. \"My bed stood against the wall and hers not far from mine, with only a small passage between. Another passage remained open between the windows and the bed of Fr\u00e4ulein Khayn. On a table between the windows stood a water-pitcher, a silver basin, and a night-light. The only door of the room was at the foot of the bed and was closed. Toward midnight, I was suddenly awakened by someone who lay down beside me in bed; I opened my eyes and saw that it was Fr\u00e4ulein Khayn. I asked her why she wanted to come into my bed. She answered, 'For God's sake leave me and go to sleep quietly.' I wanted to know what had caused her to leave her bed and come to mine, for I saw that she was trembling from fright and was almost speechless. When I pressed her she said, 'Don't you see what is going on in the room and what is there on the table?' and drew the cover over her face. I got on my knees and reached over her to draw away the curtain and see what was going on. But I heard and saw absolutely nothing. The door was closed; candles, basin, and silver pitcher were on the table. I told her what I saw and she became somewhat quieter. A few minutes later she arose to shove the bolt on the door but it was already locked. I went to sleep again but the next morning she looked wretched and quite distracted.",
+    "characters_present": [
+      "Fike (narrator)",
+      "Fr\u00e4ulein Khayn"
+    ],
+    "setting": "A cold bedroom in winter 1740, two beds separated by small passages, candlelit darkness",
+    "mood": "eerie, frightening, mysterious, intimate dread",
+    "image_prompt": "A pale, trembling woman in nightclothes climbing into a young girl's bed at midnight in a dimly-lit room; moonlight through windows illuminates a water pitcher and silver basin on a table; the scene captured in shadows and candlelight, creating an atmosphere of supernatural dread",
+    "image_type": "scene",
+    "image_file": "scene_23_the_haunted_night.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 24,
+    "title": "Lost in the Snowstorm",
+    "content": "My mother had that year an extraordinary adventure on the return journey to Stettin.\" As the story develops, one learns that Fike herself, the ever-present Khayn, another attendant, and several postilions, shared along with Fike's mother the adventure of being lost in a terrible snowstorm.",
+    "characters_present": [
+      "Fike (narrator)",
+      "Princess Johanna Elisabeth (mother)",
+      "Fr\u00e4ulein Khayn",
+      "attendant",
+      "postilions"
+    ],
+    "setting": "A snow-covered road during a terrible snowstorm, return journey to Stettin",
+    "mood": "dramatic, perilous, adventurous",
+    "image_prompt": "A carriage struggling through a violent snowstorm on an obscured road; silhouettes of postilions and passengers barely visible through swirling white snow; the Princess and her entourage battling against blinding winter weather in the 18th century",
+    "image_type": "scene",
+    "image_file": "scene_24_lost_in_the_snowstorm.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 25,
+    "title": "Aunt Hedwig's Chamber of Animals",
+    "content": ", as many as sixteen pugs. Many of the curs had young which also lived in the same room with my aunt. They slept and ate there and attended to their necessities. A maid was employed to keep them clean and this took her the whole day. A large number of parrots besides lived in the same room; one can imagine the fragrance which reigned there! When the Princess drove out, she had always in her carriage at least one parrot and a half a dozen dogs; the latter even accompanied her to church. I have never seen anyone who loved animals as much as she; she was wholly occupied with them the livelong day and only bestirred herself for their sakes. She had consequently grown quite stout, which with her short stature, made her very ugly and even deformed.",
+    "characters_present": [
+      "Aunt Hedwig",
+      "Maid",
+      "Fike (observing)"
+    ],
+    "setting": "Aunt Hedwig's private room; her carriage",
+    "mood": "Absurdist, cluttered domesticity; mixture of affection and grotesquerie",
+    "image_prompt": "A short, stout elderly woman surrounded by at least sixteen pugs of various sizes, several parrots perched about the room, a maid in the background cleaning. The room is cramped and chaotic with animal life. The Princess wears fine clothes but appears disheveled amid the menagerie.",
+    "image_type": "scene",
+    "image_file": "scene_25_aunt_hedwigs_chamber_of_animals.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 26,
+    "title": "Tante Sophie Christine and the Escaped Birds",
+    "content": "She was more than fifty,\" writes her niece, \"very tall and so thin that I had at eleven years old a bigger waist than she; she was, however, very proud of her figure. At six o'clock when she arose she carefully laced herself in and only took off her stays when she went to bed. She used to maintain that she had once been beautiful but that an accident had damaged her beauty. When she was ten years old her powder-mantle had caught fire and thereby the lower part of her face had been seriously hurt; the chin and the lower part of the cheeks were shriveled up and the parchment skin really looked ghastly. She was kind and good but when she wanted anything, very hard-headed too... She made wonderful embroidery and loved birds very much. Her kind heart mostly went out to those who had suffered a misfortune. I have seen in her chamber a thrush that had only one foot, a lark with a broken wing, a one-eyed goldfinch, a hen whose head was half-way pecked off by the cock, a cock whose tail-feathers had been torn out by the cat, a lame and lop-sided nightingale, a parrot that could not use its feet and lay flat on its belly, and many other birds of different kinds that ran and flew about her room.",
+    "characters_present": [
+      "Tante Sophie Christine",
+      "Fike (young niece, observing)"
+    ],
+    "setting": "Tante Sophie Christine's chamber",
+    "mood": "Tender melancholy; quirky compassion; Gothic undertones from the aunt's scarred visage",
+    "image_prompt": "A very tall, extremely thin elderly woman with severe scarring on the lower half of her face, standing ramrod-straight in a corset. Her chamber is filled with injured birds\u2014one-legged thrush, lark with broken wing, one-eyed goldfinch, damaged hens and roosters, a flightless parrot on its belly\u2014perched and moving about. Fine embroidery work visible. A young girl (Fike) observes from the side.",
+    "image_type": "scene",
+    "image_file": "scene_26_tante_sophie_christine_and_the_escaped_birds.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  },
+  {
+    "scene_number": 27,
+    "title": "The Open Window Incident",
+    "content": "I was a very lively and right wilful child, and I remember how once I offended this Princess by doing something for which she never forgave me. I was left alone in her room for a few moments and the idea of opening the window occurred to me. Naturally half of the menagerie flew out! I shut the window and ran away. When my aunt returned she found only her little cripples left. She could guess how this had happened and her room was in the future closed to me.",
+    "characters_present": [
+      "Fike (young child)",
+      "Tante Sophie Christine (returning)"
+    ],
+    "setting": "Tante Sophie Christine's chamber; window",
+    "mood": "Mischievous panic; permanent estrangement; poignant loss",
+    "image_prompt": "A young girl's guilty face as she shuts a window; birds flying out into the open air. Below, Tante Sophie Christine's shocked expression as she surveys her empty room, with only the crippled, flightless birds remaining on the furniture. A moment of irreversible consequence.",
+    "image_type": "scene",
+    "image_file": "scene_27_the_open_window_incident.png",
+    "chapter_number": 5,
+    "chapter_title": "3"
+  }
+]

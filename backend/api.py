@@ -1,7 +1,8 @@
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify, send_file, Response
 from flask_cors import CORS
 import json
 import shutil
+import random
 from pathlib import Path
 from config import OUTPUT_DIR, CORS_ORIGINS, FLASK_PORT, FLASK_HOST, DEBUG
 
@@ -34,7 +35,7 @@ def scan_output_books():
         if not scenes_file.exists():
             continue
         
-        # Load scenes to get count
+        # Load scenes to get count (for backward compatibility)
         try:
             with open(scenes_file, 'r') as f:
                 scenes = json.load(f)
@@ -42,7 +43,7 @@ def scan_output_books():
         except:
             scenes_count = 0
         
-        # Load character prompts to get character count
+        # Load character prompts to get character count (for backward compatibility)
         character_prompts_file = book_dir / "character_prompts.json"
         characters_count = 0
         if character_prompts_file.exists():
@@ -52,6 +53,12 @@ def scan_output_books():
                     characters_count = len(char_data.get('characters', []))
             except:
                 pass
+        
+        # Count chapters
+        chapters_dir = book_dir / "chapters"
+        chapters_count = 0
+        if chapters_dir.exists():
+            chapters_count = len([d for d in chapters_dir.iterdir() if d.is_dir()])
         
         # Get book title - use book_id formatted nicely as default
         title = book_id.replace('_', ' ').title()
@@ -87,8 +94,9 @@ def scan_output_books():
             'description': description,
             'data_dir': book_id,
             'created_at': '',
-            'scenes_count': scenes_count,
-            'characters_count': characters_count
+            'scenes_count': scenes_count,  # Kept for backward compatibility
+            'characters_count': characters_count,  # Kept for backward compatibility
+            'chapters_count': chapters_count
         })
     
     return books
@@ -136,12 +144,14 @@ def get_book_chapters(book_id):
                 except:
                     pass
             
-            # Get preview image from first scene
+            # Get preview image and scene count from first scene
             scenes_file = chapter_dir / "scenes.json"
+            scene_count = 0
             if scenes_file.exists():
                 try:
                     with open(scenes_file, 'r') as f:
                         scenes = json.load(f)
+                        scene_count = len(scenes) if scenes else 0
                         if scenes and len(scenes) > 0:
                             # Use the first scene's image as preview
                             first_scene_image = scenes[0].get('image_file', '')
@@ -151,6 +161,7 @@ def get_book_chapters(book_id):
                 except:
                     pass
             
+            chapter_info['scenes_count'] = scene_count
             chapters.append(chapter_info)
         
         return jsonify({'chapters': chapters})
@@ -198,23 +209,124 @@ def get_book_scenes(book_id):
 
 @app.route('/api/books/<book_id>/images/<path:image_path>', methods=['GET'])
 def get_book_image(book_id, image_path):
-    """Serve images from output/{book_id}/consistent_scenes/"""
+    """Serve images from output/{book_id}/consistent_scenes/ or style-specific directories"""
     try:
-        # Try consistent_scenes first
-        image_file = OUTPUT_DIR / book_id / "consistent_scenes" / image_path
+        book_dir = OUTPUT_DIR / book_id
         
-        # Fallback to scenes folder
-        if not image_file.exists():
-            image_file = OUTPUT_DIR / book_id / "scenes" / image_path
+        # List of directories to check in order of priority
+        image_paths_to_try = []
         
-        # Fallback to images folder
-        if not image_file.exists():
-            image_file = OUTPUT_DIR / book_id / "images" / image_path
+        # 1. Check for style-specific directories (consistent_scenes_{style})
+        # Try to get style from analysis.json
+        analysis_file = book_dir / "analysis.json"
+        style_safe = None
+        if analysis_file.exists():
+            try:
+                with open(analysis_file, 'r') as f:
+                    analysis = json.load(f)
+                    if isinstance(analysis, dict) and 'art_style' in analysis:
+                        art_style = analysis.get('art_style')
+                        if art_style:
+                            # Create style-safe directory name (matching how it's created in book_to_vn.py)
+                            style_safe = "".join(c for c in art_style if c.isalnum() or c in (' ', '-', '_')).strip()
+                            style_safe = style_safe.replace(' ', '_').lower()
+                            style_dir = book_dir / f"consistent_scenes_{style_safe}"
+                            if style_dir.exists():
+                                image_paths_to_try.append(style_dir / image_path)
+            except Exception:
+                pass
         
-        if not image_file.exists():
-            return jsonify({'error': f'Image not found: {image_path}'}), 404
+        # 2. Also check all style-specific directories (in case style changed or multiple exist)
+        if book_dir.exists():
+            for scene_dir in book_dir.glob("consistent_scenes_*"):
+                if scene_dir.is_dir():
+                    image_paths_to_try.append(scene_dir / image_path)
         
-        return send_file(image_file, mimetype='image/png')
+        # 3. Default consistent_scenes directory
+        image_paths_to_try.append(book_dir / "consistent_scenes" / image_path)
+        
+        # 4. Fallback to scenes folder
+        image_paths_to_try.append(book_dir / "scenes" / image_path)
+        
+        # 5. Fallback to images folder (for character images)
+        image_paths_to_try.append(book_dir / "images" / image_path)
+        
+        # Try each path in order
+        for image_file in image_paths_to_try:
+            if image_file.exists() and image_file.is_file():
+                # Read the image file and create response with explicit headers to avoid CORB issues
+                with open(image_file, 'rb') as f:
+                    image_data = f.read()
+                
+                response = Response(image_data, mimetype='image/png')
+                # Set headers to prevent CORB issues
+                # CORS will be handled by flask-cors automatically, but we ensure Content-Type is explicit
+                response.headers['Content-Type'] = 'image/png'
+                response.headers['X-Content-Type-Options'] = 'nosniff'
+                return response
+        
+        # If not found, try to find a fallback image from scene directories
+        # Prioritize style-specific directories, then default scene directories
+        fallback_image = None
+        
+        # Determine if this is a scene image (starts with "scene_") or character image
+        is_scene_image = image_path.startswith("scene_")
+        
+        if is_scene_image:
+            # For scene images, look in scene directories only
+            fallback_dirs = []
+            
+            # 1. Check style-specific scene directories first (prioritize the one from analysis.json)
+            if book_dir.exists():
+                analysis_file = book_dir / "analysis.json"
+                if analysis_file.exists():
+                    try:
+                        with open(analysis_file, 'r') as f:
+                            analysis = json.load(f)
+                            if isinstance(analysis, dict) and 'art_style' in analysis:
+                                art_style = analysis.get('art_style')
+                                if art_style:
+                                    style_safe = "".join(c for c in art_style if c.isalnum() or c in (' ', '-', '_')).strip()
+                                    style_safe = style_safe.replace(' ', '_').lower()
+                                    style_dir = book_dir / f"consistent_scenes_{style_safe}"
+                                    if style_dir.exists():
+                                        fallback_dirs.append(style_dir)
+                    except Exception:
+                        pass
+                
+                # Add all style-specific directories
+                for style_dir in book_dir.glob("consistent_scenes_*"):
+                    if style_dir.is_dir() and style_dir not in fallback_dirs:
+                        fallback_dirs.append(style_dir)
+            
+            # 2. Check default scene directories
+            fallback_dirs.append(book_dir / "consistent_scenes")
+            fallback_dirs.append(book_dir / "scenes")
+        else:
+            # For character images, look in character images directory
+            fallback_dirs = [book_dir / "images"]
+        
+        # Try to find a fallback image
+        for fallback_dir in fallback_dirs:
+            if fallback_dir.exists() and fallback_dir.is_dir():
+                png_files = list(fallback_dir.glob("*.png"))
+                if png_files:
+                    fallback_image = random.choice(png_files)
+                    break
+        
+        if fallback_image:
+            # Return random fallback image
+            with open(fallback_image, 'rb') as f:
+                image_data = f.read()
+            
+            response = Response(image_data, mimetype='image/png')
+            response.headers['Content-Type'] = 'image/png'
+            response.headers['X-Content-Type-Options'] = 'nosniff'
+            response.headers['X-Fallback-Image'] = 'true'  # Indicate this is a fallback
+            return response
+        
+        # If no fallback found, return 404
+        return jsonify({'error': f'Image not found: {image_path}'}), 404
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 

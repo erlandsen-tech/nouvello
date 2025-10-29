@@ -393,6 +393,7 @@ def main():
     parser.add_argument("--window-overlap", type=int, default=int(os.getenv("SEG_WINDOW_OVERLAP", "500")), help="Overlap between windows in characters")
     parser.add_argument("--workers", type=int, default=int(os.getenv("SEG_WORKERS", "4")), help="Parallel workers for windows within each chapter")
     parser.add_argument("--chapter-workers", type=int, default=int(os.getenv("CHAPTER_SEG_WORKERS", "1")), help="Parallel workers for processing multiple chapters (default: 1)")
+    parser.add_argument("--chapters", help="Comma-separated list of chapter numbers to segment (for incremental updates)")
     args = parser.parse_args()
     
     input_dir = Path(args.input_dir)
@@ -426,14 +427,7 @@ def main():
     
     print(f"📖 Using analysis file: {analysis_file}")
     
-    # Check if scenes.json already exists
-    scenes_file = output_dir / "scenes.json"
-    if scenes_file.exists():
-        print(f"✅ Scene segmentation already exists: {scenes_file}")
-        print(f"   ⏭️  Skipping scene generation (file already exists)")
-        print(f"\n💡 To regenerate scenes, delete {scenes_file} and run again")
-        sys.exit(0)
-    
+    # Load analysis first to check if specific chapters are requested
     with open(analysis_file) as f:
         analysis_data = json.load(f)
     
@@ -443,8 +437,64 @@ def main():
     else:
         chapters_list = analysis_data
     
+    # Check if scenes.json already exists
+    scenes_file = output_dir / "scenes.json"
+    existing_scenes = []
+    if scenes_file.exists():
+        try:
+            with open(scenes_file, 'r') as f:
+                existing_scenes = json.load(f)
+        except Exception:
+            existing_scenes = []
+        
+        # If specific chapters requested, check if they already exist
+        if args.chapters:
+            try:
+                requested = [int(x.strip()) for x in args.chapters.split(',') if x.strip()]
+                requested_set = set(requested)
+                
+                existing_chapter_nums = {s.get('chapter_number', 0) for s in existing_scenes if isinstance(s, dict)}
+                
+                # Filter to only requested chapters
+                chapters_list = [ch for ch in chapters_list if ch.get('chapter_number', 0) in requested_set]
+                if not chapters_list:
+                    print(f"⚠️  No matching chapters found in analysis for requested: {sorted(requested_set)}")
+                    sys.exit(0)
+                
+                # Check if all requested chapters already have scenes
+                missing = requested_set - existing_chapter_nums
+                if not missing:
+                    print(f"✅ Scenes for requested chapters already exist: {sorted(requested_set)}")
+                    sys.exit(0)
+                else:
+                    print(f"🔄 Updating scenes for missing chapters: {sorted(missing)}")
+                    # Keep existing scenes from other chapters
+                    all_scenes = [s for s in existing_scenes if isinstance(s, dict) and s.get('chapter_number', 0) not in requested_set]
+            except ValueError:
+                print(f"❌ Invalid --chapters value: {args.chapters}")
+                sys.exit(1)
+        else:
+            # No specific chapters requested, just skip if file exists
+            print(f"✅ Scene segmentation already exists: {scenes_file}")
+            print(f"   ⏭️  Skipping scene generation (file already exists)")
+            print(f"\n💡 To regenerate scenes, delete {scenes_file} and run again")
+            sys.exit(0)
+    else:
+        # File doesn't exist but chapters specified - filter list
+        if args.chapters:
+            try:
+                requested = [int(x.strip()) for x in args.chapters.split(',') if x.strip()]
+                requested_set = set(requested)
+            except ValueError:
+                print(f"❌ Invalid --chapters value: {args.chapters}")
+                sys.exit(1)
+            chapters_list = [ch for ch in chapters_list if ch.get('chapter_number', 0) in requested_set]
+            if not chapters_list:
+                print(f"⚠️  No matching chapters found in analysis for requested: {sorted(requested_set)}")
+                sys.exit(0)
+        all_scenes = []
+    
     segmentation = SceneSegmentation(model=args.model)
-    all_scenes = []
     
     # Determine if we should parallelize chapter processing
     chapter_workers = args.chapter_workers if hasattr(args, 'chapter_workers') else int(os.getenv("CHAPTER_SEG_WORKERS", "1"))
@@ -492,19 +542,21 @@ def main():
             for future in as_completed(futures):
                 try:
                     scenes = future.result()
-                    all_scenes.extend(scenes)
+                    # Convert Scene objects to dicts for consistency
+                    all_scenes.extend([scene.__dict__ for scene in scenes])
                 except Exception as e:
                     print(f"❌ Error processing chapter: {e}")
     else:
         # Sequential processing (original behavior)
         for chapter in chapters_list:
             scenes = segment_single_chapter((chapter, segmentation))
-            all_scenes.extend(scenes)
+            # Convert Scene objects to dicts for consistency
+            all_scenes.extend([scene.__dict__ for scene in scenes])
     
-    # Save scenes
+    # Save scenes (all_scenes is now a list of dicts)
     scenes_file = output_dir / "scenes.json"
     with open(scenes_file, 'w') as f:
-        json.dump([scene.__dict__ for scene in all_scenes], f, indent=2)
+        json.dump(all_scenes, f, indent=2)
     
     print(f"✅ Generated {len(all_scenes)} scenes")
     print(f"📁 Saved to: {scenes_file}")

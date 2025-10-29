@@ -64,7 +64,8 @@ class GeminiImageGenerator:
         self.client = genai.Client(api_key=self.api_key)
     
     def generate_character_image(self, character_name: str, prompt: str, 
-                                output_dir: str, aspect_ratio: str = "1:1") -> GeneratedImage:
+                                output_dir: str, aspect_ratio: str = "1:1",
+                                style_suffix: Optional[str] = None) -> GeneratedImage:
         """
         Generate an image for a single character
         
@@ -73,6 +74,7 @@ class GeminiImageGenerator:
             prompt: Image generation prompt
             output_dir: Directory to save generated image
             aspect_ratio: Aspect ratio (1:1, 16:9, 9:16, 3:4, 4:3, etc.)
+            style_suffix: Optional style suffix for filename (e.g., "horror" -> "Alice_horror.png")
             
         Returns:
             GeneratedImage object with generation results
@@ -82,7 +84,16 @@ class GeminiImageGenerator:
         # Sanitize filename
         safe_name = "".join(c for c in character_name if c.isalnum() or c in (' ', '-', '_')).strip()
         safe_name = safe_name.replace(' ', '_')
-        output_path = os.path.join(output_dir, f"{safe_name}.png")
+        
+        # Add style suffix if provided
+        if style_suffix:
+            style_safe = "".join(c for c in style_suffix if c.isalnum() or c in (' ', '-', '_')).strip()
+            style_safe = style_safe.replace(' ', '_').lower()
+            filename = f"{safe_name}_{style_safe}.png"
+        else:
+            filename = f"{safe_name}.png"
+        
+        output_path = os.path.join(output_dir, filename)
         
         # Check if image already exists
         if Path(output_path).exists():
@@ -242,7 +253,8 @@ class GeminiImageGenerator:
     
     def generate_from_prompts_file(self, prompts_file: str, output_dir: str,
                                   aspect_ratio: str = "1:1",
-                                  delay_seconds: float = 1.0) -> List[GeneratedImage]:
+                                  delay_seconds: float = 1.0,
+                                  style_suffix: Optional[str] = None) -> List[GeneratedImage]:
         """
         Generate images for all characters from a prompts JSON file
         
@@ -251,6 +263,7 @@ class GeminiImageGenerator:
             output_dir: Directory to save generated images
             aspect_ratio: Aspect ratio for all images
             delay_seconds: Delay between API calls to avoid rate limits
+            style_suffix: Optional style suffix for filenames (e.g., "horror" -> "Alice_horror.png")
             
         Returns:
             List of GeneratedImage objects
@@ -261,6 +274,8 @@ class GeminiImageGenerator:
             prompts_data = json.load(f)
         
         print(f"✅ Loaded {len(prompts_data)} character prompts")
+        if style_suffix:
+            print(f"🎨 Style suffix: {style_suffix} (filenames will be: CharacterName_{style_suffix}.png)")
         
         # Create output directory
         os.makedirs(output_dir, exist_ok=True)
@@ -274,7 +289,7 @@ class GeminiImageGenerator:
             # Don't create more workers than characters
             actual_workers = min(num_workers, len(prompts_data))
             print(f"🚀 Running parallel image generation with {actual_workers} workers")
-            results = self._generate_images_parallel(prompts_data, output_dir, aspect_ratio, actual_workers, delay_seconds)
+            results = self._generate_images_parallel(prompts_data, output_dir, aspect_ratio, actual_workers, delay_seconds, style_suffix)
         else:
             # Sequential for single character or single worker
             results = []
@@ -290,7 +305,8 @@ class GeminiImageGenerator:
                     char_name,
                     image_prompt,
                     output_dir,
-                    aspect_ratio
+                    aspect_ratio,
+                    style_suffix
                 )
                 results.append(result)
                 
@@ -300,7 +316,7 @@ class GeminiImageGenerator:
         
         return results
     
-    def _generate_images_parallel(self, prompts_data: List, output_dir: str, aspect_ratio: str, num_workers: int, delay_seconds: float) -> List[GeneratedImage]:
+    def _generate_images_parallel(self, prompts_data: List, output_dir: str, aspect_ratio: str, num_workers: int, delay_seconds: float, style_suffix: Optional[str] = None) -> List[GeneratedImage]:
         """Generate images in parallel using threads (API-safe)"""
         results = []
         
@@ -311,7 +327,7 @@ class GeminiImageGenerator:
             total = len(prompts_data)
             
             print(f"\n[{idx}/{total}] {char_name}")
-            result = self.generate_character_image(char_name, image_prompt, output_dir, aspect_ratio)
+            result = self.generate_character_image(char_name, image_prompt, output_dir, aspect_ratio, style_suffix)
             
             # Delay after generation
             time.sleep(delay_seconds)

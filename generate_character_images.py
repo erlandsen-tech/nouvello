@@ -172,6 +172,11 @@ Environment Variables:
         help='Delay between Gemini API calls in seconds (default: 1.0)'
     )
     
+    parser.add_argument(
+        '--style',
+        help='Art style override for character images. If not specified, style will be read from analysis.json if available. Images will be saved as CharacterName_style.png'
+    )
+    
     args = parser.parse_args()
     
     # Validate Gemini API key if needed
@@ -325,10 +330,22 @@ Environment Variables:
             prompter.export_prompts(prompts, prompts_file, format="json")
             print(f"   ✅ Generated prompts for {len(prompts)} characters")
             print(f"   ✅ Output: {prompts_file}")
+        # Only check for style-specific images if style was explicitly provided
+        # Don't use auto-detected styles for filename matching
+        style_suffix = args.style  # Only if explicitly passed via --style
+        
         if existing_images:
             filtered = []
             for p in prompts:
                 basename = p.character_name.lower().replace(' ', '_')
+                # Check for both style-specific and non-style images
+                if style_suffix:
+                    style_safe = "".join(c for c in style_suffix if c.isalnum() or c in (' ', '-', '_')).strip()
+                    style_safe = style_safe.replace(' ', '_').lower()
+                    style_name = f"{basename}_{style_safe}"
+                    if style_name in existing_images:
+                        print(f"   ⏭️  Skipping prompt for {p.character_name} (image exists: {style_name}.png)")
+                        continue
                 if basename in existing_images:
                     print(f"   ⏭️  Skipping prompt for {p.character_name} (image exists)")
                     continue
@@ -389,11 +406,16 @@ Environment Variables:
                 model=args.gemini_model
             )
             
+            # Only use style suffix if explicitly provided via --style argument
+            # Don't use auto-detected styles from analysis.json for filenames (they're too long)
+            style_suffix = args.style  # Only use if explicitly passed, not from analysis.json
+            
             results = generator.generate_from_prompts_file(
                 prompts_file,
                 images_dir,
                 aspect_ratio=args.aspect_ratio,
-                delay_seconds=args.delay
+                delay_seconds=args.delay,
+                style_suffix=style_suffix
             )
             
             # Export report

@@ -10,8 +10,9 @@ interface Book {
   description: string;
   data_dir: string;
   created_at: string;
-  scenes_count: number;
-  characters_count: number;
+  scenes_count?: number;  // Kept for backward compatibility
+  characters_count?: number;  // Kept for backward compatibility
+  chapters_count?: number;
   cover_image?: string;
 }
 
@@ -162,10 +163,7 @@ const BookChooser: React.FC<BookChooserProps> = ({ onBookSelect }) => {
               <p className="book-description">{book.description}</p>
               <div className="book-stats">
                 <span className="stat">
-                  <strong>{book.scenes_count}</strong> scenes
-                </span>
-                <span className="stat">
-                  <strong>{book.characters_count}</strong> characters
+                  <strong>{book.chapters_count ?? 0}</strong> {book.chapters_count === 1 ? 'chapter' : 'chapters'}
                 </span>
               </div>
             </div>

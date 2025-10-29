@@ -1,0 +1,442 @@
+[
+  {
+    "scene_number": 1,
+    "title": "The Sunday Circle",
+    "content": "The governess had friends, French emigrants like herself, intellectuals, who are to be distinguished from the simple-minded Laurent, master of calligraphy. Babet received on Sundays in the nursery a certain Monsieur de Mauclerc, a clergyman, who was remembered by Fike chiefly as the editor of a History of England written by his father-in-law, Rapin Thoiras. The Mauclerc-Thoiras circle was pro-English, which meant in those days that they were philosophers and liberals. With these fellow-exiles of hers Babet was intimate and her pupil was adopted by the group. In their circle Fike had her first experience of good conversation, which she afterwards passionately pursued as one of the main interests of her life. Here she learned to know as clever and delightful people those whom Pastor Wagner regarded as heretics.",
+    "characters_present": [
+      "Babet (governess)",
+      "Fike",
+      "Monsieur de Mauclerc",
+      "French emigrant intellectuals"
+    ],
+    "setting": "The nursery, Sunday afternoon",
+    "mood": "Intellectual, refined, liberating; a contrast to austere religious instruction",
+    "image_prompt": "An elegant 18th-century nursery on a Sunday afternoon. French emigrant intellectuals gather in a semi-circle, engaged in animated conversation. Babet, the French governess, sits among them while young Fike observes attentively. Books and papers are visible. Sunlight streams through tall windows. The atmosphere is cultured and liberal.",
+    "image_type": "scene",
+    "image_file": "scene_01_the_sunday_circle.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 2,
+    "title": "Pastor Wagner's Instructions",
+    "content": "It was a matter of course that the daughter of Christian August should be educated by an evangelical pastor. In her little room against the church, so close that the sound of the organ came through, the parson instructed her and put her through her so-called Pr\u00fcfungen. These examinations were high lights in a monotonous childhood. The reverend, black-robed gentleman did not scamp his duty like the music-master Roellig. He built himself into the very foundation of his pupil's character. Although she ultimately decided that he was a pedant and a block-head, she never forgot his teachings. The ghost of her old teacher accompanied her to Russia where he frequently walked and talked, and never out of character.",
+    "characters_present": [
+      "Pastor Wagner",
+      "Fike"
+    ],
+    "setting": "A small room adjoining the church, with organ sounds audible through the walls",
+    "mood": "Somber, austere, formative; mixture of respect and later judgment",
+    "image_prompt": "A sparse, austere room against a church wall. A black-robed pastor sits at a desk facing young Fike during her examination (Pr\u00fcfung). Religious texts are visible. Through the thin walls, the faint silhouette of a church organ is suggested. A single window provides limited light. The mood is stern, pedagogical, and heavy with religious instruction.",
+    "image_type": "scene",
+    "image_file": "scene_02_pastor_wagners_instructions.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 3,
+    "title": "A Mother's Assessment",
+    "content": "If the Princess of Zerbst did not make much of her daughter, it is not likely that one of her women would have held a different opinion. Probably the young girl was sufficiently commonplace. It remained for circumstances to make her into the unique and powerful personality that she came to be. For the rest, it is true that at all stages of her life she was more cool and calculating than she was eccentric and frivolous. To this extent the Baroness was right.",
+    "characters_present": [
+      "Princess of Zerbst",
+      "Fike (young)",
+      "The Baroness"
+    ],
+    "setting": "Zerbst household",
+    "mood": "Reflective, dismissive, understated",
+    "image_prompt": "A young, ordinary-looking girl stands in shadow within an elegant but austere aristocratic interior, her expression composed and cool. A noble woman (her mother) turns away dismissively in the background, suggesting indifference. Muted colors and cool lighting emphasize her unremarkable appearance despite the grand setting.",
+    "image_type": "scene",
+    "image_file": "scene_03_a_mothers_assessment.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 4,
+    "title": "Sickly Siblings and Moli\u00e8re's Wisdom",
+    "content": "Fike grew up in an atmosphere of illness. The first misfortune of the kind which befell the family was when her mother lay nineteen weeks in bed after her birth... With her governess, Fike read Moli\u00e8re's plays in which various forms of hypocrisy and hysteria are exposed and satirized. Through Babet's eyes, which had been opened by Moli\u00e8re, she viewed the cases of illness about her. \"You must know,\" she afterwards wrote in a letter to Grimm, \"that Mademoiselle Cardel made me mistrustful toward all physicians and medicine in general.\"",
+    "characters_present": [
+      "Fike",
+      "Babet Cardel (governess)",
+      "Princess (mother)",
+      "Elder brother",
+      "Younger brother"
+    ],
+    "setting": "Zerbst household, study with governess",
+    "mood": "Melancholic, educational, formative skepticism",
+    "image_prompt": "A young girl (Fike) sits with her governess Babet Cardel in a study, reading Moli\u00e8re by candlelight. Through an open doorway, a sickly boy is visible using a crutch, and a bedridden figure can be glimpsed. The composition contrasts the world of satirical literature with the household's pervasive illness and medical misery.",
+    "image_type": "scene",
+    "image_file": "scene_04_sickly_siblings_and_moli\u00e8res_wisdom.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 5,
+    "title": "The Paradox of Medicine",
+    "content": "Her prejudice was of course not consistent. Babet Cardel, the scorner of physicians, had never been able to cure her pupil of tone-deafness. The Empress was sometimes plaintive about her lack and wondered wistfully whether the physicians might not succeed where the teachers had failed. \"All that depends on the organization, does it not? Mine is faulty. I long to hear and enjoy music, but in vain do I try. It is noise and that is all. I long to send to your society of medicine a prize for him who will invent an effective remedy against insensibility to the sounds of harmony.\"",
+    "characters_present": [
+      "Fike/The Empress",
+      "Babet Cardel (referenced)",
+      "Grimm (recipient of letter)"
+    ],
+    "setting": "Memory/correspondence reflecting on past",
+    "mood": "Wistful, introspective, contradictory, vulnerable",
+    "image_prompt": "A reflective portrait of Fike as Empress, holding a letter quill, gazing pensively toward a musical performance happening in distant shadow. Her expression is plaintive and yearning, caught between intellectual skepticism of medicine and emotional longing for what she cannot hear. Soft light emphasizes her internal conflict.",
+    "image_type": "scene",
+    "image_file": "scene_05_the_paradox_of_medicine.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 6,
+    "title": "Fike's Melancholy Lesson",
+    "content": "The pastor often discoursed to his pupil on the Last Judgment. Fike was so impressed with the difficulty of being saved that she began to have fits of weeping at twilight. Babet found her hiding behind the window curtains to indulge these melancholy thoughts, and induced the child to tell her the reason. Herr Wagner was forbidden to frighten Fike in the future with his sermons on the Last Judgment.",
+    "characters_present": [
+      "Fike",
+      "Babet Cardel",
+      "Herr Wagner"
+    ],
+    "setting": "A room with window curtains, at twilight",
+    "mood": "Melancholic, sorrowful, protective",
+    "image_prompt": "A young girl hiding behind heavy window curtains at dusk, tears on her cheeks, with soft golden twilight filtering through the fabric. A caring governess gently pulls back the curtain to comfort her.",
+    "image_type": "scene",
+    "image_file": "scene_06_fikes_melancholy_lesson.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 7,
+    "title": "Arguments with the Pastor",
+    "content": "Yet Fike did not swallow Wagner whole; she argued with him. She declared it unjust that Marcus Aurelius and other heroes of antiquity should be damned because they had not known salvation. The pastor proved by chapter and verse that they were damned, but his pupil stubbornly defended her point. Babet Cardel was called in by the irate pedagogue and the governess patched up a peace between them. A second argument arose on the subject of chaos. Chaos, said the teacher, is what went before the world. \"But what is Chaos?\" demanded the pupil. And again Babet had to intervene and make peace.",
+    "characters_present": [
+      "Fike",
+      "Herr Wagner",
+      "Babet Cardel"
+    ],
+    "setting": "A study or classroom",
+    "mood": "Tense, intellectual, resolute, diplomatic",
+    "image_prompt": "A young girl facing an irate pastor across a table with religious texts, arms crossed with determination. A composed governess stands between them, her hand raised in peaceful mediation.",
+    "image_type": "scene",
+    "image_file": "scene_07_arguments_with_the_pastor.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 8,
+    "title": "Women Rule the Household",
+    "content": "Fike was conscious of solid obstacles in her world. If she had been a boy her life would have been different. She would one day have ruled over Anhalt-Zerbst instead of Fritz. But girls do not reign. In Fike's home, however, everything was ruled by women. The Princess Johanna Elisabeth managed her husband and smacked her daughter. As between Babet Cardel and Pastor Wagner, it was always Babet who decided things and gave orders to the pastor. If Mama had been a Prussian General, even under the close-fisted Frederick William who wore a short coat because he was too stingy to buy cloth for a long one, she would not have been content with the small pay and inferior post of the Prince, her husband. The Princess was proud and ambitious.",
+    "characters_present": [
+      "Fike",
+      "Princess Johanna Elisabeth",
+      "Babet Cardel",
+      "Herr Wagner"
+    ],
+    "setting": "The Anhalt household",
+    "mood": "Contemplative, observant, commanding, ambitious",
+    "image_prompt": "A dominating mother figure in the center of a room, with a young girl watching thoughtfully in the foreground, servants and a pastor in the background appearing subordinate. The composition emphasizes female authority and power dynamics within the household.",
+    "image_type": "scene",
+    "image_file": "scene_08_women_rule_the_household.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 9,
+    "title": "A Witness to Fike's Youth",
+    "content": "An old German Baroness who lived in the Stettin household says this of Fike's childhood: \"Princess Sophie was born, grew up, and was educated under my eyes. I witnessed her school instruction and her progress and I helped her to pack her trunks before her departure (for Russia). I enjoyed her confidence to a degree that entitled me to believe that I knew her better than anybody else. Yet I had no idea that she was destined to attain so much fame. In her youth I noticed in her a serious, calculating and cold personality, which was as far removed from anything distinguished or brilliant as it was from error, eccentricity and frivolity. In a word, I thought her just an ordinary person.\"",
+    "characters_present": [
+      "Fike",
+      "Old German Baroness"
+    ],
+    "setting": "The Stettin household, retrospective",
+    "mood": "Reflective, observant, surprised in hindsight",
+    "image_prompt": "An elderly Baroness looking back pensively, recounting memories. In the background, a young Fike appears serious and composed, surrounded by schoolwork and trunks, foreshadowing her departure. The image has a sepia or memory-like quality.",
+    "image_type": "scene",
+    "image_file": "scene_09_a_witness_to_fikes_youth.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 10,
+    "title": "The Castle of Stettin",
+    "content": "While Fike was still quite small, her father received an unexciting promotion. Already Commander of the garrison, he was made Governor of Stettin. This change did not bring the family any nearer to the goal of the Princess's hopes, a residence in Berlin. But it did rescue them from the commonplace house in the Domstrasse which Fike afterwards in the days of her grandeur referred to as \"Greifenheim's house.\" As Governor of Stettin, her father was given quarters in the ancestral castle of the Duke of Pomerania. It was a gloomy rectangular structure surrounding a roughly-paved courtyard and including as a corner building a church with a bell-tower. Fike's bedroom adjoined the bell-tower.",
+    "characters_present": [
+      "Fike",
+      "her father",
+      "the Princess"
+    ],
+    "setting": "The ancestral castle of the Duke of Pomerania in Stettin; Fike's bedroom adjoining the bell-tower",
+    "mood": "Austere, imposing, somewhat disappointing",
+    "image_prompt": "A gloomy rectangular castle surrounding a roughly-paved courtyard, with a church and bell-tower at the corner, Gothic architecture, overcast Northern German landscape, a small child's window visible near the bell-tower",
+    "image_type": "scene",
+    "image_file": "scene_10_the_castle_of_stettin.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 11,
+    "title": "Maternal Neglect",
+    "content": "The family occupied the third story of the left wing, the Princess's apartment being next to the entrance and her daughter's next to the church. Two or three times a day the little girl was allowed to visit her mother. In her memoirs she describes how she ran through the long corridor but does not describe the visits. The supervision over her daughter's education with which the Princess is credited was apparently of the slightest. She was preoccupied with other things; an unambitious husband and an invalid son gave her plenty to think about. Besides the family finances were not improved by the general's promotion. He still clung to his parsimonious habits and was backed up by his second in command, old Bolhagen, who as under-governor lived in the Pomeranian castle and was always close at hand to help him out.",
+    "characters_present": [
+      "Fike",
+      "the Princess",
+      "her father",
+      "old Bolhagen"
+    ],
+    "setting": "Third story of the left wing of the castle; long corridor connecting apartments",
+    "mood": "Melancholic, distant, somewhat neglectful",
+    "image_prompt": "A young girl running through a long, dimly lit stone corridor in a castle, with heavy wooden doors on either side, reaching toward her mother's distant apartment, shadows and architectural austerity",
+    "image_type": "scene",
+    "image_file": "scene_11_maternal_neglect.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 12,
+    "title": "Count Gyllenborg's Kindness",
+    "content": "The two Princesses came to be familiar figures at several North German courts, for Fike after the age of eight always accompanied her mother on her travels. Had the search for a husband already begun? Probably so; the conversation at home seems to indicate as much. The Princess neglected her daughter abroad, as well as at home. This did not escape notice, and Fike occasionally had the satisfaction of having strangers, with whom she early discovered how to get on, rebuke the Princess for her maternal indifference. In this way, the Swedish Count Gyllenborg incurred the life-long gratitude of the proud, sensitive child. \"When he saw,\" says Fike, \"how little or rather how not at all my mother occupied herself with me, he said to her that she was not right in giving me so little attention; that I was for my age a very well-developed child.\"",
+    "characters_present": [
+      "Fike",
+      "the Princess",
+      "Swedish Count Gyllenborg"
+    ],
+    "setting": "A North German court during the Princess's travels",
+    "mood": "Bittersweet, tender, vindicating",
+    "image_prompt": "A Swedish nobleman addressing a neglectful princess at a court gathering, with a young girl watching gratefully from nearby, elegant 18th-century court setting with courtiers in background",
+    "image_type": "scene",
+    "image_file": "scene_12_count_gyllenborgs_kindness.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 13,
+    "title": "The Monk's Prophecy",
+    "content": "Still another partisan was unexpectedly raised up in the person of a Catholic monk by the name of Mengden whom Fike and her mother met at the Court of Brunswick. The monk occupied himself with palmistry and prophecy, which were, by the way, forbidden by his Church. With the certainty of her tendencies, the Princess gravitated toward the sorcerer, leading by the hand the little Princess Marianna of Brunswick-Bevern to whom she had taken a great fancy. She praised the beauty of Marianna and demanded that the monk should prophesy a crown for her. \"He heard,\" says Fike, \"how my mother praised the Princess and what she prophesied; he said to her that he saw not a single crown in the features of the Princess but that he saw at least three above my forehead.\"",
+    "characters_present": [
+      "Fike",
+      "the Princess",
+      "Catholic monk Mengden",
+      "Princess Marianna of Brunswick-Bevern"
+    ],
+    "setting": "The Court of Brunswick",
+    "mood": "Mystical, vindicating, fateful",
+    "image_prompt": "A hooded Catholic monk reading palms and gazing at a plain young girl's forehead, seeing three crowns in a mystical vision, while the Princess and beautiful Princess Marianna stand nearby in a Brunswick court chamber with candlelight",
+    "image_type": "scene",
+    "image_file": "scene_13_the_monks_prophecy.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 14,
+    "title": "Babet and Fike: Beneath the Bell-Tower",
+    "content": "Fike really owed her education to her French governess, Elisabeth Cardel, and her German tutor, Pastor Wagner. With Mademoiselle Cardel she spent her days and nights in the three small rooms beneath the bell-tower. They were Fike and Babet to each other. Babet must be the key to much that afterwards astonished the world in the Empress of Russia. But what the French governess was like it would be difficult to say. She has vanished into the limbo which is reserved for the domestic servants of the famous. Our history books, like our etiquette books, do not consider these people important. But almost any child takes her nurse or governess quite seriously and is influenced by her character regardless of the difference in their social station. The personality of the servant who cares for genius in its helpless infancy and during its stumbling childhood is a factor for biography to reckon with. Certainly Babet Cardel was no ordinary servant; perhaps no ordinary individual.",
+    "characters_present": [
+      "Fike",
+      "Elisabeth Cardel (Babet)",
+      "Pastor Wagner"
+    ],
+    "setting": "Three small rooms beneath the bell-tower",
+    "mood": "Intimate, formative, contemplative",
+    "image_prompt": "A young girl and a French governess in a modest study room lit by candlelight, with books and writing materials on a desk, bell-tower shadows visible through a small window",
+    "image_type": "scene",
+    "image_file": "scene_14_babet_and_fike_beneath_the_bell_tower.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 15,
+    "title": "The Character of Babet Cardel",
+    "content": "She was another genteel spinster but was of a tougher-minded variety than the German aunts and lady companions who otherwise figured in Fike's life. She never saw ghosts and she worshiped neither animals nor God too much. Without using flattery or caresses she knew how to gain and keep the affections of her pupil. Fike was a secretive child, yet she had no secrets from Babet, and this was partly because Babet was clever. Her pupil had a life-long habit of ready, off-hand scorn for stupidity.",
+    "characters_present": [
+      "Fike",
+      "Elisabeth Cardel (Babet)"
+    ],
+    "setting": "The study rooms beneath the bell-tower",
+    "mood": "Respectful, intelligent, trustworthy, austere yet affectionate",
+    "image_prompt": "Portrait of a French governess of practical bearing, intelligent eyes, austere but kind expression, seated with a young girl who gazes at her with trust and understanding",
+    "image_type": "scene",
+    "image_file": "scene_15_the_character_of_babet_cardel.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 16,
+    "title": "Madeleine's Wedding and Elisabeth's Care",
+    "content": "The Cardel family were French emigrants; the father was a professor in Frankfort. Two daughters, Madeleine and Elisabeth, made their way to Stettin, where Madeleine was employed as Fike's governess. When her pupil was nearly four Madeleine was married to an advocate named Colhard. The child made a scene at parting. \"At Madame Colhard's wedding,\" say her memoirs, \"I drank too much and would not go to bed without her. I bawled so loudly that they had to take me out and put me to bed with my parents.\" Fike passed into the hands of Elisabeth Cardel. The two sisters were opposites: Madeleine was showy and insincere while Elisabeth was just and consistent.",
+    "characters_present": [
+      "Fike",
+      "Madeleine Cardel",
+      "Elisabeth Cardel",
+      "Monsieur Colhard",
+      "Fike's parents"
+    ],
+    "setting": "Stettin; Madame Colhard's wedding; Fike's family home",
+    "mood": "Emotional upheaval, loss, transition, tender care",
+    "image_prompt": "A young child crying at a wedding celebration while being comforted, with an austere French woman (Elisabeth) watching nearby with compassionate resolve",
+    "image_type": "scene",
+    "image_file": "scene_16_madeleines_wedding_and_elisabeths_care.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 17,
+    "title": "The Perverse Spirit and Critical Silence",
+    "content": "Babet, who was something of a phrase-maker, called her an \"esprit gauche.\" In mature years, Fike still delighted in the title. \"Mademoiselle Cardel and Herr Wagner had to deal with a perverse spirit who took all that was said to her in the opposite sense.\" Oppressed by moralities and preachments, her eager, curious nature took refuge behind a smiling but critical silence. \"One does not always know what children are thinking,\" she says. \"Children are hard to understand, especially when careful training has accustomed them to obedience and experience has made them cautious in conversations with their elders.\"",
+    "characters_present": [
+      "Fike",
+      "Elisabeth Cardel (Babet)",
+      "Pastor Wagner"
+    ],
+    "setting": "The study rooms; various settings with instruction",
+    "mood": "Precocious, secretive, critical, self-protective, cleverly defiant",
+    "image_prompt": "A young girl with an enigmatic smile listening to her tutors, her face serene but her eyes sharp and questioning, surrounded by books and educational materials",
+    "image_type": "scene",
+    "image_file": "scene_17_the_perverse_spirit_and_critical_silence.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 18,
+    "title": "A Governess Reflects on Understanding Children",
+    "content": "\"I know what children are thinking,\" she says. \"Children are hard to understand, especially when careful training has accustomed them to obedience and experience has made them cautious in conversations with their elders.\"",
+    "characters_present": [
+      "Elisabeth Cardel"
+    ],
+    "setting": "A room in the Zerbst household",
+    "mood": "Reflective, wise, slightly weary",
+    "image_prompt": "A middle-aged French governess in 18th-century dress standing thoughtfully, with a slight knowing smile, as if considering the nature of children's minds",
+    "image_type": "scene",
+    "image_file": "scene_18_a_governess_reflects_on_understanding_children.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 19,
+    "title": "The Dancing Master's Futile Lesson",
+    "content": "A French dancing-master came to the little room beside the bell-tower, placed the four-year-old child on a table and trained her in positions and steps. \"This was money thrown away,\" remarked the affluent Empress of Russia many years later; doubtless an echo of dear Papa's views, hardly of dear Mama's.",
+    "characters_present": [
+      "Fike (young Catherine)",
+      "French dancing-master"
+    ],
+    "setting": "A small room beside the bell-tower at Zerbst",
+    "mood": "Awkward, futile, slightly comedic in retrospect",
+    "image_prompt": "A young four-year-old girl standing uncertainly on a table while a French dancing-master demonstrates positions and steps beside her, in a sparse room with a bell-tower visible",
+    "image_type": "scene",
+    "image_file": "scene_19_the_dancing_masters_futile_lesson.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 20,
+    "title": "Fike's Sardonic Judgment of Her Teachers",
+    "content": "Fike afterwards described her teachers, always excepting Mademoiselle Cardel, as rather a poor lot. Monsieur Laurent was \"an old weak-head who in his youth was but a dunce,\" a Frenchman who spoke German \"like a Spanish cow.\" The music-master was preserved in a burlesque sketch addressed to Grimm. \"About the poor devil Roellig I have never told you yet, because you know what success his lessons had. He always brought with him a creature who roared bass. He had him sing in my room; I listened to him and said to myself, 'he roars like a bull,' but Herr Roellig was beside himself with delight when ever this bass throat was in action.\"",
+    "characters_present": [
+      "Fike (Catherine, narrator/adult)"
+    ],
+    "setting": "In written reflection or correspondence",
+    "mood": "Satirical, witty, dismissive yet amused",
+    "image_prompt": "A portrait-style illustration of an older Catherine, with a knowing, sardonic expression, perhaps holding a letter or quill, with faded ghostly images of her poor teachers in the background",
+    "image_type": "scene",
+    "image_file": "scene_20_fikes_sardonic_judgment_of_her_teachers.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 21,
+    "title": "The Torment of Rote Learning",
+    "content": "\"Very early it was noticed that I had a good memory; therefore I was incessantly tormented with learning by rote. They called it training the memory; but I believe it to have been rather a weakening. At first it was Bible verses; then specially prepared pieces on the fables of La Fontaine which I had to commit to memory and repeat. If I forgot anything, I was scolded; I believe, however, it was not humanly possible to retain all that I had to memorize; also I do not think it worth the trouble. I still possess a German Bible in which all the verses which I had to learn are underlined with red ink.\"",
+    "characters_present": [
+      "Young Fike (Catherine)",
+      "Her teachers (unspecified)"
+    ],
+    "setting": "Various rooms at Zerbst, study areas",
+    "mood": "Frustration, resentment, weariness tempered by irony",
+    "image_prompt": "A young girl sitting at a desk with an open German Bible, her face showing concentration mixed with frustration, as stern figures loom in shadow behind her; red-underlined verses visible on the page",
+    "image_type": "scene",
+    "image_file": "scene_21_the_torment_of_rote_learning.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 22,
+    "title": "Babet's Wisdom and Wit",
+    "content": "The most valuable part of her education was incidental to her association with Babet, \"who knew everything without having learned anything; she knew all the comedies and tragedies like her five fingers and was very amusing.\" Babet's vocabulary and phrases were drawn from her reading. Often she reminded her pupil that the word \"Monsieur\" \"never broke anyone's jaw-bone,\" a phrase which Fike assumed had been drawn from some old comedy. She read Corneille and Racine and was saturated with Moli\u00e8re, who consequently became the daily bread of her pupil. Her favorite authority was \"common sense\" which she evoked habitually. \"That is not common sense,\" represented a final judgment with the governess as it eventually did with the Empress. Everybody else in Fike's early environment dealt in moral principles and religious dogmas; Babet seems to have been a realist.",
+    "characters_present": [
+      "Babet (governess)",
+      "Young Fike (Catherine)"
+    ],
+    "setting": "Nursery or rooms at Zerbst",
+    "mood": "Warm, intellectual, witty, genuine affection beneath instruction",
+    "image_prompt": "An older French governess (Babet) seated comfortably in a nursery, gesturing expressively while speaking to a young attentive girl; bookshelves or volumes of Moli\u00e8re, Corneille, and Racine visible in the background",
+    "image_type": "scene",
+    "image_file": "scene_22_babets_wisdom_and_wit.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 23,
+    "title": "The Evening Prayer Interrupted",
+    "content": "\"It was the custom,\" says Fike, \"to kneel down every evening and morning to say our morning and evening prayer. One evening as I was praying on my knees, I fell to coughing so violently, that the strain caused me to fall upon my left side, while sharp pains almost took away my breath. Some one sprang to me and I was put to bed where I remained three weeks. I lay always on the left side and had a cough, stitches and fever. There was no proper doctor in the neighborhood. They gave me remedies, but Heaven knows of what they consisted. Finally, after much suffering, I was able to get up.\"",
+    "characters_present": [
+      "Fike",
+      "Unidentified family member(s)"
+    ],
+    "setting": "Stettin family home, prayer room/bedroom",
+    "mood": "Frightening, sudden crisis, pious yet helpless",
+    "image_prompt": "A young girl in a nightgown collapsing to her left side while kneeling in prayer, candlelight illuminating her contorted form, concerned family members rushing toward her in the shadows of a dimly-lit period room",
+    "image_type": "scene",
+    "image_file": "scene_23_the_evening_prayer_interrupted.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 24,
+    "title": "The Deformation Discovered",
+    "content": "\"When I was dressed it was seen that I had taken on the form of a Z: my right shoulder was higher than the left, the backbone had a zig-zag line, and the left shoulder was hollow. My women and those of my mother who were taken into consultation, decided to call my parents' attention to it. The first thing done in the emergency was to command the strictest silence about my condition. My parents were unhappy that one of their children should be lame, the other deformed.\"",
+    "characters_present": [
+      "Fike",
+      "Fike's women attendants",
+      "Mother's women",
+      "Parents (mentioned)"
+    ],
+    "setting": "Bedroom or dressing chamber, Stettin household",
+    "mood": "Distressed, secretive, shameful, family shame and wounded pride",
+    "image_prompt": "A girl standing in profile as attendants exchange worried glances, her silhouette showing a pronounced Z-shaped curve of her spine and misaligned shoulders, with hushed conversations and concerned faces in muted, aristocratic interior tones",
+    "image_type": "scene",
+    "image_file": "scene_24_the_deformation_discovered.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 25,
+    "title": "The Executioner's Treatment",
+    "content": "\"Finally, after several experts had been consulted with the greatest secrecy, it was decided to seek out a skillful man who knew how to heal dislocations. The search was vain, for they had a horror of calling in the only person who had this kind of skill, because he was the executioner of the place. They hesitated a long while, but finally decided to fetch him secretly. Only Babet and a chamber-maid were taken into confidence. The man examined me and ordered that every morning a girl, before she had eaten, should rub with spittle first the shoulder and then the spine. Then he himself prepared a kind of jacket which I was never to remove by day or night except to change my linen. He came every other day early in the morning to examine me further.\"",
+    "characters_present": [
+      "Fike",
+      "The executioner (healer)",
+      "Babet",
+      "Chamber-maid",
+      "Girl attendant"
+    ],
+    "setting": "Stettin household, examination room or bedroom, early morning",
+    "mood": "Apprehensive, clandestine, clinical yet cruel, desperation masked by secrecy",
+    "image_prompt": "A stern executioner in dark clothing examining a young girl's spine in a private chamber at dawn, with Babet and a maidservant watching anxiously; a restrictive leather jacket visible nearby, shadowy and austere Gothic interior",
+    "image_type": "scene",
+    "image_file": "scene_25_the_executioners_treatment.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  },
+  {
+    "scene_number": 26,
+    "title": "Recovery and the Strait-Jacket Years",
+    "content": "\"Besides this he had me wear a large black ribbon which went around my neck, passed over the shoulder and the right arm, and was fastened in the back. In short, I know not whether I had no tendency to become crooked or whether these methods were effective. In any case, after a year and a half of such treatment, hope for my health was restored. I did not lay aside the uncomfortable jacket until I was ten or eleven years old. Fike's inflammation of the lungs befell her at the age of seven. It coincided with her period of deepest pity, her melancholy absorption in the Last Judgment. She had been saturated with bigotry by the conscientious long-faced Wagner.\"",
+    "characters_present": [
+      "Fike (at ages 7-11)"
+    ],
+    "setting": "Stettin household, throughout childhood years",
+    "mood": "Oppressive, melancholic, religiously tormented, resigned endurance",
+    "image_prompt": "A girl aged 7-11 wearing a restrictive black-ribboned jacket and corset, her young face somber and introspective, perhaps at a prayer or window; timeline showing her growth over years of confinement, muted religious imagery in background",
+    "image_type": "scene",
+    "image_file": "scene_26_recovery_and_the_strait_jacket_years.png",
+    "chapter_number": 6,
+    "chapter_title": "II SHE IS EDUCATED"
+  }
+]
