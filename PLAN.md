@@ -50,65 +50,49 @@ The existing AI code (character prompter, expression prompter, consistent-scene 
 - **Supabase** — auth + Postgres + Storage in one. Replaces `books.json`, the local `output/` tree, and a hand-rolled login system. Row-Level Security keeps user data isolated for free.
 - **Stripe Checkout (hosted)** — credit packs ("3 books for $39") + one-off ("buy this book — $19"). Hosted page = no PCI scope, ship in a day.
 
+## What's already on `main` (as of plan rebase)
+
+A "make generation faster" PR landed before this plan was committed. It already did several W1 items:
+
+- `ai/gemini_image_generator.py` and `ai/consistent_scene_generator.py` and `ai/scene_segmentation.py` parallelize per-stage Gemini calls via `ThreadPoolExecutor`. Threads, not asyncio — for I/O-bound API calls these are equivalent in throughput, and FastAPI (W3) wraps sync handlers in a threadpool transparently, so we don't need to rewrite to asyncio.
+- `ai/cache_manager.py` provides a file-based sha256 cache. Sufficient until W2 swaps it for Postgres-backed.
+- `requirements.txt` exists with a minimal manifest (no torch/CUDA bloat).
+- The `vn/` Ren'Py module is gone — confirms the EPUB-to-VN sunset and removes the W5 reference to `vn/asset_pipeline.py`.
+
+What's still untouched from W1:
+- `book_to_vn.py` still shells out to seven scripts via `subprocess.run` (lines 261, 312, 359, 596). For a deployed worker we need this in-process so a single function call runs the whole pipeline.
+- `ai/llm_providers.py` still uses `signal.SIGALRM` for Bedrock timeouts — that crashes inside any ThreadPoolExecutor worker (which is now the default). Replace with `botocore.Config(connect_timeout=..., read_timeout=...)`.
+- `ai/consistent_scene_generator.py` claims to use character reference images as conditioning but historically only passed them in the text prompt; verify post-refactor and fix if still wrong (photo-of-kid in W4 hard-depends on real multi-image input).
+
 ## First steps on a fresh checkout
 
-Before any of the workstreams below can run, the host needs a working Python env. The original `.venv` had no manifest (the README referred to "the venv IS the manifest") which broke the moment the OS upgraded Python. **Don't repeat that mistake** — start by writing a real `requirements.txt`.
-
 ```bash
-# Minimal direct deps (the existing site-packages had ~6GB of torch/CUDA + transformers
-# + nltk + sklearn + scipy that are not imported anywhere in the codebase — skip them).
-cat > requirements.txt <<'EOF'
-google-genai>=1.0
-boto3>=1.40
-ebooklib>=0.19
-beautifulsoup4>=4.12
-lxml>=5.0
-python-dotenv>=1.0
-pillow>=10.0
-fastapi>=0.115
-uvicorn[standard]>=0.30
-httpx>=0.27
-pytest>=8.0
-pytest-asyncio>=0.24
-EOF
-
-uv venv --python 3.14 .venv
-uv pip install --python .venv/bin/python -r requirements.txt
-
-# Sanity-check
-.venv/bin/python -c "from google import genai; print(dir(genai.Client(api_key='x').aio.models))"
-
-# Re-create .env (gitignored). The previous key was rotated.
-cat > .env <<'EOF'
-GEMINI_API_KEY=...
-GEMINI_MODEL=gemini-2.5-flash-image
-AWS_REGION=eu-central-1
-EOF
+uv venv --python 3.14 .venv          # 3.13 EOL'd; matches what most distros now ship
+uv pip install -r requirements.txt
+cp .env.example .env  # if added; otherwise create with GEMINI_API_KEY + GEMINI_MODEL + AWS creds
 ```
 
-The pre-rebuild venv contained ~95 packages but only ~12 are actually imported. Audit any new dep before adding it; the worker container will be deployed and every MB matters on cold start.
+The host I last worked on had a `.venv` that was created on 3.13 then orphaned by a system Python upgrade to 3.14. Recreating with `uv venv --python 3.14` and reinstalling from `requirements.txt` resolves it cleanly in ~2 minutes.
 
 ## Workstreams (sequenced)
 
 ### W0 · Naming + domain · day 1 · non-blocking
 Pick a name, register the domain, set up Vercel + Supabase + Stripe + Inngest accounts. Reserve the trademark search. Throwaway logo via Recraft / SVG. **Blocker for launch, not for code.**
 
-### W1 · Refactor pipeline: subprocess → async library · ~5 days
-The single biggest performance win. Today: `book_to_vn.py` shells out to seven scripts; each script then calls Gemini sequentially for ~10 images. Wall time per book: 90-120s.
+### W1 · Kill the subprocess chain · ~2-3 days (down from 5)
+Per-stage parallelism and caching already landed on `main`. What remains is the orchestrator: `book_to_vn.py` still shells out to four separate Python processes, which means the worker (W3) can't run a book end-to-end inside a single FastAPI handler.
 
-- Promote each script's `main()` body into an importable function in a new `pipeline/` package. `analyze_chapters.py`, `generate_character_images.py`, `ai/scene_segmentation.py`, `ai/consistent_scene_generator.py`, `generate_environment_images.py` all collapse into `pipeline/{analyze,characters,scenes,illustrate,backgrounds}.py`.
-- Replace the per-step `subprocess.run` calls in `book_to_vn.py` with direct awaits.
-- Make `GeminiImageGenerator` async (`google-genai` already supports `aio.models.generate_content`). Use `asyncio.Semaphore(5)` to respect rate limits while parallelizing the 10 page renders.
-- Expected wall time: **15-25s** for a 10-page book (5x-7x speedup).
-- Add a content-hash cache layer: `sha256(input_text + character_seed + page_idx)` → previously rendered image URL in Postgres. Iteration cost on text edits drops from $0.50 → ~$0.05.
-- **Bug to fix while you're in here**: `ai/consistent_scene_generator.py:152-158` claims to use character reference images for consistency but only passes them in the *text* of the prompt — never as actual `contents` to the Gemini API. The photo-of-kid feature (W4) hard-depends on real multi-image conditioning, so this gets fixed in W1. The `google.genai` SDK accepts `contents=[prompt, PIL.Image, PIL.Image, ...]` directly.
+- Promote each script's `main()` body into an importable `run(...)` function in a new `pipeline/` package. `analyze_chapters.py`, `generate_character_images.py`, `ai/scene_segmentation.py`, `ai/consistent_scene_generator.py`, `generate_environment_images.py` all expose `run(...)` callables that `pipeline/orchestrator.py` imports and calls directly.
+- Replace the four `subprocess.run` calls in `book_to_vn.py` (lines ~261, 312, 359, 596) with direct in-process function calls. Keep the CLI as a thin wrapper that calls `pipeline.orchestrator.run_book(...)`.
+- Fix `ai/llm_providers.py` SIGALRM timeout — it crashes inside any ThreadPoolExecutor worker, which is now the default. Replace with `botocore.Config(connect_timeout=15, read_timeout=60)` and built-in retries.
+- Verify `ai/consistent_scene_generator.py` actually passes character reference images via `contents=[prompt, PIL.Image, ...]` to Gemini, not just in the prompt text. Photo-of-kid in W4 fails silently if this is wrong.
+- Establish an honest baseline once the venv is rebuilt: time `book_to_vn.py books/alice.epub --chapters demo` end-to-end. The plan's earlier "90-120s" claim predates the threading commit; the real number is unknown until measured.
 
 **Critical files to create / modify**:
-- `pipeline/__init__.py`, `pipeline/orchestrator.py` (new — replaces `book_to_vn.py`'s flow)
-- `pipeline/illustrate.py` (refactor of `ai/consistent_scene_generator.py:39` into async)
-- `ai/gemini_image_generator.py` (add async client; keep sync entry points for backward-compat with `generate_environment_images.py` until W3)
-- `ai/llm_providers.py:33` (add `async def generate_response`; replace `signal.SIGALRM` timeout — line ~107 — with `asyncio.wait_for`, the SIGALRM approach hard-fails in any non-main-thread or async context)
-- `pipeline/cache.py` (new — content-hash cache; FS-backed in W1, swapped to Postgres in W2)
+- `pipeline/__init__.py`, `pipeline/orchestrator.py` (new — replaces `book_to_vn.py`'s subprocess flow)
+- `pipeline/{analyze,characters,scenes,illustrate,backgrounds}.py` (thin wrappers around existing `ai/` modules)
+- `ai/llm_providers.py` (drop SIGALRM, use botocore.Config)
+- `ai/consistent_scene_generator.py` (verify multi-image conditioning; fix if missing)
 
 ### W2 · Supabase: Postgres + Storage + Auth · ~4 days
 Kill `books.json` and the `output/` + `frontend/public/data/` mirror.
@@ -168,7 +152,7 @@ The four input flows feed into the **same backend pipeline** — they just pre-f
 ### W5 · PDF export · ~3 days
 Two viable approaches; pick one:
 
-**Approach A: Pillow-based (recommended)** — extend `vn/asset_pipeline.py:11` (already does `PIL.Image` + `RGBA` + resize) with a layout step. One A4 page per book page: full-bleed image + caption text in a serif font. Renders in 1-2s server-side. Pre-render at purchase time, store in Storage.
+**Approach A: Pillow + reportlab (recommended)** — `pipeline/pdf.py` builds an A4 layout from scratch (the old `vn/asset_pipeline.py` PIL helper was deleted upstream). One page per book page: full-bleed image + caption text in a serif font. Renders in 1-2s server-side. Pre-render at purchase time, store in Storage.
 
 **Approach B: Playwright HTML→PDF** — better typography, but requires Chromium in the worker container (~300MB image). Skip unless A produces ugly output.
 
@@ -204,22 +188,22 @@ This is the **single biggest non-engineering risk** for a "upload your kid's pho
 |---|---|
 | `ai/character_image_prompter.py` | Powers guided + write flows; called from `pipeline/characters.py` |
 | `ai/expression_prompter.py` | Per-page emotional variation |
-| `ai/consistent_scene_generator.py:39` | Photo-of-kid conditioning (existing multi-image input path; bug fix in W1) |
-| `ai/scene_segmentation.py:37` | Splits parent's story into pages |
-| `ai/gemini_image_generator.py` | Image gen — needs async wrapper |
-| `ai/llm_providers.py:33` | LLM provider abstraction — add async + content moderation; remove SIGALRM timeout |
-| `vn/asset_pipeline.py:11` | PIL utilities → reused in `pipeline/pdf.py` |
+| `ai/consistent_scene_generator.py` | Photo-of-kid conditioning; verify in W1 that ref images go through `contents=[...]` not just prompt text |
+| `ai/scene_segmentation.py` | Splits parent's story into pages; already thread-parallel across chapters |
+| `ai/gemini_image_generator.py` | Image gen; already thread-parallel via ThreadPoolExecutor |
+| `ai/llm_providers.py` | LLM provider abstraction — fix SIGALRM timeout in W1 (crashes in threadpool workers) |
+| `ai/cache_manager.py` | File-based sha256 cache; swap to Postgres-backed in W2 |
 | `frontend/src/components/BookReader.tsx` | Port to `web/components/BookViewer.tsx` |
 
 ## Performance targets (be honest about these)
 
 | Metric | Today | Target | Mechanism |
 |---|---|---|---|
-| Wall time, 10-page book | 90-120s | **15-25s** | Async Gemini + `asyncio.gather` with semaphore (W1) |
-| Time to first page visible to user | 90-120s | **<5s** | Stream pages to UI as they finish; skeleton placeholders (W3+W4) |
-| Cost per book | ~$0.50 | ~$0.50 first gen, **~$0.05 on text edits** | Content-hash cache (W1) |
+| Wall time, 10-page book | TBD (measure post-rebuild) | **15-25s** | ThreadPoolExecutor parallelism (already landed in `cbb7b0c`) |
+| Time to first page visible to user | full pipeline | **<5s** | Stream pages to UI as they finish; skeleton placeholders (W3+W4) |
+| Cost per book | ~$0.50 | ~$0.50 first gen, **~$0.05 on text edits** | `ai/cache_manager.py` (already landed); promoted to Postgres in W2 |
 | Image payload size | unbounded PNG | **AVIF + responsive** | Next.js Image + Supabase Storage transforms (W4) |
-| PDF render time | n/a | **<2s** | Pillow server-side (W5) |
+| PDF render time | n/a | **<2s** | Pillow + reportlab server-side (W5) |
 | p95 backend response (non-job routes) | n/a | **<200ms** | Postgres indexes + Vercel edge (W2+W4) |
 
 ## Decisions deferred (not blocking; surface during build)
@@ -261,8 +245,8 @@ End-to-end smoke test, run weekly during build and as the launch gate:
 ## Suggested order of operations
 
 ```
-Week 1   W0 (naming) ‖ W1 (async refactor)
-Week 2   W2 (Supabase)
+Week 1   W0 (naming) ‖ W1 (kill subprocess chain — only ~2-3 days now) ‖ start W2 (Supabase)
+Week 2   W2 (Supabase) finishes
 Week 3   W3 (worker + Inngest)
 Week 4   W4 part 1 (Next.js + auth + library + viewer)
 Week 5   W4 part 2 (4 creation flows)
@@ -271,4 +255,4 @@ Week 7   W7 (safety) ‖ W8 (marketing)
 Week 8   Hardening, friend-and-family beta, launch
 ```
 
-W1 must finish before W3 starts; W2 must finish before W3 and W4. Everything else can shuffle.
+W1 must finish before W3 starts; W2 must finish before W3 and W4. Everything else can shuffle. With per-stage parallelism + cache already on `main`, W1 collapses from 5 days to ~2-3, freeing the saved time to start W2 in week 1.
