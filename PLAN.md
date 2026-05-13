@@ -93,22 +93,23 @@ Deferred (small follow-ups, none blocking W2/W3):
 - Honest end-to-end baseline timing on `books/alice.epub --chapters demo` — needs `GEMINI_API_KEY` + AWS creds to be present; measure when next iterating on perf.
 
 ### W2 · Supabase: Postgres + Storage + Auth · ~4 days
-Kill `books.json` and the `output/` + `frontend/public/data/` mirror.
 
-Schema (start small, grow):
-```sql
-users          (id, email, created_at, stripe_customer_id, credits_remaining)
-books          (id, user_id, title, status, input_kind, child_photo_url, created_at)
-pages          (id, book_id, page_idx, text, image_url, image_status, prompt_hash)
-jobs           (id, book_id, kind, status, error, started_at, finished_at)
-purchases      (id, user_id, stripe_session_id, credits_added, amount_cents)
-```
-RLS: users can only read their own rows. Storage buckets: `book-images/<user_id>/<book_id>/...`, `child-photos/<user_id>/...` (private, signed URLs only).
+Goal: kill `books.json` and the `output/` + `frontend/public/data/` mirror. The mirror stays in place until W4 retires the CRA reader; W2 lands the Supabase write path as an *additive* second sink.
 
-**Critical files to touch**:
-- `backend/api.py` → delete (replaced by Next.js routes + FastAPI worker)
-- New `db/schema.sql` and `db/migrations/`
-- New `pipeline/storage.py` to upload PNGs/PDFs into Supabase Storage instead of `frontend/public/`
+Landed:
+- `db/schema.sql` — canonical declarative schema (`users`, `books`, `pages`, `jobs`, `purchases`) + RLS + private storage buckets (`book-images`, `child-photos`, `book-pdfs`) keyed `<user_id>/<book_id>/...`. Enums for status fields; updated_at triggers; auto-provisioning `public.users` row on `auth.users` insert. The `books` table includes `language` (default `'nb-NO'`).
+- `supabase/migrations/20260513170000_initial.sql` — the actual migration the Supabase CLI applies (`supabase db push`). `db/schema.sql` stays as the human-readable snapshot; deltas land as additional `supabase/migrations/<timestamp>_*.sql` files going forward.
+- Applied to the **drømmevev** project (`xfbuuzxxvjcgzumtymzu`, West EU Ireland) on 2026-05-13. `supabase migration list` confirms local & remote in sync.
+- `pipeline/storage.py` — sync `SupabaseStore` (uses `service_role`), `upload_file` / `upload_directory` / `signed_url`, `upsert_book` / `upsert_pages`, plus a `push_book_artifacts(...)` helper that mirrors `_copy_to_react_app`. `from_env()` returns `None` when env vars are absent so callers no-op gracefully. A deterministic `book_id_from_slug()` keeps CLI re-runs idempotent.
+- `book_to_vn.py` — new `sync` step (step 8) at the end of the pipeline; `--resume-from sync` available. Logs and skips when `SUPABASE_URL` is unset.
+- `requirements.txt` adds `supabase`; `.env.example` documents `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_ANON_KEY`.
+
+Smoke-tested 2026-05-13 against `output/alice/`: 25 image assets land under `book-images/<dev_user>/<book_id>/{characters,scenes}/`, 30 page rows in `pages`, 1 row in `books` with `status='ready'`. The CLI lazily provisions a `dev@drommevev.local` auth user on first run via the admin API.
+
+Not yet done:
+- Replace `backend/api.py` — kept for now since the CRA reader still calls it; deletion happens in W4 when the Next.js viewer lands.
+- Postgres-backed cache promotion (the file-based `ai/cache_manager.py` works for CLI; the worker in W3 can swap to a `prompts` table if the cache hit rate proves load-bearing).
+- Surface Supabase signed-URL retrieval from the React app — also a W4 concern.
 
 ### W3 · FastAPI worker + Inngest orchestration · ~4 days
 Wrap `pipeline/orchestrator.py` in a FastAPI service deployed on Fly.io (cheaper than Render for always-on workers; `.venv` deps just work).

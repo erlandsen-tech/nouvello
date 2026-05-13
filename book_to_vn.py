@@ -20,6 +20,7 @@ from pipeline import analyze as _analyze
 from pipeline import characters as _characters
 from pipeline import illustrate as _illustrate
 from pipeline import scenes as _scenes
+from pipeline import storage as _storage
 
 
 class BookToVNConverter:
@@ -57,7 +58,8 @@ class BookToVNConverter:
             'structure': ('Create chapter structure', self._create_chapter_structure),
             'consistent': ('Generate consistent scene images', self._generate_consistent_scenes),
             'copy': ('Copy to React app', self._copy_to_react_app),
-            'update': ('Update React app book list', self._update_react_book_list)
+            'update': ('Update React app book list', self._update_react_book_list),
+            'sync': ('Sync to Supabase (skipped without SUPABASE_URL)', self._sync_to_supabase),
         }
         
         # Determine where to start
@@ -689,6 +691,31 @@ class BookToVNConverter:
         
         print(f"✅ Added book to React app: {book_info['title']}")
     
+    def _sync_to_supabase(self):
+        """Optional W2 mirror: push artifacts to Supabase Storage + Postgres.
+
+        No-ops when SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are unset, so this is
+        safe to leave in the default pipeline. The CLI uses a sentinel dev user_id;
+        the W3 worker will pass the real one from the books row.
+        """
+        print(f"\n☁️  STEP 8: Syncing to Supabase")
+        print("-" * 50)
+
+        store = _storage.SupabaseStore.from_env()
+        if store is None:
+            print("⏭️  SUPABASE_URL not set — skipping (set it in .env to enable)")
+            return
+
+        summary = _storage.push_book_artifacts(
+            store,
+            book_id=_storage.book_id_from_slug(self.book_name),
+            user_id=None,                              # → lazily provisioned dev user
+            book_name=self.book_name,
+            book_dir=self.book_dir,
+            art_style=self.art_style,
+        )
+        print(f"✅ Synced to Supabase: {summary}")
+
     def _get_selected_chapters(self) -> List[int]:
         """Get selected chapters from analysis file"""
         analysis_file = self.book_dir / "analysis.json"
@@ -791,7 +818,7 @@ Examples:
     
     parser.add_argument(
         '--resume-from',
-        choices=['parse', 'analyze', 'characters', 'scenes', 'structure', 'consistent', 'copy', 'update'],
+        choices=['parse', 'analyze', 'characters', 'scenes', 'structure', 'consistent', 'copy', 'update', 'sync'],
         help='Resume pipeline from a specific step'
     )
     
