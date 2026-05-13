@@ -133,7 +133,15 @@ Not yet done (gated on input flows in W4):
 - `lib/inngest/functions/generate-book.ts` — not needed; the Python worker owns the function definition. Next.js only enqueues.
 
 ### W4 · Frontend: Next.js + 4 creation flows + viewer · ~10 days
-Bootstrap a fresh Next.js 15 app in `web/` (don't try to retrofit `frontend/`). Migrate the *idea* of `BookReader`/`ImagePanel`/`TextPanel` (`frontend/src/components/`) but rewrite as RSC + client islands — the existing components are tightly coupled to local fetch paths.
+Bootstrap a fresh Next.js app in `web/` (don't try to retrofit `frontend/`). Migrate the *idea* of `BookReader`/`ImagePanel`/`TextPanel` (`frontend/src/components/`) but rewrite as RSC + client islands — the existing components are tightly coupled to local fetch paths.
+
+Landed (scaffolding only):
+- `web/` — Next.js 16 + App Router + TypeScript + Tailwind v4 + Turbopack. `lang="nb-NO"` on `<html>`. EB Garamond serif + Inter sans wired via `next/font`. Tailwind `@theme` carries the Drømmevev palette (surface `#FAF9F6`, primary `#E67E22`, sage/sky/marigold accents).
+- `web/src/lib/supabase/{server,browser}.ts` — `@supabase/ssr` wrappers reading `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` from `.env.local` (gitignored).
+- `web/src/app/page.tsx` — Norwegian landing page with brand wordmark, hero copy, "Lag en bok sammen" CTA, three-step workshop method, footer "Drømmevev fra aiakaki · © 2026".
+- `package-lock.json` at repo root removed (vestigial empty stub that confused Turbopack's workspace-root detection).
+
+Smoke-tested 2026-05-13: `npm run dev -- --port 3010` renders `/` with 200 OK, Norwegian copy in HTML.
 
 Routes:
 - `/` — landing (hero, sample books, CTA)
