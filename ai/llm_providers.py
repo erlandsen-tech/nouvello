@@ -16,9 +16,11 @@ load_dotenv()
 # Optional imports for different providers
 try:
     import boto3
+    from botocore.config import Config as BotoConfig
     from botocore.exceptions import ClientError
 except ImportError:
     boto3 = None
+    BotoConfig = None
 
 # Note: OpenAI support removed per project requirements
 
@@ -58,7 +60,15 @@ class BedrockProvider(LLMProvider):
         """Initialize Bedrock client"""
         if not boto3:
             raise ImportError("boto3 is required for Bedrock. Install with: pip install boto3")
-        
+
+        # Connect/read timeouts + retries via botocore.Config (thread-safe; replaces the old
+        # signal.SIGALRM-based timeout which crashed inside any non-main-thread worker).
+        boto_config = BotoConfig(
+            connect_timeout=15,
+            read_timeout=60,
+            retries={"max_attempts": 3, "mode": "standard"},
+        )
+
         try:
             # Prefer explicit AWS creds from environment if present (.env supported)
             access_key = os.getenv("AWS_ACCESS_KEY_ID")
@@ -75,13 +85,13 @@ class BedrockProvider(LLMProvider):
                     aws_session_token=session_token,
                     region_name=self.region
                 )
-                self.client = session.client('bedrock-runtime')
+                self.client = session.client('bedrock-runtime', config=boto_config)
             elif effective_profile:
                 session = boto3.Session(profile_name=effective_profile, region_name=self.region)
-                self.client = session.client('bedrock-runtime')
+                self.client = session.client('bedrock-runtime', config=boto_config)
             else:
                 # Fall back to default credential chain (env, shared config, IAM role, etc.)
-                self.client = boto3.client('bedrock-runtime', region_name=self.region)
+                self.client = boto3.client('bedrock-runtime', region_name=self.region, config=boto_config)
         except Exception as e:
             raise Exception(f"Failed to initialize Bedrock client: {e}")
     
@@ -117,58 +127,12 @@ class BedrockProvider(LLMProvider):
             }
         
         try:
-            # Add timeout and retry logic
-            import time
-            import signal
-            import threading
-            
-            max_retries = 1  # Single retry to keep it fast
-            retry_delay = 1
-            timeout_seconds = 15  # 15 second timeout per request
-            
-            # Check if we're in the main thread (signal only works there)
-            is_main_thread = threading.current_thread() is threading.main_thread()
-            
-            def timeout_handler(signum, frame):
-                raise TimeoutError("Bedrock API request timed out")
-            
-            for attempt in range(max_retries):
-                try:
-                    # Set timeout only if in main thread (signal doesn't work in worker threads)
-                    if is_main_thread:
-                        signal.signal(signal.SIGALRM, timeout_handler)
-                        signal.alarm(timeout_seconds)
-                    
-                    response = self.client.invoke_model(
-                        modelId=model,
-                        body=json.dumps(body),
-                        contentType="application/json"
-                    )
-                    
-                    # Cancel timeout
-                    if is_main_thread:
-                        signal.alarm(0)
-                    break  # Success, exit retry loop
-                    
-                except TimeoutError:
-                    if is_main_thread:
-                        signal.alarm(0)  # Cancel timeout
-                    if attempt < max_retries - 1:
-                        print(f"Bedrock API request timed out (attempt {attempt + 1}). Retrying...")
-                        time.sleep(retry_delay)
-                        retry_delay *= 2
-                    else:
-                        raise Exception("Bedrock API request timed out after all retries")
-                except Exception as e:
-                    if is_main_thread:
-                        signal.alarm(0)  # Cancel timeout
-                    if attempt < max_retries - 1:
-                        print(f"Bedrock API attempt {attempt + 1} failed: {e}. Retrying in {retry_delay}s...")
-                        time.sleep(retry_delay)
-                        retry_delay *= 2  # Exponential backoff
-                    else:
-                        raise e  # Re-raise on final attempt
-            
+            # Timeouts + retries are handled by the botocore.Config attached to the client.
+            response = self.client.invoke_model(
+                modelId=model,
+                body=json.dumps(body),
+                contentType="application/json",
+            )
             response_body = json.loads(response['body'].read())
             
             # Extract content based on model type with validation

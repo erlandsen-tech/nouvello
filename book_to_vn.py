@@ -8,7 +8,6 @@ import os
 import sys
 import json
 import shutil
-import subprocess
 from pathlib import Path
 from typing import List, Dict, Optional
 import argparse
@@ -17,6 +16,10 @@ import argparse
 sys.path.insert(0, str(Path(__file__).parent / "ai"))
 
 from ai.epub_parser import EPUBParser
+from pipeline import analyze as _analyze
+from pipeline import characters as _characters
+from pipeline import illustrate as _illustrate
+from pipeline import scenes as _scenes
 
 
 class BookToVNConverter:
@@ -235,46 +238,28 @@ class BookToVNConverter:
                 print(f"\n💡 To re-analyze chapters, delete {analysis_dest} and run again")
                 return
         
-        # Create chapter list string for the analyzer
-        # analyze_chapters.py uses 0-based indices, so convert from 1-based
-        chapter_list = ','.join(map(str, [c - 1 for c in selected_chapters]))
-        
-        # Get model from env (or use default)
+        # `pipeline.analyze.run` takes 0-based EPUB indices (book_to_vn passes 1-based).
+        zero_based = [c - 1 for c in selected_chapters]
         analysis_model = os.getenv("ANALYSIS_MODEL", os.getenv("BEDROCK_MODEL"))
-        
-        cmd = [
-            "python", "analyze_chapters.py",
-            str(self.epub_path),
-            "-c", chapter_list,
-            "-o", str(self.output_base)
-        ]
-        
-        # Add model flag if specified
-        if analysis_model:
-            cmd.extend(["--bedrock-model", analysis_model])
-        
-        # Add style override if specified
-        if self.art_style:
-            cmd.extend(["--style", self.art_style])
-        
+
         try:
-            subprocess.run(cmd, check=True)
-            
-            # Ensure book directory exists
+            analysis_source = _analyze.run(
+                epub_path=self.epub_path,
+                output_dir=self.output_base,
+                chapter_indices=zero_based,
+                model=analysis_model,
+                style=self.art_style,
+            )
+
             self.book_dir.mkdir(parents=True, exist_ok=True)
-            
-            # Copy analysis file to book directory with correct name
-            analysis_source = self.output_base / f"{self.book_name}_analysis.json"
             analysis_dest = self.book_dir / "analysis.json"
-            
-            if analysis_source.exists():
+            if Path(analysis_source).exists():
                 shutil.copy2(analysis_source, analysis_dest)
                 print(f"✅ Copied analysis to: {analysis_dest}")
             else:
                 print(f"⚠️  Warning: Analysis file not found at {analysis_source}")
-            
             print("✅ Chapter analysis complete")
-        except subprocess.CalledProcessError as e:
+        except Exception as e:
             print(f"❌ Error analyzing chapters: {e}")
             raise
     
@@ -283,35 +268,24 @@ class BookToVNConverter:
         print(f"\n🎨 STEP 3: Generating character images")
         print("-" * 50)
         
-        # Copy analysis file to the correct location for generate_character_images.py
+        # Make sure the analysis is reachable under the name `pipeline.characters` expects
         analysis_source = self.book_dir / "analysis.json"
         analysis_temp = self.output_base / f"{self.book_name}_analysis.json"
-        
         if analysis_source.exists():
             shutil.copy2(analysis_source, analysis_temp)
             print(f"✅ Copied analysis to: {analysis_temp}")
-        
-        # Get model from env (or use default)
+
         character_model = os.getenv("CHARACTER_MODEL", os.getenv("BEDROCK_MODEL"))
-        
-        cmd = [
-            "python", "generate_character_images.py",
-            "--analysis", str(analysis_temp),
-            "-o", str(self.output_base)
-        ]
-        
-        # Add model flag if specified
-        if character_model:
-            cmd.extend(["--bedrock-model", character_model])
-        
-        # Add style if specified
-        if self.art_style:
-            cmd.extend(["--style", self.art_style])
-        
+
         try:
-            subprocess.run(cmd, check=True)
+            _characters.run(
+                analysis_path=analysis_temp,
+                output_base=self.output_base,
+                model=character_model,
+                style=self.art_style,
+            )
             print("✅ Character images generated")
-        except subprocess.CalledProcessError as e:
+        except Exception as e:
             print(f"❌ Error generating characters: {e}")
             raise
     
@@ -329,36 +303,27 @@ class BookToVNConverter:
             except Exception:
                 pass
 
-        # Get model from env (or use default)
         scene_model = os.getenv("SCENE_MODEL", os.getenv("BEDROCK_MODEL"))
-        
-        # Get parallelization settings
-        chapter_workers = os.getenv("CHAPTER_SEG_WORKERS", "3")  # Default to 3 for better throughput
-        
-        cmd = [
-            "python", "ai/scene_segmentation.py",
-            str(self.book_dir),
-            str(self.book_dir),
-            "--windowed",  # Enable parallel windowed segmentation
-            "--chapter-workers", chapter_workers  # Enable parallel chapter processing
-        ]
-        
-        # Add model flag if specified
-        if scene_model:
-            cmd.extend(["--model", scene_model])
-        
-        # If we have selected chapters, pass them for incremental updates
+        chapter_workers = int(os.getenv("CHAPTER_SEG_WORKERS", "3"))
+
+        chapters_arg: Optional[List[int]] = None
         if self.selected_epub_chapters and isinstance(self.selected_epub_chapters, list):
             try:
-                chapters_arg = ",".join(str(int(c)) for c in self.selected_epub_chapters)
-                cmd.extend(["--chapters", chapters_arg])
+                chapters_arg = [int(c) for c in self.selected_epub_chapters]
             except Exception:
-                pass
-        
+                chapters_arg = None
+
         try:
-            subprocess.run(cmd, check=True)
+            _scenes.run(
+                input_dir=self.book_dir,
+                output_dir=self.book_dir,
+                model=scene_model,
+                windowed=True,
+                chapter_workers=chapter_workers,
+                chapters=chapters_arg,
+            )
             print("✅ Scene segmentation complete")
-        except subprocess.CalledProcessError as e:
+        except Exception as e:
             print(f"❌ Error generating scenes: {e}")
             raise
     
@@ -580,26 +545,18 @@ class BookToVNConverter:
                     except Exception as e:
                         print(f"   ⚠️  Warning: Could not clear {output_dir.name}: {e}")
         
-        cmd = [
-            "python", "ai/consistent_scene_generator.py",
-            "--scenes", str(scenes_file_to_use),
-            "--characters", str(character_dir),
-            "-o", str(scenes_output_dir),
-            "--delay", "2.0"
-        ]
-        
-        # Only pass explicit style if it was provided via --style flag (not auto-detected)
-        if self.art_style:
-            cmd.extend(["--explicit-style", self.art_style])
-        
         try:
-            subprocess.run(cmd, check=True)
-            # Clean up temporary file if we created one
+            _illustrate.run(
+                scenes_file=scenes_file_to_use,
+                characters_dir=character_dir,
+                output_dir=scenes_output_dir,
+                delay=2.0,
+                explicit_style=self.art_style,  # only set when --style was passed explicitly
+            )
             if selected_chapter_numbers and scenes_file_to_use.exists() and scenes_file_to_use != scenes_file:
                 scenes_file_to_use.unlink()
             print("✅ Consistent scene images generated")
-        except subprocess.CalledProcessError as e:
-            # Clean up temporary file on error
+        except Exception as e:
             if selected_chapter_numbers and scenes_file_to_use.exists() and scenes_file_to_use != scenes_file:
                 scenes_file_to_use.unlink()
             print(f"❌ Error generating consistent scenes: {e}")

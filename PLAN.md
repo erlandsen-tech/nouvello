@@ -59,10 +59,10 @@ A "make generation faster" PR landed before this plan was committed. It already 
 - `requirements.txt` exists with a minimal manifest (no torch/CUDA bloat).
 - The `vn/` Ren'Py module is gone — confirms the EPUB-to-VN sunset and removes the W5 reference to `vn/asset_pipeline.py`.
 
-What's still untouched from W1:
-- `book_to_vn.py` still shells out to seven scripts via `subprocess.run` (lines 261, 312, 359, 596). For a deployed worker we need this in-process so a single function call runs the whole pipeline.
-- `ai/llm_providers.py` still uses `signal.SIGALRM` for Bedrock timeouts — that crashes inside any ThreadPoolExecutor worker (which is now the default). Replace with `botocore.Config(connect_timeout=..., read_timeout=...)`.
-- `ai/consistent_scene_generator.py` claims to use character reference images as conditioning but historically only passed them in the text prompt; verify post-refactor and fix if still wrong (photo-of-kid in W4 hard-depends on real multi-image input).
+W1 done:
+- `pipeline/` package added (`analyze.py`, `characters.py`, `scenes.py`, `illustrate.py`); `book_to_vn.py` now calls `pipeline.X.run(...)` directly instead of shelling out via `subprocess.run`. Standalone CLI scripts kept for debugging.
+- `ai/llm_providers.py` SIGALRM machinery removed; Bedrock client now built with `botocore.Config(connect_timeout=15, read_timeout=60, retries=standard/3)`. Safe inside threadpool workers.
+- Multi-image conditioning in `ai/consistent_scene_generator.py` verified: `ai/gemini_image_generator.py:191-206` builds `contents=[PIL.Image, ..., prompt]` and passes it through `client.models.generate_content(contents=...)`. Photo-of-kid in W4 has a working code path.
 
 ## First steps on a fresh checkout
 
@@ -79,20 +79,18 @@ The host I last worked on had a `.venv` that was created on 3.13 then orphaned b
 ### W0 · Naming + domain · day 1 · non-blocking
 Pick a name, register the domain, set up Vercel + Supabase + Stripe + Inngest accounts. Reserve the trademark search. Throwaway logo via Recraft / SVG. **Blocker for launch, not for code.**
 
-### W1 · Kill the subprocess chain · ~2-3 days (down from 5)
-Per-stage parallelism and caching already landed on `main`. What remains is the orchestrator: `book_to_vn.py` still shells out to four separate Python processes, which means the worker (W3) can't run a book end-to-end inside a single FastAPI handler.
+### W1 · Kill the subprocess chain · ✅ done
 
-- Promote each script's `main()` body into an importable `run(...)` function in a new `pipeline/` package. `analyze_chapters.py`, `generate_character_images.py`, `ai/scene_segmentation.py`, `ai/consistent_scene_generator.py`, `generate_environment_images.py` all expose `run(...)` callables that `pipeline/orchestrator.py` imports and calls directly.
-- Replace the four `subprocess.run` calls in `book_to_vn.py` (lines ~261, 312, 359, 596) with direct in-process function calls. Keep the CLI as a thin wrapper that calls `pipeline.orchestrator.run_book(...)`.
-- Fix `ai/llm_providers.py` SIGALRM timeout — it crashes inside any ThreadPoolExecutor worker, which is now the default. Replace with `botocore.Config(connect_timeout=15, read_timeout=60)` and built-in retries.
-- Verify `ai/consistent_scene_generator.py` actually passes character reference images via `contents=[prompt, PIL.Image, ...]` to Gemini, not just in the prompt text. Photo-of-kid in W4 fails silently if this is wrong.
-- Establish an honest baseline once the venv is rebuilt: time `book_to_vn.py books/alice.epub --chapters demo` end-to-end. The plan's earlier "90-120s" claim predates the threading commit; the real number is unknown until measured.
+Landed:
+- `pipeline/{analyze,characters,scenes,illustrate}.py` — thin in-process wrappers around the `ai/` classes; each exposes `run(...)`.
+- `book_to_vn.py` — four `subprocess.run` calls replaced with `pipeline.X.run(...)` imports.
+- `ai/llm_providers.py` — SIGALRM removed; Bedrock client uses `botocore.Config(connect_timeout=15, read_timeout=60, retries=standard/3)`.
+- Gemini multi-image conditioning verified at `ai/gemini_image_generator.py:191-206`.
 
-**Critical files to create / modify**:
-- `pipeline/__init__.py`, `pipeline/orchestrator.py` (new — replaces `book_to_vn.py`'s subprocess flow)
-- `pipeline/{analyze,characters,scenes,illustrate,backgrounds}.py` (thin wrappers around existing `ai/` modules)
-- `ai/llm_providers.py` (drop SIGALRM, use botocore.Config)
-- `ai/consistent_scene_generator.py` (verify multi-image conditioning; fix if missing)
+Deferred (small follow-ups, none blocking W2/W3):
+- `pipeline/orchestrator.py` (a single `run_book(...)` entry point) — `book_to_vn.py` is still the orchestrator. The FastAPI worker in W3 can call into the same four stage modules without it; if the worker grows enough to want a single entry point, lift one out then.
+- `pipeline/backgrounds.py` — `generate_environment_images.py` is not called by `book_to_vn.py` today; wrap if/when needed.
+- Honest end-to-end baseline timing on `books/alice.epub --chapters demo` — needs `GEMINI_API_KEY` + AWS creds to be present; measure when next iterating on perf.
 
 ### W2 · Supabase: Postgres + Storage + Auth · ~4 days
 Kill `books.json` and the `output/` + `frontend/public/data/` mirror.
