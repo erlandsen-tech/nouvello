@@ -112,18 +112,25 @@ Not yet done:
 - Surface Supabase signed-URL retrieval from the React app — also a W4 concern.
 
 ### W3 · FastAPI worker + Inngest orchestration · ~4 days
-Wrap `pipeline/orchestrator.py` in a FastAPI service deployed on Fly.io (cheaper than Render for always-on workers; `.venv` deps just work).
+Wrap the `pipeline/` stages behind a FastAPI service deployed on Fly.io. Inngest defines the durable workflow; the Python SDK is mounted directly inside FastAPI so the worker process *is* the executor — no separate Next.js handler needed for W3.
 
-- `POST /jobs/generate-book` accepts `{book_id}`, looks up the book, runs the pipeline, writes pages to Postgres + Storage as they finish.
-- Inngest function `book.generate` calls this endpoint with retry + step durability. One Inngest step per stage so retries are cheap.
-- Frontend gets progress via Supabase realtime on the `pages` table (image_status: `pending → generating → done`).
+Landed (skeleton only — stage logic stubs):
+- `worker/main.py` — FastAPI app, `GET /healthz`, mounts `inngest.fast_api.serve(...)` at `/api/inngest`.
+- `worker/jobs.py` — `inngest.Inngest(app_id="drommevev-worker")` + `book_generate` function triggered on `book.generate`, with six `step.run(...)` boundaries (`load-book`, `mark-generating`, `analyze`, `characters`, `scenes`, `illustrate`, `mark-ready`). Reads/writes Supabase via service_role. `retries=2`.
+- `worker/Dockerfile` — `python:3.14-slim`, copies `ai/ + pipeline/ + worker/`, installs `requirements.txt`, `uvicorn worker.main:app` on port 8000.
+- `worker/fly.toml` — Amsterdam region (`ams`), `shared-cpu-1x`/1GB, auto-stop machines (Inngest webhooks wake on demand).
+- `requirements.txt` adds `fastapi`, `uvicorn[standard]`, `inngest`.
 
-**Critical files to create**:
-- `worker/main.py` (FastAPI app)
-- `worker/Dockerfile` (Python 3.14, copies `ai/` + `pipeline/`, installs from `requirements.txt`)
-- `worker/fly.toml`
-- `app/api/inngest/route.ts` (Next.js Inngest handler)
-- `lib/inngest/functions/generate-book.ts`
+Smoke-tested locally 2026-05-13: `uvicorn worker.main:app` + `npx inngest-cli@latest dev`, registration sync succeeds, `POST /e/test` with `{"name":"book.generate","data":{"book_id":"<alice uuid>"}}` runs to `Completed` in 1.5s and flips `books.status` from `ready` → `generating` → `ready` (the stub stages no-op between the two marks).
+
+Not yet done (gated on input flows in W4):
+- Wire each stub `step.run` to its real `pipeline/` stage. Today `pipeline.analyze.run` etc. expect an EPUB path; the W4 write/guided/photo/drawing flows produce different inputs that need their own pipeline entry points.
+- Deploy: `fly launch --copy-config --config worker/fly.toml --dockerfile worker/Dockerfile --no-deploy`, then `fly secrets set ...` (Supabase + Gemini + Inngest keys), then `fly deploy`. Not done yet — waiting on explicit go-ahead.
+- Once deployed, swap `inngest.Inngest(...)` to production mode (`INNGEST_ENV=production`) and point Inngest Cloud at the Fly URL.
+
+**Critical files (W4-facing)**:
+- `app/api/inngest/route.ts` — Next.js handler that sends events via `inngest.send(...)`. Defer until W4.
+- `lib/inngest/functions/generate-book.ts` — not needed; the Python worker owns the function definition. Next.js only enqueues.
 
 ### W4 · Frontend: Next.js + 4 creation flows + viewer · ~10 days
 Bootstrap a fresh Next.js 15 app in `web/` (don't try to retrofit `frontend/`). Migrate the *idea* of `BookReader`/`ImagePanel`/`TextPanel` (`frontend/src/components/`) but rewrite as RSC + client islands — the existing components are tightly coupled to local fetch paths.

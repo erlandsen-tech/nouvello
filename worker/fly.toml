@@ -1,0 +1,30 @@
+# Fly.io config for the drømmevev worker (PLAN.md W3).
+# Deploy from the repo root:
+#   fly launch --copy-config --config worker/fly.toml --dockerfile worker/Dockerfile --no-deploy
+#   fly secrets set SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... GEMINI_API_KEY=... INNGEST_SIGNING_KEY=... INNGEST_EVENT_KEY=...
+#   fly deploy --config worker/fly.toml --dockerfile worker/Dockerfile
+
+app = "drommevev-worker"
+primary_region = "ams"                  # Amsterdam — EU, closest fly region to Supabase Ireland
+
+[build]
+  dockerfile = "Dockerfile"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = "stop"           # scale to zero when idle; Inngest webhooks wake it
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  [[http_service.checks]]
+    interval = "30s"
+    timeout = "5s"
+    grace_period = "10s"
+    method = "GET"
+    path = "/healthz"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "1gb"

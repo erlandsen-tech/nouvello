@@ -8,4 +8,7 @@ lxml
 Pillow
 google-genai
 supabase
+fastapi
+uvicorn[standard]
+inngest
 
