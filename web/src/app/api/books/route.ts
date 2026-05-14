@@ -18,6 +18,33 @@ const VALID_INPUT_KINDS = new Set([
   "drawing",
 ] as const);
 
+const VALID_TARGET_MINUTES = new Set([2, 5, 10]);
+const MIN_WRITE_CHARS = 80;
+const MAX_WRITE_CHARS = 4000;
+
+function validatePayload(body: CreateBookBody): string | null {
+  const payload = body.input_payload ?? {};
+
+  if (
+    payload.target_minutes !== undefined &&
+    !VALID_TARGET_MINUTES.has(payload.target_minutes as number)
+  ) {
+    return "invalid_target_minutes";
+  }
+
+  if (body.input_kind === "write") {
+    const text = typeof payload.text === "string" ? payload.text.trim() : "";
+    if (text.length < MIN_WRITE_CHARS) return "text_too_short";
+    if (text.length > MAX_WRITE_CHARS) return "text_too_long";
+  }
+
+  if (body.input_kind === "photo" && !body.child_photo_url) {
+    return "missing_child_photo_url";
+  }
+
+  return null;
+}
+
 export async function POST(request: NextRequest) {
   const supabase = await createSupabaseServerClient();
   const { data: claimsData } = await supabase.auth.getClaims();
@@ -36,6 +63,14 @@ export async function POST(request: NextRequest) {
   if (!VALID_INPUT_KINDS.has(body.input_kind)) {
     return NextResponse.json(
       { error: "invalid_input_kind" },
+      { status: 400 },
+    );
+  }
+
+  const validation = validatePayload(body);
+  if (validation) {
+    return NextResponse.json(
+      { error: validation },
       { status: 400 },
     );
   }

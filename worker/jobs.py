@@ -40,6 +40,15 @@ def _supabase() -> _storage.SupabaseStore:
 # Each returns a list of {page_idx, text, image_url?} dicts. Real
 # implementations will wire into pipeline/ stages.
 
+_MINUTES_TO_PAGES = {2: 5, 5: 10, 10: 15}
+
+
+def _page_count(book: dict) -> int:
+    payload = book.get("input_payload") or {}
+    minutes = payload.get("target_minutes")
+    return _MINUTES_TO_PAGES.get(minutes, 5)
+
+
 def _stub_pages(book: dict, lead: str) -> list[dict]:
     title = book.get("title") or "Eventyret"
     return [
@@ -48,7 +57,7 @@ def _stub_pages(book: dict, lead: str) -> list[dict]:
             "text": f"Side {i + 1} av «{title}» — {lead}",
             "image_status": "pending",
         }
-        for i in range(5)
+        for i in range(_page_count(book))
     ]
 
 
