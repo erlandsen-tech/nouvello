@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type Mode = {
@@ -6,6 +7,8 @@ type Mode = {
   title: string;
   body: string;
   accent: string;
+  illustration: string;
+  imageAlt: string;
 };
 
 const MODES: Mode[] = [
@@ -15,6 +18,8 @@ const MODES: Mode[] = [
     title: "Barnet er helten",
     body: "Last opp et portrett. Vi tegner barnet inn i historien — gjenkjennelig på hver side.",
     accent: "var(--color-marigold)",
+    illustration: "/illustrations/mirror-magic.png",
+    imageAlt: "Et barn foran et magisk speil",
   },
   {
     href: "/create/drawing",
@@ -22,6 +27,8 @@ const MODES: Mode[] = [
     title: "Få tegningen til å leve",
     body: "Ta bilde av en tegning hjemmefra. Vi gjør den om til en figur i et eventyr.",
     accent: "var(--color-sky)",
+    illustration: "/illustrations/spread-yeti.png",
+    imageAlt: "En tegning som blir levende",
   },
   {
     href: "/create/guided",
@@ -29,6 +36,8 @@ const MODES: Mode[] = [
     title: "Lag det sammen, steg for steg",
     body: "Vi spør om helten, stedet og oppdraget. Dere bestemmer, vi vever.",
     accent: "var(--color-sage)",
+    illustration: "/illustrations/bedroom-to-forest.png",
+    imageAlt: "Et soverom som åpner seg mot en skog",
   },
   {
     href: "/create/write",
@@ -36,6 +45,8 @@ const MODES: Mode[] = [
     title: "Egen historie",
     body: "Har dere allerede en idé eller en tekst? Lim den inn — vi illustrerer.",
     accent: "var(--color-primary)",
+    illustration: "/illustrations/spread-paper-airplane.png",
+    imageAlt: "Et barn flyr på et papirfly",
   },
 ];
 
@@ -78,14 +89,21 @@ function ModeCard({ mode }: { mode: Mode }) {
   return (
     <Link
       href={mode.href}
-      className="group relative flex flex-col gap-4 rounded-2xl border border-black/10 bg-white/60 p-7 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)]"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white/60 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)]"
     >
-      <span
-        aria-hidden="true"
-        className="absolute left-7 top-7 h-2 w-12 rounded-full"
+      <div
+        className="relative aspect-[4/3] w-full overflow-hidden"
         style={{ background: mode.accent }}
-      />
-      <div className="pt-6">
+      >
+        <Image
+          src={mode.illustration}
+          alt={mode.imageAlt}
+          fill
+          sizes="(min-width: 640px) 50vw, 100vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        />
+      </div>
+      <div className="flex flex-1 flex-col p-6">
         <p className="font-sans text-xs uppercase tracking-[0.16em] text-[color:var(--color-ink-soft)]">
           {mode.eyebrow}
         </p>
@@ -93,16 +111,16 @@ function ModeCard({ mode }: { mode: Mode }) {
         <p className="mt-3 font-sans text-base text-[color:var(--color-ink-soft)]">
           {mode.body}
         </p>
-      </div>
-      <span className="mt-auto inline-flex items-center font-sans text-sm font-medium text-[color:var(--color-primary)]">
-        Velg denne
-        <span
-          aria-hidden="true"
-          className="ml-1 transition group-hover:translate-x-0.5"
-        >
-          →
+        <span className="mt-4 inline-flex items-center font-sans text-sm font-medium text-[color:var(--color-primary)]">
+          Velg denne
+          <span
+            aria-hidden="true"
+            className="ml-1 transition group-hover:translate-x-0.5"
+          >
+            →
+          </span>
         </span>
-      </span>
+      </div>
     </Link>
   );
 }
