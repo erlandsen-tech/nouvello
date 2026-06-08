@@ -8,6 +8,7 @@ lxml
 Pillow
 google-genai
 supabase
+httpx
 fastapi
 uvicorn[standard]
 inngest

@@ -6,6 +6,6 @@ The standalone CLI scripts (`analyze_chapters.py`, `generate_character_images.py
 debugging; they now delegate to these functions.
 """
 
-from . import analyze, characters, illustrate, scenes
+from . import analyze, characters, illustrate, scenes, worldsmith
 
-__all__ = ["analyze", "characters", "illustrate", "scenes"]
+__all__ = ["analyze", "characters", "illustrate", "scenes", "worldsmith"]

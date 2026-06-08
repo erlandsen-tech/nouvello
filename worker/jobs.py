@@ -1,24 +1,25 @@
-"""Inngest function definitions (PLAN.md W3 + W9).
+"""Inngest function definitions (PLAN.md W3 + W9; WORLDSMITH_INTEGRATION.md C2).
 
-`book.generate` runs the picture-book pipeline for one book row in Supabase.
-Branches on `books.input_kind` to dispatch to a flow-specific generator.
-
-Real per-flow generators are TODO — today every input_kind runs the same stub
-that writes N placeholder pages. This is enough to exercise the end-to-end
-plumbing (Next.js → Inngest → Fly worker → Supabase pages → viewer) so the
-W4 frontend tasks can land in parallel. Replacing the stubs with real
-`pipeline/` calls is a follow-up task.
+`book.generate` runs the picture-book pipeline for one book row in Supabase:
+derive a prompt from the input flow → Worldsmith builds the story canon →
+map canon to the intermediate shapes → render character + scene images
+(`pipeline.characters` / `pipeline.illustrate`) → upload to Supabase Storage →
+write `pages`. The narrative brain is Worldsmith; the image body is unchanged.
 """
 
 from __future__ import annotations
 
 import os
+from pathlib import Path
 from typing import Any
 from uuid import UUID
 
 import inngest
 
+from pipeline import characters as _characters
+from pipeline import illustrate as _illustrate
 from pipeline import storage as _storage
+from pipeline import worldsmith as _worldsmith
 
 
 inngest_client = inngest.Inngest(
@@ -36,53 +37,84 @@ def _supabase() -> _storage.SupabaseStore:
     return store
 
 
-# --- stub page generators (one per input_kind) ----------------------------
-# Each returns a list of {page_idx, text, image_url?} dicts. Real
-# implementations will wire into pipeline/ stages.
+# --- generation ------------------------------------------------------------
+# One shared narrative path (Worldsmith) for every input_kind; the per-kind
+# difference is only in how the prompt/persona is derived (see pipeline.worldsmith,
+# which for photo/drawing folds in an image→text persona step).
 
-_MINUTES_TO_PAGES = {2: 5, 5: 10, 10: 15}
-
-
-def _page_count(book: dict) -> int:
-    payload = book.get("input_payload") or {}
-    minutes = payload.get("target_minutes")
-    return _MINUTES_TO_PAGES.get(minutes, 5)
-
-
-def _stub_pages(book: dict, lead: str) -> list[dict]:
-    title = book.get("title") or "Eventyret"
-    return [
-        {
-            "page_idx": i,
-            "text": f"Side {i + 1} av «{title}» — {lead}",
-            "image_status": "pending",
-        }
-        for i in range(_page_count(book))
-    ]
+def _scene_filename(title: str, scene_number: int) -> str:
+    """Replicate ConsistentSceneGenerator's *local* output naming (may contain non-ASCII)."""
+    safe = title.lower().replace(" ", "_").replace("-", "_").replace("'", "").replace('"', "")
+    safe = "".join(c for c in safe if c.isalnum() or c == "_")
+    return f"scene_{scene_number:02d}_{safe}.png"
 
 
-def _generate_write(book: dict) -> list[dict]:
-    return _stub_pages(book, "tekst-flyten er ikke koblet til pipeline ennå.")
+def _ascii_key(name: str) -> str:
+    """Supabase Storage keys must be ASCII; transliterate Norwegian chars, drop the rest.
+
+    `str.isalnum()` treats æ/ø/å as alphanumeric, so they survive into local filenames
+    (fine on disk) but Supabase rejects them as InvalidKey — common for nb-NO titles.
+    """
+    name = name.translate(str.maketrans({
+        "æ": "ae", "ø": "o", "å": "a", "Æ": "Ae", "Ø": "O", "Å": "A",
+    }))
+    return name.encode("ascii", "ignore").decode("ascii")
 
 
-def _generate_guided(book: dict) -> list[dict]:
-    return _stub_pages(book, "veiledet flyt — pipeline kommer.")
+def _generate(book: dict) -> list[dict]:
+    """Run the full pipeline for one book and return its `pages` rows.
+
+    Kept inside a single Inngest step so the on-disk working tree stays coherent
+    across the Worldsmith → render → upload sub-stages; it is idempotent on retry
+    (image files are skipped when present, uploads upsert).
+    """
+    inter = _worldsmith.run(book)
+
+    # Character images from the canon-derived prompts (style stays out of the
+    # filenames so the scene stage's character-ref lookup finds `<Name>.png`).
+    _characters.run(inter["analysis_path"], inter["output_base"])
+
+    # Scene illustrations conditioned on the character reference images.
+    _illustrate.run(
+        inter["scenes_path"],
+        inter["images_dir"],
+        inter["scenes_out_dir"],
+        art_style=inter["art_style"],
+    )
+
+    return _build_pages(book, inter)
 
 
-def _generate_photo(book: dict) -> list[dict]:
-    return _stub_pages(book, "foto-flyten kobles til Gemini-conditioning senere.")
+def _build_pages(book: dict, inter: dict) -> list[dict]:
+    """Upload rendered images to Supabase Storage (ASCII keys) and map scenes → page rows."""
+    store = _supabase()
+    prefix = f"{book['user_id']}/{book['id']}"
 
+    def _upload_pngs(local_dir: str, sub: str) -> dict[str, str]:
+        """Upload every PNG; return {local_filename: ascii_storage_key}."""
+        keys: dict[str, str] = {}
+        for path in sorted(Path(local_dir).glob("*.png")):
+            key = f"{prefix}/{sub}/{_ascii_key(path.name)}"
+            store.upload_file(_storage.BUCKET_BOOK_IMAGES, key, path)
+            keys[path.name] = key
+        return keys
 
-def _generate_drawing(book: dict) -> list[dict]:
-    return _stub_pages(book, "tegning-flyt — style-transfer kommer.")
+    _upload_pngs(inter["images_dir"], "characters")
+    scene_keys = _upload_pngs(inter["scenes_out_dir"], "scenes")
 
-
-_GENERATORS = {
-    "write": _generate_write,
-    "guided": _generate_guided,
-    "photo": _generate_photo,
-    "drawing": _generate_drawing,
-}
+    pages: list[dict] = []
+    for idx, scene in enumerate(inter["scenes"]):
+        local_name = _scene_filename(scene["title"], scene["scene_number"])
+        key = scene_keys.get(local_name)  # None if that scene image didn't render
+        pages.append(
+            {
+                "page_idx": idx,
+                "text": scene.get("content") or "",
+                "image_url": key,
+                "image_status": "done" if key else "pending",
+            }
+        )
+    return pages
 
 
 # --- helpers ---------------------------------------------------------------
@@ -131,16 +163,15 @@ def book_generate(ctx: inngest.Context) -> dict:
     book = ctx.step.run("load-book", lambda: _load_book(book_id))
     ctx.step.run("mark-generating", lambda: _mark(book_id, "generating"))
 
-    input_kind: str = book.get("input_kind") or "write"
-    generator = _GENERATORS.get(input_kind)
-    if generator is None:
-        raise ValueError(f"unknown input_kind {input_kind!r} for book {book_id}")
-
-    pages = ctx.step.run(f"generate-{input_kind}", lambda: generator(book))
-    page_count = ctx.step.run(
-        "write-pages",
-        lambda: _write_pages(book_id, pages),
-    )
+    try:
+        pages = ctx.step.run("generate", lambda: _generate(book))
+        page_count = ctx.step.run("write-pages", lambda: _write_pages(book_id, pages))
+    except Exception as exc:
+        ctx.step.run(
+            "mark-failed",
+            lambda: _mark(book_id, "failed", error=str(exc)[:500]),
+        )
+        raise
 
     ctx.step.run(
         "mark-ready",
